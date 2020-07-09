@@ -54,3 +54,7 @@ PHP 7.4 introduced typed class properties, and these are implemented in this lib
 ```
 composer require johnbillion/args
 ```
+
+## But Why?
+
+I have a name for these array-type parameters for passing arguments. I call them *Stockholm Parameters*. We've gotten so used to using them that we forget what a terrible design pattern it is. This library exists to work around the immediate issue without rearchitecting the whole of WordPress.
