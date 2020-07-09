@@ -1,0 +1,21 @@
+{
+    "name": "johnbillion/args",
+    "description": "I don't want to get into an argument about this.",
+    "type": "library",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "John Blackbourn",
+            "homepage": "https://johnblackbourn.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Args\\": "src/Args/",
+            "Types\\": "src/Types/"
+        }
+    }
+}
