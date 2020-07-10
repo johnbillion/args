@@ -23,14 +23,14 @@ class get_posts extends WP_Query {
 	/**
 	 * An array of post IDs to retrieve, sticky posts will be included. Is an alias of $post__in in WP_Query. Default empty array.
 	 *
-	 * @var array
+	 * @var array<int, int>
 	 */
 	public array $include;
 
 	/**
 	 * An array of post IDs not to retrieve. Default empty array.
 	 *
-	 * @var array
+	 * @var array<int, int>
 	 */
 	public array $exclude;
 
