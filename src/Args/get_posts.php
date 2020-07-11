@@ -8,8 +8,6 @@ class get_posts extends WP_Query {
 
 	/**
 	 * Total number of posts to retrieve. Is an alias of $posts_per_page in WP_Query. Accepts -1 for all. Default 5.
-	 *
-	 * @var int
 	 */
 	public int $numberposts;
 
@@ -36,8 +34,6 @@ class get_posts extends WP_Query {
 
 	/**
 	 * Whether to suppress filters. Default true.
-	 *
-	 * @var bool
 	 */
 	public bool $suppress_filters;
 
