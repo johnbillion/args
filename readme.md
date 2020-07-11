@@ -4,7 +4,7 @@ Don't you hate it when a function or method in WordPress accepts its arguments a
 
 ```php
 $query = new WP_Query( [
-	'post_type' => 'post',
+	'post_type'          => 'post',
 	'category_something' => 'does this accept an integer or a string?',
 	'number_of_...errr'
 ] );
@@ -34,6 +34,30 @@ $args->suppress_filters = false;
 $posts = get_posts( $args->toArray() );
 ```
 
+## Do you still like arrays?
+
+```php
+$argsMeta = \Args\WP_Query::meta();
+
+$args = [
+    $argsMeta->post_type     => 'post',
+    $argsMeta->category_name => 'add a string here',
+];
+
+$query = new \WP_Query( \Args\WP_Query::create($args)->toArray() );
+```
+
+```php
+$argsMeta = \Args\get_posts::meta();
+
+$args = [
+    $argsMeta->numberposts => 25,
+    $argsMeta->suppress_filters => false,
+];
+
+$posts = get_posts( \Args\get_posts::create( $args )->toArray() );
+```
+
 ## What's Provided
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
@@ -41,13 +65,13 @@ $posts = get_posts( $args->toArray() );
 
 These classes are generated directly from the parameter hash notation in WordPress core. I'll be working on a partly automated process for creating these at some point. I need to give some more thought on how best to name these classes and how best to handle functions that accept multiple paramters where one or more is an args array.
 
-## Strict Types
+## Types Checks
 
-PHP 7.4 introduced typed class properties, and these are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error. No more mystery bugs.
+All @property phpdoc of the class will be type checked. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error. No more mystery bugs.
 
 ## Requirements
 
-* PHP 7.4+
+* PHP 7.0+
 
 ## Installation
 

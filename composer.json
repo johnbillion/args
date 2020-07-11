@@ -10,12 +10,20 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.0",
+        "voku/arrayy": "~7.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0 || ~7.0"
     },
     "autoload": {
         "psr-4": {
-            "Args\\": "src/Args/",
-            "Types\\": "src/Types/"
+            "Args\\": "src/Args/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Args\\tests\\": "tests/"
         }
     }
 }
