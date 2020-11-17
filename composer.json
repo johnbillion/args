@@ -14,8 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Args\\": "src/Args/",
-            "Types\\": "src/Types/"
+            "Args\\": "src/Args/"
         }
     }
 }
