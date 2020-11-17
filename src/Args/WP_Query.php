@@ -115,7 +115,7 @@ class WP_Query extends Base {
 	/**
 	 * Which fields to return. Single field or all fields (string), or array of fields. 'id=>parent' uses 'id' and 'post_parent'. Default all fields. Accepts 'ids', 'id=>parent'.
 	 *
-	 * @var string|array
+	 * @var string|array<int, string>
 	 */
 	public $fields;
 
@@ -294,7 +294,7 @@ class WP_Query extends Base {
 	/**
 	 * A post type slug (string) or array of post type slugs. Default 'any' if using 'tax_query'.
 	 *
-	 * @var string|array
+	 * @var string|array<int, string>
 	 */
 	public $post_type;
 
