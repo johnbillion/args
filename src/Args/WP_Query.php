@@ -125,9 +125,9 @@ class WP_Query extends Base {
 	public int $hour;
 
 	/**
-	 * Whether to ignore sticky posts or not. Setting this to false excludes stickies from 'post__in'. Accepts 1|true, 0|false. Default false.
+	 * Whether to ignore sticky posts or not. Setting this to false excludes stickies from 'post__in'. Default false.
 	 */
-	public $ignore_sticky_posts;
+	public bool $ignore_sticky_posts;
 
 	/**
 	 * Combination YearMonth. Accepts any four-digit year and month numbers 1-12. Default empty.
