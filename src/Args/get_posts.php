@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Args;
 
+/**
+ * Arguments for the `get_posts()` function in WordPress.
+ *
+ * @link https://developer.wordpress.org/reference/functions/get_posts/
+ * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
+ */
 class get_posts extends WP_Query {
 
 	/**

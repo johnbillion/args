@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Args;
 
+/**
+ * Arguments for the `WP_Query` class in WordPress.
+ *
+ * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
+ */
 class WP_Query extends Base {
 
 	/**
