@@ -25,11 +25,15 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of author IDs to query from.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $author__in;
 
 	/**
 	 * An array of author IDs not to query from.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $author__not_in;
 
@@ -47,16 +51,22 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of category IDs (AND in).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $category__and;
 
 	/**
 	 * An array of category IDs (OR in, no children).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $category__in;
 
 	/**
 	 * An array of category IDs (NOT in).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $category__not_in;
 
@@ -233,11 +243,15 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of post IDs to retrieve, sticky posts will be included.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $post__in;
 
 	/**
 	 * An array of post IDs not to retrieve. Note: a string of comma-separated IDs will NOT work.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $post__not_in;
 
@@ -248,6 +262,8 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of post slugs that results must match.
+	 *
+	 * @var array<int, string>
 	 */
 	public array $post_name__in;
 
@@ -258,11 +274,15 @@ class WP_Query extends Base {
 
 	/**
 	 * An array containing parent page IDs to query child pages from.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $post_parent__in;
 
 	/**
 	 * An array containing parent page IDs not to query child pages from.
+	 *
+	 * @var array<int, int>
 	 */
 	public array $post_parent__not_in;
 
@@ -276,7 +296,7 @@ class WP_Query extends Base {
 	/**
 	 * A post status (string) or array of post statuses.
 	 *
-	 * @var string|string[]
+	 * @var string|array<int, string>
 	 */
 	public $post_status;
 
@@ -317,16 +337,22 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of tag IDs (AND in).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $tag__and;
 
 	/**
 	 * An array of tag IDs (OR in).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $tag__in;
 
 	/**
 	 * An array of tag IDs (NOT in).
+	 *
+	 * @var array<int, int>
 	 */
 	public array $tag__not_in;
 
@@ -337,11 +363,15 @@ class WP_Query extends Base {
 
 	/**
 	 * An array of tag slugs (AND in).
+	 *
+	 * @var array<int, string>
 	 */
 	public array $tag_slug__and;
 
 	/**
 	 * An array of tag slugs (OR in). unless 'ignore_sticky_posts' is true. Note: a string of comma-separated IDs will NOT work.
+	 *
+	 * @var array<int, string>
 	 */
 	public array $tag_slug__in;
 
