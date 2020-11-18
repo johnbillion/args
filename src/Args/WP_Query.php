@@ -254,7 +254,7 @@ class WP_Query extends Base {
 	public array $post__in;
 
 	/**
-	 * An array of post IDs not to retrieve. Note: a string of comma-separated IDs will NOT work.
+	 * An array of post IDs not to retrieve.
 	 *
 	 * @var array<int, int>
 	 */
@@ -374,7 +374,7 @@ class WP_Query extends Base {
 	public array $tag_slug__and;
 
 	/**
-	 * An array of tag slugs (OR in). unless 'ignore_sticky_posts' is true. Note: a string of comma-separated IDs will NOT work.
+	 * An array of tag slugs (OR in). unless 'ignore_sticky_posts' is true.
 	 *
 	 * @var array<int, string>
 	 */
