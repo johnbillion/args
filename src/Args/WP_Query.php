@@ -113,11 +113,16 @@ class WP_Query extends Base {
 	public bool $exact;
 
 	/**
-	 * Which fields to return. Single field or all fields (string), or array of fields. 'id=>parent' uses 'id' and 'post_parent'. Default all fields. Accepts 'ids', 'id=>parent'.
+	 * Post fields to query for.
 	 *
-	 * @var string|array<int, string>
+	 * Accepts:
+	 *     - '' Returns an array of complete post objects (`WP_Post[]`).
+	 *     - 'ids' Returns an array of post IDs (`int[]`).
+	 *     - 'id=>parent' Returns an associative array of parent post IDs, keyed by post ID (`int[]`).
+	 *
+	 * Default ''.
 	 */
-	public $fields;
+	public string $fields;
 
 	/**
 	 * Hour of the day. Default empty. Accepts numbers 0-23.
