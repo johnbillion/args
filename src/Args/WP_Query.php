@@ -84,11 +84,17 @@ class WP_Query extends Base {
 	 * Filter results by comment count. Provide an integer to match comment count exactly. Provide an array with integer 'value' and 'compare' operator ('=', '!=', '>', '>=', '<', '<=' ) to compare against comment_count in a specific way.
 	 *
 	 * @var array|int
+	 * @phpstan-var array{
+	 *     value: int,
+	 *     compare: '='|'!='|'>'|'>='|'<'|'<=',
+	 * }|int
 	 */
 	public $comment_count;
 
 	/**
 	 * Comment status.
+	 *
+	 * @phpstan-var 'open'|'closed'
 	 */
 	public string $comment_status;
 
@@ -121,6 +127,8 @@ class WP_Query extends Base {
 	 *     - 'id=>parent' Returns an associative array of parent post IDs, keyed by post ID (`int[]`).
 	 *
 	 * Default ''.
+	 *
+	 * @phpstan-var ''|'ids'|'id=>parent'
 	 */
 	public string $fields;
 
@@ -141,11 +149,15 @@ class WP_Query extends Base {
 
 	/**
 	 * Comparison operator to test the 'meta_value'.
+	 *
+	 * @phpstan-var '='|'!='|'LIKE'|'NOT LIKE'|'IN'|'NOT IN'|'EXISTS'|'NOT EXISTS'|'RLIKE'|'REGEXP'|'NOT REGEXP'|'>'|'>='|'<'|'<='|'BETWEEN'|'NOT BETWEEN'
 	 */
 	public string $meta_compare;
 
 	/**
 	 * Comparison operator to test the 'meta_key'.
+	 *
+	 * @phpstan-var '='|'EXISTS'|'LIKE'|'IN'|'RLIKE'|'REGEXP'|'!='|'NOT EXISTS'|'NOT LIKE'|'NOT IN'|'NOT REGEXP'
 	 */
 	public string $meta_compare_key;
 
@@ -206,6 +218,8 @@ class WP_Query extends Base {
 
 	/**
 	 * Designates ascending or descending order of posts. Default 'DESC'. Accepts 'ASC', 'DESC'.
+	 *
+	 * @phpstan-var 'ASC'|'DESC'
 	 */
 	public string $order;
 
@@ -248,6 +262,8 @@ class WP_Query extends Base {
 
 	/**
 	 * Ping status.
+	 *
+	 * @phpstan-var 'open'|'closed'
 	 */
 	public string $ping_status;
 
