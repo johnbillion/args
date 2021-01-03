@@ -65,6 +65,10 @@ PHP 7.4 introduced typed class properties, and these are implemented in this lib
 
 Note that several parameters in WordPress accept multiple types, for example the `$ignore_sticky_posts` for `\WP_Query` can be a boolean or an integer. Other parameters accept either a numerical string or an integer. In some of these cases I've opted to type the parameter with the most appropriate type even though it can technically accept other types.
 
+## Static Analysis
+
+Some PHPStan-specific `@phpstan-var` tags are used for properties that have a fixed set of values. This effectively turns the properties into enums and allows for even greater type and value checking via static analysis with PHPStan.
+
 ## Requirements
 
 * PHP 7.4+
