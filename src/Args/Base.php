@@ -10,7 +10,7 @@ namespace Args;
 abstract class Base implements \ArrayAccess {
 
 	/**
-	 * @param array<mixed, mixed> $args
+	 * @param array<string, mixed> $args
 	 */
 	public static function fromArray( array $args ) : self {
 		$class = new self();
@@ -23,7 +23,7 @@ abstract class Base implements \ArrayAccess {
 	}
 
 	/**
-	 * @return array<mixed, mixed>
+	 * @return array<string, mixed>
 	 */
 	public function toArray() : array {
 		$vars = get_object_vars( $this );
