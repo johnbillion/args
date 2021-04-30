@@ -28,9 +28,7 @@ abstract class Base implements \ArrayAccess {
 	public function toArray() : array {
 		$vars = get_object_vars( $this );
 
-		$vars = array_filter( $vars, function( $value ) {
-			return $value !== null;
-		} );
+		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
 
 		return $vars;
 	}
