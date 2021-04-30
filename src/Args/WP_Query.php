@@ -8,6 +8,34 @@ namespace Args;
  * Arguments for the `WP_Query` class in WordPress.
  *
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
+ *
+ * The PHPStan types below aren't used yet. See:
+ * @link https://github.com/phpstan/phpstan/discussions/4930
+ *
+ * @phpstan-type Date_Query_Args array{
+ *     before?: string|array,
+ *     after?: string|array,
+ *     column?: string,
+ * }
+ * @phpstan-type Date_Query array{
+ *     column?: string,
+ *     compare?: string,
+ *     relation?: string,
+ *     0?: Date_Query_Args,
+ * }
+ *
+ * @phpstan-type Meta_Query_Args array{
+ *     key?: string,
+ *     compare_key?: string,
+ *     type_key?: string,
+ *     value?: string,
+ *     compare?: string,
+ *     type?: string,
+ * }
+ * @phpstan-type Meta_Query array{
+ *     relation?: string,
+ *     0?: Meta_Query_Args,
+ * }
  */
 class WP_Query extends Base {
 
