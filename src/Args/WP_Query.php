@@ -402,7 +402,7 @@ class WP_Query extends Base {
 	public array $tag_slug__in;
 
 	/**
-	 * An associative array of WP_Tax_Query arguments. See WP_Tax_Query->queries.
+	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
 	 */
 	public array $tax_query;
 
