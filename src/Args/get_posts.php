@@ -14,6 +14,8 @@ class get_posts extends WP_Query {
 
 	/**
 	 * Total number of posts to retrieve. Is an alias of $posts_per_page in WP_Query. Accepts -1 for all. Default 5.
+	 *
+	 * @phpstan-var positive-int|-1
 	 */
 	public int $numberposts;
 
