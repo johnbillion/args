@@ -356,11 +356,15 @@ class WP_Query extends Base {
 
 	/**
 	 * The number of posts to query for. Use -1 to request all posts.
+	 *
+	 * @phpstan-var positive-int | -1
 	 */
 	public int $posts_per_page;
 
 	/**
 	 * The number of posts to query for by archive page. Overrides 'posts_per_page' when is_archive(), or is_search() are true.
+	 *
+	 * @phpstan-var positive-int | -1
 	 */
 	public int $posts_per_archive_page;
 
