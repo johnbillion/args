@@ -70,6 +70,8 @@ Note that several parameters in WordPress accept multiple types, for example the
 
 Some PHPStan-specific `@phpstan-var` tags are used for properties that have a fixed set of values. This effectively turns the properties into enums and allows for even greater type and value checking via static analysis with PHPStan.
 
+Note that this isn't completely reliable currently due to [this bug in PHPStan](https://github.com/phpstan/phpstan/issues/3555).
+
 ## Requirements
 
 * PHP 7.4+
