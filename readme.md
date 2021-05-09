@@ -56,6 +56,7 @@ $posts = get_posts( $args->toArray() );
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
 * `\Args\get_posts` for the `get_posts()` function
+* `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
 
 These classes are generated directly from the parameter hash notation in WordPress core. I'll be working on a partly automated process for creating these at some point. I need to give some more thought on how best to name these classes and how best to handle functions that accept multiple parameters where one or more is an args array.
 
