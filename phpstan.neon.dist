@@ -2,7 +2,5 @@ parameters:
   level: max
   paths:
     - src
-  scanDirectories:
-    - src
   bootstrapFiles:
     - tests/stubs.php
