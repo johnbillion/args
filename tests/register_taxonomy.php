@@ -26,4 +26,4 @@ $args->meta_box_sanitize_cb = function( string $taxonomy, $terms ) {
 $args->rewrite = [
 	'hierarchical' => false,
 ];
-$args->update_count_callback = function( array $terms, string $taxonomy ) {};
+$args->update_count_callback = function( array $terms, \WP_Taxonomy $taxonomy ) {};

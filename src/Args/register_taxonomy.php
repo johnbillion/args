@@ -139,7 +139,7 @@ class register_taxonomy extends Base {
 	 * Works much like a hook, in that it will be called when the count is updated. Default _update_post_term_count() for taxonomies attached to post types, which confirms that the objects are published before counting them. Default _update_generic_term_count() for taxonomies attached to other object types, such as users.
 	 *
 	 * @var callable
-	 * @phpstan-var callable(int[],string) : void
+	 * @phpstan-var callable(int[],\WP_Taxonomy) : void
 	 */
 	public $update_count_callback;
 
