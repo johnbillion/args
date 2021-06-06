@@ -119,7 +119,7 @@ class register_post_type extends Base {
 	 *
 	 * Default is 'WP_REST_Posts_Controller'.
 	 *
-	 * @phpstan-var class-string
+	 * @phpstan-var class-string<\WP_REST_Controller>
 	 */
 	public string $rest_controller_class;
 
