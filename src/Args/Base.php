@@ -13,6 +13,7 @@ abstract class Base implements \ArrayAccess {
 
 	/**
 	 * @param array<string, mixed> $args
+	 * @return static
 	 */
 	final public static function fromArray( array $args ) : self {
 		$class = new static();
