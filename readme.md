@@ -44,15 +44,6 @@ $query = new \WP_Query( $args->toArray() );
 ```
 
 ```php
-$args = new \Args\get_posts;
-
-$args->numberposts = 25;
-$args->suppress_filters = false;
-
-$posts = get_posts( $args->toArray() );
-```
-
-```php
 $args = new \Args\register_post_type;
 
 $args->show_in_rest = true;
@@ -72,6 +63,7 @@ $story = register_post_type( 'story', $args->toArray() );
 
 * `\Args\get_posts` for the `get_posts()` function
 * `\Args\register_post_type` for the `register_post_type()` function
+* `\Args\register_taxonomy` for the `register_taxonomy()` function
 
 ## Type Checking
 
