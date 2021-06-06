@@ -4,3 +4,5 @@ parameters:
     - src
   scanDirectories:
     - src
+  bootstrapFiles:
+    - tests/stubs.php

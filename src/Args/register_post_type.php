@@ -149,6 +149,10 @@ class register_post_type extends Base {
 	 * Default [ 'post', 'posts' ].
 	 *
 	 * @var string[]
+	 * @phpstan-var array<int, string>{
+	 *     0: string,
+	 *     1: string,
+	 * }
 	 */
 	public array $capability_type;
 
@@ -158,6 +162,23 @@ class register_post_type extends Base {
 	 * `$capability_type` is used as a base to construct capabilities by default. See get_post_type_capabilities().
 	 *
 	 * @var string[]
+	 * @phpstan-var array<string, string>{
+	 *     edit_post?: string,
+	 *     read_post?: string,
+	 *     delete_post?: string,
+	 *     edit_posts?: string,
+	 *     edit_others_posts?: string,
+	 *     delete_posts?: string,
+	 *     publish_posts?: string,
+	 *     read_private_posts?: string,
+	 *     read?: string,
+	 *     delete_private_posts?: string,
+	 *     delete_published_posts?: string,
+	 *     delete_others_posts?: string,
+	 *     edit_private_posts?: string,
+	 *     edit_published_posts?: string,
+	 *     create_posts?: string,
+	 * }
 	 */
 	public array $capabilities;
 
@@ -205,6 +226,7 @@ class register_post_type extends Base {
 	 * Default null.
 	 *
 	 * @var callable
+	 * @phpstan-var callable(\WP_Post): void
 	 */
 	public $register_meta_box_cb;
 
@@ -234,20 +256,16 @@ class register_post_type extends Base {
 	 * Triggers the handling of rewrites for this post type.
 	 *
 	 * To prevent rewrite, set to false. Defaults to true, using $post_type as slug. To specify rewrite rules,
-	 * an array can be passed with any of these keys:
-	 *
-	 *     @type string $slug       Customize the permastruct slug.
-	 *                              Defaults to $post_type key.
-	 *     @type bool   $with_front Whether the permastruct should be prepended with WP_Rewrite::$front.
-	 *                              Default true.
-	 *     @type bool   $feeds      Whether the feed permastruct should be built for this post type.
-	 *                              Default is value of $has_archive.
-	 *     @type bool   $pages      Whether the permastruct should provide for pagination.
-	 *                              Default true.
-	 *     @type int    $ep_mask    Endpoint mask to assign. If not specified and `$permalink_epmask` is set, inherits from that.
-	 *                              If not specified and permalink_epmask is not set, defaults to EP_PERMALINK.
+	 * an array can be passed.
 	 *
 	 * @var bool|mixed[]
+	 * @phpstan-var bool|array{
+	 *     slug?: string,
+	 *     with_front?: bool,
+	 *     feeds?: bool,
+	 *     pages?: bool,
+	 *     ep_mask?: int,
+	 * }
 	 */
 	public $rewrite;
 
@@ -301,6 +319,7 @@ class register_post_type extends Base {
 	 * Default false.
 	 *
 	 * @var string|false
+	 * @phpstan-var 'all'|'insert'|false
 	 */
 	public $template_lock;
 }
