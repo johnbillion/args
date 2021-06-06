@@ -52,6 +52,15 @@ $args->suppress_filters = false;
 $posts = get_posts( $args->toArray() );
 ```
 
+```php
+$args = new \Args\register_post_type;
+
+$args->show_in_rest = true;
+$args->taxonomies = [ 'genre', 'audience' ];
+
+$story = register_post_type( 'story', $args->toArray() );
+```
+
 ## What's Provided
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
