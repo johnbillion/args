@@ -99,6 +99,10 @@ $args->tag_slug__in = [ 'hello' ];
 $tax_query_clause_1 = \Args\WP_Tax_Query_Clause::fromArray( [
 	'taxonomy' => 'post_tag',
 ] );
+$tax_query_clause_1->field = 'term_id';
+$tax_query_clause_1->terms = [ 123, 456 ];
+$tax_query_clause_1->operator = 'IN';
+
 $tax_query_clause_2 = new \Args\WP_Tax_Query_Clause();
 $tax_query_clause_2->taxonomy = 'category';
 $tax_query_clause_2->terms = [

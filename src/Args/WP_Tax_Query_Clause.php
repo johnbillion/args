@@ -24,12 +24,20 @@ class WP_Tax_Query_Clause extends Base {
 	public $terms;
 
 	/**
-	 * Field to match $terms against. Accepts 'term_id', 'slug', 'name', or 'term_taxonomy_id'. Default: 'term_id'.
+	 * Field to match $terms against.
+	 *
+	 * Default: 'term_id'.
+	 *
+	 * @phpstan-var 'term_id'|'slug'|'name'|'term_taxonomy_id'
 	 */
 	public string $field;
 
 	/**
-	 * MySQL operator to be used with $terms in the WHERE clause. Accepts 'AND', 'IN', 'NOT IN', 'EXISTS', 'NOT EXISTS'. Default: 'IN'.
+	 * MySQL operator to be used with $terms in the WHERE clause.
+	 *
+	 * Default: 'IN'.
+	 *
+	 * @phpstan-var 'AND'|'IN'|'NOT IN'|'EXISTS'|'NOT EXISTS'
 	 */
 	public string $operator;
 
