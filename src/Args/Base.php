@@ -9,11 +9,13 @@ namespace Args;
  */
 abstract class Base implements \ArrayAccess {
 
+	final public function __construct() {}
+
 	/**
 	 * @param array<string, mixed> $args
 	 */
-	public static function fromArray( array $args ) : self {
-		$class = new self();
+	final public static function fromArray( array $args ) : self {
+		$class = new static();
 
 		foreach ( $args as $key => $value ) {
 			$class->$key = $value;
@@ -25,7 +27,7 @@ abstract class Base implements \ArrayAccess {
 	/**
 	 * @return array<string, mixed>
 	 */
-	public function toArray() : array {
+	final public function toArray() : array {
 		$vars = get_object_vars( $this );
 
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
@@ -36,7 +38,7 @@ abstract class Base implements \ArrayAccess {
 	/**
 	 * @param int|string $offset
 	 */
-	public function offsetExists( $offset ) : bool {
+	final public function offsetExists( $offset ) : bool {
 		return array_key_exists( $offset, get_object_vars( $this ) );
 	}
 
@@ -44,7 +46,7 @@ abstract class Base implements \ArrayAccess {
 	 * @param int|string $offset
 	 * @return mixed
 	 */
-	public function offsetGet( $offset ) {
+	final public function offsetGet( $offset ) {
 		if ( ! array_key_exists( $offset, get_object_vars( $this ) ) ) {
 			return null;
 		}
@@ -56,14 +58,14 @@ abstract class Base implements \ArrayAccess {
 	 * @param int|string $offset
 	 * @param mixed $value
 	 */
-	public function offsetSet( $offset, $value ) : void {
+	final public function offsetSet( $offset, $value ) : void {
 		$this->$offset = $value;
 	}
 
 	/**
 	 * @param int|string $offset
 	 */
-	public function offsetUnset( $offset ) : void {
+	final public function offsetUnset( $offset ) : void {
 		unset( $this->$offset );
 	}
 
