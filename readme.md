@@ -54,16 +54,20 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ## What's Provided
 
-### Classes
+### Class Arguments
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
 * `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
 
-### Functions
+### Function Arguments
 
 * `\Args\get_posts` for the `get_posts()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
+
+### Argument Arguments
+
+* `\Args\WP_Tax_Query_Clause` for a single clause within the `WP_Tax_Query` class constructor array
 
 ## Type Checking
 

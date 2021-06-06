@@ -36,6 +36,20 @@ namespace Args;
  *     relation?: string,
  *     0?: Meta_Query_Args,
  * }
+ *
+ * @phpstan-type Tax_Query array{
+ *     relation?: 'AND'|'OR',
+ *     0: WP_Tax_Query_Clause,
+ *     1?: WP_Tax_Query_Clause,
+ *     2?: WP_Tax_Query_Clause,
+ *     3?: WP_Tax_Query_Clause,
+ *     4?: WP_Tax_Query_Clause,
+ *     5?: WP_Tax_Query_Clause,
+ *     6?: WP_Tax_Query_Clause,
+ *     7?: WP_Tax_Query_Clause,
+ *     8?: WP_Tax_Query_Clause,
+ *     9?: WP_Tax_Query_Clause,
+ * }
  */
 class WP_Query extends Base {
 
@@ -467,6 +481,7 @@ class WP_Query extends Base {
 	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
 	 *
 	 * @var mixed[]
+	 * @phpstan-var Tax_Query
 	 */
 	public array $tax_query;
 
