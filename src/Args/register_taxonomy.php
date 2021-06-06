@@ -64,6 +64,8 @@ class register_taxonomy extends Base {
 
 	/**
 	 * REST API Controller class name. Default is 'WP_REST_Terms_Controller'.
+	 *
+	 * @phpstan-var class-string<\WP_REST_Controller>
 	 */
 	public string $rest_controller_class;
 
@@ -85,7 +87,8 @@ class register_taxonomy extends Base {
 	/**
 	 * Provide a callback function for the meta box display. If not set, post_categories_meta_box() is used for hierarchical taxonomies, and post_tags_meta_box() is used for non-hierarchical. If false, no meta box is shown.
 	 *
-	 * @var bool|callable
+	 * @var false|callable
+	 * @phpstan-var false|callable(\WP_Post,mixed[]) : void
 	 */
 	public $meta_box_cb;
 
@@ -93,18 +96,20 @@ class register_taxonomy extends Base {
 	 * Callback function for sanitizing taxonomy data saved from a meta box. If no callback is defined, an appropriate one is determined based on the value of `$meta_box_cb`.
 	 *
 	 * @var callable
+	 * @phpstan-var callable(string,mixed) : (int|string)[]
 	 */
 	public $meta_box_sanitize_cb;
 
 	/**
 	 * Array of capabilities for this taxonomy.
 	 *
-	 * @type string $manage_terms Default 'manage_categories'.
-	 * @type string $edit_terms   Default 'manage_categories'.
-	 * @type string $delete_terms Default 'manage_categories'.
-	 * @type string $assign_terms Default 'edit_posts'.
-	 *
 	 * @var string[]
+	 * @phpstan-var array{
+	 *     manage_terms: string,
+	 *     edit_terms: string,
+	 *     delete_terms: string,
+	 *     assign_terms: string,
+	 * }
 	 */
 	public array $capabilities;
 
@@ -113,12 +118,13 @@ class register_taxonomy extends Base {
 	 *
 	 * To prevent rewrite, set to false. To specify rewrite rules, an array can be passed with any of these keys:
 	 *
-	 * @type string $slug         Customize the permastruct slug. Default `$taxonomy` key.
-	 * @type bool   $with_front   Should the permastruct be prepended with WP_Rewrite::$front. Default true.
-	 * @type bool   $hierarchical Either hierarchical rewrite tag or not. Default false.
-	 * @type int    $ep_mask      Assign an endpoint mask. Default `EP_NONE`.
-	 *
-	 * @var bool|array
+	 * @var bool|mixed[]
+	 * @phpstan-var bool|array{
+	 *     slug?: string,
+	 *     with_front?: bool,
+	 *     hierarchical?: bool,
+	 *     ep_mask?: int,
+	 * }
 	 */
 	public $rewrite;
 
@@ -133,17 +139,19 @@ class register_taxonomy extends Base {
 	 * Works much like a hook, in that it will be called when the count is updated. Default _update_post_term_count() for taxonomies attached to post types, which confirms that the objects are published before counting them. Default _update_generic_term_count() for taxonomies attached to other object types, such as users.
 	 *
 	 * @var callable
+	 * @phpstan-var callable(int[],string) : void
 	 */
 	public $update_count_callback;
 
 	/**
 	 * Default term to be used for the taxonomy.
 	 *
-	 * @type string $name         Name of default term.
-	 * @type string $slug         Slug for default term. Default empty.
-	 * @type string $description  Description for default term. Default empty.
-	 *
-	 * @var string|array
+	 * @var string|string[]
+	 * @phpstan-var string|array<string,string>{
+	 *     name: string,
+	 *     slug?: string,
+	 *     description?: string,
+	 * }
 	 */
 	public $default_term;
 
@@ -154,6 +162,8 @@ class register_taxonomy extends Base {
 
 	/**
 	 * Array of arguments to automatically use inside `wp_get_object_terms()` for this taxonomy.
+	 *
+	 * @var mixed[]
 	 */
 	public array $args;
 

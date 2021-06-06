@@ -12,3 +12,4 @@ $args->capabilities = [
 	'what' => 'foo',
 ];
 $args->template_lock = 'all';
+$args->register_meta_box_cb = function( \WP_Post $post ) {};

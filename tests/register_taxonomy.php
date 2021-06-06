@@ -7,6 +7,23 @@ $args = new \Args\register_taxonomy;
 $args->public = true;
 $args->rest_controller_class = WP_REST_Controller::class;
 $args->capabilities = [
-	'read' => 'foo',
-	'what' => 'foo',
+	'manage_terms' => 'foo',
+	'edit_terms' => 'foo',
+	'delete_terms' => 'foo',
+	'assign_terms' => 'foo',
 ];
+$args->default_term = [
+	'name' => 'Foo',
+];
+$args->default_term = 'Foo';
+$args->meta_box_cb = function( \WP_Post $post, array $args ) {};
+$args->meta_box_sanitize_cb = function( string $taxonomy, $terms ) {
+	return [
+		123,
+		'abc',
+	];
+};
+$args->rewrite = [
+	'hierarchical' => false,
+];
+$args->update_count_callback = function( array $terms, string $taxonomy ) {};

@@ -149,7 +149,7 @@ class register_post_type extends Base {
 	 * Default [ 'post', 'posts' ].
 	 *
 	 * @var string[]
-	 * @phpstan-var array<int, string>{
+	 * @phpstan-var array{
 	 *     0: string,
 	 *     1: string,
 	 * }
@@ -162,7 +162,7 @@ class register_post_type extends Base {
 	 * `$capability_type` is used as a base to construct capabilities by default. See get_post_type_capabilities().
 	 *
 	 * @var string[]
-	 * @phpstan-var array<string, string>{
+	 * @phpstan-var array{
 	 *     edit_post?: string,
 	 *     read_post?: string,
 	 *     delete_post?: string,
