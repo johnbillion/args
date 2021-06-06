@@ -71,7 +71,13 @@ These classes are generated directly from the parameter hash notation in WordPre
 
 ## Type Checking
 
-PHP 7.4 introduced typed class properties, and these are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error. No more mystery bugs.
+PHP 7.4 introduced typed class properties, and these are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
+
+```php
+declare( strict_types=1 );
+```
+
+No more mystery bugs due to incorrect types.
 
 Note that several parameters in WordPress accept multiple types, for example the `$ignore_sticky_posts` for `\WP_Query` can be a boolean or an integer. Other parameters accept either a numerical string or an integer. In some of these cases I've opted to type the parameter with the most appropriate type even though it can technically accept other types.
 
