@@ -133,6 +133,8 @@ class WP_Query extends Base {
 
 	/**
 	 * An associative array of WP_Date_Query arguments. See WP_Date_Query::__construct().
+	 *
+	 * @var mixed[]
 	 */
 	public array $date_query;
 
@@ -196,6 +198,8 @@ class WP_Query extends Base {
 
 	/**
 	 * An associative array of WP_Meta_Query arguments. See WP_Meta_Query.
+	 *
+	 * @var mixed[]
 	 */
 	public array $meta_query;
 
@@ -252,9 +256,35 @@ class WP_Query extends Base {
 	public string $order;
 
 	/**
-	 * Sort retrieved posts by parameter. One or more options may be passed. To use 'meta_value', or 'meta_value_num', 'meta_key=keyname' must be also be defined. To sort by a specific `$meta_query` clause, use that clause's array key. Accepts 'none', 'name', 'author', 'date', 'title', 'modified', 'menu_order', 'parent', 'ID', 'rand', 'relevance', 'RAND(x)' (where 'x' is an integer seed value), 'comment_count', 'meta_value', 'meta_value_num', 'post__in', 'post_name__in', 'post_parent__in', and the array keys of `$meta_query`. Default is 'date', except when a search is being performed, when the default is 'relevance'.
+	 * Sort retrieved posts by parameter. One or more options may be passed.
 	 *
-	 * @var string|array
+	 * To use 'meta_value', or 'meta_value_num', 'meta_key=keyname' must be also be defined. To sort by a specific `$meta_query` clause, use that clause's array key.
+	 *
+	 * Accepts:
+	 *
+	 *   - 'none'
+	 *   - 'name'
+	 *   - 'author'
+	 *   - 'date'
+	 *   - 'title'
+	 *   - 'modified'
+	 *   - 'menu_order'
+	 *   - 'parent'
+	 *   - 'ID'
+	 *   - 'rand'
+	 *   - 'relevance'
+	 *   - 'RAND(x)' (where 'x' is an integer seed value)
+	 *   - 'comment_count'
+	 *   - 'meta_value'
+	 *   - 'meta_value_num'
+	 *   - 'post__in'
+	 *   - 'post_name__in'
+	 *   - 'post_parent__in'
+	 *   - The array keys of `$meta_query`
+	 *
+	 * Default is 'date', except when a search is being performed, when the default is 'relevance'.
+	 *
+	 * @var string|string[]
 	 */
 	public $orderby;
 
@@ -435,6 +465,8 @@ class WP_Query extends Base {
 
 	/**
 	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
+	 *
+	 * @var mixed[]
 	 */
 	public array $tax_query;
 

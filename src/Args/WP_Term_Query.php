@@ -204,6 +204,8 @@ class WP_Term_Query extends Base {
 
 	/**
 	 * Optional. Meta query clauses to limit retrieved terms by. See `WP_Meta_Query`.
+	 *
+	 * @var mixed[]
 	 */
 	public array $meta_query;
 
