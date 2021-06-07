@@ -67,9 +67,10 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ### Argument Arguments
 
-Some individual arguments are themselves an array with complex values. Argument definitions are provided for the following, but they are currently only enforced via PHPStan, not at runtime.
+Some individual arguments are themselves an array with a specific shape. Argument definitions are provided for the following, but they are currently only enforced via PHPStan, not at runtime.
 
 * `\Args\WP_Tax_Query_Clause` for a single clause within the `WP_Tax_Query` class constructor array
+  - Used by the `tax_query` argument of `WP_Query`
 
 ## Type Checking
 
@@ -91,7 +92,7 @@ Note that this isn't completely reliable currently due to [this bug in PHPStan](
 
 ## Requirements
 
-* PHP 7.4+
+* PHP 7.4 or PHP 8.0
 
 ## Installation
 
