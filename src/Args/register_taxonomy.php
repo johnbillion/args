@@ -13,7 +13,7 @@ class register_taxonomy extends Base {
 	/**
 	 * An array of labels for this taxonomy. By default, Tag labels are used for non-hierarchical taxonomies, and Category labels are used for hierarchical taxonomies. See accepted values in get_taxonomy_labels(). Default empty array.
 	 *
-	 * @var array<int,string>
+	 * @var array<string,string>
 	 */
 	public array $labels;
 

@@ -22,7 +22,7 @@ class register_post_type extends Base {
 	 *
 	 * See get_post_type_labels() for a full list of supported labels.
 	 *
-	 * @var array<int,string>
+	 * @var array<string,string>
 	 */
 	public array $labels;
 

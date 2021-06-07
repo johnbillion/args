@@ -27,3 +27,6 @@ $args->rewrite = [
 	'hierarchical' => false,
 ];
 $args->update_count_callback = function( array $terms, \WP_Taxonomy $taxonomy ) {};
+$args->labels = [
+	'filter_by_item' => 'Filter by Item',
+];

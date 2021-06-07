@@ -13,3 +13,6 @@ $args->capabilities = [
 ];
 $args->template_lock = 'all';
 $args->register_meta_box_cb = function( \WP_Post $post ) {};
+$args->labels = [
+	'featured_image' => 'Icon',
+];
