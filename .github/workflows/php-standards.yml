@@ -1,0 +1,48 @@
+name: PHP Standards
+on:
+  push:
+    branches:
+      - 'develop'
+      - 'trunk'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: PHP Coding Standards
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+
+    - name: Install PHP
+      uses: shivammathur/setup-php@2.7.0
+      with:
+        php-version: '7.4'
+        coverage: none
+
+    - name: Debugging
+      run: |
+        php --version
+        composer --version
+
+    - name: Get Composer Cache Directory
+      id: composer-cache-dir
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - name: Cache PHP Dependencies
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.composer-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-composer-7.4-${{ hashFiles('composer.lock') }}
+
+    - name: Install PHP Dependencies
+      run: |
+        composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+    - name: Run the tests
+      run: |
+        composer test
