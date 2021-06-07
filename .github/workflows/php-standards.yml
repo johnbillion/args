@@ -37,7 +37,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.composer-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-composer-7.4-${{ hashFiles('composer.lock') }}
+        key: ${{ runner.os }}-composer-7.4-${{ hashFiles('composer.json') }}
 
     - name: Install PHP Dependencies
       run: |
