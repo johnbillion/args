@@ -37,14 +37,14 @@ abstract class Base implements \ArrayAccess {
 	}
 
 	/**
-	 * @param int|string $offset
+	 * @param string $offset
 	 */
 	final public function offsetExists( $offset ) : bool {
 		return array_key_exists( $offset, get_object_vars( $this ) );
 	}
 
 	/**
-	 * @param int|string $offset
+	 * @param string $offset
 	 * @return mixed
 	 */
 	final public function offsetGet( $offset ) {
@@ -56,7 +56,7 @@ abstract class Base implements \ArrayAccess {
 	}
 
 	/**
-	 * @param int|string $offset
+	 * @param string $offset
 	 * @param mixed $value
 	 */
 	final public function offsetSet( $offset, $value ) : void {
@@ -64,7 +64,7 @@ abstract class Base implements \ArrayAccess {
 	}
 
 	/**
-	 * @param int|string $offset
+	 * @param string $offset
 	 */
 	final public function offsetUnset( $offset ) : void {
 		unset( $this->$offset );
