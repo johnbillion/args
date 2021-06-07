@@ -10,6 +10,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        php: ['7.4', '8.0']
+      fail-fast: false
     name: PHP Coding Standards
     runs-on: ubuntu-18.04
     steps:
@@ -19,7 +23,7 @@ jobs:
     - name: Install PHP
       uses: shivammathur/setup-php@2.7.0
       with:
-        php-version: '7.4'
+        php-version: ${{ matrix.php }}
         coverage: none
 
     - name: Debugging
@@ -37,7 +41,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.composer-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-composer-7.4-${{ hashFiles('composer.json') }}
+        key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('composer.json') }}
 
     - name: Install PHP Dependencies
       run: |
