@@ -125,7 +125,7 @@ class WP_Query extends Base {
 	/**
 	 * Filter results by comment count. Provide an integer to match comment count exactly. Provide an array with integer 'value' and 'compare' operator ('=', '!=', '>', '>=', '<', '<=' ) to compare against comment_count in a specific way.
 	 *
-	 * @var array|int
+	 * @var array<string,(int|string)>|int
 	 * @phpstan-var array{
 	 *     value: int,
 	 *     compare: '='|'!='|'>'|'>='|'<'|'<=',
