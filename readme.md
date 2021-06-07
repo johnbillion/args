@@ -54,7 +54,7 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ## What's Provided
 
-### Class Arguments
+### Class Constructor Arguments
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
 * `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
@@ -66,6 +66,8 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
 
 ### Argument Arguments
+
+Some individual arguments are themselves an array with complex values. Argument definitions are provided for the following, but they are currently only enforced via PHPStan, not at runtime.
 
 * `\Args\WP_Tax_Query_Clause` for a single clause within the `WP_Tax_Query` class constructor array
 
