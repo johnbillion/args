@@ -22,7 +22,7 @@ class register_post_type extends Base {
 	 *
 	 * See get_post_type_labels() for a full list of supported labels.
 	 *
-	 * @var string[]
+	 * @var array<int,string>
 	 */
 	public array $labels;
 
@@ -148,7 +148,7 @@ class register_post_type extends Base {
 	 *
 	 * Default [ 'post', 'posts' ].
 	 *
-	 * @var string[]
+	 * @var array<int,string>
 	 * @phpstan-var array{
 	 *     0: string,
 	 *     1: string,
@@ -161,7 +161,7 @@ class register_post_type extends Base {
 	 *
 	 * `$capability_type` is used as a base to construct capabilities by default. See get_post_type_capabilities().
 	 *
-	 * @var string[]
+	 * @var array<string,string>
 	 * @phpstan-var array{
 	 *     edit_post?: string,
 	 *     read_post?: string,
@@ -237,7 +237,7 @@ class register_post_type extends Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var string[]
+	 * @var array<int,string>
 	 */
 	public array $taxonomies;
 
@@ -258,7 +258,7 @@ class register_post_type extends Base {
 	 * To prevent rewrite, set to false. Defaults to true, using $post_type as slug. To specify rewrite rules,
 	 * an array can be passed.
 	 *
-	 * @var bool|mixed[]
+	 * @var bool|array<string,mixed>
 	 * @phpstan-var bool|array{
 	 *     slug?: string,
 	 *     with_front?: bool,

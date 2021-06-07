@@ -13,7 +13,7 @@ class register_taxonomy extends Base {
 	/**
 	 * An array of labels for this taxonomy. By default, Tag labels are used for non-hierarchical taxonomies, and Category labels are used for hierarchical taxonomies. See accepted values in get_taxonomy_labels(). Default empty array.
 	 *
-	 * @var string[]
+	 * @var array<int,string>
 	 */
 	public array $labels;
 
@@ -103,7 +103,7 @@ class register_taxonomy extends Base {
 	/**
 	 * Array of capabilities for this taxonomy.
 	 *
-	 * @var string[]
+	 * @var array<string,string>
 	 * @phpstan-var array{
 	 *     manage_terms: string,
 	 *     edit_terms: string,
@@ -118,7 +118,7 @@ class register_taxonomy extends Base {
 	 *
 	 * To prevent rewrite, set to false. To specify rewrite rules, an array can be passed with any of these keys:
 	 *
-	 * @var bool|mixed[]
+	 * @var bool|array<string,mixed>
 	 * @phpstan-var bool|array{
 	 *     slug?: string,
 	 *     with_front?: bool,
@@ -146,7 +146,7 @@ class register_taxonomy extends Base {
 	/**
 	 * Default term to be used for the taxonomy.
 	 *
-	 * @var string|string[]
+	 * @var string|array<string,string>
 	 * @phpstan-var string|array<string,string>{
 	 *     name: string,
 	 *     slug?: string,
@@ -163,7 +163,7 @@ class register_taxonomy extends Base {
 	/**
 	 * Array of arguments to automatically use inside `wp_get_object_terms()` for this taxonomy.
 	 *
-	 * @var mixed[]
+	 * @var array<string,mixed>
 	 */
 	public array $args;
 

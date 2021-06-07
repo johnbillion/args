@@ -14,14 +14,14 @@ class WP_Term_Query extends Base {
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.
 	 *
-	 * @phpstan-var string|string[]
+	 * @var string|array<int,string>
 	 */
 	public $taxonomy;
 
 	/**
 	 * Object ID, or array of object IDs. Results will be limited to terms associated with these objects.
 	 *
-	 * @phpstan-var int|int[]
+	 * @var int|array<int,int>
 	 */
 	public $object_ids;
 
@@ -60,21 +60,21 @@ class WP_Term_Query extends Base {
 	/**
 	 * Array of term IDs to include.
 	 *
-	 * @phpstan-var int[]
+	 * @var array<int,int>
 	 */
 	public array $include;
 
 	/**
 	 * Array of term IDs to exclude. If `$include` is non-empty, `$exclude` is ignored.
 	 *
-	 * @phpstan-var int[]
+	 * @var array<int,int>
 	 */
 	public array $exclude;
 
 	/**
 	 * Array of term IDs to exclude along with all of their descendant terms. If `$include` is non-empty, `$exclude_tree` is ignored.
 	 *
-	 * @phpstan-var int[]
+	 * @var array<int,int>
 	 */
 	public array $exclude_tree;
 
@@ -116,6 +116,8 @@ class WP_Term_Query extends Base {
 	 *      keyed by term ID (`string[]`).
 	 *
 	 * Default 'all'.
+	 *
+	 * @phpstan-var 'all'|'all_with_object_id'|'ids'|'tt_ids'|'names'|'slugs'|'count'|'id=>parent'|'id=>name'|'id=>slug'
 	 */
 	public string $fields;
 
@@ -127,21 +129,21 @@ class WP_Term_Query extends Base {
 	/**
 	 * Name or array of names to return term(s) for.
 	 *
-	 * @phpstan-var string|string[]
+	 * @var string|array<int,string>
 	 */
 	public $name;
 
 	/**
 	 * Slug or array of slugs to return term(s) for.
 	 *
-	 * @phpstan-var string|string[]
+	 * @var string|array<int,string>
 	 */
 	public $slug;
 
 	/**
 	 * Term taxonomy ID, or array of term taxonomy IDs, to match when querying terms.
 	 *
-	 * @phpstan-var int|int[]
+	 * @var int|array<int,int>
 	 */
 	public $term_taxonomy_id;
 
@@ -226,6 +228,8 @@ class WP_Term_Query extends Base {
 
 	/**
 	 * Comparison operator to test the 'meta_value'.
+	 *
+	 * @phpstan-var '='|'!='|'>'|'>='|'<'|'<='|'LIKE'|'NOT LIKE'|'IN'|'NOT IN'|'BETWEEN'|'NOT BETWEEN'|'REGEXP'|'NOT REGEXP'|'RLIKE'|'EXISTS'|'NOT EXISTS'
 	 */
 	public string $meta_compare;
 }

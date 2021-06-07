@@ -229,6 +229,8 @@ class WP_Query extends Base {
 
 	/**
 	 * Cast for 'meta_key'. See WP_Meta_Query::construct().
+	 *
+	 * @phpstan-var ''|'BINARY'
 	 */
 	public string $meta_type_key;
 
@@ -298,7 +300,7 @@ class WP_Query extends Base {
 	 *
 	 * Default is 'date', except when a search is being performed, when the default is 'relevance'.
 	 *
-	 * @var string|string[]
+	 * @var string|array<int,string>
 	 */
 	public $orderby;
 
@@ -329,6 +331,8 @@ class WP_Query extends Base {
 
 	/**
 	 * Show posts if user has the appropriate capability.
+	 *
+	 * @phpstan-var 'readable'|'editable'
 	 */
 	public string $perm;
 

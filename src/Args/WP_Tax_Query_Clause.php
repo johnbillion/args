@@ -19,7 +19,7 @@ class WP_Tax_Query_Clause extends Base {
 	/**
 	 * Term or terms to filter by.
 	 *
-	 * @var string|int|string[]|int[]
+	 * @var string|int|array<int,string>|array<int,int>
 	 */
 	public $terms;
 
