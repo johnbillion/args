@@ -58,11 +58,13 @@ $story = register_post_type( 'story', $args->toArray() );
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
 * `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
+* `\Args\WP_User_Query` for the `WP_User_Query` class constructor
 * `\Args\WP_Http` for the `WP_Http::request()` method
 
 ### Function Arguments
 
 * `\Args\get_posts` for the `get_posts()` function
+* `\Args\get_terms` for the `get_terms()` function
 * `\Args\get_users` for the `get_users()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
