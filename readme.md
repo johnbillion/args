@@ -24,7 +24,7 @@ This library does _not_ operate like [the `OptionsResolver` class in Symfony](ht
 * [Type Checking](#type-checking)
 * [Requirements](#requirements)
 * [Installation](#installation)
-* [But Why?](#but-why)
+* [Contributing](#contributing)
 
 ---
 
@@ -58,15 +58,17 @@ $story = register_post_type( 'story', $args->toArray() );
 
 * `\Args\WP_Query` for the `WP_Query` class constructor
 * `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
+* `\Args\WP_Http` for the `WP_Http::request()` method
 
 ### Function Arguments
 
 * `\Args\get_posts` for the `get_posts()` function
+* `\Args\get_users` for the `get_users()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
 * `\Args\wp_remote_get` for the `wp_remote_get()` function
-* `\Args\wp_remote_post` for the `wp_remote_post()` function
 * `\Args\wp_remote_head` for the `wp_remote_head()` function
+* `\Args\wp_remote_post` for the `wp_remote_post()` function
 * `\Args\wp_remote_request` for the `wp_remote_request()` function
 
 ### Argument Arguments
@@ -112,7 +114,7 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md) for information about generating yo
 
 I have a name for these array-type parameters for passing arguments. I call them *Stockholm Parameters*. We've gotten so used to using them that we forget what a terrible design pattern it is. This library exists to work around the immediate issue without rearchitecting the whole of WordPress.
 
-# License: GPLv2
+## License: GPLv2
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
