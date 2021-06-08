@@ -21,6 +21,14 @@ if ( empty( $options['file'] ) || empty( $options['method'] ) || empty( $options
 	exit( 1 );
 }
 
+if ( ! file_exists( $options['file'] ) ) {
+	printf(
+		'The file "%s" does not exist.' . "\n",
+		$options['file']
+	);
+	exit( 1 );
+}
+
 $projectFactory = \phpDocumentor\Reflection\Php\ProjectFactory::createInstance();
 $projectFiles = [
 	new \phpDocumentor\Reflection\File\LocalFile( $options['file'] ),
