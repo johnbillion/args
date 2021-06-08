@@ -21,19 +21,10 @@ if ( empty( $options['file'] ) || empty( $options['method'] ) || empty( $options
 	exit( 1 );
 }
 
-$interested = [
-	$options['file'] => [
-		$options['method'] => $options['param'],
-	],
-];
-
 $projectFactory = \phpDocumentor\Reflection\Php\ProjectFactory::createInstance();
-
-$projectFiles = [];
-
-foreach ( array_keys( $interested ) as $path ) {
-	$projectFiles[] = new \phpDocumentor\Reflection\File\LocalFile( $path );
-}
+$projectFiles = [
+	new \phpDocumentor\Reflection\File\LocalFile( $options['file'] ),
+];
 
 /** @var Project $project */
 $project = $projectFactory->create('My Project', $projectFiles);
@@ -42,11 +33,10 @@ $project = $projectFactory->create('My Project', $projectFiles);
 foreach ($project->getFiles() as $k => $file) {
 	foreach ( $file->getClasses() as $c => $class) {
 		foreach ( $class->getMethods() as $m => $method ) {
-			if ( ! isset( $interested[ $k ][ $m ] ) ) {
+			if ( $m !== $options['method'] ) {
 				continue;
 			}
 
-			$in = $interested[ $k ][ $m ];
 			$tags = $method->getDocBlock()->getTags();
 
 			/** @var BaseTag[] $tags */
@@ -55,8 +45,8 @@ foreach ($project->getFiles() as $k => $file) {
 			} ) );
 
 			/** @var Param[] $tags */
-			$tags = array_values( array_filter( $tags, function( Param $tag ) use ( $in ) : bool {
-				return (string) $tag->getVariableName() === $in;
+			$tags = array_values( array_filter( $tags, function( Param $tag ) use ( $options ) : bool {
+				return (string) $tag->getVariableName() === $options['param'];
 			} ) );
 
 			$desc = (string) $tags[0]->getDescription();
