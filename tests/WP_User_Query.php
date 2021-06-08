@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$args = new \Args\get_users;
+$args = new \Args\WP_User_Query;
 
 $args->blog_id = 123;
 $args->role = 'editor';
