@@ -23,8 +23,12 @@
             "phpstan analyze tests"
         ]
     },
+    "extra": {
+        "wordpress-install-dir": "vendor/wordpress/wordpress"
+    },
     "require-dev": {
+        "phpdocumentor/reflection": "~4.0",
         "phpstan/phpstan": "0.12.85",
-        "phpstan/phpstan-strict-rules": "0.12.9"
+        "roots/wordpress": "^5.7.0"
     }
 }
