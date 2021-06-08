@@ -8,6 +8,8 @@ namespace Args;
  * @implements \ArrayAccess<mixed, mixed>
  */
 abstract class Base implements \ArrayAccess {
+	/** @var array<string, string> */
+	protected $map = [];
 
 	final public function __construct() {}
 
@@ -30,6 +32,13 @@ abstract class Base implements \ArrayAccess {
 	 */
 	final public function toArray() : array {
 		$vars = get_object_vars( $this );
+
+		foreach ( $this->map as $from => $to ) {
+			if ( array_key_exists( $from, $vars ) ) {
+				$vars[ $to ] = $vars[ $from ];
+				unset( $vars[ $from ] );
+			}
+		}
 
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
 
