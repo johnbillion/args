@@ -119,6 +119,8 @@ $desc = trim( $desc, '}' );
 $desc = explode( '@type', $desc );
 $desc = array_map( 'trim', $desc );
 
+unset( $desc[0] );
+
 $desc = array_map( function( string $string ) : array {
 	return preg_split( '#\s+#', $string, 3 );
 }, $desc );
