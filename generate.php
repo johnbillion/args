@@ -15,15 +15,13 @@ $options = getopt( '', [
 ] );
 
 if ( empty( $options['file'] ) || ( empty( $options['method'] ) && empty( $options['function'] ) ) || empty( $options['param'] ) ) {
-	printf(
+	echo
 		<<<'USAGE'
 Usage:
-  $ php -f %1$s --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
-  $ php -f %1$s --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
+  $ composer generate -- --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
+  $ composer generate -- --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
 
-USAGE,
-		$argv[0]
-	);
+USAGE;
 	exit( 1 );
 }
 
@@ -133,6 +131,4 @@ BLOCK,
 	);
 }, $desc );
 
-$desc = 'class ' . trim( $name, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
-
-echo $desc;
+echo 'class ' . trim( $name, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";

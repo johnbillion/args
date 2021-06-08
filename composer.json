@@ -18,6 +18,9 @@
 		}
 	},
 	"scripts": {
+		"generate": [
+			"@php generate.php"
+		],
 		"test": [
 			"phpstan analyze src/Args",
 			"phpstan analyze tests"
