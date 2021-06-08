@@ -64,6 +64,10 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\get_posts` for the `get_posts()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
+* `\Args\wp_remote_get` for the `wp_remote_get()` function
+* `\Args\wp_remote_post` for the `wp_remote_post()` function
+* `\Args\wp_remote_head` for the `wp_remote_head()` function
+* `\Args\wp_remote_request` for the `wp_remote_request()` function
 
 ### Argument Arguments
 
