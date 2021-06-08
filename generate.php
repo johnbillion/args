@@ -29,14 +29,10 @@ $projectFiles = [
 /** @var Project $project */
 $project = $projectFactory->create('My Project', $projectFiles);
 
-/** @var \phpDocumentor\Reflection\Php\Class_ $class */
-foreach ($project->getFiles() as $k => $file) {
+	$file = $project->getFiles()[ $options['file'] ];
+	/** @var \phpDocumentor\Reflection\Php\Class_ $class */
 	foreach ( $file->getClasses() as $c => $class) {
-		foreach ( $class->getMethods() as $m => $method ) {
-			if ( $m !== $options['method'] ) {
-				continue;
-			}
-
+			$method = $class->getMethods()[ $options['method'] ];
 			$tags = $method->getDocBlock()->getTags();
 
 			/** @var BaseTag[] $tags */
@@ -78,6 +74,4 @@ BLOCK,
 			$desc = 'class ' . trim( $c, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
 
 			echo $desc;
-		}
 	}
-}
