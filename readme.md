@@ -30,7 +30,7 @@ This library does _not_ operate like [the `OptionsResolver` class in Symfony](ht
 
 ## Current Status
 
-Proof of concept
+Alpha.
 
 ## Usage
 
