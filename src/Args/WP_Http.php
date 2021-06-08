@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Args;
 
+use WP_Http_Cookie;
+
 /**
  * Arguments for the `WP_Http::request()` method in WordPress.
  *
@@ -17,6 +19,8 @@ class WP_Http extends Base {
 
 	/**
 	 * Request method. Accepts 'GET', 'POST', 'HEAD', 'PUT', 'DELETE', 'TRACE', 'OPTIONS', or 'PATCH'. Some transports technically allow others, but should not be assumed. Default 'GET'.
+	 *
+	 * @phpstan-var 'GET'|'POST'|'HEAD'|'PUT'|'DELETE'|'TRACE'|'OPTIONS'|'PATCH'
 	 */
 	public string $method;
 
@@ -69,7 +73,7 @@ class WP_Http extends Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var string|mixed[]
+	 * @var string|array<int,string>
 	 */
 	public $headers;
 
@@ -78,7 +82,7 @@ class WP_Http extends Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var mixed[]
+	 * @var string[]|WP_Http_Cookie[]
 	 */
 	public array $cookies;
 
