@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Args;
 
 /**
+ * Arguments for the `WP_Http::request()` method in WordPress.
+ *
+ * @link https://developer.wordpress.org/reference/classes/wp_http/request/
  */
 class WP_Http extends Base {
 	/** @var array<string, string> */
