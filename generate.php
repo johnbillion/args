@@ -39,7 +39,10 @@ $project = $projectFactory->create('My Project', $projectFiles);
 
 $file = $project->getFiles()[ $options['file'] ];
 
-foreach ( $file->getClasses() as $c => $class) {
+list( $oc, $om ) = explode( '::', $options['method'] );
+
+$class = $file->getClasses()[ $oc ];
+
 	$method = $class->getMethods()[ $options['method'] ];
 	$tags = $method->getDocBlock()->getTags();
 
@@ -82,4 +85,3 @@ BLOCK,
 	$desc = 'class ' . trim( $c, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
 
 	echo $desc;
-}
