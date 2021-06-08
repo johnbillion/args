@@ -1,3 +1,5 @@
+[![](https://img.shields.io/github/workflow/status/johnbillion/args/PHP%20Standards/trunk?style=flat-square)](https://github.com/johnbillion/args/actions)
+
 # Args
 
 Many functions and methods in WordPress accept arguments as an associative array. Your IDE or text editor cannot provide autocompletion and type hinting for each element in the array like it does for individual function parameters.
