@@ -104,6 +104,10 @@ Note that this isn't completely reliable due to [this bug in PHPStan](https://gi
 composer require johnbillion/args
 ```
 
+## Contributing
+
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) for information about generating your own Args definitions or contributing to the Args library.
+
 ## But Why?
 
 I have a name for these array-type parameters for passing arguments. I call them *Stockholm Parameters*. We've gotten so used to using them that we forget what a terrible design pattern it is. This library exists to work around the immediate issue without rearchitecting the whole of WordPress.
