@@ -67,7 +67,7 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ### Argument Arguments
 
-Some individual arguments are themselves an array with a specific shape. Argument definitions are provided for the following, but they are currently only enforced via PHPStan, not at runtime.
+Some individual arguments are themselves an array with a specific shape. Argument definitions are provided for the following, but they are only enforced via PHPStan, not at runtime.
 
 * `\Args\WP_Tax_Query_Clause` for a single clause within the `WP_Tax_Query` class constructor array
   - Used by the `tax_query` argument of `WP_Query`
@@ -86,9 +86,9 @@ Note that several parameters in WordPress accept multiple types, for example the
 
 ## Static Analysis
 
-Some PHPStan-specific `@phpstan-var` tags are used for properties that have a fixed set of values. This effectively turns the properties into enums and allows for even greater type and value checking via static analysis with PHPStan.
+PHPStan-specific `@phpstan-var` tags are used for properties that have a fixed set of values or other constraints. This allows for even greater type and value checking via static analysis with PHPStan.
 
-Note that this isn't completely reliable currently due to [this bug in PHPStan](https://github.com/phpstan/phpstan/issues/3555).
+Note that this isn't completely reliable due to [this bug in PHPStan](https://github.com/phpstan/phpstan/issues/3555).
 
 ## Requirements
 
