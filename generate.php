@@ -9,13 +9,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $options = getopt( '', [
 	"file:",
-	"method:",
+	"method::",
+	"function::",
 	"param:",
 ] );
 
-if ( empty( $options['file'] ) || empty( $options['method'] ) || empty( $options['param'] ) ) {
+if ( empty( $options['file'] ) || ( empty( $options['method'] ) && empty( $options['function'] ) ) || empty( $options['param'] ) ) {
 	printf(
-		"Usage: %s --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method=\"\WP_Query::parse_query()\" --param=query \n",
+		<<<'USAGE'
+Usage:
+  $ php -f %1$s --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
+  $ php -f %1$s --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
+
+USAGE,
 		$argv[0]
 	);
 	exit( 1 );
@@ -39,12 +45,18 @@ $project = $projectFactory->create('My Project', $projectFiles);
 
 $file = $project->getFiles()[ $options['file'] ];
 
-list( $oc, $om ) = explode( '::', $options['method'] );
+if ( ! empty( $options['method'] ) ) {
+	list( $oc, $om ) = explode( '::', $options['method'] );
 
-$class = $file->getClasses()[ $oc ];
+	$class = $file->getClasses()[ $oc ];
+	$symbol = $class->getMethods()[ $options['method'] ];
+	$name = $oc;
+} else {
+	$symbol = $file->getFunctions()[ $options['function'] ];
+	$name = trim( $options['function'], '()' );
+}
 
-$method = $class->getMethods()[ $options['method'] ];
-$tags = $method->getDocBlock()->getTags();
+$tags = $symbol->getDocBlock()->getTags();
 
 /** @var BaseTag[] $tags */
 $tags = array_values( array_filter( $tags, function( BaseTag $tag ) : bool {
@@ -82,6 +94,6 @@ BLOCK,
 	);
 }, $desc );
 
-$desc = 'class ' . trim( $c, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
+$desc = 'class ' . trim( $name, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
 
 echo $desc;
