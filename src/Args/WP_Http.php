@@ -18,7 +18,11 @@ class WP_Http extends Base {
 	];
 
 	/**
-	 * Request method. Accepts 'GET', 'POST', 'HEAD', 'PUT', 'DELETE', 'TRACE', 'OPTIONS', or 'PATCH'. Some transports technically allow others, but should not be assumed. Default 'GET'.
+	 * Request method.
+	 *
+	 * Some transports technically allow others, but should not be assumed.
+	 *
+	 * Default 'GET'.
 	 *
 	 * @phpstan-var 'GET'|'POST'|'HEAD'|'PUT'|'DELETE'|'TRACE'|'OPTIONS'|'PATCH'
 	 */
