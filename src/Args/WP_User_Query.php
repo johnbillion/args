@@ -137,6 +137,8 @@ class WP_User_Query extends Base {
 	 * Designates ascending or descending order of users. Order values passed as part of an `$orderby` array take precedence over this parameter. Accepts 'ASC', 'DESC'.
 	 *
 	 * Default 'ASC'.
+	 *
+	 * @phpstan-var 'ASC'|'DESC'
 	 */
 	public string $order;
 

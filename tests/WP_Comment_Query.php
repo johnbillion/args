@@ -13,7 +13,6 @@ $args->comment__not_in = [ 234 ];
 $args->count = true;
 $args->date_query = [];
 $args->fields = 'ids';
-$args->ID = 987;
 $args->include_unapproved = [ 123, 'user@example.com' ];
 $args->karma = 5;
 $args->meta_key = 'key';

@@ -86,11 +86,6 @@ class WP_Comment_Query extends Base {
 	public string $fields;
 
 	/**
-	 * Currently unused.
-	 */
-	public int $ID;
-
-	/**
 	 * Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of `$status`.
 	 *
 	 * Default empty.
@@ -170,6 +165,8 @@ class WP_Comment_Query extends Base {
 	 * How to order retrieved comments. Accepts 'ASC', 'DESC'.
 	 *
 	 * Default: 'DESC'.
+	 *
+	 * @phpstan-var 'ASC'|'DESC'
 	 */
 	public string $order;
 
@@ -261,8 +258,10 @@ class WP_Comment_Query extends Base {
 	 * Post type or array of post types to retrieve affiliated comments for. Pass 'any' to match any value.
 	 *
 	 * Default empty.
+	 *
+	 * @var string|array<int,string>
 	 */
-	public string $post_type;
+	public $post_type;
 
 	/**
 	 * Post name to retrieve affiliated comments for.
@@ -290,7 +289,7 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default 'all'.
 	 *
-	 * @var string|mixed[]
+	 * @var string|array<int,string>
 	 */
 	public $status;
 
@@ -299,7 +298,7 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default empty.
 	 *
-	 * @var string|mixed[]
+	 * @var string|array<int,string>
 	 */
 	public $type;
 
@@ -333,7 +332,8 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default: false.
 	 *
-	 * @var bool|string
+	 * @var false|string
+	 * @phpstan-var false|'threaded'|'flat'
 	 */
 	public $hierarchical;
 
