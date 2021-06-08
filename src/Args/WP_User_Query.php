@@ -8,6 +8,9 @@ namespace Args;
  * Arguments for the `WP_User_Query::prepare_query()` method in WordPress.
  *
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
+ *
+ * @phpstan-type User_Fields_Search ('ID'|'user_login'|'user_email'|'user_url'|'user_nicename'|'display_name')
+ * @phpstan-type User_Fields_Return (User_Fields_Search|'user_registered')
  */
 class WP_User_Query extends Base {
 	/**
@@ -62,6 +65,8 @@ class WP_User_Query extends Base {
 	 * Comparison operator to test the `$meta_value`. Accepts '=', '!=', '>', '>=', '<', '<=', 'LIKE', 'NOT LIKE', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN', 'EXISTS', 'NOT EXISTS', 'REGEXP', 'NOT REGEXP', or 'RLIKE'.
 	 *
 	 * Default '='.
+	 *
+	 * @phpstan-var '='|'!='|'>'|'>='|'<'|'<='|'LIKE'|'NOT LIKE'|'IN'|'NOT IN'|'BETWEEN'|'NOT BETWEEN'|'EXISTS'|' EXISTS''REGEXP'|'NOT REGEXP'|'RLIKE'
 	 */
 	public string $meta_compare;
 
@@ -96,6 +101,7 @@ class WP_User_Query extends Base {
 	 * Default empty array.
 	 *
 	 * @var array<int,string>
+	 * @phpstan-var array<int,User_Fields_Search>
 	 */
 	public array $search_columns;
 
@@ -167,7 +173,7 @@ class WP_User_Query extends Base {
 	 *
 	 * Default 'all'.
 	 *
-	 * @var string|array<int,string>
+	 * @var (User_Fields_Return|'all'|'all_with_meta')|array<int,(User_Fields_Return)>
 	 */
 	public $fields;
 
@@ -175,6 +181,8 @@ class WP_User_Query extends Base {
 	 * Type of users to query. Accepts 'authors'.
 	 *
 	 * Default empty (all users).
+	 *
+	 * @phpstan-var 'authors'
 	 */
 	public string $who;
 
