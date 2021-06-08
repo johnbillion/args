@@ -100,12 +100,20 @@ $tags = array_values( array_filter( $tags, function( BaseTag $tag ) : bool {
 	return ( $tag instanceof Param );
 } ) );
 
-/** @var Param[] $tags */
-$tags = array_values( array_filter( $tags, function( Param $tag ) use ( $options ) : bool {
+/** @var Param[] $params */
+$params = array_values( array_filter( $tags, function( Param $tag ) use ( $options ) : bool {
 	return (string) $tag->getVariableName() === $options['param'];
 } ) );
 
-$desc = (string) $tags[0]->getDescription();
+if ( empty( $params ) ) {
+	printf(
+		'The parameter "$%s" could not be found.' . "\n",
+		$options['param']
+	);
+	exit( 1 );
+}
+
+$desc = (string) $params[0]->getDescription();
 $desc = trim( $desc, '{' );
 $desc = trim( $desc, '}' );
 $desc = explode( '@type', $desc );
