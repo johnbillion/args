@@ -43,16 +43,55 @@ $projectFiles = [
 /** @var Project $project */
 $project = $projectFactory->create('My Project', $projectFiles);
 
-$file = $project->getFiles()[ $options['file'] ];
+$files = $project->getFiles();
+
+if ( ! isset( $files[ $options['file'] ] ) ) {
+	printf(
+		'The file "%s" could not be loaded.' . "\n",
+		$options['file']
+	);
+	exit( 1 );
+}
+
+$file = $files[ $options['file'] ];
 
 if ( ! empty( $options['method'] ) ) {
 	list( $oc, $om ) = explode( '::', $options['method'] );
 
-	$class = $file->getClasses()[ $oc ];
-	$symbol = $class->getMethods()[ $options['method'] ];
+	$classes = $file->getClasses();
+
+	if ( ! isset( $classes[ $oc ] ) ) {
+		printf(
+			'The class "%s" could not be found.' . "\n",
+			$oc
+		);
+		exit( 1 );
+	}
+
+	$methods = $classes[ $oc ]->getMethods();
+
+	if ( ! isset( $methods[ $options['method'] ] ) ) {
+		printf(
+			'The method "%s" could not be found.' . "\n",
+			$options['method']
+		);
+		exit( 1 );
+	}
+
+	$symbol = $methods[ $options['method'] ];
 	$name = $oc;
 } else {
-	$symbol = $file->getFunctions()[ $options['function'] ];
+	$functions = $file->getFunctions();
+
+	if ( ! isset( $functions[ $options['function'] ] ) ) {
+		printf(
+			'The function "%s" could not be found.' . "\n",
+			$options['function']
+		);
+		exit( 1 );
+	}
+
+	$symbol = $functions[ $options['function'] ];
 	$name = trim( $options['function'], '()' );
 }
 
