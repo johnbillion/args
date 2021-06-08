@@ -118,6 +118,18 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md) for information about generating yo
 
 I have a name for these array-type parameters for passing arguments. I call them *Stockholm Parameters*. We've gotten so used to using them that we forget what a terrible design pattern it is. This library exists to work around the immediate issue without rearchitecting the whole of WordPress.
 
+## Sponsors
+
+Development of this library is sponsored by:
+
+[![Automattic](assets/gh/automattic.png)](https://automattic.com)
+
+Plus all my kind sponsors on GitHub:
+
+[![Sponsors](assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+
+[Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).
+
 ## License: GPLv2
 
 This program is free software; you can redistribute it and/or modify

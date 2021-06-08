@@ -33,5 +33,11 @@
 		"phpdocumentor/reflection": "~4.0",
 		"phpstan/phpstan": "0.12.85",
 		"roots/wordpress": "^5.7.0"
-	}
+	},
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/johnbillion"
+		}
+	]
 }
