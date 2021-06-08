@@ -29,49 +29,49 @@ $projectFiles = [
 /** @var Project $project */
 $project = $projectFactory->create('My Project', $projectFiles);
 
-	$file = $project->getFiles()[ $options['file'] ];
-	/** @var \phpDocumentor\Reflection\Php\Class_ $class */
-	foreach ( $file->getClasses() as $c => $class) {
-			$method = $class->getMethods()[ $options['method'] ];
-			$tags = $method->getDocBlock()->getTags();
+$file = $project->getFiles()[ $options['file'] ];
 
-			/** @var BaseTag[] $tags */
-			$tags = array_values( array_filter( $tags, function( BaseTag $tag ) : bool {
-				return ( $tag instanceof Param );
-			} ) );
+foreach ( $file->getClasses() as $c => $class) {
+	$method = $class->getMethods()[ $options['method'] ];
+	$tags = $method->getDocBlock()->getTags();
 
-			/** @var Param[] $tags */
-			$tags = array_values( array_filter( $tags, function( Param $tag ) use ( $options ) : bool {
-				return (string) $tag->getVariableName() === $options['param'];
-			} ) );
+	/** @var BaseTag[] $tags */
+	$tags = array_values( array_filter( $tags, function( BaseTag $tag ) : bool {
+		return ( $tag instanceof Param );
+	} ) );
 
-			$desc = (string) $tags[0]->getDescription();
-			$desc = trim( $desc, '{' );
-			$desc = trim( $desc, '}' );
-			$desc = explode( '@type', $desc );
-			$desc = array_map( 'trim', $desc );
+	/** @var Param[] $tags */
+	$tags = array_values( array_filter( $tags, function( Param $tag ) use ( $options ) : bool {
+		return (string) $tag->getVariableName() === $options['param'];
+	} ) );
 
-			$desc = array_map( function( string $string ) : array {
-				return preg_split( '#\s+#', $string, 3 );
-			}, $desc );
+	$desc = (string) $tags[0]->getDescription();
+	$desc = trim( $desc, '{' );
+	$desc = trim( $desc, '}' );
+	$desc = explode( '@type', $desc );
+	$desc = array_map( 'trim', $desc );
 
-			$desc = array_map( function( array $item ) : string {
-				$item[2] = preg_replace( '#\n\s+#', ' ', $item[2] );
+	$desc = array_map( function( string $string ) : array {
+		return preg_split( '#\s+#', $string, 3 );
+	}, $desc );
 
-				return sprintf(
-					<<<'BLOCK'
+	$desc = array_map( function( array $item ) : string {
+		$item[2] = preg_replace( '#\n\s+#', ' ', $item[2] );
+
+		return sprintf(
+			<<<'BLOCK'
 	/**
 	 * %1$s
 	 */
 	public %2$s %3$s;
 BLOCK,
-					$item[2],
-					$item[0],
-					$item[1]
-				);
-			}, $desc );
+			$item[2],
+			$item[0],
+			$item[1]
+		);
+	}, $desc );
 
-			$desc = 'class ' . trim( $c, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
+	$desc = 'class ' . trim( $c, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
 
-			echo $desc;
-	}
+	echo $desc;
+}
