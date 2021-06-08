@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 use phpDocumentor\Reflection\DocBlock\Tags\BaseTag;
@@ -6,9 +7,23 @@ use phpDocumentor\Reflection\Php\Project;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+$options = getopt( '', [
+	"file:",
+	"method:",
+	"param:",
+] );
+
+if ( empty( $options['file'] ) || empty( $options['method'] ) || empty( $options['param'] ) ) {
+	printf(
+		"Usage: %s --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method=\"\WP_Query::parse_query()\" --param=query \n",
+		$argv[0]
+	);
+	exit( 1 );
+}
+
 $interested = [
-	'vendor/wordpress/wordpress/wp-includes/class-wp-query.php' => [
-		'\WP_Query::parse_query()' => 'query',
+	$options['file'] => [
+		$options['method'] => $options['param'],
 	],
 ];
 
