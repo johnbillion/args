@@ -1,34 +1,34 @@
 {
-    "name": "johnbillion/args",
-    "description": "I don't want to get into an argument about this.",
-    "type": "library",
-    "license": "GPL-2.0+",
-    "authors": [
-        {
-            "name": "John Blackbourn",
-            "homepage": "https://johnblackbourn.com/"
-        }
-    ],
-    "require": {
-        "php": ">=7.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Args\\": "src/Args/"
-        }
-    },
-    "scripts": {
-        "test": [
-            "phpstan analyze src/Args",
-            "phpstan analyze tests"
-        ]
-    },
-    "extra": {
-        "wordpress-install-dir": "vendor/wordpress/wordpress"
-    },
-    "require-dev": {
-        "phpdocumentor/reflection": "~4.0",
-        "phpstan/phpstan": "0.12.85",
-        "roots/wordpress": "^5.7.0"
-    }
+	"name": "johnbillion/args",
+	"description": "I don't want to get into an argument about this.",
+	"type": "library",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "John Blackbourn",
+			"homepage": "https://johnblackbourn.com/"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Args\\": "src/Args/"
+		}
+	},
+	"scripts": {
+		"test": [
+			"phpstan analyze src/Args",
+			"phpstan analyze tests"
+		]
+	},
+	"extra": {
+		"wordpress-install-dir": "vendor/wordpress/wordpress"
+	},
+	"require-dev": {
+		"phpdocumentor/reflection": "~4.0",
+		"phpstan/phpstan": "0.12.85",
+		"roots/wordpress": "^5.7.0"
+	}
 }
