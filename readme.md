@@ -72,6 +72,7 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\get_comments` for the `get_comments()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
+* `\Args\wp_get_object_terms` for the `wp_get_object_terms()` function
 * `\Args\wp_remote_get` for the `wp_remote_get()` function
 * `\Args\wp_remote_head` for the `wp_remote_head()` function
 * `\Args\wp_remote_post` for the `wp_remote_post()` function
