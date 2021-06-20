@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
-class WP_Term_Query extends Base implements Shared\iQuery_By_Meta {
+class WP_Term_Query extends Base implements Shared\Query_By_Meta_Values {
 	const FIELD_ALL = 'all';
 	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
 	const FIELD_IDS = 'ids';
@@ -20,6 +20,8 @@ class WP_Term_Query extends Base implements Shared\iQuery_By_Meta {
 	const FIELD_ID_PARENT = 'id=>parent';
 	const FIELD_ID_NAME = 'id=>name';
 	const FIELD_ID_SLUG = 'id=>slug';
+
+	use Shared\Query_By_Meta_Args;
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.
@@ -235,13 +237,4 @@ class WP_Term_Query extends Base implements Shared\iQuery_By_Meta {
 	 * MySQL data type that the `$meta_value` will be CAST to for comparisons.
 	 */
 	public string $meta_type;
-
-	/**
-	 * Comparison operator to test the 'meta_value'.
-	 *
-	 * Default '='.
-	 *
-	 * @phpstan-var self::META_COMPARE_VALUE_*
-	 */
-	public string $meta_compare;
 }

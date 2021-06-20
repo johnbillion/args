@@ -51,7 +51,7 @@ namespace Args;
  *     9?: WP_Tax_Query_Clause,
  * }
  */
-class WP_Query extends Base implements Shared\iQuery_By_Meta {
+class WP_Query extends Base implements Shared\Query_By_Meta_Values {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 
@@ -64,6 +64,8 @@ class WP_Query extends Base implements Shared\iQuery_By_Meta {
 
 	const META_TYPE_KEY_NONE = '';
 	const META_TYPE_KEY_BINARY = 'BINARY';
+
+	use Shared\Query_By_Meta_Args;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
@@ -202,15 +204,6 @@ class WP_Query extends Base implements Shared\iQuery_By_Meta {
 	 * Combination YearMonth. Accepts any four-digit year and month numbers 1-12. Default empty.
 	 */
 	public int $m;
-
-	/**
-	 * Comparison operator to test the 'meta_value'.
-	 *
-	 * Default '='.
-	 *
-	 * @phpstan-var self::META_COMPARE_VALUE_*
-	 */
-	public string $meta_compare;
 
 	/**
 	 * Comparison operator to test the 'meta_key'.

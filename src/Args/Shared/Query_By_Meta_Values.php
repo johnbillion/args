@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Args\Shared;
 
 /**
- * Arguments for any query class that allows querying by meta data.
+ * Argument values for any query class that allows querying by meta data.
  */
-interface iQuery_By_Meta {
+interface Query_By_Meta_Values {
 	const META_COMPARE_VALUE_EQUALS = '=';
 	const META_COMPARE_VALUE_NOT_EQUALS = '!=';
 	const META_COMPARE_VALUE_GREATER_THAN = '>';
