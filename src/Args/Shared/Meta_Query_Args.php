@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Arguments for any query class that supports meta queries.
  */
-trait Query_By_Meta_Args {
+trait Meta_Query_Args {
 	/**
 	 * Meta key or keys to filter by.
 	 *

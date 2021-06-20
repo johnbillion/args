@@ -51,7 +51,7 @@ namespace Args;
  *     9?: WP_Tax_Query_Clause,
  * }
  */
-class WP_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
+class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 
@@ -62,7 +62,7 @@ class WP_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
 
-	use Shared\Query_By_Meta_Args;
+	use Shared\Meta_Query_Args;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.

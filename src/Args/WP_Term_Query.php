@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
-class WP_Term_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
+class WP_Term_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const FIELD_ALL = 'all';
 	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
 	const FIELD_IDS = 'ids';
@@ -21,7 +21,7 @@ class WP_Term_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	const FIELD_ID_NAME = 'id=>name';
 	const FIELD_ID_SLUG = 'id=>slug';
 
-	use Shared\Query_By_Meta_Args;
+	use Shared\Meta_Query_Args;
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.

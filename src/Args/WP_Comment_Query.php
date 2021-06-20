@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
-class WP_Comment_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
+class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const FIELD_IDS = 'ids';
 	const FIELD_ALL = '';
 
@@ -17,7 +17,7 @@ class WP_Comment_Query extends Shared\Base implements Shared\Query_By_Meta_Value
 	const HIERARCHICAL_THREADED = 'threaded';
 	const HIERARCHICAL_FLAT = 'flat';
 
-	use Shared\Query_By_Meta_Args;
+	use Shared\Meta_Query_Args;
 
 	/**
 	 * Comment author email address.
