@@ -66,12 +66,16 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ### Function Arguments
 
+* `\Args\get_categories` for the `get_categories()` function
+* `\Args\get_comments` for the `get_comments()` function
 * `\Args\get_posts` for the `get_posts()` function
+* `\Args\get_tags` for the `get_tags()` function
 * `\Args\get_terms` for the `get_terms()` function
 * `\Args\get_users` for the `get_users()` function
-* `\Args\get_comments` for the `get_comments()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
+* `\Args\wp_count_terms` for the `wp_count_terms()` function
+* `\Args\wp_get_nav_menus` for the `wp_get_nav_menus()` function
 * `\Args\wp_get_object_terms` for the `wp_get_object_terms()` function
 * `\Args\wp_remote_get` for the `wp_remote_get()` function
 * `\Args\wp_remote_head` for the `wp_remote_head()` function
