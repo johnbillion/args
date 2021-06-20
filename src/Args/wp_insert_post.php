@@ -62,11 +62,15 @@ class wp_insert_post extends Base {
 
 	/**
 	 * Whether the post can accept comments. Accepts 'open' or 'closed'. Default is the value of 'default_comment_status' option.
+	 *
+	 * @phpstan-var 'open'|'closed'
 	 */
 	public string $comment_status;
 
 	/**
 	 * Whether the post can accept pings. Accepts 'open' or 'closed'. Default is the value of 'default_ping_status' option.
+	 *
+	 * @phpstan-var 'open'|'closed'
 	 */
 	public string $ping_status;
 
@@ -123,28 +127,28 @@ class wp_insert_post extends Base {
 	/**
 	 * Array of category IDs. Defaults to value of the 'default_category' option.
 	 *
-	 * @var int[]
+	 * @var array<int,int>
 	 */
 	public array $post_category;
 
 	/**
 	 * Array of tag names, slugs, or IDs. Default empty.
 	 *
-	 * @var mixed[]
+	 * @var array<int,(int|string)>
 	 */
 	public array $tags_input;
 
 	/**
 	 * Array of taxonomy terms keyed by their taxonomy name. Default empty.
 	 *
-	 * @var mixed[]
+	 * @var array<string,mixed>
 	 */
 	public array $tax_input;
 
 	/**
 	 * Array of post meta values keyed by their post meta key. Default empty.
 	 *
-	 * @var mixed[]
+	 * @var array<string,mixed>
 	 */
 	public array $meta_input;
 }
