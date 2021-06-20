@@ -10,6 +10,16 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
 class WP_Term_Query extends Base {
+	const FIELD_ALL = 'all';
+	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
+	const FIELD_IDS = 'ids';
+	const FIELD_TT_IDS = 'tt_ids';
+	const FIELD_NAMES = 'names';
+	const FIELD_SLUGS = 'slugs';
+	const FIELD_COUNT = 'count';
+	const FIELD_ID_PARENT = 'id=>parent';
+	const FIELD_ID_NAME = 'id=>name';
+	const FIELD_ID_SLUG = 'id=>slug';
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.
@@ -117,7 +127,7 @@ class WP_Term_Query extends Base {
 	 *
 	 * Default 'all'.
 	 *
-	 * @phpstan-var 'all'|'all_with_object_id'|'ids'|'tt_ids'|'names'|'slugs'|'count'|'id=>parent'|'id=>name'|'id=>slug'
+	 * @phpstan-var self::FIELD_*
 	 */
 	public string $fields;
 

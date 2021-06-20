@@ -10,6 +10,10 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_tax_query/__construct/
  */
 class WP_Tax_Query_Clause extends Base {
+	const FIELD_TERM_ID = 'term_id';
+	const FIELD_SLUG = 'slug';
+	const FIELD_NAME = 'name';
+	const FIELD_TERM_TAXONOMY_ID = 'term_taxonomy_id';
 
 	/**
 	 * Taxonomy being queried. Optional when `field=term_taxonomy_id`.
@@ -28,7 +32,7 @@ class WP_Tax_Query_Clause extends Base {
 	 *
 	 * Default: 'term_id'.
 	 *
-	 * @phpstan-var 'term_id'|'slug'|'name'|'term_taxonomy_id'
+	 * @phpstan-var self::FIELD_*
 	 */
 	public string $field;
 

@@ -8,11 +8,26 @@ namespace Args;
  * Arguments for the `WP_User_Query::prepare_query()` method in WordPress.
  *
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
- *
- * @phpstan-type User_Fields_Search ('ID'|'user_login'|'user_email'|'user_url'|'user_nicename'|'display_name')
- * @phpstan-type User_Fields_Return (User_Fields_Search|'user_registered')
  */
 class WP_User_Query extends Base {
+	const FIELD_ID = 'ID';
+	const FIELD_LOGIN = 'user_login';
+	const FIELD_EMAIL = 'user_email';
+	const FIELD_URL = 'user_url';
+	const FIELD_NICENAME = 'user_nicename';
+	const FIELD_DISPLAY_NAME = 'display_name';
+	const FIELD_REGISTERED = 'user_registered';
+
+	const SEARCH_COLUMN_ID = self::FIELD_ID;
+	const SEARCH_COLUMN_LOGIN = self::FIELD_LOGIN;
+	const SEARCH_COLUMN_EMAIL = self::FIELD_EMAIL;
+	const SEARCH_COLUMN_URL = self::FIELD_URL;
+	const SEARCH_COLUMN_NICENAME = self::FIELD_NICENAME;
+	const SEARCH_COLUMN_DISPLAY_NAME = self::FIELD_DISPLAY_NAME;
+
+	const WHO_ALL = '';
+	const WHO_AUTHORS = 'authors';
+
 	/**
 	 * The site ID.
 	 *
@@ -101,7 +116,7 @@ class WP_User_Query extends Base {
 	 * Default empty array.
 	 *
 	 * @var array<int,string>
-	 * @phpstan-var array<int,User_Fields_Search>
+	 * @phpstan-var array<int,self::SEARCH_COLUMN_*>
 	 */
 	public array $search_columns;
 
@@ -175,7 +190,7 @@ class WP_User_Query extends Base {
 	 *
 	 * Default 'all'.
 	 *
-	 * @var (User_Fields_Return|'all'|'all_with_meta')|array<int,(User_Fields_Return)>
+	 * @var (self::FIELD_*|'all'|'all_with_meta')|array<int,(self::FIELD_*)>
 	 */
 	public $fields;
 
@@ -184,7 +199,7 @@ class WP_User_Query extends Base {
 	 *
 	 * Default empty (all users).
 	 *
-	 * @phpstan-var 'authors'
+	 * @phpstan-var self::WHO_*
 	 */
 	public string $who;
 

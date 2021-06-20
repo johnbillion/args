@@ -62,6 +62,9 @@ class WP_Query extends Base {
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
 
+	const META_TYPE_KEY_NONE = '';
+	const META_TYPE_KEY_BINARY = 'BINARY';
+
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
 	 */
@@ -239,7 +242,7 @@ class WP_Query extends Base {
 	/**
 	 * Cast for 'meta_key'. See WP_Meta_Query::construct().
 	 *
-	 * @phpstan-var ''|'BINARY'
+	 * @phpstan-var self::META_TYPE_KEY_*
 	 */
 	public string $meta_type_key;
 
