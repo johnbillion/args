@@ -58,7 +58,6 @@ $args->meta_compare_key = 'REGEXP';
 $args->meta_key = 'meta_key';
 $args->meta_query = [];
 $args->meta_value = 'meta_value';
-$args->meta_value_num = 123;
 $args->meta_type_key = '';
 $args->menu_order = 0;
 $args->monthnum = 10;
