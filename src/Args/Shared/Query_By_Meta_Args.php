@@ -9,19 +9,23 @@ namespace Args\Shared;
  */
 trait Query_By_Meta_Args {
 	/**
-	 * Meta key to filter by.
+	 * Meta key or keys to filter by.
+	 *
+	 * @var string|array<int,string>
 	 */
-	public string $meta_key;
+	public $meta_key;
 
 	/**
-	 * Meta value to filter by.
+	 * Meta value or values to filter by.
+	 *
+	 * @var string|array<int,string>
 	 */
-	public string $meta_value;
+	public $meta_value;
 
 	/**
 	 * MySQL operator used for comparing the meta value.
 	 *
-	 * Default '='.
+	 * Default is 'IN' when `meta_value` is an array, '=' otherwise.
 	 *
 	 * @phpstan-var self::META_COMPARE_VALUE_*
 	 */
@@ -29,6 +33,8 @@ trait Query_By_Meta_Args {
 
 	/**
 	 * MySQL operator used for comparing the meta key.
+	 *
+	 * Default is 'IN' when `meta_key` is an array, '=' otherwise.
 	 */
 	public string $meta_compare_key;
 
