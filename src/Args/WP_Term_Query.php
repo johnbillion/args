@@ -21,6 +21,24 @@ class WP_Term_Query extends Base {
 	const FIELD_ID_NAME = 'id=>name';
 	const FIELD_ID_SLUG = 'id=>slug';
 
+	const META_COMPARE_EQUALS = '=';
+	const META_COMPARE_NOT_EQUALS = '!=';
+	const META_COMPARE_GREATER_THAN = '>';
+	const META_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	const META_COMPARE_LESS_THAN = '<';
+	const META_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+	const META_COMPARE_LIKE = 'LIKE';
+	const META_COMPARE_NOT_LIKE = 'NOT LIKE';
+	const META_COMPARE_IN = 'IN';
+	const META_COMPARE_NOT_IN = 'NOT IN';
+	const META_COMPARE_BETWEEN = 'BETWEEN';
+	const META_COMPARE_NOT_BETWEEN = 'NOT BETWEEN';
+	const META_COMPARE_REGEXP = 'REGEXP';
+	const META_COMPARE_NOT_REGEXP = 'NOT REGEXP';
+	const META_COMPARE_RLIKE = 'RLIKE';
+	const META_COMPARE_EXISTS = 'EXISTS';
+	const META_COMPARE_NOT_EXISTS = 'NOT EXISTS';
+
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.
 	 *
@@ -239,7 +257,9 @@ class WP_Term_Query extends Base {
 	/**
 	 * Comparison operator to test the 'meta_value'.
 	 *
-	 * @phpstan-var '='|'!='|'>'|'>='|'<'|'<='|'LIKE'|'NOT LIKE'|'IN'|'NOT IN'|'BETWEEN'|'NOT BETWEEN'|'REGEXP'|'NOT REGEXP'|'RLIKE'|'EXISTS'|'NOT EXISTS'
+	 * Default '='.
+	 *
+	 * @phpstan-var self::META_COMPARE_*
 	 */
 	public string $meta_compare;
 }

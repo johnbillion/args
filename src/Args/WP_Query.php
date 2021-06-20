@@ -65,6 +65,24 @@ class WP_Query extends Base {
 	const META_TYPE_KEY_NONE = '';
 	const META_TYPE_KEY_BINARY = 'BINARY';
 
+	const META_COMPARE_EQUALS = '=';
+	const META_COMPARE_NOT_EQUALS = '!=';
+	const META_COMPARE_GREATER_THAN = '>';
+	const META_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	const META_COMPARE_LESS_THAN = '<';
+	const META_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+	const META_COMPARE_LIKE = 'LIKE';
+	const META_COMPARE_NOT_LIKE = 'NOT LIKE';
+	const META_COMPARE_IN = 'IN';
+	const META_COMPARE_NOT_IN = 'NOT IN';
+	const META_COMPARE_BETWEEN = 'BETWEEN';
+	const META_COMPARE_NOT_BETWEEN = 'NOT BETWEEN';
+	const META_COMPARE_REGEXP = 'REGEXP';
+	const META_COMPARE_NOT_REGEXP = 'NOT REGEXP';
+	const META_COMPARE_RLIKE = 'RLIKE';
+	const META_COMPARE_EXISTS = 'EXISTS';
+	const META_COMPARE_NOT_EXISTS = 'NOT EXISTS';
+
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
 	 */
@@ -206,7 +224,9 @@ class WP_Query extends Base {
 	/**
 	 * Comparison operator to test the 'meta_value'.
 	 *
-	 * @phpstan-var '='|'!='|'LIKE'|'NOT LIKE'|'IN'|'NOT IN'|'EXISTS'|'NOT EXISTS'|'RLIKE'|'REGEXP'|'NOT REGEXP'|'>'|'>='|'<'|'<='|'BETWEEN'|'NOT BETWEEN'
+	 * Default '='.
+	 *
+	 * @phpstan-var self::META_COMPARE_*
 	 */
 	public string $meta_compare;
 
