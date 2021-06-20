@@ -50,6 +50,8 @@ trait Query_By_Meta_Args {
 
 	/**
 	 * An associative array of WP_Meta_Query arguments.
+	 *
+	 * @var mixed[]
 	 */
 	public array $meta_query;
 }
