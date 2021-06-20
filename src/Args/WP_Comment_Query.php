@@ -17,6 +17,7 @@ class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const HIERARCHICAL_THREADED = 'threaded';
 	const HIERARCHICAL_FLAT = 'flat';
 
+	use Shared\Date_Query_Args;
 	use Shared\Meta_Query_Args;
 
 	/**
@@ -75,15 +76,6 @@ class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	 * Default false.
 	 */
 	public bool $count;
-
-	/**
-	 * Date query clauses to limit comments by. See WP_Date_Query.
-	 *
-	 * Default null.
-	 *
-	 * @var mixed[]
-	 */
-	public array $date_query;
 
 	/**
 	 * Comment fields to return. Accepts 'ids' for comment IDs only or empty for all fields.

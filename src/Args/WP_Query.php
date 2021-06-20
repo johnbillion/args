@@ -8,21 +8,6 @@ namespace Args;
  * Arguments for the `WP_Query` class in WordPress.
  *
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
- *
- * The PHPStan types below aren't used yet. See:
- * @link https://github.com/phpstan/phpstan/discussions/4930
- *
- * @phpstan-type Date_Query_Args array{
- *     before?: string|array,
- *     after?: string|array,
- *     column?: string,
- * }
- * @phpstan-type Date_Query array{
- *     column?: string,
- *     compare?: string,
- *     relation?: string,
- *     0?: Date_Query_Args,
- * }
  */
 class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const COMMENT_STATUS_OPEN = 'open';
@@ -35,6 +20,7 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
 
+	use Shared\Date_Query_Args;
 	use Shared\Meta_Query_Args;
 	use Shared\Tax_Query_Args;
 
@@ -129,13 +115,6 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	 * The number of comments to return per page. Default 'comments_per_page' option.
 	 */
 	public int $comments_per_page;
-
-	/**
-	 * An associative array of WP_Date_Query arguments. See WP_Date_Query::__construct().
-	 *
-	 * @var mixed[]
-	 */
-	public array $date_query;
 
 	/**
 	 * Day of the month. Default empty. Accepts numbers 1-31.
