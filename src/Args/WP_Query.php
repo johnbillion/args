@@ -24,19 +24,6 @@ namespace Args;
  *     0?: Date_Query_Args,
  * }
  *
- * @phpstan-type Meta_Query_Args array{
- *     key?: string,
- *     compare_key?: string,
- *     type_key?: string,
- *     value?: string,
- *     compare?: string,
- *     type?: string,
- * }
- * @phpstan-type Meta_Query array{
- *     relation?: string,
- *     0?: Meta_Query_Args,
- * }
- *
  * @phpstan-type Tax_Query array{
  *     relation?: 'AND'|'OR',
  *     0: WP_Tax_Query_Clause,
