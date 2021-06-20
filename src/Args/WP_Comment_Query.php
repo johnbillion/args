@@ -10,6 +10,13 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
 class WP_Comment_Query extends Base {
+	const FIELDS_IDS = 'ids';
+	const FIELDS_ALL = '';
+
+	const HIERARCHICAL_FALSE = false;
+	const HIERARCHICAL_THREADED = 'threaded';
+	const HIERARCHICAL_FLAT = 'flat';
+
 	/**
 	 * Comment author email address.
 	 *
@@ -81,7 +88,7 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default empty.
 	 *
-	 * @phpstan-var 'ids'
+	 * @phpstan-var self::FIELDS_*
 	 */
 	public string $fields;
 
@@ -166,7 +173,7 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default: 'DESC'.
 	 *
-	 * @phpstan-var 'ASC'|'DESC'
+	 * @phpstan-var self::ORDER_*
 	 */
 	public string $order;
 
@@ -333,7 +340,7 @@ class WP_Comment_Query extends Base {
 	 * Default: false.
 	 *
 	 * @var false|string
-	 * @phpstan-var false|'threaded'|'flat'
+	 * @phpstan-var self::HIERARCHICAL_*
 	 */
 	public $hierarchical;
 

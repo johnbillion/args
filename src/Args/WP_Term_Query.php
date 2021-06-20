@@ -48,7 +48,7 @@ class WP_Term_Query extends Base {
 	/**
 	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending). Default 'ASC'.
 	 *
-	 * @phpstan-var 'ASC'|'DESC'
+	 * @phpstan-var self::ORDER_*
 	 */
 	public string $order;
 

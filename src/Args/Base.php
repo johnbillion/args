@@ -8,6 +8,9 @@ namespace Args;
  * @implements \ArrayAccess<mixed, mixed>
  */
 abstract class Base implements \ArrayAccess {
+	const ORDER_ASC = 'ASC';
+	const ORDER_DESC = 'DESC';
+
 	/** @var array<string, string> */
 	protected $map = [];
 

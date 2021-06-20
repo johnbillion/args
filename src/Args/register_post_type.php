@@ -10,6 +10,10 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/register_post_type/
  */
 class register_post_type extends Base {
+	const TEMPLATE_LOCK_ALL = 'all';
+	const TEMPLATE_LOCK_INSERT = 'insert';
+	const TEMPLATE_LOCK_FALSE = false;
+
 	/**
 	 * Name of the post type shown in the menu. Usually plural. Default is value of `$labels['name']`.
 	 */
@@ -319,7 +323,7 @@ class register_post_type extends Base {
 	 * Default false.
 	 *
 	 * @var string|false
-	 * @phpstan-var 'all'|'insert'|false
+	 * @phpstan-var self::TEMPLATE_LOCK_*
 	 */
 	public $template_lock;
 }

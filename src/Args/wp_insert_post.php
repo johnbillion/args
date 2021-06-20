@@ -10,6 +10,9 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/wp_insert_post/
  */
 class wp_insert_post extends Base {
+	const COMMENT_STATUS_OPEN = 'open';
+	const COMMENT_STATUS_CLOSED = 'closed';
+
 	/**
 	 * The post ID. If equal to something other than 0, the post with that ID will be updated. Default 0.
 	 */
@@ -63,14 +66,14 @@ class wp_insert_post extends Base {
 	/**
 	 * Whether the post can accept comments. Accepts 'open' or 'closed'. Default is the value of 'default_comment_status' option.
 	 *
-	 * @phpstan-var 'open'|'closed'
+	 * @phpstan-var self::COMMENT_STATUS_*
 	 */
 	public string $comment_status;
 
 	/**
 	 * Whether the post can accept pings. Accepts 'open' or 'closed'. Default is the value of 'default_ping_status' option.
 	 *
-	 * @phpstan-var 'open'|'closed'
+	 * @phpstan-var self::COMMENT_STATUS_*
 	 */
 	public string $ping_status;
 

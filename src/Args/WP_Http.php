@@ -12,6 +12,15 @@ use WP_Http_Cookie;
  * @link https://developer.wordpress.org/reference/classes/wp_http/request/
  */
 class WP_Http extends Base {
+	const METHOD_GET = 'GET';
+	const METHOD_POST = 'POST';
+	const METHOD_HEAD = 'HEAD';
+	const METHOD_PUT = 'PUT';
+	const METHOD_DELETE = 'DELETE';
+	const METHOD_TRACE = 'TRACE';
+	const METHOD_OPTIONS = 'OPTIONS';
+	const METHOD_PATCH = 'PATCH';
+
 	/** @var array<string, string> */
 	protected $map = [
 		'user_agent' => 'user-agent',
@@ -24,7 +33,7 @@ class WP_Http extends Base {
 	 *
 	 * Default 'GET'.
 	 *
-	 * @phpstan-var 'GET'|'POST'|'HEAD'|'PUT'|'DELETE'|'TRACE'|'OPTIONS'|'PATCH'
+	 * @phpstan-var self::METHOD_*
 	 */
 	public string $method;
 

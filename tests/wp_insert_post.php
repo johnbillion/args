@@ -14,10 +14,17 @@ $args->post_title = 'Title';
 $args->post_excerpt = 'This <b>is great</b>.';
 $args->post_status = 'draft';
 $args->post_type = 'page';
+
 $args->comment_status = 'open';
 $args->comment_status = 'closed';
+$args->comment_status = $args::COMMENT_STATUS_OPEN;
+$args->comment_status = $args::COMMENT_STATUS_CLOSED;
+
 $args->ping_status = 'open';
 $args->ping_status = 'closed';
+$args->ping_status = $args::COMMENT_STATUS_OPEN;
+$args->ping_status = $args::COMMENT_STATUS_CLOSED;
+
 $args->post_password = 'hunter2';
 $args->post_name = 'hello-world';
 $args->to_ping = 'http://example.org,http://example.net';

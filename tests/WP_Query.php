@@ -29,6 +29,8 @@ $args->comment_count = [
 
 $args->comment_status = 'open';
 $args->comment_status = 'closed';
+$args->comment_status = $args::COMMENT_STATUS_OPEN;
+$args->comment_status = $args::COMMENT_STATUS_CLOSED;
 
 $args->comments_per_page = 10;
 $args->date_query = [
@@ -72,7 +74,12 @@ $args->paged = 9;
 $args->page_id = 14;
 $args->pagename = '';
 $args->perm = 'editable';
+
 $args->ping_status = 'open';
+$args->ping_status = 'closed';
+$args->ping_status = $args::COMMENT_STATUS_OPEN;
+$args->ping_status = $args::COMMENT_STATUS_CLOSED;
+
 $args->post__in = [ 1, 2 ];
 $args->post__not_in = [ 1, 2 ];
 $args->post_mime_type = '';

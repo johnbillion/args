@@ -138,7 +138,7 @@ class WP_User_Query extends Base {
 	 *
 	 * Default 'ASC'.
 	 *
-	 * @phpstan-var 'ASC'|'DESC'
+	 * @phpstan-var self::ORDER_*
 	 */
 	public string $order;
 

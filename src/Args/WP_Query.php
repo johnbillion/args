@@ -52,6 +52,15 @@ namespace Args;
  * }
  */
 class WP_Query extends Base {
+	const COMMENT_STATUS_OPEN = 'open';
+	const COMMENT_STATUS_CLOSED = 'closed';
+
+	const FIELDS_ALL = '';
+	const FIELDS_IDS = 'ids';
+	const FIELDS_ID_PARENT = 'id=>parent';
+
+	const PERM_READABLE = 'readable';
+	const PERM_EDITABLE = 'editable';
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
@@ -136,7 +145,7 @@ class WP_Query extends Base {
 	/**
 	 * Comment status.
 	 *
-	 * @phpstan-var 'open'|'closed'
+	 * @phpstan-var self::COMMENT_STATUS_*
 	 */
 	public string $comment_status;
 
@@ -172,7 +181,7 @@ class WP_Query extends Base {
 	 *
 	 * Default ''.
 	 *
-	 * @phpstan-var ''|'ids'|'id=>parent'
+	 * @phpstan-var self::FIELDS_*
 	 */
 	public string $fields;
 
@@ -267,7 +276,7 @@ class WP_Query extends Base {
 	/**
 	 * Designates ascending or descending order of posts. Default 'DESC'. Accepts 'ASC', 'DESC'.
 	 *
-	 * @phpstan-var 'ASC'|'DESC'
+	 * @phpstan-var self::ORDER_*
 	 */
 	public string $order;
 
@@ -332,14 +341,14 @@ class WP_Query extends Base {
 	/**
 	 * Show posts if user has the appropriate capability.
 	 *
-	 * @phpstan-var 'readable'|'editable'
+	 * @phpstan-var self::PERM_*
 	 */
 	public string $perm;
 
 	/**
 	 * Ping status.
 	 *
-	 * @phpstan-var 'open'|'closed'
+	 * @phpstan-var self::COMMENT_STATUS_*
 	 */
 	public string $ping_status;
 
