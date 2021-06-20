@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Args\Shared;
 
 /**
- * Argument values for any query class that allows querying by meta data.
+ * Argument values for any query class that supports meta queries.
  */
 interface Query_By_Meta_Values {
 	const META_COMPARE_KEY_EQUALS = '=';

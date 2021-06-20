@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Args\Shared;
 
 /**
- * Arguments for any query class that allows querying by meta data.
+ * Arguments for any query class that supports meta queries.
  */
 trait Query_By_Meta_Args {
 	/**
