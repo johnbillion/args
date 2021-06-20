@@ -81,7 +81,7 @@ class WP_User_Query extends Base implements iQuery_By_Meta {
 	 *
 	 * Default '='.
 	 *
-	 * @phpstan-var self::META_COMPARE_*
+	 * @phpstan-var self::META_COMPARE_VALUE_*
 	 */
 	public string $meta_compare;
 
