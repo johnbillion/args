@@ -23,20 +23,6 @@ namespace Args;
  *     relation?: string,
  *     0?: Date_Query_Args,
  * }
- *
- * @phpstan-type Tax_Query array{
- *     relation?: 'AND'|'OR',
- *     0: WP_Tax_Query_Clause,
- *     1?: WP_Tax_Query_Clause,
- *     2?: WP_Tax_Query_Clause,
- *     3?: WP_Tax_Query_Clause,
- *     4?: WP_Tax_Query_Clause,
- *     5?: WP_Tax_Query_Clause,
- *     6?: WP_Tax_Query_Clause,
- *     7?: WP_Tax_Query_Clause,
- *     8?: WP_Tax_Query_Clause,
- *     9?: WP_Tax_Query_Clause,
- * }
  */
 class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const COMMENT_STATUS_OPEN = 'open';
@@ -50,6 +36,7 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const PERM_EDITABLE = 'editable';
 
 	use Shared\Meta_Query_Args;
+	use Shared\Tax_Query_Args;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
@@ -435,14 +422,6 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	 * @var array<int, string>
 	 */
 	public array $tag_slug__in;
-
-	/**
-	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
-	 *
-	 * @var mixed[]
-	 * @phpstan-var Tax_Query
-	 */
-	public array $tax_query;
 
 	/**
 	 * Post title.

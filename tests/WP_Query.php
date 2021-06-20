@@ -107,25 +107,7 @@ $args->tag_id = 123;
 $args->tag_slug__and = [ 'hello' ];
 $args->tag_slug__in = [ 'hello' ];
 
-$tax_query_clause_1 = \Args\WP_Tax_Query_Clause::fromArray( [
-	'taxonomy' => 'post_tag',
-] );
-$tax_query_clause_1->field = 'term_id';
-$tax_query_clause_1->terms = [ 123, 456 ];
-$tax_query_clause_1->operator = 'IN';
-
-$tax_query_clause_2 = new \Args\WP_Tax_Query_Clause();
-$tax_query_clause_2->taxonomy = 'category';
-$tax_query_clause_2->terms = [
-	'Uncategorized',
-];
-$args->tax_query = [
-	'relation' => 'OR',
-	$tax_query_clause_1,
-	$tax_query_clause_2,
-	9 => $tax_query_clause_2,
-	50 => $tax_query_clause_2,
-];
+$args->tax_query = [];
 
 $args->title = '';
 $args->update_post_meta_cache = true;
