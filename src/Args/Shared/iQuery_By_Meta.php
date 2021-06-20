@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Args;
+namespace Args\Shared;
 
 /**
  * Arguments for any query class that allows querying by meta data.
