@@ -25,4 +25,7 @@ interface Query_By_Meta_Values {
 	const META_COMPARE_VALUE_RLIKE = 'RLIKE';
 	const META_COMPARE_VALUE_EXISTS = 'EXISTS';
 	const META_COMPARE_VALUE_NOT_EXISTS = 'NOT EXISTS';
+
+	const META_TYPE_KEY_NONE = '';
+	const META_TYPE_KEY_BINARY = 'BINARY';
 }

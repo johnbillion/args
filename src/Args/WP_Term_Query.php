@@ -215,26 +215,4 @@ class WP_Term_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	 * Whether to prime meta caches for matched terms. Default true.
 	 */
 	public bool $update_term_meta_cache;
-
-	/**
-	 * Optional. Meta query clauses to limit retrieved terms by. See `WP_Meta_Query`.
-	 *
-	 * @var mixed[]
-	 */
-	public array $meta_query;
-
-	/**
-	 * Limit terms to those matching a specific metadata key. Can be used in conjunction with `$meta_value`.
-	 */
-	public string $meta_key;
-
-	/**
-	 * Limit terms to those matching a specific metadata value. Usually used in conjunction with `$meta_key`.
-	 */
-	public string $meta_value;
-
-	/**
-	 * MySQL data type that the `$meta_value` will be CAST to for comparisons.
-	 */
-	public string $meta_type;
 }

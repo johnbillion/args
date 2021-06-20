@@ -109,29 +109,6 @@ class WP_Comment_Query extends Shared\Base {
 	public int $karma;
 
 	/**
-	 * Include comments with a matching comment meta key.
-	 *
-	 * Default empty.
-	 */
-	public string $meta_key;
-
-	/**
-	 * Include comments with a matching comment meta value. Requires `$meta_key` to be set.
-	 *
-	 * Default empty.
-	 */
-	public string $meta_value;
-
-	/**
-	 * Meta query clauses to limit retrieved comments by. See WP_Meta_Query.
-	 *
-	 * Default empty.
-	 *
-	 * @var array<int,mixed>
-	 */
-	public array $meta_query;
-
-	/**
 	 * Maximum number of comments to retrieve.
 	 *
 	 * Default empty (no limit).

@@ -62,9 +62,6 @@ class WP_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
 
-	const META_TYPE_KEY_NONE = '';
-	const META_TYPE_KEY_BINARY = 'BINARY';
-
 	use Shared\Query_By_Meta_Args;
 
 	/**
@@ -204,42 +201,6 @@ class WP_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	 * Combination YearMonth. Accepts any four-digit year and month numbers 1-12. Default empty.
 	 */
 	public int $m;
-
-	/**
-	 * Comparison operator to test the 'meta_key'.
-	 *
-	 * @phpstan-var '='|'EXISTS'|'LIKE'|'IN'|'RLIKE'|'REGEXP'|'!='|'NOT EXISTS'|'NOT LIKE'|'NOT IN'|'NOT REGEXP'
-	 */
-	public string $meta_compare_key;
-
-	/**
-	 * Custom field key.
-	 */
-	public string $meta_key;
-
-	/**
-	 * An associative array of WP_Meta_Query arguments. See WP_Meta_Query.
-	 *
-	 * @var mixed[]
-	 */
-	public array $meta_query;
-
-	/**
-	 * Custom field value.
-	 */
-	public string $meta_value;
-
-	/**
-	 * Custom field value number.
-	 */
-	public int $meta_value_num;
-
-	/**
-	 * Cast for 'meta_key'. See WP_Meta_Query::construct().
-	 *
-	 * @phpstan-var self::META_TYPE_KEY_*
-	 */
-	public string $meta_type_key;
 
 	/**
 	 * The menu order of the posts.

@@ -65,20 +65,6 @@ class WP_User_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	public array $role__not_in;
 
 	/**
-	 * User meta key.
-	 *
-	 * Default empty.
-	 */
-	public string $meta_key;
-
-	/**
-	 * User meta value.
-	 *
-	 * Default empty.
-	 */
-	public string $meta_value;
-
-	/**
 	 * An array of user IDs to include.
 	 *
 	 * Default empty array.
