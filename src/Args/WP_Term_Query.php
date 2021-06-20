@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
-class WP_Term_Query extends Base {
+class WP_Term_Query extends Base implements iQuery_By_Meta {
 	const FIELD_ALL = 'all';
 	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
 	const FIELD_IDS = 'ids';
@@ -20,24 +20,6 @@ class WP_Term_Query extends Base {
 	const FIELD_ID_PARENT = 'id=>parent';
 	const FIELD_ID_NAME = 'id=>name';
 	const FIELD_ID_SLUG = 'id=>slug';
-
-	const META_COMPARE_EQUALS = '=';
-	const META_COMPARE_NOT_EQUALS = '!=';
-	const META_COMPARE_GREATER_THAN = '>';
-	const META_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
-	const META_COMPARE_LESS_THAN = '<';
-	const META_COMPARE_LESS_THAN_OR_EQUALS = '<=';
-	const META_COMPARE_LIKE = 'LIKE';
-	const META_COMPARE_NOT_LIKE = 'NOT LIKE';
-	const META_COMPARE_IN = 'IN';
-	const META_COMPARE_NOT_IN = 'NOT IN';
-	const META_COMPARE_BETWEEN = 'BETWEEN';
-	const META_COMPARE_NOT_BETWEEN = 'NOT BETWEEN';
-	const META_COMPARE_REGEXP = 'REGEXP';
-	const META_COMPARE_NOT_REGEXP = 'NOT REGEXP';
-	const META_COMPARE_RLIKE = 'RLIKE';
-	const META_COMPARE_EXISTS = 'EXISTS';
-	const META_COMPARE_NOT_EXISTS = 'NOT EXISTS';
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.
