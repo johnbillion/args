@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/functions/register_post_type/
  */
-class register_post_type extends Base {
+class register_post_type extends Shared\Base {
 	const TEMPLATE_LOCK_ALL = 'all';
 	const TEMPLATE_LOCK_INSERT = 'insert';
 	const TEMPLATE_LOCK_FALSE = false;

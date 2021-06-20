@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_tax_query/__construct/
  */
-class WP_Tax_Query_Clause extends Base {
+class WP_Tax_Query_Clause extends Shared\Base {
 	const FIELD_TERM_ID = 'term_id';
 	const FIELD_SLUG = 'slug';
 	const FIELD_NAME = 'name';

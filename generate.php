@@ -141,4 +141,4 @@ BLOCK,
 	);
 }, $desc );
 
-echo 'class ' . trim( $name, '\\' ) . ' extends Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
+echo 'class ' . trim( $name, '\\' ) . ' extends Shared\Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";

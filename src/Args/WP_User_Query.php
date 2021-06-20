@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
  */
-class WP_User_Query extends Base implements Shared\Query_By_Meta_Values {
+class WP_User_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	const FIELD_ID = 'ID';
 	const FIELD_LOGIN = 'user_login';
 	const FIELD_EMAIL = 'user_email';

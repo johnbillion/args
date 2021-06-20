@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Args;
+namespace Args\Shared;
 
 /**
  * @implements \ArrayAccess<mixed, mixed>

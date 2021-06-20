@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/functions/wp_insert_post/
  */
-class wp_insert_post extends Base {
+class wp_insert_post extends Shared\Base {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 

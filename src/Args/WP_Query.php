@@ -51,7 +51,7 @@ namespace Args;
  *     9?: WP_Tax_Query_Clause,
  * }
  */
-class WP_Query extends Base implements Shared\Query_By_Meta_Values {
+class WP_Query extends Shared\Base implements Shared\Query_By_Meta_Values {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 

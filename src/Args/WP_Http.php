@@ -11,7 +11,7 @@ use WP_Http_Cookie;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_http/request/
  */
-class WP_Http extends Base {
+class WP_Http extends Shared\Base {
 	const METHOD_GET = 'GET';
 	const METHOD_POST = 'POST';
 	const METHOD_HEAD = 'HEAD';
