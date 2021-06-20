@@ -10,8 +10,8 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
 class WP_Comment_Query extends Base {
-	const FIELDS_IDS = 'ids';
-	const FIELDS_ALL = '';
+	const FIELD_IDS = 'ids';
+	const FIELD_ALL = '';
 
 	const HIERARCHICAL_FALSE = false;
 	const HIERARCHICAL_THREADED = 'threaded';
@@ -88,7 +88,7 @@ class WP_Comment_Query extends Base {
 	 *
 	 * Default empty.
 	 *
-	 * @phpstan-var self::FIELDS_*
+	 * @phpstan-var self::FIELD_*
 	 */
 	public string $fields;
 

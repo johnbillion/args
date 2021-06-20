@@ -55,9 +55,9 @@ class WP_Query extends Base {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 
-	const FIELDS_ALL = '';
-	const FIELDS_IDS = 'ids';
-	const FIELDS_ID_PARENT = 'id=>parent';
+	const FIELD_ALL = '';
+	const FIELD_IDS = 'ids';
+	const FIELD_ID_PARENT = 'id=>parent';
 
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
@@ -181,7 +181,7 @@ class WP_Query extends Base {
 	 *
 	 * Default ''.
 	 *
-	 * @phpstan-var self::FIELDS_*
+	 * @phpstan-var self::FIELD_*
 	 */
 	public string $fields;
 
