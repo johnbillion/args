@@ -8,6 +8,18 @@ namespace Args\Shared;
  * Argument values for any query class that allows querying by meta data.
  */
 interface Query_By_Meta_Values {
+	const META_COMPARE_KEY_EQUALS = '=';
+	const META_COMPARE_KEY_NOT_EQUALS = '!=';
+	const META_COMPARE_KEY_LIKE = 'LIKE';
+	const META_COMPARE_KEY_NOT_LIKE = 'NOT LIKE';
+	const META_COMPARE_KEY_IN = 'IN';
+	const META_COMPARE_KEY_NOT_IN = 'NOT IN';
+	const META_COMPARE_KEY_REGEXP = 'REGEXP';
+	const META_COMPARE_KEY_NOT_REGEXP = 'NOT REGEXP';
+	const META_COMPARE_KEY_RLIKE = 'RLIKE';
+	const META_COMPARE_KEY_EXISTS = 'EXISTS';
+	const META_COMPARE_KEY_NOT_EXISTS = 'NOT EXISTS';
+
 	const META_COMPARE_VALUE_EQUALS = '=';
 	const META_COMPARE_VALUE_NOT_EQUALS = '!=';
 	const META_COMPARE_VALUE_GREATER_THAN = '>';

@@ -35,6 +35,8 @@ trait Query_By_Meta_Args {
 	 * MySQL operator used for comparing the meta key.
 	 *
 	 * Default is 'IN' when `meta_key` is an array, '=' otherwise.
+	 *
+	 * @phpstan-var self::META_COMPARE_KEY_*
 	 */
 	public string $meta_compare_key;
 
