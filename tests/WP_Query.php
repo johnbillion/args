@@ -53,12 +53,17 @@ $args->fields = 'id=>parent';
 $args->hour = 12;
 $args->ignore_sticky_posts = true;
 $args->m = 2;
-$args->meta_compare = '>=';
-$args->meta_compare_key = 'REGEXP';
-$args->meta_key = 'meta_key';
-$args->meta_query = [];
-$args->meta_value = 'meta_value';
+
+$args->meta_key = 'key';
+$args->meta_key = [ 'key', 'key' ];
+$args->meta_value = 'value';
+$args->meta_value = [ 'value', 'value' ];
+$args->meta_compare = 'NOT IN';
+$args->meta_compare_key = 'LIKE';
+$args->meta_type = 'BINARY';
 $args->meta_type_key = '';
+$args->meta_query = [];
+
 $args->menu_order = 0;
 $args->monthnum = 10;
 $args->name = '';

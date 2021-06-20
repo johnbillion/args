@@ -8,9 +8,17 @@ $args->blog_id = 123;
 $args->role = 'editor';
 $args->role__in = [ 'subscriber' ];
 $args->role__not_in = [ 'contributor' ];
-$args->meta_key = 'foo';
-$args->meta_value = 'bar';
-$args->meta_compare = '>=';
+
+$args->meta_key = 'key';
+$args->meta_key = [ 'key', 'key' ];
+$args->meta_value = 'value';
+$args->meta_value = [ 'value', 'value' ];
+$args->meta_compare = 'NOT IN';
+$args->meta_compare_key = 'LIKE';
+$args->meta_type = 'BINARY';
+$args->meta_type_key = '';
+$args->meta_query = [];
+
 $args->include = [ 123 ];
 $args->exclude = [ 456 ];
 $args->search = 'john';
