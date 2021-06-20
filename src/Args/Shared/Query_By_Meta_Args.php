@@ -42,11 +42,15 @@ trait Query_By_Meta_Args {
 
 	/**
 	 * MySQL data type that the meta_value column will be CAST to for comparisons.
+	 *
+	 * @phpstan-var self::META_TYPE_VALUE_*
 	 */
 	public string $meta_type;
 
 	/**
 	 * MySQL data type that the meta_key column will be CAST to for comparisons.
+	 *
+	 * @phpstan-var self::META_TYPE_KEY_*
 	 */
 	public string $meta_type_key;
 
