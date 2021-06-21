@@ -20,6 +20,13 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const PERM_READABLE = 'readable';
 	const PERM_EDITABLE = 'editable';
 
+	const COMMENT_COUNT_COMPARE_EQUALS = '=';
+	const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
+	const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
+	const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
+	const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+
 	use Shared\Date_Query_Args;
 	use Shared\Meta_Query_Args;
 	use Shared\Tax_Query_Args;
@@ -99,7 +106,7 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	 * @var array<string,(int|string)>|int
 	 * @phpstan-var array{
 	 *     value: int,
-	 *     compare: '='|'!='|'>'|'>='|'<'|'<=',
+	 *     compare: self::COMMENT_COUNT_COMPARE_*,
 	 * }|int
 	 */
 	public $comment_count;

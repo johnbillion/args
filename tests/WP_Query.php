@@ -26,6 +26,10 @@ $args->comment_count = [
 	'value' => 10,
 	'compare' => '>=',
 ];
+$args->comment_count = [
+	'value' => 123,
+	'compare' => $args::COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS,
+];
 
 $args->comment_status = 'open';
 $args->comment_status = 'closed';
