@@ -30,4 +30,9 @@ $args->auth_callback = '__return_false';
 
 $args->show_in_rest = true;
 $args->show_in_rest = false;
-$args->show_in_rest = [];
+$args->show_in_rest = [
+	'schema' => [
+		'items' => [],
+	],
+	'prepare_callback' => fn( mixed $value, \WP_REST_Request $request, array $args ) => ( 123 ),
+];

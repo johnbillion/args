@@ -71,7 +71,10 @@ class register_meta extends Shared\Base {
 	 *
 	 * A custom post type must also declare support for custom fields for registered meta to be accessible via REST. When registering complex meta values this argument may optionally be an array with 'schema' or 'prepare_callback' keys instead of a boolean.
 	 *
-	 * @var bool|mixed[]
+	 * @var bool|array{
+	 *     schema: mixed[],
+	 *     prepare_callback: callable(mixed,\WP_REST_Request,array): mixed,
+	 * }
 	 */
 	public $show_in_rest;
 }
