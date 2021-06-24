@@ -80,6 +80,7 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
 * `\Args\register_term_meta` for the `register_term_meta()` function
 * `\Args\wp_count_terms` for the `wp_count_terms()` function
+* `\Args\wp_die` for the `wp_die()` function
 * `\Args\wp_get_nav_menus` for the `wp_get_nav_menus()` function
 * `\Args\wp_get_object_terms` for the `wp_get_object_terms()` function
 * `\Args\wp_insert_post` for the `wp_insert_post()` function
