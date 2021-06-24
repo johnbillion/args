@@ -16,7 +16,7 @@ class register_rest_field extends Shared\Base {
 	 * Default is 'null', the field will not be returned in the response. The function will be passed the prepared object data.
 	 *
 	 * @var callable
-	 * @phpstan-var callable(mixed[],string,\WP_REST_Request): mixed[]
+	 * @phpstan-var callable(mixed[],string,\WP_REST_Request): mixed
 	 */
 	public $get_callback;
 
