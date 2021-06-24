@@ -18,12 +18,5 @@ function __return_false() : bool {
  * @return mixed[]
  */
 function _n_noop( string $singular, string $plural, string $domain = null ) : array {
-	return array(
-		0          => $singular,
-		1          => $plural,
-		'singular' => $singular,
-		'plural'   => $plural,
-		'context'  => null,
-		'domain'   => $domain,
-	);
+	return array();
 }

@@ -6,15 +6,6 @@ namespace Args\Shared;
 
 /**
  * @implements \ArrayAccess<mixed, mixed>
- *
- * @phpstan-type _n_noop array{
- *     0: string,
- *     1: string,
- *     singular: string,
- *     plural: string,
- *     context: null,
- *     domain: string|null,
- * }
  */
 abstract class Base implements \ArrayAccess {
 	const ORDER_ASC = 'ASC';
