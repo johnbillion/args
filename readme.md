@@ -74,6 +74,7 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\get_users` for the `get_users()` function
 * `\Args\register_meta` for the `register_meta()` function
 * `\Args\register_post_meta` for the `register_post_meta()` function
+* `\Args\register_post_status` for the `register_post_status()` function
 * `\Args\register_post_type` for the `register_post_type()` function
 * `\Args\register_rest_field` for the `register_rest_field()` function
 * `\Args\register_taxonomy` for the `register_taxonomy()` function
