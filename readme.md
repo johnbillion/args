@@ -83,12 +83,14 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\wp_get_object_terms` for the `wp_get_object_terms()` function
 * `\Args\wp_insert_post` for the `wp_insert_post()` function
 * `\Args\wp_insert_term` for the `wp_insert_term()` function
+* `\Args\wp_insert_user` for the `wp_insert_user()` function
 * `\Args\wp_remote_get` for the `wp_remote_get()` function
 * `\Args\wp_remote_head` for the `wp_remote_head()` function
 * `\Args\wp_remote_post` for the `wp_remote_post()` function
 * `\Args\wp_remote_request` for the `wp_remote_request()` function
 * `\Args\wp_update_post` for the `wp_update_post()` function
 * `\Args\wp_update_term` for the `wp_update_term()` function
+* `\Args\wp_update_user` for the `wp_update_user()` function
 
 ### Argument Arguments
 
