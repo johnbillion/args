@@ -12,8 +12,8 @@ namespace Args\Shared;
  *     1: string,
  *     singular: string,
  *     plural: string,
- *     context?: null,
- *     domain: string,
+ *     context: null,
+ *     domain: string|null,
  * }
  */
 abstract class Base implements \ArrayAccess {
