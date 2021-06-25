@@ -46,43 +46,55 @@ $story = register_post_type( 'story', $args->toArray() );
 
 ## What's Provided
 
-### Class Constructor Arguments
+### Posts
 
-* `\Args\WP_Query` for the `WP_Query` class constructor
-* `\Args\WP_Term_Query` for the `WP_Term_Query` class constructor
-* `\Args\WP_User_Query` for the `WP_User_Query` class constructor
-* `\Args\WP_Comment_Query` for the `WP_Comment_Query` class constructor
-* `\Args\WP_Http` for the `WP_Http::request()` method
+* `\Args\WP_Query`
+* `\Args\register_post_type`
+* `\Args\wp_insert_post`
+* `\Args\wp_update_post`
+* `\Args\get_posts`
+* `\Args\register_post_meta`
+* `\Args\register_post_status`
 
-### Function Arguments
+### Taxonomies and Terms
 
-* `\Args\get_categories` for the `get_categories()` function
-* `\Args\get_comments` for the `get_comments()` function
-* `\Args\get_posts` for the `get_posts()` function
-* `\Args\get_tags` for the `get_tags()` function
-* `\Args\get_terms` for the `get_terms()` function
-* `\Args\get_users` for the `get_users()` function
-* `\Args\register_meta` for the `register_meta()` function
-* `\Args\register_post_meta` for the `register_post_meta()` function
-* `\Args\register_post_status` for the `register_post_status()` function
-* `\Args\register_post_type` for the `register_post_type()` function
-* `\Args\register_rest_field` for the `register_rest_field()` function
-* `\Args\register_taxonomy` for the `register_taxonomy()` function
-* `\Args\register_term_meta` for the `register_term_meta()` function
-* `\Args\wp_count_terms` for the `wp_count_terms()` function
-* `\Args\wp_die` for the `wp_die()` function
-* `\Args\wp_get_nav_menus` for the `wp_get_nav_menus()` function
-* `\Args\wp_get_object_terms` for the `wp_get_object_terms()` function
-* `\Args\wp_insert_post` for the `wp_insert_post()` function
-* `\Args\wp_insert_term` for the `wp_insert_term()` function
-* `\Args\wp_insert_user` for the `wp_insert_user()` function
-* `\Args\wp_remote_get` for the `wp_remote_get()` function
-* `\Args\wp_remote_head` for the `wp_remote_head()` function
-* `\Args\wp_remote_post` for the `wp_remote_post()` function
-* `\Args\wp_remote_request` for the `wp_remote_request()` function
-* `\Args\wp_update_post` for the `wp_update_post()` function
-* `\Args\wp_update_term` for the `wp_update_term()` function
-* `\Args\wp_update_user` for the `wp_update_user()` function
+* `\Args\WP_Term_Query`
+* `\Args\register_taxonomy`
+* `\Args\wp_insert_term`
+* `\Args\wp_update_term`
+* `\Args\get_terms`
+* `\Args\get_categories`
+* `\Args\get_tags`
+* `\Args\register_term_meta`
+* `\Args\wp_count_terms`
+* `\Args\wp_get_object_terms`
+
+### Users
+
+* `\Args\WP_User_Query`
+* `\Args\wp_insert_user`
+* `\Args\wp_update_user`
+* `\Args\get_users`
+
+### Comments
+
+* `\Args\WP_Comment_Query`
+* `\Args\get_comments`
+
+### HTTP API
+
+* `\Args\wp_remote_get`
+* `\Args\wp_remote_post`
+* `\Args\wp_remote_head`
+* `\Args\wp_remote_request`
+
+### Everything Else
+
+* `\Args\register_block_type`
+* `\Args\register_meta`
+* `\Args\register_rest_field`
+* `\Args\wp_get_nav_menus`
+* `\Args\wp_die`
 
 ### Argument Arguments
 
