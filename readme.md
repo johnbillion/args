@@ -22,7 +22,7 @@ This library does _not_ operate like [the `OptionsResolver` class in Symfony](ht
 
 ## Current Status
 
-Alpha.
+Alpha. The general shape of the args are stable but it's likely I'll restructure the complex arguments such as `meta_query` and `term_query` work before version 1.0.
 
 ## Usage
 
