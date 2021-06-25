@@ -96,13 +96,6 @@ $story = register_post_type( 'story', $args->toArray() );
 * `\Args\wp_get_nav_menus`
 * `\Args\wp_die`
 
-### Argument Arguments
-
-Some individual arguments are themselves an array with a specific shape. Argument definitions are provided for the following, but they are only enforced via PHPStan, not at runtime.
-
-* `\Args\WP_Tax_Query_Clause` for a single clause within the `WP_Tax_Query` class constructor array
-  - Used by the `tax_query` argument of `WP_Query`
-
 ## Type Checking
 
 PHP 7.4 introduced typed class properties, and these are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
