@@ -67,16 +67,22 @@ class wp_insert_user extends Shared\Base {
 
 	/**
 	 * Whether to enable the rich-editor for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 *
+	 * @phpstan-var 'true'|'false'
 	 */
 	public string $rich_editing;
 
 	/**
 	 * Whether to enable the rich code editor for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 *
+	 * @phpstan-var 'true'|'false'
 	 */
 	public string $syntax_highlighting;
 
 	/**
 	 * Whether to enable comment moderation keyboard shortcuts for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'false'.
+	 *
+	 * @phpstan-var 'true'|'false'
 	 */
 	public string $comment_shortcuts;
 
@@ -107,6 +113,8 @@ class wp_insert_user extends Shared\Base {
 
 	/**
 	 * Whether to display the Admin Bar for the user on the site's front end. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 *
+	 * @phpstan-var 'true'|'false'
 	 */
 	public string $show_admin_bar_front;
 
