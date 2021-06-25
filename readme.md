@@ -20,16 +20,6 @@ This library does _not_ operate like [the `OptionsResolver` class in Symfony](ht
 
 ---
 
-* [Current Status](#current-status)
-* [Usage](#usage)
-* [What's Provided](#whats-provided)
-* [Type Checking](#type-checking)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Contributing](#contributing)
-
----
-
 ## Current Status
 
 Alpha.
