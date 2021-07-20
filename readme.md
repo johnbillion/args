@@ -12,7 +12,7 @@ $query = new WP_Query( [
 ] );
 ```
 
-This library provides well-documented classes which represent some of the associative array parameters that are used in WordPress. Using these classes at the point where you populate the arguments means you get familiar autocompletion and intellisense in your code editor, and strict typing thanks to the behaviour of typed properties in PHP 7.4. PHPstan typings are provided for even more comprehensive checks, if you use it.
+This library provides well-documented classes which represent some of the associative array parameters that are used in WordPress. Using these classes at the point where you populate the arguments means you get familiar autocompletion and intellisense in your code editor, and strict typing thanks to the behaviour of typed properties in PHP 7.4. Comprehensive types and constraints for [PHPStan](https://phpstan.org/) are also included.
 
 ![](assets/screenshot.png)
 
@@ -23,6 +23,8 @@ This library does _not_ operate like [the `OptionsResolver` class in Symfony](ht
 ## Current Status
 
 Alpha. The general shape of the args are stable but it's likely I'll restructure the complex arguments such as `meta_query` and `term_query` work before version 1.0.
+
+This library was last updated for WordPress 5.7.
 
 ## Usage
 
@@ -134,7 +136,7 @@ I have a name for these array-type parameters for passing arguments. I call them
 
 ## Sponsors
 
-Development of this library is sponsored by:
+The time that I spend maintaining this library and others is in part sponsored by:
 
 [![Automattic](assets/gh/automattic.png)](https://automattic.com)
 
