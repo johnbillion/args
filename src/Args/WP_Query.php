@@ -125,6 +125,8 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 
 	/**
 	 * Day of the month. Default empty. Accepts numbers 1-31.
+	 *
+	 * @phpstan-var int<1, 31>
 	 */
 	public int $day;
 
@@ -149,6 +151,8 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 
 	/**
 	 * Hour of the day. Default empty. Accepts numbers 0-23.
+	 *
+	 * @phpstan-var int<0, 23>
 	 */
 	public int $hour;
 
@@ -169,6 +173,8 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 
 	/**
 	 * The two-digit month. Default empty. Accepts numbers 1-12.
+	 *
+	 * @phpstan-var int<1, 12>
 	 */
 	public int $monthnum;
 
@@ -350,7 +356,9 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	public string $s;
 
 	/**
-	 * Second of the minute. Default empty. Accepts numbers 0-60.
+	 * Second of the minute. Default empty. Accepts numbers 0-59.
+	 *
+	 * @phpstan-var int<0, 59>
 	 */
 	public int $second;
 
@@ -431,6 +439,8 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 
 	/**
 	 * The week number of the year. Default empty. Accepts numbers 0-53.
+	 *
+	 * @phpstan-var int<0, 53>
 	 */
 	public int $w;
 
