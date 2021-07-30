@@ -172,6 +172,13 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	public int $menu_order;
 
 	/**
+	 * Second of the minute. Default empty. Accepts numbers 0-59.
+	 *
+	 * @phpstan-var int<0, 59>
+	 */
+	public int $minute;
+
+	/**
 	 * The two-digit month. Default empty. Accepts numbers 1-12.
 	 *
 	 * @phpstan-var int<1, 12>

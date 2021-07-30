@@ -69,6 +69,7 @@ $args->meta_type_key = '';
 $args->meta_query = [];
 
 $args->menu_order = 0;
+$args->minute = 59;
 $args->monthnum = 10;
 $args->name = '';
 $args->nopaging = true;
