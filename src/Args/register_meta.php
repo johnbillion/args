@@ -73,7 +73,7 @@ class register_meta extends Shared\Base {
 	 *
 	 * @var bool|array{
 	 *     schema: mixed[],
-	 *     prepare_callback: callable(mixed,\WP_REST_Request,array): mixed,
+	 *     prepare_callback: callable(mixed,\WP_REST_Request,mixed[]): mixed,
 	 * }
 	 */
 	public $show_in_rest;
