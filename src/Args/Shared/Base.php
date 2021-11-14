@@ -52,6 +52,10 @@ abstract class Base implements \ArrayAccess {
 	 * @param mixed $offset
 	 */
 	final public function offsetExists( $offset ) : bool {
+		if ( ! is_string( $offset ) ) {
+			return false;
+		}
+
 		return array_key_exists( $offset, get_object_vars( $this ) );
 	}
 
@@ -60,6 +64,10 @@ abstract class Base implements \ArrayAccess {
 	 * @return mixed
 	 */
 	final public function offsetGet( $offset ) {
+		if ( ! is_string( $offset ) ) {
+			return null;
+		}
+
 		if ( ! array_key_exists( $offset, get_object_vars( $this ) ) ) {
 			return null;
 		}
