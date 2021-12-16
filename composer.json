@@ -9,6 +9,10 @@
 			"homepage": "https://johnblackbourn.com/"
 		}
 	],
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
 	"require": {
 		"php": ">=7.4"
 	},
