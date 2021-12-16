@@ -1,0 +1,17 @@
+<phpunit
+	backupGlobals="false"
+	beStrictAboutOutputDuringTests="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	cacheResultFile="tests/cache/phpunit.json"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+>
+	<testsuites>
+		<testsuite name="main">
+			<directory suffix=".php">tests/phpunit</directory>
+			<exclude>tests/phpunit/includes</exclude>
+		</testsuite>
+	</testsuites>
+</phpunit>

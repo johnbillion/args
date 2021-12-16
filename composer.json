@@ -28,8 +28,12 @@
 		"test:phpcs": [
 			"phpcs -p --cache=tests/cache/phpcs.json ."
 		],
+		"test:phpunit": [
+			"phpunit --testdox"
+		],
 		"test": [
 			"@test:phpcs",
+			"@test:phpunit",
 			"phpstan analyze src/Args",
 			"phpstan analyze tests"
 		]
@@ -41,6 +45,7 @@
 		"humanmade/coding-standards": "^1.1",
 		"phpdocumentor/reflection": "~4.0",
 		"phpstan/phpstan": "^1.0",
+		"phpunit/phpunit": "^9.0",
 		"roots/wordpress": "^5.7.0"
 	},
 	"funding": [
