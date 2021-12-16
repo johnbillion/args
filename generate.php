@@ -8,10 +8,10 @@ use phpDocumentor\Reflection\Php\Project;
 require_once __DIR__ . '/vendor/autoload.php';
 
 $options = getopt( '', [
-	"file:",
-	"method::",
-	"function::",
-	"param:",
+	'file:',
+	'method::',
+	'function::',
+	'param:',
 ] );
 
 if ( empty( $options['file'] ) || ( empty( $options['method'] ) && empty( $options['function'] ) ) || empty( $options['param'] ) ) {
@@ -39,7 +39,7 @@ $projectFiles = [
 ];
 
 /** @var Project $project */
-$project = $projectFactory->create('My Project', $projectFiles);
+$project = $projectFactory->create( 'My Project', $projectFiles );
 
 $files = $project->getFiles();
 

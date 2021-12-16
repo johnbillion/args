@@ -21,7 +21,11 @@
 		"generate": [
 			"@php generate.php"
 		],
+		"test:phpcs": [
+			"phpcs -p --cache=tests/cache/phpcs.json ."
+		],
 		"test": [
+			"@test:phpcs",
 			"phpstan analyze src/Args",
 			"phpstan analyze tests"
 		]
@@ -30,6 +34,7 @@
 		"wordpress-install-dir": "vendor/wordpress/wordpress"
 	},
 	"require-dev": {
+		"humanmade/coding-standards": "^1.1",
 		"phpdocumentor/reflection": "~4.0",
 		"phpstan/phpstan": "^1.0",
 		"roots/wordpress": "^5.7.0"
