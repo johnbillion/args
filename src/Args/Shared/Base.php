@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Args\Shared;
 
 /**
- * @implements \ArrayAccess<mixed, mixed>
+ * @implements \ArrayAccess<string, mixed>
+ * @implements \IteratorAggregate<string, mixed>
  */
-abstract class Base implements \ArrayAccess, \Countable {
+abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate {
 	const ORDER_ASC = 'ASC';
 	const ORDER_DESC = 'DESC';
 
@@ -96,4 +97,7 @@ abstract class Base implements \ArrayAccess, \Countable {
 		return count( $this->toArray() );
 	}
 
+	public function getIterator() : \Traversable {
+		return new \ArrayIterator( $this->toArray() );
+	}
 }

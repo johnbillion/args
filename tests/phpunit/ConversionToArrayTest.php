@@ -56,4 +56,23 @@ final class ConversionToArrayTest extends TestCase {
 		self::assertCount( 2, $args );
 	}
 
+	public function testIteratingArrayElementsWorksAsExpected(): void {
+		$args = new \Args\WP_Query;
+
+		$args->attachment_id = 123;
+		$args->hello = 'world';
+
+		$expected = [
+			123,
+			'world',
+		];
+		$actual = [];
+
+		foreach ( $args as $arg ) {
+			$actual[] = $arg;
+		}
+
+		self::assertSame( $expected, $actual );
+	}
+
 }
