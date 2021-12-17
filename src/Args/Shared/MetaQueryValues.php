@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Argument values for any query class that supports meta queries.
  */
-interface Meta_Query_Values {
+interface MetaQueryValues {
 	const META_COMPARE_KEY_EQUALS = '=';
 	const META_COMPARE_KEY_NOT_EQUALS = '!=';
 	const META_COMPARE_KEY_LIKE = 'LIKE';
@@ -50,4 +50,7 @@ interface Meta_Query_Values {
 	const META_TYPE_VALUE_SIGNED = 'SIGNED';
 	const META_TYPE_VALUE_TIME = 'TIME';
 	const META_TYPE_VALUE_UNSIGNED = 'UNSIGNED';
+
+	const META_QUERY_RELATION_AND = 'AND';
+	const META_QUERY_RELATION_OR = 'OR';
 }

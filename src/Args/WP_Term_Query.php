@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
-class WP_Term_Query extends Shared\Base implements Shared\Meta_Query_Values {
+class WP_Term_Query extends Shared\Base implements Shared\MetaQueryValues {
 	const FIELD_ALL = 'all';
 	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
 	const FIELD_IDS = 'ids';

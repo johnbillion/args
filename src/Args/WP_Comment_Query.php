@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
-class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
+class WP_Comment_Query extends Shared\Base implements Shared\MetaQueryValues {
 	const FIELD_IDS = 'ids';
 	const FIELD_ALL = '';
 
