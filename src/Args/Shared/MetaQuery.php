@@ -7,11 +7,11 @@ namespace Args\Shared;
 /**
  * Structure for a `meta_query` argument.
  */
-final class MetaQuery implements MetaQueryValues {
+final class MetaQuery {
 	/**
 	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
 	 *
-	 * @phpstan-var self::META_QUERY_RELATION_*
+	 * @phpstan-var MetaQueryValues::META_QUERY_RELATION_*
 	 */
 	public string $relation;
 

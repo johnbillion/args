@@ -27,7 +27,7 @@ trait ProvidesMetaQueryArgs {
 	 *
 	 * Default is 'IN' when `meta_value` is an array, '=' otherwise.
 	 *
-	 * @phpstan-var self::META_COMPARE_VALUE_*
+	 * @phpstan-var MetaQueryValues::META_COMPARE_VALUE_*
 	 */
 	public string $meta_compare;
 
@@ -36,21 +36,21 @@ trait ProvidesMetaQueryArgs {
 	 *
 	 * Default is 'IN' when `meta_key` is an array, '=' otherwise.
 	 *
-	 * @phpstan-var self::META_COMPARE_KEY_*
+	 * @phpstan-var MetaQueryValues::META_COMPARE_KEY_*
 	 */
 	public string $meta_compare_key;
 
 	/**
 	 * MySQL data type that the `meta_value` column will be CAST to for comparisons.
 	 *
-	 * @phpstan-var self::META_TYPE_VALUE_*
+	 * @phpstan-var MetaQueryValues::META_TYPE_VALUE_*
 	 */
 	public string $meta_type;
 
 	/**
 	 * MySQL data type that the `meta_key` column will be CAST to for comparisons.
 	 *
-	 * @phpstan-var self::META_TYPE_KEY_*
+	 * @phpstan-var MetaQueryValues::META_TYPE_KEY_*
 	 */
 	public string $meta_type_key;
 

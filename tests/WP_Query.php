@@ -71,7 +71,7 @@ $meta_query = new \Args\Shared\MetaQuery;
 $meta_query->clauses[] = new \Args\Shared\MetaQueryClause;
 
 $args->meta_query = $meta_query;
-$args->meta_query->relation = $args::META_QUERY_RELATION_AND;
+$args->meta_query->relation = \Args\Shared\MetaQueryValues::META_QUERY_RELATION_AND;
 
 $args->menu_order = 0;
 $args->minute = 59;
