@@ -131,11 +131,34 @@ class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	public bool $no_found_rows;
 
 	/**
-	 * Comment status or array of statuses. To use 'meta_value' or 'meta_value_num', `$meta_key` must also be defined. To sort by a specific `$meta_query` clause, use that clause's array key. Accepts 'comment_agent', 'comment_approved', 'comment_author', 'comment_author_email', 'comment_author_IP', 'comment_author_url', 'comment_content', 'comment_date', 'comment_date_gmt', 'comment_ID', 'comment_karma', 'comment_parent', 'comment_post_ID', 'comment_type', 'user_id', 'comment__in', 'meta_value', 'meta_value_num', the value of $meta_key, and the array keys of `$meta_query`. Also accepts false, an empty array, or 'none' to disable `ORDER BY` clause.
+	 * Field(s) to order comments by. To use 'meta_value' or 'meta_value_num', `$meta_key` must also be defined. To sort by a specific `$meta_query` clause, use that clause's array key. Accepts:
+	 *
+	 *   - 'comment_agent'
+	 *   - 'comment_approved'
+	 *   - 'comment_author'
+	 *   - 'comment_author_email'
+	 *   - 'comment_author_IP'
+	 *   - 'comment_author_url'
+	 *   - 'comment_content'
+	 *   - 'comment_date'
+	 *   - 'comment_date_gmt'
+	 *   - 'comment_ID'
+	 *   - 'comment_karma'
+	 *   - 'comment_parent'
+	 *   - 'comment_post_ID'
+	 *   - 'comment_type'
+	 *   - 'user_id'
+	 *   - 'comment__in'
+	 *   - 'meta_value'
+	 *   - 'meta_value_num'
+	 *   - the value of `$meta_key`
+	 *   - and the array keys of `$meta_query`.
+	 *
+	 * Also accepts an empty array or 'none' to disable `ORDER BY` clause.
 	 *
 	 * Default: 'comment_date_gmt'.
 	 *
-	 * @var string|mixed[]
+	 * @var string|array<int,string>
 	 */
 	public $orderby;
 

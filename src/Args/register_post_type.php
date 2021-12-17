@@ -310,7 +310,7 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var mixed[]
+	 * @var array<int, array<int, string|array<string, mixed>>>
 	 */
 	public array $template;
 
