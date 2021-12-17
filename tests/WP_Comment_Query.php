@@ -24,7 +24,6 @@ $args->meta_compare = 'NOT IN';
 $args->meta_compare_key = 'LIKE';
 $args->meta_type = 'BINARY';
 $args->meta_type_key = '';
-$args->meta_query = [];
 
 $args->number = 25;
 $args->paged = 3;
