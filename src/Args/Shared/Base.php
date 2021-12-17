@@ -43,6 +43,8 @@ abstract class Base implements \ArrayAccess {
 			}
 		}
 
+		unset( $vars['map'] );
+
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
 
 		return $vars;
