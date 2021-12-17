@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
 
 final class ConversionToArrayTest extends TestCase {
 
+	use \FalseyAssertEqualsDetector\Test;
+
 	public function testBasicParamsAreCorrectlyConvertedToArray(): void {
 		$args = new \Args\WP_Query;
 

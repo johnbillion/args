@@ -45,6 +45,7 @@
 	},
 	"require-dev": {
 		"humanmade/coding-standards": "^1.1",
+		"johnbillion/falsey-assertequals-detector": "^3",
 		"phpdocumentor/reflection": "~4.0",
 		"phpstan/phpstan": "^1.0",
 		"phpstan/phpstan-phpunit": "^1.0",
