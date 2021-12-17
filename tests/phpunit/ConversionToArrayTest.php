@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Args\Tests;
 
+use Args\Shared\MetaQuery;
+use Args\Shared\MetaQueryClause;
+use Args\Shared\MetaQueryValues;
 use PHPUnit\Framework\TestCase;
 
 final class ConversionToArrayTest extends TestCase {
@@ -73,6 +76,51 @@ final class ConversionToArrayTest extends TestCase {
 		}
 
 		self::assertSame( $expected, $actual );
+	}
+
+	public function testIndexedMetaQueryIsCorrectlyConvertedToArray(): void {
+		$args = new \Args\WP_Query;
+
+		$clause1 = new MetaQueryClause;
+		$clause1->key = 'my_meta_key';
+		$clause1->value = 'my_meta_value';
+
+		$clause2 = new MetaQueryClause;
+		$clause2->value = '100';
+		$clause2->compare = MetaQueryValues::META_COMPARE_VALUE_GREATER_THAN;
+
+		$meta_query = new MetaQuery;
+		$meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
+		$meta_query->addClause( $clause1 );
+		$meta_query->addClause( $clause2 );
+
+		$args->attachment_id = 123;
+		$args->meta_query = $meta_query;
+
+		$expected = [
+			'meta_query' => [
+				'relation' => 'OR',
+				[
+					'key' => 'my_meta_key',
+					'value' => 'my_meta_value',
+				],
+				[
+					'value' => '100',
+					'compare' => '>',
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	public function testCombinedMetaQueryArgumentsAreCorrectlyConvertedToArray(): void {
+		self::markTestIncomplete();
+	}
+
+	public function testAssociativeMetaQueryIsCorrectlyConvertedToArray(): void {
+		self::markTestIncomplete();
 	}
 
 }

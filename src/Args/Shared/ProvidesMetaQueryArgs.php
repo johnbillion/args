@@ -55,7 +55,7 @@ trait ProvidesMetaQueryArgs {
 	public string $meta_type_key;
 
 	/**
-	 * A `Meta_Query` object representing the `WP_Meta_Query` arguments.
+	 * A `MetaQuery` object representing the `WP_Meta_Query` constructor argument.
 	 */
-	public Meta_Query $meta_query;
+	public MetaQuery $meta_query;
 }

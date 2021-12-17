@@ -66,7 +66,12 @@ $args->meta_compare = 'NOT IN';
 $args->meta_compare_key = 'LIKE';
 $args->meta_type = 'BINARY';
 $args->meta_type_key = '';
-$args->meta_query = [];
+
+$meta_query = new \Args\Shared\MetaQuery;
+$meta_query->clauses[] = new \Args\Shared\MetaQueryClause;
+
+$args->meta_query = $meta_query;
+$args->meta_query->relation = $args::META_QUERY_RELATION_AND;
 
 $args->menu_order = 0;
 $args->minute = 59;
