@@ -28,9 +28,9 @@ class register_post_status extends Shared\Base {
 	public bool $exclude_from_search;
 
 	/**
-	 * Whether the status is built-in. Core-use only. Default false.
+	 * FOR INTERNAL USE ONLY! Whether the status is built-in. Default false.
 	 */
-	public bool $_builtin;
+	protected bool $_builtin;
 
 	/**
 	 * Whether posts of this status should be shown in the front end of the site. Default false.

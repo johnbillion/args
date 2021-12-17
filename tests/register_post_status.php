@@ -7,7 +7,6 @@ $args = new \Args\register_post_status;
 $args->label = 'Redacted';
 $args->label_count = _n_noop( 'Redacted', 'Redacted' );
 $args->exclude_from_search = true;
-$args->_builtin = true;
 $args->public = true;
 $args->internal = true;
 $args->protected = true;

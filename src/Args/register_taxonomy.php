@@ -167,4 +167,8 @@ class register_taxonomy extends Shared\Base {
 	 */
 	public array $args;
 
+	/**
+	 * FOR INTERNAL USE ONLY! True if this taxonomy is a native or "built-in" post_type. Default false.
+	 */
+	protected bool $_builtin;
 }
