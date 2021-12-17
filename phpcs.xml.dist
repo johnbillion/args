@@ -12,6 +12,7 @@
 		<exclude name="HM.Files"/>
 		<exclude name="HM.Layout.Order"/>
 		<exclude name="HM.Namespaces.NoLeadingSlashOnUse.LeadingSlash"/>
+		<exclude name="HM.Performance.SlowMetaQuery"/>
 		<exclude name="HM.Security.EscapeOutput"/>
 		<exclude name="PEAR.NamingConventions"/>
 		<exclude name="PSR2R.Namespaces.UnusedUseStatement"/>
