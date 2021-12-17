@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Arguments for any query class that supports date queries.
  */
-trait Date_Query_Args {
+trait ProvidesDateQueryArgs {
 	/**
 	 * Date query clauses to limit results by. See WP_Date_Query.
 	 *

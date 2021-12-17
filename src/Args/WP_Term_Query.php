@@ -21,7 +21,7 @@ class WP_Term_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const FIELD_ID_NAME = 'id=>name';
 	const FIELD_ID_SLUG = 'id=>slug';
 
-	use Shared\Meta_Query_Args;
+	use Shared\ProvidesMetaQueryArgs;
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.

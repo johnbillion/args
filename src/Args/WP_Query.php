@@ -27,9 +27,9 @@ class WP_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
 	const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
 
-	use Shared\Date_Query_Args;
-	use Shared\Meta_Query_Args;
-	use Shared\Tax_Query_Args;
+	use Shared\ProvidesDateQueryArgs;
+	use Shared\ProvidesMetaQueryArgs;
+	use Shared\ProvidesTaxQueryArgs;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.

@@ -17,8 +17,8 @@ class WP_Comment_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const HIERARCHICAL_THREADED = 'threaded';
 	const HIERARCHICAL_FLAT = 'flat';
 
-	use Shared\Date_Query_Args;
-	use Shared\Meta_Query_Args;
+	use Shared\ProvidesDateQueryArgs;
+	use Shared\ProvidesMetaQueryArgs;
 
 	/**
 	 * Comment author email address.

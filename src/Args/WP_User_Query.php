@@ -28,7 +28,7 @@ class WP_User_Query extends Shared\Base implements Shared\Meta_Query_Values {
 	const WHO_ALL = '';
 	const WHO_AUTHORS = 'authors';
 
-	use Shared\Meta_Query_Args;
+	use Shared\ProvidesMetaQueryArgs;
 
 	/**
 	 * The site ID.

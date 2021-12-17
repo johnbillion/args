@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Arguments for any query class that supports meta queries.
  */
-trait Meta_Query_Args {
+trait ProvidesMetaQueryArgs {
 	/**
 	 * Meta key or keys to filter by.
 	 *
@@ -55,9 +55,7 @@ trait Meta_Query_Args {
 	public string $meta_type_key;
 
 	/**
-	 * An associative array of WP_Meta_Query arguments.
-	 *
-	 * @var mixed[]
+	 * A `Meta_Query` object representing the `WP_Meta_Query` arguments.
 	 */
-	public array $meta_query;
+	public Meta_Query $meta_query;
 }

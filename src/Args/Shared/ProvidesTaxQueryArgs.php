@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Arguments for any query class that supports taxonomy queries.
  */
-trait Tax_Query_Args {
+trait ProvidesTaxQueryArgs {
 	/**
 	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
 	 *
