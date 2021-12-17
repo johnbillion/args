@@ -11,19 +11,19 @@ namespace Args;
  */
 class register_post_status extends Shared\Base {
 	/**
-	 * A descriptive name for the post status marked for translation. Defaults to value of $post_status.
+	 * A descriptive name for the post status marked for translation. Defaults to value of `$post_status`.
 	 */
 	public string $label;
 
 	/**
-	 * Descriptive text to use for nooped plurals. Default array of $label, twice.
+	 * Descriptive text to use for nooped plurals. Default array of `$label`, twice.
 	 *
 	 * @var mixed[]
 	 */
 	public array $label_count;
 
 	/**
-	 * Whether to exclude posts with this post status from search results. Default is value of $internal.
+	 * Whether to exclude posts with this post status from search results. Default is value of `$internal`.
 	 */
 	public bool $exclude_from_search;
 

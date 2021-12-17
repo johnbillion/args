@@ -41,14 +41,14 @@ trait ProvidesMetaQueryArgs {
 	public string $meta_compare_key;
 
 	/**
-	 * MySQL data type that the meta_value column will be CAST to for comparisons.
+	 * MySQL data type that the `meta_value` column will be CAST to for comparisons.
 	 *
 	 * @phpstan-var self::META_TYPE_VALUE_*
 	 */
 	public string $meta_type;
 
 	/**
-	 * MySQL data type that the meta_key column will be CAST to for comparisons.
+	 * MySQL data type that the `meta_key` column will be CAST to for comparisons.
 	 *
 	 * @phpstan-var self::META_TYPE_KEY_*
 	 */
