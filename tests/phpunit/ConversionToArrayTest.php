@@ -98,6 +98,7 @@ final class ConversionToArrayTest extends TestCase {
 		$args->meta_query = $meta_query;
 
 		$expected = [
+			'attachment_id' => 123,
 			'meta_query' => [
 				'relation' => 'OR',
 				[

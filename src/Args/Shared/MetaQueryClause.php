@@ -7,8 +7,9 @@ namespace Args\Shared;
 /**
  * Arguments for a clause within a meta query, for example those within a `$meta_query` argument.
  */
-final class MetaQueryClause {
+final class MetaQueryClause implements Arrayable {
 	use ProvidesFromArray;
+	use ProvidesToArray;
 
 	/**
 	 * Meta key or keys to filter by.

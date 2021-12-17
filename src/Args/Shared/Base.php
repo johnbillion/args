@@ -8,36 +8,14 @@ namespace Args\Shared;
  * @implements \ArrayAccess<string, mixed>
  * @implements \IteratorAggregate<string, mixed>
  */
-abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate {
+abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arrayable {
 	const ORDER_ASC = 'ASC';
 	const ORDER_DESC = 'DESC';
 
 	use ProvidesFromArray;
-
-	/** @var array<string, string> */
-	protected array $map = [];
+	use ProvidesToArray;
 
 	final public function __construct() {}
-
-	/**
-	 * @return array<string, mixed>
-	 */
-	final public function toArray() : array {
-		$vars = get_object_vars( $this );
-
-		foreach ( $this->map as $from => $to ) {
-			if ( array_key_exists( $from, $vars ) ) {
-				$vars[ $to ] = $vars[ $from ];
-				unset( $vars[ $from ] );
-			}
-		}
-
-		unset( $vars['map'] );
-
-		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
-
-		return $vars;
-	}
 
 	/**
 	 * @param mixed $offset

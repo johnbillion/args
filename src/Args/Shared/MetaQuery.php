@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Structure for a `meta_query` argument.
  */
-final class MetaQuery {
+final class MetaQuery implements Arrayable {
 	/**
 	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
 	 *
@@ -47,4 +47,26 @@ final class MetaQuery {
 			$this->clauses[] = $clause;
 		}
 	}
+
+	/**
+	 * @return mixed[]
+	 */
+	final public function toArray() :? array {
+		if ( empty( $this->clauses ) ) {
+			return null;
+		}
+
+		$vars = [];
+
+		if ( isset( $this->relation ) ) {
+			$vars['relation'] = $this->relation;
+		}
+
+		foreach ( $this->clauses as $key => $value ) {
+			$vars[ $key ] = $value->toArray();
+		}
+
+		return $vars;
+	}
+
 }
