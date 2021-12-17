@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * @implements \ArrayAccess<mixed, mixed>
  */
-abstract class Base implements \ArrayAccess {
+abstract class Base implements \ArrayAccess, \Countable {
 	const ORDER_ASC = 'ASC';
 	const ORDER_DESC = 'DESC';
 
@@ -90,6 +90,10 @@ abstract class Base implements \ArrayAccess {
 	 */
 	final public function offsetUnset( $offset ) : void {
 		unset( $this->$offset );
+	}
+
+	final public function count() : int {
+		return count( $this->toArray() );
 	}
 
 }

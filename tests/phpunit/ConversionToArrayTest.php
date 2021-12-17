@@ -45,5 +45,15 @@ final class ConversionToArrayTest extends TestCase {
 
 		self::assertSame( $expected, $actual );
 	}
+	public function testCountingArrayElementsWorksAsExpected(): void {
+		$args = new \Args\WP_Query;
+
+		self::assertCount( 0, $args );
+
+		$args->attachment_id = 123;
+		$args->hello = 'world';
+
+		self::assertCount( 2, $args );
+	}
 
 }
