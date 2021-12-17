@@ -22,7 +22,7 @@ class WP_Http extends Shared\Base {
 	const METHOD_PATCH = 'PATCH';
 
 	/** @var array<string, string> */
-	protected $map = [
+	protected array $map = [
 		'user_agent' => 'user-agent',
 	];
 

@@ -13,7 +13,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate {
 	const ORDER_DESC = 'DESC';
 
 	/** @var array<string, string> */
-	protected $map = [];
+	protected array $map = [];
 
 	final public function __construct() {}
 
