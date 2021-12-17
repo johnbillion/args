@@ -8,6 +8,8 @@ namespace Args\Shared;
  * Arguments for a clause within a meta query, for example those within a `$meta_query` argument.
  */
 final class MetaQueryClause {
+	use ProvidesFromArray;
+
 	/**
 	 * Meta key or keys to filter by.
 	 *
@@ -53,19 +55,5 @@ final class MetaQueryClause {
 	 * @phpstan-var MetaQueryValues::META_TYPE_KEY_*
 	 */
 	public string $type_key;
-
-	/**
-	 * @param mixed[] $clause
-	 * @return static
-	 */
-	final public static function fromArray( array $clause ) : self {
-		$class = new static();
-
-		foreach ( $clause as $key => $value ) {
-			$class->$key = $value;
-		}
-
-		return $class;
-	}
 
 }

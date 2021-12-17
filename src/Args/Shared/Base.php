@@ -12,24 +12,12 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate {
 	const ORDER_ASC = 'ASC';
 	const ORDER_DESC = 'DESC';
 
+	use ProvidesFromArray;
+
 	/** @var array<string, string> */
 	protected array $map = [];
 
 	final public function __construct() {}
-
-	/**
-	 * @param array<string, mixed> $args
-	 * @return static
-	 */
-	final public static function fromArray( array $args ) : self {
-		$class = new static();
-
-		foreach ( $args as $key => $value ) {
-			$class->$key = $value;
-		}
-
-		return $class;
-	}
 
 	/**
 	 * @return array<string, mixed>
