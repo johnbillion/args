@@ -143,7 +143,7 @@ $desc = array_map( function( string $string ) : array {
 
 $desc = array_map( function( array $item ) : string {
 	$description = preg_replace( '#\n\s+#', ' ', (string) $item[2] );
-	$visibility = $item[0];
+	$type = $item[0];
 	$name = $item[1];
 
 	return sprintf(
@@ -154,7 +154,7 @@ $desc = array_map( function( array $item ) : string {
 	public %2$s %3$s;
 BLOCK,
 		$description,
-		$visibility,
+		$type,
 		$name
 	);
 }, $desc );
