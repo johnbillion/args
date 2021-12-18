@@ -67,7 +67,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 		return count( $this->toArray() );
 	}
 
-	public function getIterator() : \Traversable {
+	final public function getIterator() : \Traversable {
 		return new \ArrayIterator( $this->toArray() );
 	}
 }
