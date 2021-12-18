@@ -50,7 +50,7 @@
 		"phpstan/phpstan": "^1.0",
 		"phpstan/phpstan-phpunit": "^1.0",
 		"phpunit/phpunit": "^9.0",
-		"roots/wordpress": "^5.7.0"
+		"roots/wordpress": "^5.8.0"
 	},
 	"funding": [
 		{

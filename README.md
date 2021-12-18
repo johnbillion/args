@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current Status
 
-Beta. This library was last updated for WordPress 5.7.
+Beta. This library was last updated for WordPress 5.8.
 
 ## Requirements
 
