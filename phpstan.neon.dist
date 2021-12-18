@@ -7,9 +7,6 @@ parameters:
   paths:
     - src
     - tests
-  scanDirectories:
-    - src
-    - tests
   bootstrapFiles:
     - tests/stubs.php
   ignoreErrors:
