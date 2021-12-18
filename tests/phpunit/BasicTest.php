@@ -9,7 +9,7 @@ use Args\Shared\MetaQueryClause;
 use Args\Shared\MetaQueryValues;
 use PHPUnit\Framework\TestCase;
 
-final class ConversionToArrayTest extends TestCase {
+final class BasicTest extends TestCase {
 
 	use \FalseyAssertEqualsDetector\Test;
 
@@ -48,6 +48,7 @@ final class ConversionToArrayTest extends TestCase {
 
 		self::assertSame( $expected, $actual );
 	}
+
 	public function testCountingArrayElementsWorksAsExpected(): void {
 		$args = new \Args\WP_Query;
 
