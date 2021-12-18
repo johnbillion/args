@@ -132,7 +132,7 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	 *
 	 * Default 'ASC'.
 	 *
-	 * @phpstan-var self::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*
 	 */
 	public string $order;
 

@@ -167,7 +167,7 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	 *
 	 * Default: 'DESC'.
 	 *
-	 * @phpstan-var self::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*
 	 */
 	public string $order;
 

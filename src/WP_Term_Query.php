@@ -60,7 +60,7 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	/**
 	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending). Default 'ASC'.
 	 *
-	 * @phpstan-var self::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*
 	 */
 	public string $order;
 

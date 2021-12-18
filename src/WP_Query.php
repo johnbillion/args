@@ -208,7 +208,7 @@ class WP_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	/**
 	 * Designates ascending or descending order of posts. Default 'DESC'. Accepts 'ASC', 'DESC'.
 	 *
-	 * @phpstan-var self::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*
 	 */
 	public string $order;
 
