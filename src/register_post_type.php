@@ -259,7 +259,7 @@ class register_post_type extends Shared\Base {
 	/**
 	 * Triggers the handling of rewrites for this post type.
 	 *
-	 * To prevent rewrite, set to false. Defaults to true, using $post_type as slug. To specify rewrite rules,
+	 * To prevent rewrite, set to false. Defaults to true, using `$post_type` as slug. To specify rewrite rules,
 	 * an array can be passed.
 	 *
 	 * @var bool|array<string,mixed>
@@ -278,8 +278,8 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Defaults to `$post_type` key.
 	 *
-	 *   - If false, a post type cannot be loaded at ?{query_var}={post_slug}.
-	 *   - If specified as a string, the query ?{query_var_string}={post_slug} will be valid.
+	 *   - If false, a post type cannot be loaded at `?{query_var}={post_slug}`.
+	 *   - If specified as a string, the query `?{query_var_string}={post_slug}` will be valid.
 	 *
 	 * @var string|bool
 	 */

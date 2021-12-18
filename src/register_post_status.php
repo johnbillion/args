@@ -53,17 +53,17 @@ class register_post_status extends Shared\Base {
 	public bool $private;
 
 	/**
-	 * Whether posts with this status should be publicly- queryable. Default is value of $public.
+	 * Whether posts with this status should be publicly- queryable. Default is value of `$public`.
 	 */
 	public bool $publicly_queryable;
 
 	/**
-	 * Whether to include posts in the edit listing for their post type. Default is the opposite value of $internal.
+	 * Whether to include posts in the edit listing for their post type. Default is the opposite value of `$internal`.
 	 */
 	public bool $show_in_admin_all_list;
 
 	/**
-	 * Show in the list of statuses with post counts at the top of the edit listings, e.g. All (12) | Published (9) | My Custom Status (2) Default is the opposite value of $internal.
+	 * Show in the list of statuses with post counts at the top of the edit listings, e.g. All (12) | Published (9) | My Custom Status (2) Default is the opposite value of `$internal`.
 	 */
 	public bool $show_in_admin_status_list;
 

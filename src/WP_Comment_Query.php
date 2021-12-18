@@ -329,7 +329,13 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public int $user_id;
 
 	/**
-	 * Whether to include comment descendants in the results. - 'threaded' returns a tree, with each comment's children stored in a `children` property on the `WP_Comment` object. - 'flat' returns a flat array of found comments plus their children. - Boolean `false` leaves out descendants. The parameter is ignored (forced to `false`) when `$fields` is 'ids' or 'counts'. Accepts 'threaded', 'flat', or false.
+	 * Whether to include comment descendants in the results.
+	 *
+	 *   - 'threaded' returns a tree, with each comment's children stored in a `children` property on the `WP_Comment` object.
+	 *   - 'flat' returns a flat array of found comments plus their children.
+	 *   - Boolean `false` leaves out descendants.
+	 *
+	 * The parameter is ignored (forced to `false`) when `$fields` is 'ids' or 'counts'.
 	 *
 	 * Default: false.
 	 *
