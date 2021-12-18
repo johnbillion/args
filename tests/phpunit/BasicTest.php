@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Args\Tests;
 
-use Args\Shared\MetaQuery;
-use Args\Shared\MetaQueryClause;
-use Args\Shared\MetaQueryValues;
 use PHPUnit\Framework\TestCase;
 
 final class BasicTest extends TestCase {
