@@ -58,4 +58,8 @@ trait ProvidesMetaQueryArgs {
 	 * A `MetaQuery` object representing the `WP_Meta_Query` constructor argument.
 	 */
 	public MetaQuery $meta_query;
+
+	public function setMetaQuery( MetaQuery $meta_query ) : void {
+		$this->meta_query = $meta_query;
+	}
 }

@@ -7,7 +7,7 @@ namespace Args\Shared;
 /**
  * Structure for a `meta_query` argument.
  */
-final class MetaQuery implements Arrayable {
+final class MetaQuery implements Arrayable, MetaQueryValues {
 	/**
 	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
 	 *

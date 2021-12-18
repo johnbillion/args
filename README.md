@@ -59,9 +59,6 @@ Creating a `meta_query` argument:
 ```php
 $args = new \Args\WP_Query;
 
-// Instantiate the meta query
-$args->meta_query = new \Args\Shared\MetaQuery;
-
 // Create a clause
 $clause = new \Args\Shared\MetaQueryClause;
 $clause->key = 'my_meta_key';

@@ -15,7 +15,11 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	use ProvidesFromArray;
 	use ProvidesToArray;
 
-	final public function __construct() {}
+	final public function __construct() {
+		if ( $this instanceof WithMetaQueryArgs ) {
+			$this->setMetaQuery( new MetaQuery );
+		}
+	}
 
 	/**
 	 * @param mixed $offset

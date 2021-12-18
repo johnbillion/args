@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
  */
-class WP_Query extends Shared\Base {
+class WP_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 

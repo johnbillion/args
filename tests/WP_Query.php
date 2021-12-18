@@ -67,11 +67,15 @@ $args->meta_compare_key = 'LIKE';
 $args->meta_type = 'BINARY';
 $args->meta_type_key = '';
 
-$meta_query = new \Args\Shared\MetaQuery;
-$meta_query->clauses[] = new \Args\Shared\MetaQueryClause;
+$clause1 = new \Args\Shared\MetaQueryClause;
+$clause1->key = 'foo';
 
-$args->meta_query = $meta_query;
-$args->meta_query->relation = \Args\Shared\MetaQueryValues::META_QUERY_RELATION_AND;
+$clause2 = new \Args\Shared\MetaQueryClause;
+$clause2->key = 'bar';
+
+$args->meta_query->clauses['one'] = $clause1;
+$args->meta_query->addClause( $clause2 );
+$args->meta_query->relation = $args->meta_query::META_QUERY_RELATION_AND;
 
 $args->menu_order = 0;
 $args->minute = 59;

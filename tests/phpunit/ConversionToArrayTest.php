@@ -89,13 +89,11 @@ final class ConversionToArrayTest extends TestCase {
 		$clause2->value = '100';
 		$clause2->compare = MetaQueryValues::META_COMPARE_VALUE_GREATER_THAN;
 
-		$meta_query = new MetaQuery;
-		$meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
-		$meta_query->addClause( $clause1 );
-		$meta_query->addClause( $clause2 );
+		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
+		$args->meta_query->addClause( $clause1 );
+		$args->meta_query->addClause( $clause2 );
 
 		$args->attachment_id = 123;
-		$args->meta_query = $meta_query;
 
 		$expected = [
 			'attachment_id' => 123,
@@ -124,4 +122,17 @@ final class ConversionToArrayTest extends TestCase {
 		self::markTestIncomplete();
 	}
 
+	public function testMetaQueryWithOnlyItsRelationIsNotIncludedInArray(): void {
+		$args = new \Args\WP_Query;
+
+		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
+		$args->attachment_id = 123;
+
+		$expected = [
+			'attachment_id' => 123,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
 }
