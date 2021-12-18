@@ -37,6 +37,8 @@ trait ProvidesToArray {
 
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
 
+		ksort( $vars );
+
 		return $vars;
 	}
 

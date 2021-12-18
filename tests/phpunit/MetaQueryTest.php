@@ -20,8 +20,17 @@ final class MetaQueryTest extends TestCase {
 	 */
 	public function dataWithMetaQueryArgs() : array {
 		return [
+			'WP_Comment_Query' => [
+				\Args\WP_Comment_Query::class,
+			],
 			'WP_Query' => [
 				\Args\WP_Query::class,
+			],
+			'WP_Term_Query' => [
+				\Args\WP_Term_Query::class,
+			],
+			'WP_User_Query' => [
+				\Args\WP_User_Query::class,
 			],
 		];
 	}
@@ -56,8 +65,8 @@ final class MetaQueryTest extends TestCase {
 					'value' => 'my_meta_value',
 				],
 				'clause2' => [
-					'value' => '100',
 					'compare' => '>',
+					'value' => '100',
 				],
 			],
 		];
@@ -80,8 +89,8 @@ final class MetaQueryTest extends TestCase {
 				'value' => 'my_meta_value',
 			],
 			[
-				'value' => '100',
 				'compare' => '>',
+				'value' => '100',
 			],
 		];
 		$args->meta_query = MetaQuery::fromArray( $meta_query );
