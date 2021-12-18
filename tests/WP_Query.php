@@ -121,7 +121,10 @@ $args->tag_id = 123;
 $args->tag_slug__and = [ 'hello' ];
 $args->tag_slug__in = [ 'hello' ];
 
-$args->tax_query = [];
+$clause1 = new \Args\Shared\TaxQueryClause;
+$clause1->taxonomy = 'foo';
+
+$args->tax_query->addClause( $clause1 );
 
 $args->title = '';
 $args->update_post_meta_cache = true;

@@ -9,9 +9,11 @@ namespace Args\Shared;
  */
 trait ProvidesTaxQueryArgs {
 	/**
-	 * Array of associative arrays of WP_Tax_Query arguments. See WP_Tax_Query->__construct().
-	 *
-	 * @var mixed[]
+	 * A `TaxQuery` object representing the `WP_Tax_Query` constructor argument.
 	 */
-	public array $tax_query;
+	public TaxQuery $tax_query;
+
+	public function setTaxQuery( TaxQuery $tax_query ) : void {
+		$this->tax_query = $tax_query;
+	}
 }

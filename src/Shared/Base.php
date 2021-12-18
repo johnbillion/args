@@ -19,6 +19,9 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 		if ( $this instanceof WithMetaQueryArgs ) {
 			$this->setMetaQuery( new MetaQuery );
 		}
+		if ( $this instanceof WithTaxQueryArgs ) {
+			$this->setTaxQuery( new TaxQuery );
+		}
 	}
 
 	/**
