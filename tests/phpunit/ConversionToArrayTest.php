@@ -78,7 +78,7 @@ final class ConversionToArrayTest extends TestCase {
 		self::assertSame( $expected, $actual );
 	}
 
-	public function testIndexedMetaQueryIsCorrectlyConvertedToArray(): void {
+	public function testMetaQueryIsCorrectlyConvertedToArray(): void {
 		$args = new \Args\WP_Query;
 
 		$clause1 = new MetaQueryClause;
@@ -91,7 +91,7 @@ final class ConversionToArrayTest extends TestCase {
 
 		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
 		$args->meta_query->addClause( $clause1 );
-		$args->meta_query->addClause( $clause2 );
+		$args->meta_query->addClause( $clause2, 'clause2' );
 
 		$args->attachment_id = 123;
 
@@ -103,7 +103,7 @@ final class ConversionToArrayTest extends TestCase {
 					'key' => 'my_meta_key',
 					'value' => 'my_meta_value',
 				],
-				[
+				'clause2' => [
 					'value' => '100',
 					'compare' => '>',
 				],
@@ -115,11 +115,29 @@ final class ConversionToArrayTest extends TestCase {
 	}
 
 	public function testCombinedMetaQueryArgumentsAreCorrectlyConvertedToArray(): void {
-		self::markTestIncomplete();
-	}
+		$args = new \Args\WP_Query;
 
-	public function testAssociativeMetaQueryIsCorrectlyConvertedToArray(): void {
-		self::markTestIncomplete();
+		$meta_query = [
+			'relation' => 'OR',
+			[
+				'key' => 'my_meta_key',
+				'value' => 'my_meta_value',
+			],
+			[
+				'value' => '100',
+				'compare' => '>',
+			],
+		];
+		$args->meta_query = MetaQuery::fromArray( $meta_query );
+		$args->attachment_id = 123;
+
+		$expected = [
+			'attachment_id' => 123,
+			'meta_query' => $meta_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
 	}
 
 	public function testMetaQueryWithOnlyItsRelationIsNotIncludedInArray(): void {
