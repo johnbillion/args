@@ -20,14 +20,18 @@ class wp_die extends Shared\Base {
 	/**
 	 * A URL to include a link to.
 	 *
-	 * Only works in combination with `$link_text`. Default empty string.
+	 * Only works in combination with `$link_text`.
+	 *
+	 * Default empty string.
 	 */
 	public string $link_url;
 
 	/**
 	 * A label for the link to include.
 	 *
-	 * Only works in combination with `$link_url`. Default empty string.
+	 * Only works in combination with `$link_url`.
+	 *
+	 * Default empty string.
 	 */
 	public string $link_text;
 
@@ -41,7 +45,9 @@ class wp_die extends Shared\Base {
 	/**
 	 * The text direction.
 	 *
-	 * This is only useful internally, when WordPress is still loading and the site's locale is not set up yet. Accepts 'rtl' and 'ltr'. Default is the value of is_rtl().
+	 * This is only useful internally, when WordPress is still loading and the site's locale is not set up yet. Accepts 'rtl' and 'ltr'.
+	 *
+	 * Default is the value of is_rtl().
 	 *
 	 * @phpstan-var 'rtl'|'ltr'
 	 */

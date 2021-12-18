@@ -9,7 +9,9 @@ namespace Args\Shared;
  */
 final class MetaQuery implements Arrayable, MetaQueryValues {
 	/**
-	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
+	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'.
+	 *
+	 * Default 'AND'.
 	 *
 	 * @phpstan-var MetaQueryValues::META_QUERY_RELATION_*
 	 */

@@ -40,7 +40,9 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * the column specified in the top-level `$column` parameter.
 	 * See WP_Date_Query::validate_column() and
 	 * the {@see 'date_query_valid_columns'} filter for the list
-	 * of accepted values. Default is the value of top-level `$column`.
+	 * of accepted values.
+	 *
+	 * Default is the value of top-level `$column`.
 	 */
 	public string $column;
 
@@ -48,7 +50,9 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * The comparison operator. Accepts '=', '!=', '>', '>=',
 	 * '<', '<=', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN'. 'IN',
 	 * 'NOT IN', 'BETWEEN', and 'NOT BETWEEN'. Comparisons support
-	 * arrays in some time-related parameters. Default '='.
+	 * arrays in some time-related parameters.
+	 *
+	 * Default '='.
 	 *
 	 * @phpstan-var DateQueryValues::DATE_QUERY_COMPARE_*
 	 */

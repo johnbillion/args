@@ -265,7 +265,9 @@ class register_post_type extends Shared\Base {
 	/**
 	 * Triggers the handling of rewrites for this post type.
 	 *
-	 * To prevent rewrite, set to false. Defaults to true, using `$post_type` as slug. To specify rewrite rules,
+	 * To prevent rewrite, set to false.
+	 *
+	 * Defaults to true, using `$post_type` as slug. To specify rewrite rules,
 	 * an array can be passed.
 	 *
 	 * @var bool|array<string,mixed>
@@ -334,12 +336,16 @@ class register_post_type extends Shared\Base {
 	public $template_lock;
 
 	/**
-	 * FOR INTERNAL USE ONLY! True if this post type is a native or "built-in" post_type. Default false.
+	 * FOR INTERNAL USE ONLY! True if this post type is a native or "built-in" post_type.
+	 *
+	 * Default false.
 	 */
 	protected bool $_builtin;
 
 	/**
-	 * FOR INTERNAL USE ONLY! URL segment to use for edit link of this post type. Default 'post.php?post=%d'.
+	 * FOR INTERNAL USE ONLY! URL segment to use for edit link of this post type.
+	 *
+	 * Default 'post.php?post=%d'.
 	 */
 	protected string $_edit_link;
 }

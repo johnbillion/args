@@ -19,7 +19,7 @@ final class TaxQueryClause implements Arrayable, TaxQueryValues {
 	/**
 	 * Term or terms to filter by.
 	 *
-	 * @var mixed
+	 * @var string|int|array<int,string>|array<int,int>
 	 */
 	public $terms;
 

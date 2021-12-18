@@ -11,7 +11,9 @@ namespace Args;
  */
 class register_post_status extends Shared\Base {
 	/**
-	 * A descriptive name for the post status marked for translation. Defaults to value of `$post_status`.
+	 * A descriptive name for the post status marked for translation.
+	 *
+	 * Defaults to value of `$post_status`.
 	 */
 	public string $label;
 

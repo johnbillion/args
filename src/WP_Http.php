@@ -54,7 +54,9 @@ class WP_Http extends Shared\Base {
 	/**
 	 * Version of the HTTP protocol to use.
 	 *
-	 * Accepts '1.0' and '1.1'. Default '1.0'.
+	 * Accepts '1.0' and '1.1'.
+	 *
+	 * Default '1.0'.
 	 */
 	public string $httpversion;
 

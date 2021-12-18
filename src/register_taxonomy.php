@@ -11,14 +11,18 @@ namespace Args;
  */
 class register_taxonomy extends Shared\Base {
 	/**
-	 * An array of labels for this taxonomy. By default, Tag labels are used for non-hierarchical taxonomies, and Category labels are used for hierarchical taxonomies. See accepted values in `get_taxonomy_labels()`. Default empty array.
+	 * An array of labels for this taxonomy. By default, Tag labels are used for non-hierarchical taxonomies, and Category labels are used for hierarchical taxonomies. See accepted values in `get_taxonomy_labels()`.
+	 *
+	 * Default empty array.
 	 *
 	 * @var array<string,string>
 	 */
 	public array $labels;
 
 	/**
-	 * A short descriptive summary of what the taxonomy is for. Default empty.
+	 * A short descriptive summary of what the taxonomy is for.
+	 *
+	 * Default empty.
 	 */
 	public string $description;
 
@@ -33,7 +37,9 @@ class register_taxonomy extends Shared\Base {
 	public bool $publicly_queryable;
 
 	/**
-	 * Whether the taxonomy is hierarchical. Default false.
+	 * Whether the taxonomy is hierarchical.
+	 *
+	 * Default false.
 	 */
 	public bool $hierarchical;
 
@@ -58,12 +64,16 @@ class register_taxonomy extends Shared\Base {
 	public bool $show_in_rest;
 
 	/**
-	 * To change the base url of REST API route. Default is `$taxonomy`.
+	 * To change the base url of REST API route.
+	 *
+	 * Default is `$taxonomy`.
 	 */
 	public string $rest_base;
 
 	/**
-	 * REST API Controller class name. Default is 'WP_REST_Terms_Controller'.
+	 * REST API Controller class name.
+	 *
+	 * Default is 'WP_REST_Terms_Controller'.
 	 *
 	 * @phpstan-var class-string<\WP_REST_Controller>
 	 */
@@ -80,7 +90,9 @@ class register_taxonomy extends Shared\Base {
 	public bool $show_in_quick_edit;
 
 	/**
-	 * Whether to display a column for the taxonomy on its post type listing screens. Default false.
+	 * Whether to display a column for the taxonomy on its post type listing screens.
+	 *
+	 * Default false.
 	 */
 	public bool $show_admin_column;
 
@@ -114,7 +126,9 @@ class register_taxonomy extends Shared\Base {
 	public array $capabilities;
 
 	/**
-	 * Triggers the handling of rewrites for this taxonomy. Default true, using `$taxonomy` as slug.
+	 * Triggers the handling of rewrites for this taxonomy.
+	 *
+	 * Default true, using `$taxonomy` as slug.
 	 *
 	 * To prevent rewrite, set to false. To specify rewrite rules, an array can be passed with any of these keys:
 	 *
@@ -129,14 +143,18 @@ class register_taxonomy extends Shared\Base {
 	public $rewrite;
 
 	/**
-	 * Sets the query var key for this taxonomy. Default `$taxonomy` key. If false, a taxonomy cannot be loaded at `?{query_var}={term_slug}`. If a string, the query `?{query_var}={term_slug}` will be valid.
+	 * Sets the query var key for this taxonomy.
+	 *
+	 * Default `$taxonomy` key. If false, a taxonomy cannot be loaded at `?{query_var}={term_slug}`. If a string, the query `?{query_var}={term_slug}` will be valid.
 	 *
 	 * @var string|bool
 	 */
 	public $query_var;
 
 	/**
-	 * Works much like a hook, in that it will be called when the count is updated. Default `_update_post_term_count()` for taxonomies attached to post types, which confirms that the objects are published before counting them.
+	 * Works much like a hook, in that it will be called when the count is updated.
+	 *
+	 * Default `_update_post_term_count()` for taxonomies attached to post types, which confirms that the objects are published before counting them.
 	 *
 	 * Default `_update_generic_term_count()` for taxonomies attached to other object types, such as users.
 	 *
@@ -172,7 +190,9 @@ class register_taxonomy extends Shared\Base {
 	public array $args;
 
 	/**
-	 * FOR INTERNAL USE ONLY! True if this taxonomy is a native or "built-in" post_type. Default false.
+	 * FOR INTERNAL USE ONLY! True if this taxonomy is a native or "built-in" post_type.
+	 *
+	 * Default false.
 	 */
 	protected bool $_builtin;
 }

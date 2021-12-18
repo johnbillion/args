@@ -181,7 +181,8 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	 *
 	 * Default 'all'.
 	 *
-	 * @var (self::FIELD_*|'all'|'all_with_meta')|array<int,(self::FIELD_*)>
+	 * @var string|array<int, string>
+	 * @phpstan-var (self::FIELD_*|'all'|'all_with_meta')|array<int,(self::FIELD_*)>
 	 */
 	public $fields;
 

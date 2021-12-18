@@ -29,7 +29,9 @@ final class DateQuery implements Arrayable, DateQueryValues {
 	public string $compare;
 
 	/**
-	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
+	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'.
+	 *
+	 * Default 'AND'.
 	 *
 	 * @phpstan-var DateQueryValues::DATE_QUERY_RELATION_*
 	 */
