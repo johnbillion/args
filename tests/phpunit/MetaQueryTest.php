@@ -9,12 +9,29 @@ use Args\Shared\MetaQueryClause;
 use Args\Shared\MetaQueryValues;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @phpstan-type WithMeta class-string<\Args\Shared\WithMetaQueryArgs&\Args\Shared\Base>
+ */
 final class MetaQueryTest extends TestCase {
-
 	use \FalseyAssertEqualsDetector\Test;
 
-	public function testMetaQueryIsCorrectlyConvertedToArray(): void {
-		$args = new \Args\WP_Query;
+	/**
+	 * @return array<string, array<int, WithMeta>>
+	 */
+	public function dataWithMetaQueryArgs() : array {
+		return [
+			'WP_Query' => [
+				\Args\WP_Query::class,
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
+	public function testMetaQueryIsCorrectlyConvertedToArray( string $class ): void {
+		$args = new $class;
 
 		$clause1 = new MetaQueryClause;
 		$clause1->key = 'my_meta_key';
@@ -49,8 +66,12 @@ final class MetaQueryTest extends TestCase {
 		self::assertSame( $expected, $actual );
 	}
 
-	public function testMetaQueryIsCorrectlyConvertedFromArray(): void {
-		$args = new \Args\WP_Query;
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
+	public function testMetaQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
 
 		$meta_query = [
 			'relation' => 'OR',
@@ -75,8 +96,12 @@ final class MetaQueryTest extends TestCase {
 		self::assertSame( $expected, $actual );
 	}
 
-	public function testMetaQueryWithOnlyItsRelationIsNotIncludedInArray(): void {
-		$args = new \Args\WP_Query;
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
+	public function testMetaQueryWithOnlyItsRelationIsNotIncludedInArray( string $class ): void {
+		$args = new $class;
 
 		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
 		$args->attachment_id = 123;
@@ -88,5 +113,4 @@ final class MetaQueryTest extends TestCase {
 
 		self::assertSame( $expected, $actual );
 	}
-
 }
