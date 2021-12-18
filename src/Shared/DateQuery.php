@@ -23,6 +23,8 @@ final class DateQuery implements Arrayable, DateQueryValues {
 	 * Accepts '=', '!=', '>', '>=', '<', '<=', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN'.
 	 *
 	 * Default '='.
+	 *
+	 * @phpstan-var DateQueryValues::DATE_QUERY_COMPARE_*
 	 */
 	public string $compare;
 

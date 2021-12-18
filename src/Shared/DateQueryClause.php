@@ -49,6 +49,8 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * '<', '<=', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN'. 'IN',
 	 * 'NOT IN', 'BETWEEN', and 'NOT BETWEEN'. Comparisons support
 	 * arrays in some time-related parameters. Default '='.
+	 *
+	 * @phpstan-var DateQueryValues::DATE_QUERY_COMPARE_*
 	 */
 	public string $compare;
 
@@ -76,6 +78,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,12>|array<int, int<1,12>>
 	 */
 	public $month;
 
@@ -86,6 +89,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<0,53>|array<int, int<0,53>>
 	 */
 	public $week;
 
@@ -96,6 +100,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,366>|array<int, int<1,366>>
 	 */
 	public $dayofyear;
 
@@ -106,6 +111,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,31>|array<int, int<1,31>>
 	 */
 	public $day;
 
@@ -116,6 +122,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,7>|array<int, int<1,7>>
 	 */
 	public $dayofweek;
 
@@ -126,6 +133,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,7>|array<int, int<1,7>>
 	 */
 	public $dayofweek_iso;
 
@@ -136,6 +144,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<1,23>|array<int, int<1,23>>
 	 */
 	public $hour;
 
@@ -146,6 +155,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<0,59>|array<int, int<0,59>>
 	 */
 	public $minute;
 
@@ -156,6 +166,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 * Default empty.
 	 *
 	 * @var int|int[]
+	 * @phpstan-var int<0,59>|array<int, int<0,59>>
 	 */
 	public $second;
 

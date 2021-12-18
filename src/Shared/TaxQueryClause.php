@@ -32,6 +32,8 @@ final class TaxQueryClause implements Arrayable, TaxQueryValues {
 	 *   - 'term_taxonomy_id'
 	 *
 	 * Default: 'term_id'.
+	 *
+	 * @phpstan-var 'term_id'|'slug'|'name'|'term_taxonomy_id'
 	 */
 	public string $field;
 
@@ -47,6 +49,8 @@ final class TaxQueryClause implements Arrayable, TaxQueryValues {
 	 *   - 'NOT EXISTS'
 	 *
 	 * Default: 'IN'.
+	 *
+	 * @phpstan-var TaxQueryValues::TAX_QUERY_OPERATOR_*
 	 */
 	public string $operator;
 
