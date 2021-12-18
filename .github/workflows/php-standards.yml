@@ -12,16 +12,16 @@ jobs:
   build:
     strategy:
       matrix:
-        php: ['7.4', '8.0', '8.1']
+        php: ['7.4', '8.0', '8.1', '8.2']
       fail-fast: false
     name: PHP Coding Standards
     runs-on: ubuntu-18.04
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
 
     - name: Install PHP
-      uses: shivammathur/setup-php@2.7.0
+      uses: shivammathur/setup-php@2.16.0
       with:
         php-version: ${{ matrix.php }}
         coverage: none
