@@ -28,7 +28,9 @@ $args->httpversion = '1.1';
 $args->user_agent = 'Args';
 $args->reject_unsafe_urls = true;
 $args->blocking = false;
-$args->headers = '';
+$args->headers = [
+	'Foo: Bar',
+];
 $args->cookies = [];
 $args->body = 'Hello';
 $args->compress = true;

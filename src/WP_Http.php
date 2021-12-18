@@ -82,13 +82,13 @@ class WP_Http extends Shared\Base {
 	public bool $blocking;
 
 	/**
-	 * Array or string of headers to send with the request.
+	 * Array of headers to send with the request.
 	 *
 	 * Default empty array.
 	 *
-	 * @var string|array<int,string>
+	 * @var array<int,string>
 	 */
-	public $headers;
+	public array $headers;
 
 	/**
 	 * List of cookies to send with the request.
