@@ -7,6 +7,7 @@ parameters:
   paths:
     - src
     - tests
+    - generate.php
   bootstrapFiles:
     - tests/stubs.php
   ignoreErrors:
