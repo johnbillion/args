@@ -12,3 +12,7 @@ parameters:
     - tests
   bootstrapFiles:
     - tests/stubs.php
+  ignoreErrors:
+    -
+      message: '#^Access to an undefined property Args\\#'
+      path: tests/phpunit/ConversionToArrayTest.php
