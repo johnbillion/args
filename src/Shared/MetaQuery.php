@@ -11,7 +11,7 @@ final class MetaQuery implements Arrayable, MetaQueryValues {
 	/**
 	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'. Default 'AND'.
 	 *
-	 * @phpstan-var MetaQueryValues::META_QUERY_RELATION_*
+	 * @phpstan-var self::META_QUERY_RELATION_*
 	 */
 	public string $relation;
 
