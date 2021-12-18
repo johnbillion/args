@@ -109,7 +109,7 @@ final class MetaQueryTest extends TestCase {
 	 * @dataProvider dataWithMetaQueryArgs
 	 * @param WithMeta $class
 	 */
-	public function testMetaQueryWithOnlyItsRelationIsNotIncludedInArray( string $class ): void {
+	public function testMetaQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
 		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;

@@ -37,16 +37,9 @@ $args->comment_status = $args::COMMENT_STATUS_OPEN;
 $args->comment_status = $args::COMMENT_STATUS_CLOSED;
 
 $args->comments_per_page = 10;
-$args->date_query = [
-	'column' => 'foo',
-	'relation' => 'foo',
-	0 => [
-		'before' => 'foo',
-		'after' => 'foo',
-		'column' => '123',
-		'what' => 'foo',
-	],
-];
+$args->date_query->column = 'foo';
+$args->date_query->relation = 'OR';
+
 $args->day = 25;
 $args->exact = false;
 

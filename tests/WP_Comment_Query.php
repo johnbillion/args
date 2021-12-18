@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Args\Shared\DateQueryClause;
+
 $args = new \Args\WP_Comment_Query;
 
 $args->author_email = 'foo@example.org';
@@ -11,7 +13,12 @@ $args->author__not_in = [ 456 ];
 $args->comment__in = [ 123 ];
 $args->comment__not_in = [ 234 ];
 $args->count = true;
-$args->date_query = [];
+
+$args->date_query->relation = 'AND';
+$args->date_query->clauses[] = DateQueryClause::fromArray( [
+	'year' => date( 'Y' ),
+] );
+
 $args->fields = 'ids';
 $args->include_unapproved = [ 123, 'user@example.com' ];
 $args->karma = 5;

@@ -9,9 +9,11 @@ namespace Args\Shared;
  */
 trait ProvidesDateQueryArgs {
 	/**
-	 * Date query clauses to limit results by. See WP_Date_Query.
-	 *
-	 * @var mixed[]
+	 * A `DateQuery` object representing the `WP_Date_Query` constructor argument.
 	 */
-	public array $date_query;
+	public DateQuery $date_query;
+
+	public function setDateQuery( DateQuery $date_query ) : void {
+		$this->date_query = $date_query;
+	}
 }

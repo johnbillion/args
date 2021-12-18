@@ -100,7 +100,7 @@ final class TaxQueryTest extends TestCase {
 	 * @dataProvider dataWithTaxQueryArgs
 	 * @param WithTax $class
 	 */
-	public function testTaxQueryWithOnlyItsRelationIsNotIncludedInArray( string $class ): void {
+	public function testTaxQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
 		$args->tax_query->relation = TaxQueryValues::TAX_QUERY_RELATION_OR;
