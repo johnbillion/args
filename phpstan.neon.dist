@@ -12,5 +12,3 @@ parameters:
     - tests
   bootstrapFiles:
     - tests/stubs.php
-  ignoreErrors:
-    - '#Access to an undefined property Args#'
