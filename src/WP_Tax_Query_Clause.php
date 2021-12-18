@@ -46,7 +46,9 @@ class WP_Tax_Query_Clause extends Shared\Base {
 	public string $operator;
 
 	/**
-	 * Optional. Whether to include child terms. Requires a `$taxonomy`. Default: true.
+	 * Optional. Whether to include child terms. Requires a `$taxonomy`.
+	 *
+	 * Default: true.
 	 */
 	public bool $include_children;
 }

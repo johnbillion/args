@@ -66,7 +66,7 @@ class WP_Http extends Shared\Base {
 	public string $user_agent;
 
 	/**
-	 * Whether to pass URLs through wp_http_validate_url().
+	 * Whether to pass URLs through `wp_http_validate_url()`.
 	 *
 	 * Default false.
 	 */
@@ -132,7 +132,7 @@ class WP_Http extends Shared\Base {
 	public bool $sslverify;
 
 	/**
-	 * Absolute path to an SSL certificate .crt file.
+	 * Absolute path to an SSL certificate `.crt` file.
 	 *
 	 * Default `ABSPATH . WPINC . '/certificates/ca-bundle.crt'`.
 	 */
@@ -148,7 +148,7 @@ class WP_Http extends Shared\Base {
 	public bool $stream;
 
 	/**
-	 * Filename of the file to write to when streaming. $stream must be set to true.
+	 * Filename of the file to write to when streaming. `$stream` must be set to true.
 	 *
 	 * Default null.
 	 */

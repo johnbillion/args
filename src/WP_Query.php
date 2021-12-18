@@ -63,7 +63,9 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public array $author__not_in;
 
 	/**
-	 * Whether to cache post information. Default true.
+	 * Whether to cache post information.
+	 *
+	 * Default true.
 	 */
 	public bool $cache_results;
 
@@ -119,19 +121,25 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $comment_status;
 
 	/**
-	 * The number of comments to return per page. Default 'comments_per_page' option.
+	 * The number of comments to return per page.
+	 *
+	 * Default 'comments_per_page' option.
 	 */
 	public int $comments_per_page;
 
 	/**
-	 * Day of the month. Default empty. Accepts numbers 1-31.
+	 * Day of the month.
+	 *
+	 * Default empty. Accepts numbers 1-31.
 	 *
 	 * @phpstan-var int<1, 31>
 	 */
 	public int $day;
 
 	/**
-	 * Whether to search by exact keyword. Default false.
+	 * Whether to search by exact keyword.
+	 *
+	 * Default false.
 	 */
 	public bool $exact;
 
@@ -150,19 +158,25 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $fields;
 
 	/**
-	 * Hour of the day. Default empty. Accepts numbers 0-23.
+	 * Hour of the day.
+	 *
+	 * Default empty. Accepts numbers 0-23.
 	 *
 	 * @phpstan-var int<0, 23>
 	 */
 	public int $hour;
 
 	/**
-	 * Whether to ignore sticky posts or not. Setting this to false excludes stickies from 'post__in'. Default false.
+	 * Whether to ignore sticky posts or not. Setting this to false excludes stickies from 'post__in'.
+	 *
+	 * Default false.
 	 */
 	public bool $ignore_sticky_posts;
 
 	/**
-	 * Combination YearMonth. Accepts any four-digit year and month numbers 1-12. Default empty.
+	 * Combination YearMonth. Accepts any four-digit year and month numbers 1-12.
+	 *
+	 * Default empty.
 	 */
 	public int $m;
 
@@ -172,14 +186,18 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public int $menu_order;
 
 	/**
-	 * Second of the minute. Default empty. Accepts numbers 0-59.
+	 * Second of the minute.
+	 *
+	 * Default empty. Accepts numbers 0-59.
 	 *
 	 * @phpstan-var int<0, 59>
 	 */
 	public int $minute;
 
 	/**
-	 * The two-digit month. Default empty. Accepts numbers 1-12.
+	 * The two-digit month.
+	 *
+	 * Default empty. Accepts numbers 1-12.
 	 *
 	 * @phpstan-var int<1, 12>
 	 */
@@ -191,12 +209,16 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $name;
 
 	/**
-	 * Show all posts (true) or paginate (false). Default false.
+	 * Show all posts (true) or paginate (false).
+	 *
+	 * Default false.
 	 */
 	public bool $nopaging;
 
 	/**
-	 * Whether to skip counting the total rows found. Enabling can improve performance. Default false.
+	 * Whether to skip counting the total rows found. Enabling can improve performance.
+	 *
+	 * Default false.
 	 */
 	public bool $no_found_rows;
 
@@ -206,7 +228,9 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public int $offset;
 
 	/**
-	 * Designates ascending or descending order of posts. Default 'DESC'. Accepts 'ASC', 'DESC'.
+	 * Designates ascending or descending order of posts.
+	 *
+	 * Default 'DESC'. Accepts 'ASC', 'DESC'.
 	 *
 	 * @phpstan-var Shared\Base::ORDER_*
 	 */
@@ -330,7 +354,9 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public array $post_parent__not_in;
 
 	/**
-	 * A post type slug (string) or array of post type slugs. Default 'any' if using 'tax_query'.
+	 * A post type slug (string) or array of post type slugs.
+	 *
+	 * Default 'any' if using 'tax_query'.
 	 *
 	 * @var string|array<int, string>
 	 */
@@ -363,19 +389,25 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $s;
 
 	/**
-	 * Second of the minute. Default empty. Accepts numbers 0-59.
+	 * Second of the minute.
+	 *
+	 * Default empty. Accepts numbers 0-59.
 	 *
 	 * @phpstan-var int<0, 59>
 	 */
 	public int $second;
 
 	/**
-	 * Whether to search by phrase. Default false.
+	 * Whether to search by phrase.
+	 *
+	 * Default false.
 	 */
 	public bool $sentence;
 
 	/**
-	 * Whether to suppress filters. Default false.
+	 * Whether to suppress filters.
+	 *
+	 * Default false.
 	 */
 	public bool $suppress_filters;
 
@@ -430,29 +462,39 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $title;
 
 	/**
-	 * Whether to update the post meta cache. Default true.
+	 * Whether to update the post meta cache.
+	 *
+	 * Default true.
 	 */
 	public bool $update_post_meta_cache;
 
 	/**
-	 * Whether to update the post term cache. Default true.
+	 * Whether to update the post term cache.
+	 *
+	 * Default true.
 	 */
 	public bool $update_post_term_cache;
 
 	/**
-	 * Whether to lazy-load term meta. Setting to false will disable cache priming for term meta, so that each get_term_meta() call will hit the database. Defaults to the value of `$update_post_term_cache`.
+	 * Whether to lazy-load term meta. Setting to false will disable cache priming for term meta, so that each get_term_meta() call will hit the database.
+	 *
+	 * Defaults to the value of `$update_post_term_cache`.
 	 */
 	public bool $lazy_load_term_meta;
 
 	/**
-	 * The week number of the year. Default empty. Accepts numbers 0-53.
+	 * The week number of the year.
+	 *
+	 * Default empty. Accepts numbers 0-53.
 	 *
 	 * @phpstan-var int<0, 53>
 	 */
 	public int $w;
 
 	/**
-	 * The four-digit year. Default empty. Accepts any four-digit year.
+	 * The four-digit year.
+	 *
+	 * Default empty. Accepts any four-digit year.
 	 */
 	public int $year;
 

@@ -58,14 +58,18 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public string $orderby;
 
 	/**
-	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending). Default 'ASC'.
+	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending).
+	 *
+	 * Default 'ASC'.
 	 *
 	 * @phpstan-var Shared\Base::ORDER_*
 	 */
 	public string $order;
 
 	/**
-	 * Whether to hide terms not assigned to any posts. Default true.
+	 * Whether to hide terms not assigned to any posts.
+	 *
+	 * Default true.
 	 */
 	public bool $hide_empty;
 
@@ -91,9 +95,11 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public array $exclude_tree;
 
 	/**
-	 * Maximum number of terms to return. Accepts 0 (all) or any positive number. Default 0 (all).
+	 * Maximum number of terms to return. Accepts 0 (all) or any positive number.
 	 *
 	 * Note that `$number` may not return accurate results when coupled with `$object_ids`. See #41796 for details.
+	 *
+	 * Default 0 (all).
 	 *
 	 * @phpstan-var positive-int | 0
 	 */
@@ -134,7 +140,9 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public string $fields;
 
 	/**
-	 * Whether to return a term count. If true, will take precedence over `$fields`. Default false.
+	 * Whether to return a term count. If true, will take precedence over `$fields`.
+	 *
+	 * Default false.
 	 */
 	public bool $count;
 
@@ -160,7 +168,9 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public $term_taxonomy_id;
 
 	/**
-	 * Whether to include terms that have non-empty descendants (even if `$hide_empty` is set to true). Default true.
+	 * Whether to include terms that have non-empty descendants (even if `$hide_empty` is set to true).
+	 *
+	 * Default true.
 	 */
 	public bool $hierarchical;
 
@@ -180,12 +190,16 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public string $description__like;
 
 	/**
-	 * Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false.
+	 * Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable.
+	 *
+	 * Default false.
 	 */
 	public bool $pad_counts;
 
 	/**
-	 * Whether to return terms regardless of ancestry or whether the terms are empty. Accepts 'all' or empty (disabled). Default ''.
+	 * Whether to return terms regardless of ancestry or whether the terms are empty. Accepts 'all' or empty (disabled).
+	 *
+	 * Default ''.
 	 *
 	 * @phpstan-var 'all' | ''
 	 */
@@ -202,17 +216,23 @@ class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public int $parent;
 
 	/**
-	 * True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false.
+	 * True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies.
+	 *
+	 * Default false.
 	 */
 	public bool $childless;
 
 	/**
-	 * Unique cache key to be produced when this query is stored in an object cache. Default 'core'.
+	 * Unique cache key to be produced when this query is stored in an object cache.
+	 *
+	 * Default 'core'.
 	 */
 	public string $cache_domain;
 
 	/**
-	 * Whether to prime meta caches for matched terms. Default true.
+	 * Whether to prime meta caches for matched terms.
+	 *
+	 * Default true.
 	 */
 	public bool $update_term_meta_cache;
 }

@@ -41,12 +41,16 @@ class wp_insert_user extends Shared\Base {
 	public string $user_email;
 
 	/**
-	 * The user's display name. Default is the user's username.
+	 * The user's display name.
+	 *
+	 * Default is the user's username.
 	 */
 	public string $display_name;
 
 	/**
-	 * The user's nickname. Default is the user's username.
+	 * The user's nickname.
+	 *
+	 * Default is the user's username.
 	 */
 	public string $nickname;
 
@@ -66,33 +70,43 @@ class wp_insert_user extends Shared\Base {
 	public string $description;
 
 	/**
-	 * Whether to enable the rich-editor for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 * Whether to enable the rich-editor for the user. Accepts 'true' or 'false' as a string literal, not boolean.
+	 *
+	 * Default 'true'.
 	 *
 	 * @phpstan-var 'true'|'false'
 	 */
 	public string $rich_editing;
 
 	/**
-	 * Whether to enable the rich code editor for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 * Whether to enable the rich code editor for the user. Accepts 'true' or 'false' as a string literal, not boolean.
+	 *
+	 * Default 'true'.
 	 *
 	 * @phpstan-var 'true'|'false'
 	 */
 	public string $syntax_highlighting;
 
 	/**
-	 * Whether to enable comment moderation keyboard shortcuts for the user. Accepts 'true' or 'false' as a string literal, not boolean. Default 'false'.
+	 * Whether to enable comment moderation keyboard shortcuts for the user. Accepts 'true' or 'false' as a string literal, not boolean.
+	 *
+	 * Default 'false'.
 	 *
 	 * @phpstan-var 'true'|'false'
 	 */
 	public string $comment_shortcuts;
 
 	/**
-	 * Admin color scheme for the user. Default 'fresh'.
+	 * Admin color scheme for the user.
+	 *
+	 * Default 'fresh'.
 	 */
 	public string $admin_color;
 
 	/**
-	 * Whether the user should always access the admin over https. Default false.
+	 * Whether the user should always access the admin over https.
+	 *
+	 * Default false.
 	 */
 	public bool $use_ssl;
 
@@ -102,17 +116,23 @@ class wp_insert_user extends Shared\Base {
 	public string $user_registered;
 
 	/**
-	 * Password reset key. Default empty.
+	 * Password reset key.
+	 *
+	 * Default empty.
 	 */
 	public string $user_activation_key;
 
 	/**
-	 * Multisite only. Whether the user is marked as spam. Default false.
+	 * Multisite only. Whether the user is marked as spam.
+	 *
+	 * Default false.
 	 */
 	public bool $spam;
 
 	/**
-	 * Whether to display the Admin Bar for the user on the site's front end. Accepts 'true' or 'false' as a string literal, not boolean. Default 'true'.
+	 * Whether to display the Admin Bar for the user on the site's front end. Accepts 'true' or 'false' as a string literal, not boolean.
+	 *
+	 * Default 'true'.
 	 *
 	 * @phpstan-var 'true'|'false'
 	 */
@@ -124,7 +144,9 @@ class wp_insert_user extends Shared\Base {
 	public string $role;
 
 	/**
-	 * User's locale. Default empty.
+	 * User's locale.
+	 *
+	 * Default empty.
 	 */
 	public string $locale;
 }

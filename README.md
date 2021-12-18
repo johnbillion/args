@@ -54,6 +54,10 @@ $args->taxonomies = [ 'genre', 'audience' ];
 $story = register_post_type( 'story', $args->toArray() );
 ```
 
+## Meta Queries, Tax Queries, and Date Queries
+
+The query classes in WordPress support variously `meta_query`, `tax_query`, and `date_query` arguments. These are fully supported and you can construct them in a structured and strongly typed way.
+
 Creating a `meta_query` argument:
 
 ```php
@@ -66,6 +70,54 @@ $clause->value = 'my_meta_value';
 
 // Add the clause
 $args->meta_query->clauses[] = $clause;
+
+$query = new \WP_Query( $args->toArray() );
+```
+
+Creating a `tax_query` argument:
+
+```php
+$args = new \Args\WP_Query;
+
+// Create a clause
+$clause = new \Args\Shared\TaxQueryClause;
+$clause->taxonomy = 'post_tag';
+$clause->terms = [ 'amazing' ];
+
+// Add the clause
+$args->meta_query->clauses[] = $clause;
+
+$query = new \WP_Query( $args->toArray() );
+```
+
+Creating a `date_query` argument:
+
+```php
+$args = new \Args\WP_Query;
+
+// Create a clause
+$clause = new \Args\Shared\DateQueryClause;
+$clause->year = 2000;
+$clause->compare = '>=';
+
+// Add the clause
+$args->meta_query->clauses[] = $clause;
+
+$query = new \WP_Query( $args->toArray() );
+```
+
+Alternatively you can construct a complete query object by calling the `fromArray()` static method with the same nested array syntax that WordPress core uses:
+
+```php
+$args = new \Args\WP_Query;
+
+// Set the meta query from an array
+$args->meta_query = $args->meta_query::fromArray( [
+	[
+		'key' => 'my_meta_key',
+		'value' => 'my_meta_value',
+	]
+] );
 
 $query = new \WP_Query( $args->toArray() );
 ```

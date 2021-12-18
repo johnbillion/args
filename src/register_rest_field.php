@@ -23,7 +23,7 @@ class register_rest_field extends Shared\Base {
 	/**
 	 * The callback function used to set and update the field value.
 	 *
-	 * Default is 'null', the value cannot be set or updated. The function will be passed the model object, like WP_Post.
+	 * Default is 'null', the value cannot be set or updated. The function will be passed the model object, like `WP_Post`.
 	 *
 	 * @var callable
 	 * @phpstan-var callable(mixed,object,string,\WP_REST_Request,string): mixed

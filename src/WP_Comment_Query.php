@@ -110,14 +110,14 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithDateQueryArgs, 
 	public int $number;
 
 	/**
-	 * When used with $number, defines the page of results to return. When used with $offset, $offset takes precedence.
+	 * When used with `$number`, defines the page of results to return. When used with `$offset`, `$offset` takes precedence.
 	 *
 	 * Default 1.
 	 */
 	public int $paged;
 
 	/**
-	 * Number of comments to offset the query. Used to build LIMIT clause.
+	 * Number of comments to offset the query. Used to build `LIMIT` clause.
 	 *
 	 * Default 0.
 	 */

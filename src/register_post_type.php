@@ -15,7 +15,9 @@ class register_post_type extends Shared\Base {
 	const TEMPLATE_LOCK_FALSE = false;
 
 	/**
-	 * Name of the post type shown in the menu. Usually plural. Default is value of `$labels['name']`.
+	 * Name of the post type shown in the menu. Usually plural.
+	 *
+	 * Default is value of `$labels['name']`.
 	 */
 	public string $label;
 
@@ -24,14 +26,16 @@ class register_post_type extends Shared\Base {
 	 *
 	 * If not set, post labels are inherited for non-hierarchical types and page labels for hierarchical ones.
 	 *
-	 * See get_post_type_labels() for a full list of supported labels.
+	 * See `get_post_type_labels()` for a full list of supported labels.
 	 *
 	 * @var array<string,string>
 	 */
 	public array $labels;
 
 	/**
-	 * A short descriptive summary of what the post type is. Default empty.
+	 * A short descriptive summary of what the post type is.
+	 *
+	 * Default empty.
 	 */
 	public string $description;
 
@@ -46,7 +50,9 @@ class register_post_type extends Shared\Base {
 	public bool $public;
 
 	/**
-	 * Whether the post type is hierarchical (e.g. page). Default false.
+	 * Whether the post type is hierarchical (e.g. page).
+	 *
+	 * Default false.
 	 */
 	public bool $hierarchical;
 
@@ -58,15 +64,15 @@ class register_post_type extends Shared\Base {
 	public bool $exclude_from_search;
 
 	/**
-	 * Whether queries can be performed on the front end for the post type as part of parse_request().
+	 * Whether queries can be performed on the front end for the post type as part of `parse_request()`.
 	 *
 	 * Endpoints would include:
 	 *
-	 *   - ?post_type={post_type_key}
-	 *   - ?{post_type_key}={single_post_slug}
-	 *   - ?{post_type_query_var}={single_post_slug}
+	 *   - `?post_type={post_type_key}`
+	 *   - `?{post_type_key}={single_post_slug}`
+	 *   - `?{post_type_query_var}={single_post_slug}`
 	 *
-	 * If not set, the default is inherited from $public.
+	 * If not set, the default is inherited from `$public`.
 	 */
 	public bool $publicly_queryable;
 
@@ -80,7 +86,7 @@ class register_post_type extends Shared\Base {
 	/**
 	 * Where to show the post type in the admin menu. To work, `$show_ui` must be true.
 	 *
-	 *   - If true, the post type is shown in its own top level menu.
+	 *   - If true the post type is shown in its own top level menu.
 	 *   - If false, no menu is shown.
 	 *   - If a string of an existing top level menu (eg. 'tools.php' or 'edit.php?post_type=page'), the post type will be placed as a sub-menu of that.
 	 *
@@ -137,9 +143,9 @@ class register_post_type extends Shared\Base {
 	/**
 	 * The URL to the icon to be used for this menu.
 	 *
-	 *   - Pass a base64-encoded SVG using a data URI, which will be colored to match the color scheme -- this should begin with 'data:image/svg+xml;base64,'.
-	 *   - Pass the name of a Dashicons helper class to use a font icon, e.g. 'dashicons-chart-pie'.
-	 *   - Pass 'none' to leave div.wp-menu-image empty so an icon can be added via CSS.
+	 *   - Pass a base64-encoded SVG using a data URI, which will be colored to match the color scheme -- this should begin with `data:image/svg+xml;base64,`.
+	 *   - Pass the name of a Dashicons helper class to use a font icon, e.g. `dashicons-chart-pie`.
+	 *   - Pass `'none'` to leave `div.wp-menu-image` empty so an icon can be added via CSS.
 	 *
 	 * Defaults to use the posts icon.
 	 */
@@ -163,7 +169,7 @@ class register_post_type extends Shared\Base {
 	/**
 	 * Array of capabilities for this post type.
 	 *
-	 * `$capability_type` is used as a base to construct capabilities by default. See get_post_type_capabilities().
+	 * `$capability_type` is used as a base to construct capabilities by default. See `get_post_type_capabilities()`.
 	 *
 	 * @var array<string,string>
 	 * @phpstan-var array{
@@ -194,7 +200,7 @@ class register_post_type extends Shared\Base {
 	public bool $map_meta_cap;
 
 	/**
-	 * Core feature(s) the post type supports. Serves as an alias for calling add_post_type_support() directly.
+	 * Core feature(s) the post type supports. Serves as an alias for calling `add_post_type_support()` directly.
 	 *
 	 * Core features include:
 	 *
@@ -225,7 +231,7 @@ class register_post_type extends Shared\Base {
 	/**
 	 * Provide a callback function that sets up the meta boxes for the edit form.
 	 *
-	 * Do remove_meta_box() and add_meta_box() calls in the callback.
+	 * Do `remove_meta_box()` and `add_meta_box()` calls in the callback.
 	 *
 	 * Default null.
 	 *
@@ -237,7 +243,7 @@ class register_post_type extends Shared\Base {
 	/**
 	 * An array of taxonomy identifiers that will be registered for the post type.
 	 *
-	 * Taxonomies can be registered later with register_taxonomy() or register_taxonomy_for_object_type().
+	 * Taxonomies can be registered later with `register_taxonomy()` or `register_taxonomy_for_object_type()`.
 	 *
 	 * Default empty array.
 	 *

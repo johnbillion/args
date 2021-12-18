@@ -20,14 +20,14 @@ class wp_die extends Shared\Base {
 	/**
 	 * A URL to include a link to.
 	 *
-	 * Only works in combination with $link_text. Default empty string.
+	 * Only works in combination with `$link_text`. Default empty string.
 	 */
 	public string $link_url;
 
 	/**
 	 * A label for the link to include.
 	 *
-	 * Only works in combination with $link_url. Default empty string.
+	 * Only works in combination with `$link_url`. Default empty string.
 	 */
 	public string $link_text;
 
@@ -57,7 +57,7 @@ class wp_die extends Shared\Base {
 	/**
 	 * Error code to use.
 	 *
-	 * Default is 'wp_die', or the main error code if $message is a WP_Error.
+	 * Default is 'wp_die', or the main error code if `$message` is a `WP_Error`.
 	 */
 	public string $code;
 

@@ -165,7 +165,19 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public bool $count_total;
 
 	/**
-	 * Which fields to return. Single or all fields (string), or array of fields. Accepts 'ID', 'display_name', 'user_login', 'user_nicename', 'user_email', 'user_url', 'user_registered'. Use 'all' for all fields and 'all_with_meta' to include meta fields.
+	 * Which fields to return. Single or all fields (string), or array of fields.
+	 *
+	 * Accepts:
+	 *
+	 *   - 'ID'
+	 *   - 'display_name'
+	 *   - 'user_login'
+	 *   - 'user_nicename'
+	 *   - 'user_email'
+	 *   - 'user_url'
+	 *   - 'user_registered'
+	 *
+	 * Use 'all' for all fields and 'all_with_meta' to include meta fields.
 	 *
 	 * Default 'all'.
 	 *
