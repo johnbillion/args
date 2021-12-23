@@ -48,7 +48,7 @@ final class TaxQuery implements Arrayable, TaxQueryValues {
 	 * @return mixed[]|null
 	 */
 	final public function toArray() :? array {
-		if ( count( $this->clauses ) === 0 ) {
+		if ( ! isset( $this->clauses ) || count( $this->clauses ) === 0 ) {
 			return null;
 		}
 

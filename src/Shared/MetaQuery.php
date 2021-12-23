@@ -54,7 +54,7 @@ final class MetaQuery implements Arrayable, MetaQueryValues {
 	 * @return mixed[]|null
 	 */
 	final public function toArray() :? array {
-		if ( count( $this->clauses ) === 0 ) {
+		if ( ! isset( $this->clauses ) || count( $this->clauses ) === 0 ) {
 			return null;
 		}
 
