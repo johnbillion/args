@@ -24,7 +24,7 @@ $options = getopt( '', [
 	'param:',
 ] );
 
-if ( empty( $options['file'] ) || ( empty( $options['method'] ) && empty( $options['function'] ) ) || empty( $options['param'] ) ) {
+if ( ! isset( $options['file'], $options['param'] ) || ( ! isset( $options['method'] ) && ! isset( $options['function'] ) ) ) {
 	echo
 		<<<'USAGE'
 Usage:
@@ -63,7 +63,7 @@ if ( ! isset( $files[ $options['file'] ] ) ) {
 
 $file = $files[ $options['file'] ];
 
-if ( ! empty( $options['method'] ) ) {
+if ( isset( $options['method'] ) ) {
 	list( $oc, $om ) = explode( '::', $options['method'] );
 
 	$classes = $file->getClasses();
@@ -88,7 +88,7 @@ if ( ! empty( $options['method'] ) ) {
 
 	$symbol = $methods[ $options['method'] ];
 	$name = $oc;
-} elseif ( ! empty( $options['function'] ) ) {
+} elseif ( isset( $options['function'] ) ) {
 	$functions = $file->getFunctions();
 
 	if ( ! isset( $functions[ $options['function'] ] ) ) {
@@ -124,7 +124,7 @@ $params = array_values( array_filter( $tags, function( Param $tag ) use ( $optio
 	return (string) $tag->getVariableName() === $options['param'];
 } ) );
 
-if ( empty( $params ) ) {
+if ( count( $params ) === 0 ) {
 	printf(
 		'The parameter "$%s" could not be found.' . "\n",
 		$options['param']

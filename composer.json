@@ -49,6 +49,7 @@
 		"phpdocumentor/reflection": "~4.0",
 		"phpstan/phpstan": "^1.0",
 		"phpstan/phpstan-phpunit": "^1.0",
+		"phpstan/phpstan-strict-rules": "^1.1",
 		"phpunit/phpunit": "^9.0",
 		"roots/wordpress": "^5.8.0"
 	},
