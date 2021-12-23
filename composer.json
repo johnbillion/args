@@ -30,7 +30,7 @@
 			"@php generate.php"
 		],
 		"test:phpcs": [
-			"phpcs -p --cache=tests/cache/phpcs.json ."
+			"phpcs -p --cache=tests/cache/phpcs.json --basepath='./' ."
 		],
 		"test:phpunit": [
 			"phpunit --testdox"
