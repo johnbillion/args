@@ -4,6 +4,7 @@ includes:
   - vendor/phpstan/phpstan-phpunit/rules.neon
 parameters:
   level: 8
+  checkMissingCallableSignature: true
   paths:
     - src
     - tests
