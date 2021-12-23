@@ -11,7 +11,11 @@
 	],
 	"config": {
 		"preferred-install": "dist",
-		"sort-packages": true
+		"sort-packages": true,
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"roots/wordpress-core-installer": true
+		}
 	},
 	"require": {
 		"php": ">=7.4"
