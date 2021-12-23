@@ -13,9 +13,6 @@ final class BasicTest extends TestCase {
 	public function testBasicParamsAreCorrectlyConvertedToArray(): void {
 		$args = new \Args\WP_Query;
 
-		self::assertObjectHasAttribute( 'attachment_id', $args );
-		self::assertObjectHasAttribute( 'author', $args );
-
 		$args->attachment_id = 123;
 		$args->author = '1,2,3';
 
@@ -31,7 +28,6 @@ final class BasicTest extends TestCase {
 	public function testUnknownParamsAreIncludedInArray(): void {
 		$args = new \Args\WP_Query;
 
-		self::assertObjectHasAttribute( 'attachment_id', $args );
 		self::assertObjectNotHasAttribute( 'hello', $args );
 
 		$args->attachment_id = 123;
