@@ -168,11 +168,16 @@ $query = new \WP_Query( $args->toArray() );
 
 ### Everything Else
 
+* `\Args\WP_Block_Type`
+* `\Args\paginate_links`
 * `\Args\register_block_type`
 * `\Args\register_meta`
 * `\Args\register_rest_field`
 * `\Args\wp_get_nav_menus`
+* `\Args\wp_nav_menu`
 * `\Args\wp_die`
+* `\Args\wp_dropdown_languages`
+* `\Args\wp_generate_tag_cloud`
 
 ## Type Checking
 
