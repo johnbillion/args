@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\MetaQuery;
 
 /**
  * Argument values for any query class that supports meta queries.
  */
-interface MetaQueryValues {
+interface Values {
 	const META_COMPARE_KEY_EQUALS = '=';
 	const META_COMPARE_KEY_NOT_EQUALS = '!=';
 	const META_COMPARE_KEY_LIKE = 'LIKE';

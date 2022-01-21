@@ -64,7 +64,7 @@ Creating a `meta_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\MetaQueryClause;
+$clause = new \Args\MetaQuery\Clause;
 $clause->key = 'my_meta_key';
 $clause->value = 'my_meta_value';
 
@@ -80,7 +80,7 @@ Creating a `tax_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\TaxQueryClause;
+$clause = new \Args\TaxQuery\Clause;
 $clause->taxonomy = 'post_tag';
 $clause->terms = [ 'amazing' ];
 
@@ -96,7 +96,7 @@ Creating a `date_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\DateQueryClause;
+$clause = new \Args\DateQuery\Clause;
 $clause->year = 2000;
 $clause->compare = '>=';
 

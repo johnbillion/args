@@ -27,7 +27,7 @@ trait ProvidesMetaQueryArgs {
 	 *
 	 * Default is 'IN' when `meta_value` is an array, '=' otherwise.
 	 *
-	 * @phpstan-var MetaQueryValues::META_COMPARE_VALUE_*
+	 * @phpstan-var \Args\MetaQuery\Values::META_COMPARE_VALUE_*
 	 */
 	public string $meta_compare;
 
@@ -36,30 +36,30 @@ trait ProvidesMetaQueryArgs {
 	 *
 	 * Default is 'IN' when `meta_key` is an array, '=' otherwise.
 	 *
-	 * @phpstan-var MetaQueryValues::META_COMPARE_KEY_*
+	 * @phpstan-var \Args\MetaQuery\Values::META_COMPARE_KEY_*
 	 */
 	public string $meta_compare_key;
 
 	/**
 	 * MySQL data type that the `meta_value` column will be CAST to for comparisons.
 	 *
-	 * @phpstan-var MetaQueryValues::META_TYPE_VALUE_*
+	 * @phpstan-var \Args\MetaQuery\Values::META_TYPE_VALUE_*
 	 */
 	public string $meta_type;
 
 	/**
 	 * MySQL data type that the `meta_key` column will be CAST to for comparisons.
 	 *
-	 * @phpstan-var MetaQueryValues::META_TYPE_KEY_*
+	 * @phpstan-var \Args\MetaQuery\Values::META_TYPE_KEY_*
 	 */
 	public string $meta_type_key;
 
 	/**
-	 * A `MetaQuery` object representing the `WP_Meta_Query` constructor argument.
+	 * A `\Args\MetaQuery\Query` object representing the `WP_Meta_Query` constructor argument.
 	 */
-	public MetaQuery $meta_query;
+	public \Args\MetaQuery\Query $meta_query;
 
-	public function setMetaQuery( MetaQuery $meta_query ) : void {
+	public function setMetaQuery( \Args\MetaQuery\Query $meta_query ) : void {
 		$this->meta_query = $meta_query;
 	}
 }

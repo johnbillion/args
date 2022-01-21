@@ -2,23 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\TaxQuery;
+
+use Args\Shared\Arrayable;
 
 /**
- * Structure for a `meta_query` argument.
+ * Structure for a `tax_query` argument.
  */
-final class MetaQuery implements Arrayable, MetaQueryValues {
+final class Query implements Arrayable, Values {
 	/**
 	 * The MySQL keyword used to join the clauses of the query. Accepts 'AND' or 'OR'.
 	 *
 	 * Default 'AND'.
 	 *
-	 * @phpstan-var MetaQueryValues::META_QUERY_RELATION_*
+	 * @phpstan-var Values::TAX_QUERY_RELATION_*
 	 */
 	public string $relation;
 
 	/**
-	 * @var MetaQueryClause[]
+	 * @var array<int, Clause>
 	 */
 	public array $clauses;
 
@@ -32,22 +34,16 @@ final class MetaQuery implements Arrayable, MetaQueryValues {
 		foreach ( $clauses as $key => $value ) {
 			if ( 'relation' === $key ) {
 				$class->relation = $value;
-			} elseif ( is_string( $key ) ) {
-				$class->addClause( MetaQueryClause::fromArray( $value ), $key );
 			} else {
-				$class->addClause( MetaQueryClause::fromArray( $value ) );
+				$class->addClause( Clause::fromArray( $value ) );
 			}
 		}
 
 		return $class;
 	}
 
-	final public function addClause( MetaQueryClause $clause, string $key = null ) : void {
-		if ( null !== $key ) {
-			$this->clauses[ $key ] = $clause;
-		} else {
-			$this->clauses[] = $clause;
-		}
+	final public function addClause( Clause $clause ) : void {
+		$this->clauses[] = $clause;
 	}
 
 	/**

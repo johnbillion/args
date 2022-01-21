@@ -8,5 +8,5 @@ namespace Args\Shared;
  * Methods for any query class that supports meta queries.
  */
 interface WithMetaQueryArgs {
-	public function setMetaQuery( MetaQuery $meta_query ) : void;
+	public function setMetaQuery( \Args\MetaQuery\Query $meta_query ) : void;
 }

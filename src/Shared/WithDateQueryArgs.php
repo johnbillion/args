@@ -8,5 +8,5 @@ namespace Args\Shared;
  * Methods for any query class that supports date queries.
  */
 interface WithDateQueryArgs {
-	public function setDateQuery( DateQuery $tax_query ) : void;
+	public function setDateQuery( \Args\DateQuery\Query $tax_query ) : void;
 }

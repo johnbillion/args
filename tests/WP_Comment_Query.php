@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Args\Shared\DateQueryClause;
+use Args\DateQuery\Clause;
 
 $args = new \Args\WP_Comment_Query;
 
@@ -15,7 +15,7 @@ $args->comment__not_in = [ 234 ];
 $args->count = true;
 
 $args->date_query->relation = 'AND';
-$args->date_query->clauses[] = DateQueryClause::fromArray( [
+$args->date_query->clauses[] = Clause::fromArray( [
 	'year' => date( 'Y' ),
 ] );
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\DateQuery;
 
 /**
  * Argument values for any query class that supports date queries.
  */
-interface DateQueryValues {
+interface Values {
 	const DATE_QUERY_RELATION_AND = 'AND';
 	const DATE_QUERY_RELATION_OR = 'OR';
 

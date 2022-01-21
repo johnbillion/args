@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Args\Tests;
 
-use Args\Shared\TaxQuery;
-use Args\Shared\TaxQueryClause;
-use Args\Shared\TaxQueryValues;
+use Args\TaxQuery\Clause;
+use Args\TaxQuery\Query;
+use Args\TaxQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -33,15 +33,15 @@ final class TaxQueryTest extends TestCase {
 	public function testTaxQueryIsCorrectlyConvertedToArray( string $class ): void {
 		$args = new $class;
 
-		$clause1 = new TaxQueryClause;
+		$clause1 = new Clause;
 		$clause1->taxonomy = 'category';
 		$clause1->terms = 'foo';
 
-		$clause2 = new TaxQueryClause;
+		$clause2 = new Clause;
 		$clause2->terms = 456;
 		$clause2->operator = 'EXISTS';
 
-		$args->tax_query->relation = TaxQueryValues::TAX_QUERY_RELATION_OR;
+		$args->tax_query->relation = Values::TAX_QUERY_RELATION_OR;
 		$args->tax_query->addClause( $clause1 );
 		$args->tax_query->addClause( $clause2 );
 
@@ -84,7 +84,7 @@ final class TaxQueryTest extends TestCase {
 				'terms' => 456,
 			],
 		];
-		$args->tax_query = TaxQuery::fromArray( $tax_query );
+		$args->tax_query = Query::fromArray( $tax_query );
 		$args->attachment_id = 123;
 
 		$expected = [
@@ -103,7 +103,7 @@ final class TaxQueryTest extends TestCase {
 	public function testTaxQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
-		$args->tax_query->relation = TaxQueryValues::TAX_QUERY_RELATION_OR;
+		$args->tax_query->relation = Values::TAX_QUERY_RELATION_OR;
 		$args->attachment_id = 123;
 
 		$expected = [

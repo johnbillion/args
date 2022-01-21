@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\DateQuery;
+
+use Args\Shared\Arrayable;
 
 /**
  * Arguments for a clause within a date query, for example those within a `$date_query` argument.
  */
-final class DateQueryClause implements Arrayable, DateQueryValues {
-	use ProvidesFromArray;
-	use ProvidesToArray;
+final class Clause implements Arrayable, Values {
+	use \Args\Shared\ProvidesFromArray;
+	use \Args\Shared\ProvidesToArray;
 
 	/**
 	 * Date to retrieve posts before. Accepts `strtotime()`-compatible string, or array of 'year', 'month', 'day' values.
@@ -54,7 +56,7 @@ final class DateQueryClause implements Arrayable, DateQueryValues {
 	 *
 	 * Default '='.
 	 *
-	 * @phpstan-var DateQueryValues::DATE_QUERY_COMPARE_*
+	 * @phpstan-var Values::DATE_QUERY_COMPARE_*
 	 */
 	public string $compare;
 

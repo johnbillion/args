@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\DateQuery;
+
+use Args\Shared\Arrayable;
 
 /**
  * Structure for a `date_query` argument.
  */
-final class DateQuery implements Arrayable, DateQueryValues {
+final class Query implements Arrayable, Values {
 	/**
 	 * The column to query against.
 	 *
@@ -24,7 +26,7 @@ final class DateQuery implements Arrayable, DateQueryValues {
 	 *
 	 * Default '='.
 	 *
-	 * @phpstan-var DateQueryValues::DATE_QUERY_COMPARE_*
+	 * @phpstan-var Values::DATE_QUERY_COMPARE_*
 	 */
 	public string $compare;
 
@@ -33,12 +35,12 @@ final class DateQuery implements Arrayable, DateQueryValues {
 	 *
 	 * Default 'AND'.
 	 *
-	 * @phpstan-var DateQueryValues::DATE_QUERY_RELATION_*
+	 * @phpstan-var Values::DATE_QUERY_RELATION_*
 	 */
 	public string $relation;
 
 	/**
-	 * @var DateQueryClause[]
+	 * @var Clause[]
 	 */
 	public array $clauses;
 
@@ -57,14 +59,14 @@ final class DateQuery implements Arrayable, DateQueryValues {
 			} elseif ( 'relation' === $key ) {
 				$class->relation = $value;
 			} else {
-				$class->addClause( DateQueryClause::fromArray( $value ) );
+				$class->addClause( Clause::fromArray( $value ) );
 			}
 		}
 
 		return $class;
 	}
 
-	final public function addClause( DateQueryClause $clause ) : void {
+	final public function addClause( Clause $clause ) : void {
 		$this->clauses[] = $clause;
 	}
 

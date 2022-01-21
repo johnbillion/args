@@ -9,11 +9,11 @@ namespace Args\Shared;
  */
 trait ProvidesDateQueryArgs {
 	/**
-	 * A `DateQuery` object representing the `WP_Date_Query` constructor argument.
+	 * A `\Args\DateQuery\Query` object representing the `WP_Date_Query` constructor argument.
 	 */
-	public DateQuery $date_query;
+	public \Args\DateQuery\Query $date_query;
 
-	public function setDateQuery( DateQuery $date_query ) : void {
+	public function setDateQuery( \Args\DateQuery\Query $date_query ) : void {
 		$this->date_query = $date_query;
 	}
 }

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\TaxQuery;
 
 /**
  * Argument values for any query class that supports taxonomy queries.
  */
-interface TaxQueryValues {
+interface Values {
 	const TAX_QUERY_RELATION_AND = 'AND';
 	const TAX_QUERY_RELATION_OR = 'OR';
 

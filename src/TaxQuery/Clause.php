@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\TaxQuery;
+
+use Args\Shared\Arrayable;
 
 /**
  * Arguments for a clause within a taxonomy query, for example those within a `$tax_query` argument.
  */
-final class TaxQueryClause implements Arrayable, TaxQueryValues {
-	use ProvidesFromArray;
-	use ProvidesToArray;
+final class Clause implements Arrayable, Values {
+	use \Args\Shared\ProvidesFromArray;
+	use \Args\Shared\ProvidesToArray;
 
 	/**
 	 * Taxonomy being queried. Optional when field=term_taxonomy_id.
@@ -50,7 +52,7 @@ final class TaxQueryClause implements Arrayable, TaxQueryValues {
 	 *
 	 * Default: 'IN'.
 	 *
-	 * @phpstan-var TaxQueryValues::TAX_QUERY_OPERATOR_*
+	 * @phpstan-var Values::TAX_QUERY_OPERATOR_*
 	 */
 	public string $operator;
 
