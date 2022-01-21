@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
  */
-class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\WithMetaQueryArgs, Shared\WithTaxQueryArgs {
+class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs, TaxQuery\WithArgs {
 	const COMMENT_STATUS_OPEN = 'open';
 	const COMMENT_STATUS_CLOSED = 'closed';
 
@@ -27,9 +27,9 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
 	const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
 
-	use Shared\ProvidesDateQueryArgs;
-	use Shared\ProvidesMetaQueryArgs;
-	use Shared\ProvidesTaxQueryArgs;
+	use DateQuery\ProvidesArgs;
+	use MetaQuery\ProvidesArgs;
+	use TaxQuery\ProvidesArgs;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.

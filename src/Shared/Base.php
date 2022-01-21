@@ -16,13 +16,13 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	use ProvidesToArray;
 
 	final public function __construct() {
-		if ( $this instanceof WithDateQueryArgs ) {
+		if ( $this instanceof \Args\DateQuery\WithArgs ) {
 			$this->setDateQuery( new \Args\DateQuery\Query );
 		}
-		if ( $this instanceof WithMetaQueryArgs ) {
+		if ( $this instanceof \Args\MetaQuery\WithArgs ) {
 			$this->setMetaQuery( new \Args\MetaQuery\Query );
 		}
-		if ( $this instanceof WithTaxQueryArgs ) {
+		if ( $this instanceof \Args\TaxQuery\WithArgs ) {
 			$this->setTaxQuery( new \Args\TaxQuery\Query );
 		}
 	}

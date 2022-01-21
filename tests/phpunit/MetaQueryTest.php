@@ -10,7 +10,7 @@ use Args\MetaQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-type WithMeta class-string<\Args\Shared\WithMetaQueryArgs&\Args\Shared\Base>
+ * @phpstan-type WithMeta class-string<\Args\MetaQuery\WithArgs&\Args\Shared\Base>
  */
 final class MetaQueryTest extends TestCase {
 	use \FalseyAssertEqualsDetector\Test;

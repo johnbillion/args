@@ -9,7 +9,7 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
  */
-class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
+class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	const FIELD_ID = 'ID';
 	const FIELD_LOGIN = 'user_login';
 	const FIELD_EMAIL = 'user_email';
@@ -28,7 +28,7 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	const WHO_ALL = '';
 	const WHO_AUTHORS = 'authors';
 
-	use Shared\ProvidesMetaQueryArgs;
+	use MetaQuery\ProvidesArgs;
 
 	/**
 	 * The site ID.

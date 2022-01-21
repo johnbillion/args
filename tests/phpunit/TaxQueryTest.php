@@ -10,7 +10,7 @@ use Args\TaxQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-type WithTax class-string<\Args\Shared\WithTaxQueryArgs&\Args\Shared\Base>
+ * @phpstan-type WithTax class-string<\Args\TaxQuery\WithArgs&\Args\Shared\Base>
  */
 final class TaxQueryTest extends TestCase {
 	use \FalseyAssertEqualsDetector\Test;

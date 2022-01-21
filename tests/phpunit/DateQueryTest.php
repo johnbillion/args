@@ -10,7 +10,7 @@ use Args\DateQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-type WithDate class-string<\Args\Shared\WithDateQueryArgs&\Args\Shared\Base>
+ * @phpstan-type WithDate class-string<\Args\DateQuery\WithArgs&\Args\Shared\Base>
  */
 final class DateQueryTest extends TestCase {
 	use \FalseyAssertEqualsDetector\Test;
