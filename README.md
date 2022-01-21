@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current Status
 
-Beta. This library was last updated for WordPress 5.8.
+Last updated for WordPress 5.8.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ Beta. This library was last updated for WordPress 5.8.
 
 ## Installation
 
-```
+```shell
 composer require johnbillion/args
 ```
 
@@ -112,12 +112,13 @@ Alternatively you can construct a complete query object by calling the `fromArra
 $args = new \Args\WP_Query;
 
 // Set the meta query from an array
-$args->meta_query = $args->meta_query::fromArray( [
+$array = [
 	[
 		'key' => 'my_meta_key',
 		'value' => 'my_meta_value',
 	]
-] );
+];
+$args->meta_query = $args->meta_query::fromArray( $array );
 
 $query = new \WP_Query( $args->toArray() );
 ```
