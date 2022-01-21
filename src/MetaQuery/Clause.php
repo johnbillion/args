@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Args\MetaQuery;
 
-use Args\Shared\Arrayable;
+use Args\Arrayable\Arrayable;
 
 /**
  * Arguments for a clause within a meta query, for example those within a `$meta_query` argument.
  */
 final class Clause implements Arrayable, Values {
-	use \Args\Shared\ProvidesFromArray;
-	use \Args\Shared\ProvidesToArray;
+	use \Args\Arrayable\ProvidesFromArray;
+	use \Args\Arrayable\ProvidesToArray;
 
 	/**
 	 * Meta key or keys to filter by.

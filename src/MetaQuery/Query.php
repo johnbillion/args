@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Args\MetaQuery;
 
-use Args\Shared\Arrayable;
+use Args\Arrayable\Arrayable;
 
 /**
  * Structure for a `meta_query` argument.

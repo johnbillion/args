@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Args\DateQuery;
 
-use Args\Shared\Arrayable;
+use Args\Arrayable\Arrayable;
 
 /**
  * Arguments for a clause within a date query, for example those within a `$date_query` argument.
  */
 final class Clause implements Arrayable, Values {
-	use \Args\Shared\ProvidesFromArray;
-	use \Args\Shared\ProvidesToArray;
+	use \Args\Arrayable\ProvidesFromArray;
+	use \Args\Arrayable\ProvidesToArray;
 
 	/**
 	 * Date to retrieve posts before. Accepts `strtotime()`-compatible string, or array of 'year', 'month', 'day' values.

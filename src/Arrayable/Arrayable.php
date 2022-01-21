@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\Arrayable;
 
 /**
  * Arguments object that can be converted to an array.

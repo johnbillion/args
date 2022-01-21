@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Args\TaxQuery;
 
-use Args\Shared\Arrayable;
+use Args\Arrayable\Arrayable;
 
 /**
  * Structure for a `tax_query` argument.

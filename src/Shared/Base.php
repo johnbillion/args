@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Args\Shared;
 
+use Args\Arrayable\Arrayable;
+
 /**
  * @implements \ArrayAccess<string, mixed>
  * @implements \IteratorAggregate<string, mixed>
@@ -12,8 +14,8 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	const ORDER_ASC = 'ASC';
 	const ORDER_DESC = 'DESC';
 
-	use ProvidesFromArray;
-	use ProvidesToArray;
+	use \Args\Arrayable\ProvidesFromArray;
+	use \Args\Arrayable\ProvidesToArray;
 
 	final public function __construct() {
 		if ( $this instanceof \Args\DateQuery\WithArgs ) {

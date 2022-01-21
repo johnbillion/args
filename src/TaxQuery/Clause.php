@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Args\TaxQuery;
 
-use Args\Shared\Arrayable;
+use Args\Arrayable\Arrayable;
 
 /**
  * Arguments for a clause within a taxonomy query, for example those within a `$tax_query` argument.
  */
 final class Clause implements Arrayable, Values {
-	use \Args\Shared\ProvidesFromArray;
-	use \Args\Shared\ProvidesToArray;
+	use \Args\Arrayable\ProvidesFromArray;
+	use \Args\Arrayable\ProvidesToArray;
 
 	/**
 	 * Taxonomy being queried. Optional when field=term_taxonomy_id.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Args\Shared;
+namespace Args\Arrayable;
 
 /**
  * An arguments object which provides a vanilla `toArray()` method.
