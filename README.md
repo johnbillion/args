@@ -176,7 +176,7 @@ $query = new \WP_Query( $args->toArray() );
 
 ## Type Checking
 
-PHP 7.4 supports typed class properties, which are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
+Typed class properties are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
 
 ```php
 <?php
