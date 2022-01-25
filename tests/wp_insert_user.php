@@ -30,3 +30,4 @@ $args->show_admin_bar_front = 'true';
 $args->show_admin_bar_front = 'false';
 $args->role = 'editor';
 $args->locale = 'en_GB';
+$args->meta_input = [];
