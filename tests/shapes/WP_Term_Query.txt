@@ -17,7 +17,7 @@ array $meta_query
 string $meta_type
 string $meta_type_key
 string|string[] $meta_value
-string|array $name
+string|string[] $name
 string $name__like
 int|string $number
 int|int[] $object_ids
@@ -25,9 +25,9 @@ int $offset
 string $order
 string $orderby
 bool $pad_counts
-int|string $parent
+int $parent
 string $search
-string|array $slug
-string|array $taxonomy
+string|string[] $slug
+string|string[] $taxonomy
 int|int[] $term_taxonomy_id
 bool $update_term_meta_cache

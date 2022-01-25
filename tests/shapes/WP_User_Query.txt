@@ -1,8 +1,8 @@
 int $blog_id
 bool $count_total
 int[] $exclude
-string|array $fields
-bool|array $has_published_posts
+string|string[] $fields
+bool|string[] $has_published_posts
 int[] $include
 string $login
 string[] $login__in
@@ -22,7 +22,7 @@ int $offset
 string $order
 string|array $orderby
 int $paged
-string|array $role
+string|string[] $role
 string[] $role__in
 string[] $role__not_in
 string $search

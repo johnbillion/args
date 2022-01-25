@@ -8,7 +8,7 @@ string $ping_status
 string $pinged
 int $post_author
 int[] $post_category
-mixed $post_content
+string $post_content
 string $post_content_filtered
 string $post_date
 string $post_date_gmt

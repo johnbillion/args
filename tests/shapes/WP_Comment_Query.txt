@@ -37,11 +37,11 @@ int[] $post_author__not_in
 int $post_id
 string $post_name
 int $post_parent
-string|array $post_status
-string $post_type
+string|string[] $post_status
+string|string[] $post_type
 string $search
 string|array $status
-string|array $type
+string|string[] $type
 string[] $type__in
 string[] $type__not_in
 bool $update_comment_meta_cache
