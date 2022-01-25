@@ -1,0 +1,12 @@
+bool $_builtin
+bool $date_floating
+bool $exclude_from_search
+bool $internal
+bool|string $label
+bool|array $label_count
+bool $private
+bool $protected
+bool $public
+bool $publicly_queryable
+bool $show_in_admin_all_list
+bool $show_in_admin_status_list

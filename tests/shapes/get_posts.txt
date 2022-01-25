@@ -1,0 +1,5 @@
+int|string $category
+int[] $exclude
+int[] $include
+int $numberposts
+bool $suppress_filters

@@ -1,0 +1,8 @@
+callable $auth_callback
+mixed $default
+string $description
+string $object_subtype
+callable $sanitize_callback
+bool|array $show_in_rest
+bool $single
+string $type
