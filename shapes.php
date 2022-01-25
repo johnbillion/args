@@ -11,6 +11,7 @@ foreach ( $shapes as $shape ) {
 	$output = null;
 	$result = null;
 
+	// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.system_calls_exec
 	exec(
 		sprintf(
 			'composer test:shape -- %s',
