@@ -30,7 +30,6 @@
 			"@php generate.php"
 		],
 		"test:shapes": [
-			"sed -i.bak 's/@return array()/@return array/g' vendor/wordpress/wordpress/wp-includes/comment.php",
 			"@php shapes.php"
 		],
 		"test:shape": [
@@ -55,7 +54,7 @@
 	"extra": {
 		"args-shapes": [
 			"--method=\"\\WP_Comment_Query::__construct()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-comment-query.php",
-			"--method=\"\\WP_Http::request()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-http.php",
+			"--method=\"\\WP_Http::request()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-http.php",
 			"--method=\"\\WP_Query::parse_query()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php",
 			"--method=\"\\WP_Term_Query::__construct()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-term-query.php",
 			"--method=\"\\WP_User_Query::prepare_query()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-user-query.php",
@@ -101,7 +100,7 @@
 		"phpstan/phpstan-phpunit": "^1.0",
 		"phpstan/phpstan-strict-rules": "^1.1",
 		"phpunit/phpunit": "^9.0",
-		"roots/wordpress": "^5.8.0"
+		"roots/wordpress": "~5.9.0"
 	},
 	"funding": [
 		{

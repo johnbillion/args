@@ -23,11 +23,12 @@ int $m
 int $menu_order
 string $meta_compare
 string $meta_compare_key
-string $meta_key
+string|string[] $meta_key
 array $meta_query
+string $meta_type
 string $meta_type_key
-string $meta_value
-int $meta_value_num
+string|string[] $meta_value
+int $minute
 int $monthnum
 string $name
 bool $no_found_rows
@@ -49,8 +50,8 @@ string[] $post_name__in
 int $post_parent
 int[] $post_parent__in
 int[] $post_parent__not_in
-string|array $post_status
-string|array $post_type
+string|string[] $post_status
+string|string[] $post_type
 int $posts_per_archive_page
 int $posts_per_page
 string $s

@@ -20,6 +20,7 @@ bool $publicly_queryable
 string|bool $query_var
 string $rest_base
 string $rest_controller_class
+string $rest_namespace
 bool|array $rewrite
 bool $show_admin_column
 bool $show_in_menu

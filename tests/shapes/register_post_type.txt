@@ -2,7 +2,7 @@ bool $_builtin
 string $_edit_link
 bool $can_export
 string[] $capabilities
-string $capability_type
+string|array $capability_type
 bool $delete_with_user
 string $description
 int $ep_mask
@@ -22,6 +22,7 @@ string|bool $query_var
 callable $register_meta_box_cb
 string $rest_base
 string $rest_controller_class
+string $rest_namespace
 bool|array $rewrite
 bool $show_in_admin_bar
 bool|string $show_in_menu

@@ -6,6 +6,7 @@ string $display_name
 string $first_name
 string $last_name
 string $locale
+array $meta_input
 string $nickname
 string $rich_editing
 string $role
