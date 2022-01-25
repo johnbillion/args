@@ -11,10 +11,12 @@ bool|int $hide_empty
 bool $hierarchical
 int[]|string $include
 string $meta_compare
-string $meta_key
+string $meta_compare_key
+string|string[] $meta_key
 array $meta_query
 string $meta_type
-string $meta_value
+string $meta_type_key
+string|string[] $meta_value
 string|array $name
 string $name__like
 int|string $number
