@@ -251,4 +251,33 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 * @var array<int,string>
 	 */
 	public array $login__not_in;
+
+	/**
+	 * An array or a comma-separated list of capability names that users must match to be included in results.
+	 *
+	 * Note that this is an inclusive list: users must match *each* capability.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var string|array<int,string>
+	 */
+	public $capability;
+
+	/**
+	 * An array of capability names. Matched users must have at least one of these capabilities.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var array<int,string>
+	 */
+	public array $capability__in;
+
+	/**
+	 * An array of capability names to exclude. Users matching one or more of these capabilities will not be included in results.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var array<int,string>
+	 */
+	public array $capability__not_in;
 }
