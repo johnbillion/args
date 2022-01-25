@@ -30,7 +30,6 @@
 			"@php generate.php"
 		],
 		"test:shapes": [
-			"sed -i '' 's/@return array()/@return array/g' vendor/wordpress/wordpress/wp-includes/comment.php",
 			"@php shapes.php"
 		],
 		"test:shape": [
