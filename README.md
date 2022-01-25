@@ -166,6 +166,10 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_remote_post`
 * `\Args\wp_remote_head`
 * `\Args\wp_remote_request`
+* `\Args\wp_safe_remote_get`
+* `\Args\wp_safe_remote_post`
+* `\Args\wp_safe_remote_head`
+* `\Args\wp_safe_remote_request`
 
 ### Everything Else
 
