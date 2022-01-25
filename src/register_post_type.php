@@ -125,6 +125,13 @@ class register_post_type extends Shared\Base {
 	public string $rest_base;
 
 	/**
+	 * To change the namespace URL of REST API route.
+	 *
+	 * Default is wp/v2.
+	 */
+	public string $rest_namespace;
+
+	/**
 	 * REST API controller class name.
 	 *
 	 * Default is 'WP_REST_Posts_Controller'.

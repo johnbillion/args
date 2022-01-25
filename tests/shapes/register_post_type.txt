@@ -22,6 +22,7 @@ string|bool $query_var
 callable $register_meta_box_cb
 string $rest_base
 string $rest_controller_class
+string $rest_namespace
 bool|array $rewrite
 bool $show_in_admin_bar
 bool|string $show_in_menu
