@@ -147,6 +147,7 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\register_term_meta`
 * `\Args\wp_count_terms`
 * `\Args\wp_get_object_terms`
+* `\Args\wp_dropdown_categories`
 
 ### Users
 

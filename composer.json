@@ -73,6 +73,7 @@
 			"--function=\"\\register_term_meta()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
 			"--function=\"\\wp_count_terms()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
 			"--function=\"\\wp_die()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/functions.php",
+			"--function=\"\\wp_dropdown_categories()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/category-template.php",
 			"--function=\"\\wp_get_nav_menus()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/nav-menu.php",
 			"--function=\"\\wp_get_object_terms()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
 			"--function=\"\\wp_insert_post()\" --param=postarr --file=vendor/wordpress/wordpress/wp-includes/post.php",
