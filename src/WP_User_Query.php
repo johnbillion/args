@@ -196,7 +196,9 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string $who;
 
 	/**
-	 * Pass an array of post types to filter results to users who have published posts in those post types. `true` is an alias for all public post types.
+	 * Pass an array of post types to filter results to users who have published posts in those post types.
+	 *
+	 * `true` is an alias for all public post types.
 	 *
 	 * @var true|array<int,string>
 	 */
