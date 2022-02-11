@@ -104,4 +104,13 @@ class wp_dropdown_categories extends WP_Term_Query {
 	 * Default false.
 	 */
 	public bool $required;
+
+	/**
+	 * Walker object to use to build the output.
+	 *
+	 * Default empty which results in a `Walker_CategoryDropdown` instance being used.
+	 *
+	 * @var \Walker
+	 */
+	public $walker;
 }

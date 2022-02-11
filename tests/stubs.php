@@ -10,6 +10,8 @@ class WP_REST_Request {}
 
 class WP_Http_Cookie {}
 
+class Walker {}
+
 function __return_false() : bool {
 	return false;
 }
