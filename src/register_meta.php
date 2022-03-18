@@ -49,8 +49,10 @@ class register_meta extends Shared\Base {
 	 * The default value returned from `get_metadata()` if no value has been set yet.
 	 *
 	 * When using a non-single meta key, the default value is for the first entry. In other words, when calling `get_metadata()` with `$single` set to `false`, the default value given here will be wrapped in an array.
+	 *
+	 * @var mixed
 	 */
-	public mixed $default;
+	public $default;
 
 	/**
 	 * A function or method to call when sanitizing `$meta_key` data.
