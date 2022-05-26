@@ -28,8 +28,8 @@ if ( ! isset( $options['file'], $options['param'] ) || ( ! isset( $options['meth
 	echo
 		<<<'USAGE'
 Usage:
-  $ composer shape -- --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
-  $ composer shape -- --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
+  $ composer test:shape -- --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
+  $ composer test:shape -- --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
 
 USAGE;
 	exit( 1 );
