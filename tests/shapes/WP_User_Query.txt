@@ -1,5 +1,5 @@
 int $blog_id
-string $capability
+string|string[] $capability
 string[] $capability__in
 string[] $capability__not_in
 bool $count_total

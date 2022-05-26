@@ -16,3 +16,4 @@ string $show_option_none
 int $tab_index
 string|array $taxonomy
 string $value_field
+Walker $walker
