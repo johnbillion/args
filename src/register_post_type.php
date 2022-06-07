@@ -10,9 +10,9 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/register_post_type/
  */
 class register_post_type extends Shared\Base {
-	const TEMPLATE_LOCK_ALL = 'all';
-	const TEMPLATE_LOCK_INSERT = 'insert';
-	const TEMPLATE_LOCK_FALSE = false;
+	public const TEMPLATE_LOCK_ALL = 'all';
+	public const TEMPLATE_LOCK_INSERT = 'insert';
+	public const TEMPLATE_LOCK_FALSE = false;
 
 	/**
 	 * Name of the post type shown in the menu. Usually plural.
@@ -125,6 +125,13 @@ class register_post_type extends Shared\Base {
 	public string $rest_base;
 
 	/**
+	 * To change the namespace URL of REST API route.
+	 *
+	 * Default is wp/v2.
+	 */
+	public string $rest_namespace;
+
+	/**
 	 * REST API controller class name.
 	 *
 	 * Default is 'WP_REST_Posts_Controller'.
@@ -224,7 +231,7 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Default is an array containing 'title' and 'editor'.
 	 *
-	 * @var mixed[]
+	 * @var array<int, (string|array<string, mixed>)>
 	 */
 	public array $supports;
 

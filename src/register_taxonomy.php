@@ -71,6 +71,13 @@ class register_taxonomy extends Shared\Base {
 	public string $rest_base;
 
 	/**
+	 * To change the namespace URL of REST API route.
+	 *
+	 * Default is wp/v2.
+	 */
+	public string $rest_namespace;
+
+	/**
 	 * REST API Controller class name.
 	 *
 	 * Default is 'WP_REST_Terms_Controller'.

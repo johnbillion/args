@@ -60,10 +60,10 @@ $args->meta_compare_key = 'LIKE';
 $args->meta_type = 'BINARY';
 $args->meta_type_key = '';
 
-$clause1 = new \Args\Shared\MetaQueryClause;
+$clause1 = new \Args\MetaQuery\Clause;
 $clause1->key = 'foo';
 
-$clause2 = new \Args\Shared\MetaQueryClause;
+$clause2 = new \Args\MetaQuery\Clause;
 $clause2->key = 'bar';
 
 $args->meta_query->clauses['one'] = $clause1;
@@ -114,7 +114,7 @@ $args->tag_id = 123;
 $args->tag_slug__and = [ 'hello' ];
 $args->tag_slug__in = [ 'hello' ];
 
-$clause1 = new \Args\Shared\TaxQueryClause;
+$clause1 = new \Args\TaxQuery\Clause;
 $clause1->taxonomy = 'foo';
 
 $args->tax_query->addClause( $clause1 );

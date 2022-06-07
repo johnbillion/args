@@ -9,27 +9,27 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
  */
-class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\WithMetaQueryArgs, Shared\WithTaxQueryArgs {
-	const COMMENT_STATUS_OPEN = 'open';
-	const COMMENT_STATUS_CLOSED = 'closed';
+class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs, TaxQuery\WithArgs {
+	public const COMMENT_STATUS_OPEN = 'open';
+	public const COMMENT_STATUS_CLOSED = 'closed';
 
-	const FIELD_ALL = '';
-	const FIELD_IDS = 'ids';
-	const FIELD_ID_PARENT = 'id=>parent';
+	public const FIELD_ALL = '';
+	public const FIELD_IDS = 'ids';
+	public const FIELD_ID_PARENT = 'id=>parent';
 
-	const PERM_READABLE = 'readable';
-	const PERM_EDITABLE = 'editable';
+	public const PERM_READABLE = 'readable';
+	public const PERM_EDITABLE = 'editable';
 
-	const COMMENT_COUNT_COMPARE_EQUALS = '=';
-	const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
-	const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
-	const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
-	const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
-	const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+	public const COMMENT_COUNT_COMPARE_EQUALS = '=';
+	public const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
+	public const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
+	public const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	public const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
+	public const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
 
-	use Shared\ProvidesDateQueryArgs;
-	use Shared\ProvidesMetaQueryArgs;
-	use Shared\ProvidesTaxQueryArgs;
+	use DateQuery\ProvidesArgs;
+	use MetaQuery\ProvidesArgs;
+	use TaxQuery\ProvidesArgs;
 
 	/**
 	 * Attachment post ID. Used for 'attachment' post_type.
@@ -103,7 +103,9 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public string $category_name;
 
 	/**
-	 * Filter results by comment count. Provide an integer to match comment count exactly. Provide an array with integer 'value' and 'compare' operator ('=', '!=', '>', '>=', '<', '<=' ) to compare against comment_count in a specific way.
+	 * Filter results by comment count.
+	 *
+	 * Provide an integer to match comment count exactly. Provide an array with integer 'value' and 'compare' operator ('=', '!=', '>', '>=', '<', '<=' ) to compare against comment_count in a specific way.
 	 *
 	 * @var array<string,(int|string)>|int
 	 * @phpstan-var array{
@@ -147,9 +149,10 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	 * Post fields to query for.
 	 *
 	 * Accepts:
-	 *     - '' Returns an array of complete post objects (`WP_Post[]`).
-	 *     - 'ids' Returns an array of post IDs (`int[]`).
-	 *     - 'id=>parent' Returns an associative array of parent post IDs, keyed by post ID (`int[]`).
+	 *
+	 *   - '' Returns an array of complete post objects (`WP_Post[]`).
+	 *   - 'ids' Returns an array of post IDs (`int[]`).
+	 *   - 'id=>parent' Returns an associative array of parent post IDs, keyed by post ID (`int[]`).
 	 *
 	 * Default ''.
 	 *
@@ -384,7 +387,11 @@ class WP_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\W
 	public int $posts_per_archive_page;
 
 	/**
-	 * Search keyword(s). Prepending a term with a hyphen will exclude posts matching that term. Eg, 'pillow -sofa' will return posts containing 'pillow' but not 'sofa'. The character used for exclusion can be modified using the the 'wp_query_search_exclusion_prefix' filter.
+	 * Search keyword(s).
+	 *
+	 * Prepending a term with a hyphen will exclude posts matching that term. Eg, 'pillow -sofa' will return posts containing 'pillow' but not 'sofa'.
+	 *
+	 * The character used for exclusion can be modified using the the 'wp_query_search_exclusion_prefix' filter.
 	 */
 	public string $s;
 

@@ -4,26 +4,28 @@ declare(strict_types=1);
 
 namespace Args\Shared;
 
+use Args\Arrayable\Arrayable;
+
 /**
  * @implements \ArrayAccess<string, mixed>
  * @implements \IteratorAggregate<string, mixed>
  */
 abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arrayable {
-	const ORDER_ASC = 'ASC';
-	const ORDER_DESC = 'DESC';
+	public const ORDER_ASC = 'ASC';
+	public const ORDER_DESC = 'DESC';
 
-	use ProvidesFromArray;
-	use ProvidesToArray;
+	use \Args\Arrayable\ProvidesFromArray;
+	use \Args\Arrayable\ProvidesToArray;
 
 	final public function __construct() {
-		if ( $this instanceof WithDateQueryArgs ) {
-			$this->setDateQuery( new DateQuery );
+		if ( $this instanceof \Args\DateQuery\WithArgs ) {
+			$this->setDateQuery( new \Args\DateQuery\Query );
 		}
-		if ( $this instanceof WithMetaQueryArgs ) {
-			$this->setMetaQuery( new MetaQuery );
+		if ( $this instanceof \Args\MetaQuery\WithArgs ) {
+			$this->setMetaQuery( new \Args\MetaQuery\Query );
 		}
-		if ( $this instanceof WithTaxQueryArgs ) {
-			$this->setTaxQuery( new TaxQuery );
+		if ( $this instanceof \Args\TaxQuery\WithArgs ) {
+			$this->setTaxQuery( new \Args\TaxQuery\Query );
 		}
 	}
 

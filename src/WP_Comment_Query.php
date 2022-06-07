@@ -9,16 +9,16 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
-class WP_Comment_Query extends Shared\Base implements Shared\WithDateQueryArgs, Shared\WithMetaQueryArgs {
-	const FIELD_IDS = 'ids';
-	const FIELD_ALL = '';
+class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs {
+	public const FIELD_IDS = 'ids';
+	public const FIELD_ALL = '';
 
-	const HIERARCHICAL_FALSE = false;
-	const HIERARCHICAL_THREADED = 'threaded';
-	const HIERARCHICAL_FLAT = 'flat';
+	public const HIERARCHICAL_FALSE = false;
+	public const HIERARCHICAL_THREADED = 'threaded';
+	public const HIERARCHICAL_FLAT = 'flat';
 
-	use Shared\ProvidesDateQueryArgs;
-	use Shared\ProvidesMetaQueryArgs;
+	use DateQuery\ProvidesArgs;
+	use MetaQuery\ProvidesArgs;
 
 	/**
 	 * Comment author email address.
@@ -152,9 +152,8 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithDateQueryArgs, 
 	 *   - 'meta_value'
 	 *   - 'meta_value_num'
 	 *   - the value of `$meta_key`
-	 *   - and the array keys of `$meta_query`.
-	 *
-	 * Also accepts an empty array or 'none' to disable `ORDER BY` clause.
+	 *   - the array keys of `$meta_query`
+	 *   - an empty array or 'none' to disable `ORDER BY` clause.
 	 *
 	 * Default: 'comment_date_gmt'.
 	 *
@@ -286,7 +285,12 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithDateQueryArgs, 
 	public string $search;
 
 	/**
-	 * Comment statuses to limit results by. Accepts an array or space/comma-separated list of 'hold' (`comment_status=0`), 'approve' (`comment_status=1`), 'all', or a custom comment status.
+	 * Comment statuses to limit results by. Accepts an array or space/comma-separated list of:
+	 *
+	 *   - 'hold' (`comment_status=0`)
+	 *   - 'approve' (`comment_status=1`)
+	 *   - 'all'
+	 *   - a custom comment status
 	 *
 	 * Default 'all'.
 	 *
@@ -295,7 +299,11 @@ class WP_Comment_Query extends Shared\Base implements Shared\WithDateQueryArgs, 
 	public $status;
 
 	/**
-	 * Include comments of a given type, or array of types. Accepts 'comment', 'pings' (includes 'pingback' and 'trackback'), or any custom type string.
+	 * Include comments of a given type, or array of types. Accepts:
+	 *
+	 *   - 'comment'
+	 *   - 'pings' (includes 'pingback' and 'trackback')
+	 *   - any custom type string
 	 *
 	 * Default empty.
 	 *

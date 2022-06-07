@@ -1,0 +1,4 @@
+string $alias_of
+string $description
+int $parent
+string $slug

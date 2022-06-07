@@ -1,0 +1,17 @@
+bool $blocking
+string|array $body
+bool $compress
+array $cookies
+bool $decompress
+string $filename
+string|array $headers
+string $httpversion
+int $limit_response_size
+string $method
+int $redirection
+bool $reject_unsafe_urls
+string $sslcertificates
+bool $sslverify
+bool $stream
+float $timeout
+string $user-agent

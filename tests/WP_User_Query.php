@@ -39,3 +39,7 @@ $args->nicename__not_in = [ 'dave' ];
 $args->login = 'john';
 $args->login__in = [ 'john' ];
 $args->login__not_in = [ 'dave' ];
+$args->capability = 'manage_options,edit_posts';
+$args->capability = [ 'manage_options', 'edit_posts' ];
+$args->capability__in = [ 'manage_options', 'edit_posts' ];
+$args->capability__not_in = [ 'manage_options', 'edit_posts' ];

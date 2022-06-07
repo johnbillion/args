@@ -18,3 +18,6 @@ parameters:
       path: tests/phpunit
     - '#Variable property access on static\(Args\\Shared\\#'
     - '#Variable property access on \$this\(Args\\Shared\\#'
+    - '#Variable property access on static\(Args\\DateQuery\\#'
+    - '#Variable property access on static\(Args\\MetaQuery\\#'
+    - '#Variable property access on static\(Args\\TaxQuery\\#'

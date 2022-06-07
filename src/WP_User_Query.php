@@ -9,26 +9,26 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
  */
-class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
-	const FIELD_ID = 'ID';
-	const FIELD_LOGIN = 'user_login';
-	const FIELD_EMAIL = 'user_email';
-	const FIELD_URL = 'user_url';
-	const FIELD_NICENAME = 'user_nicename';
-	const FIELD_DISPLAY_NAME = 'display_name';
-	const FIELD_REGISTERED = 'user_registered';
+class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
+	public const FIELD_ID = 'ID';
+	public const FIELD_LOGIN = 'user_login';
+	public const FIELD_EMAIL = 'user_email';
+	public const FIELD_URL = 'user_url';
+	public const FIELD_NICENAME = 'user_nicename';
+	public const FIELD_DISPLAY_NAME = 'display_name';
+	public const FIELD_REGISTERED = 'user_registered';
 
-	const SEARCH_COLUMN_ID = self::FIELD_ID;
-	const SEARCH_COLUMN_LOGIN = self::FIELD_LOGIN;
-	const SEARCH_COLUMN_EMAIL = self::FIELD_EMAIL;
-	const SEARCH_COLUMN_URL = self::FIELD_URL;
-	const SEARCH_COLUMN_NICENAME = self::FIELD_NICENAME;
-	const SEARCH_COLUMN_DISPLAY_NAME = self::FIELD_DISPLAY_NAME;
+	public const SEARCH_COLUMN_ID = self::FIELD_ID;
+	public const SEARCH_COLUMN_LOGIN = self::FIELD_LOGIN;
+	public const SEARCH_COLUMN_EMAIL = self::FIELD_EMAIL;
+	public const SEARCH_COLUMN_URL = self::FIELD_URL;
+	public const SEARCH_COLUMN_NICENAME = self::FIELD_NICENAME;
+	public const SEARCH_COLUMN_DISPLAY_NAME = self::FIELD_DISPLAY_NAME;
 
-	const WHO_ALL = '';
-	const WHO_AUTHORS = 'authors';
+	public const WHO_ALL = '';
+	public const WHO_AUTHORS = 'authors';
 
-	use Shared\ProvidesMetaQueryArgs;
+	use MetaQuery\ProvidesArgs;
 
 	/**
 	 * The site ID.
@@ -196,7 +196,9 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	public string $who;
 
 	/**
-	 * Pass an array of post types to filter results to users who have published posts in those post types. `true` is an alias for all public post types.
+	 * Pass an array of post types to filter results to users who have published posts in those post types.
+	 *
+	 * `true` is an alias for all public post types.
 	 *
 	 * @var true|array<int,string>
 	 */
@@ -251,4 +253,33 @@ class WP_User_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
 	 * @var array<int,string>
 	 */
 	public array $login__not_in;
+
+	/**
+	 * An array or a comma-separated list of capability names that users must match to be included in results.
+	 *
+	 * Note that this is an inclusive list: users must match *each* capability.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var string|array<int,string>
+	 */
+	public $capability;
+
+	/**
+	 * An array of capability names. Matched users must have at least one of these capabilities.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var array<int,string>
+	 */
+	public array $capability__in;
+
+	/**
+	 * An array of capability names to exclude. Users matching one or more of these capabilities will not be included in results.
+	 *
+	 * Does NOT work for capabilities not in the database or filtered via {@see 'map_meta_cap'}.
+	 *
+	 * @var array<int,string>
+	 */
+	public array $capability__not_in;
 }

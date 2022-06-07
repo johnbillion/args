@@ -9,19 +9,19 @@ namespace Args;
  *
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
-class WP_Term_Query extends Shared\Base implements Shared\WithMetaQueryArgs {
-	const FIELD_ALL = 'all';
-	const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
-	const FIELD_IDS = 'ids';
-	const FIELD_TT_IDS = 'tt_ids';
-	const FIELD_NAMES = 'names';
-	const FIELD_SLUGS = 'slugs';
-	const FIELD_COUNT = 'count';
-	const FIELD_ID_PARENT = 'id=>parent';
-	const FIELD_ID_NAME = 'id=>name';
-	const FIELD_ID_SLUG = 'id=>slug';
+class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
+	public const FIELD_ALL = 'all';
+	public const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
+	public const FIELD_IDS = 'ids';
+	public const FIELD_TT_IDS = 'tt_ids';
+	public const FIELD_NAMES = 'names';
+	public const FIELD_SLUGS = 'slugs';
+	public const FIELD_COUNT = 'count';
+	public const FIELD_ID_PARENT = 'id=>parent';
+	public const FIELD_ID_NAME = 'id=>name';
+	public const FIELD_ID_SLUG = 'id=>slug';
 
-	use Shared\ProvidesMetaQueryArgs;
+	use MetaQuery\ProvidesArgs;
 
 	/**
 	 * Taxonomy name, or array of taxonomies, to which results should be limited.

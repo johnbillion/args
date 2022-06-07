@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current Status
 
-Beta. This library was last updated for WordPress 5.8.
+Last updated for WordPress 6.0.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ Beta. This library was last updated for WordPress 5.8.
 
 ## Installation
 
-```
+```shell
 composer require johnbillion/args
 ```
 
@@ -64,7 +64,7 @@ Creating a `meta_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\MetaQueryClause;
+$clause = new \Args\MetaQuery\Clause;
 $clause->key = 'my_meta_key';
 $clause->value = 'my_meta_value';
 
@@ -80,7 +80,7 @@ Creating a `tax_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\TaxQueryClause;
+$clause = new \Args\TaxQuery\Clause;
 $clause->taxonomy = 'post_tag';
 $clause->terms = [ 'amazing' ];
 
@@ -96,7 +96,7 @@ Creating a `date_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\DateQueryClause;
+$clause = new \Args\DateQuery\Clause;
 $clause->year = 2000;
 $clause->compare = '>=';
 
@@ -112,12 +112,13 @@ Alternatively you can construct a complete query object by calling the `fromArra
 $args = new \Args\WP_Query;
 
 // Set the meta query from an array
-$args->meta_query = $args->meta_query::fromArray( [
+$array = [
 	[
 		'key' => 'my_meta_key',
 		'value' => 'my_meta_value',
 	]
-] );
+];
+$args->meta_query = $args->meta_query::fromArray( $array );
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -146,6 +147,7 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\register_term_meta`
 * `\Args\wp_count_terms`
 * `\Args\wp_get_object_terms`
+* `\Args\wp_dropdown_categories`
 
 ### Users
 
@@ -165,6 +167,10 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_remote_post`
 * `\Args\wp_remote_head`
 * `\Args\wp_remote_request`
+* `\Args\wp_safe_remote_get`
+* `\Args\wp_safe_remote_post`
+* `\Args\wp_safe_remote_head`
+* `\Args\wp_safe_remote_request`
 
 ### Everything Else
 
@@ -181,7 +187,7 @@ $query = new \WP_Query( $args->toArray() );
 
 ## Type Checking
 
-PHP 7.4 supports typed class properties, which are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
+Typed class properties are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
 
 ```php
 <?php

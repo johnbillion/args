@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Args\Tests;
 
-use Args\Shared\DateQuery;
-use Args\Shared\DateQueryClause;
-use Args\Shared\DateQueryValues;
+use Args\DateQuery\Clause;
+use Args\DateQuery\Query;
+use Args\DateQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-type WithDate class-string<\Args\Shared\WithDateQueryArgs&\Args\Shared\Base>
+ * @phpstan-type WithDate class-string<\Args\DateQuery\WithArgs&\Args\Shared\Base>
  */
 final class DateQueryTest extends TestCase {
 	use \FalseyAssertEqualsDetector\Test;
@@ -36,16 +36,16 @@ final class DateQueryTest extends TestCase {
 	public function testDateQueryIsCorrectlyConvertedToArray( string $class ): void {
 		$args = new $class;
 
-		$clause1 = new DateQueryClause;
+		$clause1 = new Clause;
 		$clause1->year = 1984;
 		$clause1->column = 'post_modified';
 
-		$clause2 = new DateQueryClause;
+		$clause2 = new Clause;
 		$clause2->year = 2000;
 		$clause2->column = 'post_modified';
 
 		$args->date_query->compare = 'BETWEEN';
-		$args->date_query->relation = DateQueryValues::DATE_QUERY_RELATION_OR;
+		$args->date_query->relation = Values::DATE_QUERY_RELATION_OR;
 		$args->date_query->addClause( $clause1 );
 		$args->date_query->addClause( $clause2 );
 
@@ -89,7 +89,7 @@ final class DateQueryTest extends TestCase {
 				'year' => 2000,
 			],
 		];
-		$args->date_query = DateQuery::fromArray( $date_query );
+		$args->date_query = Query::fromArray( $date_query );
 		$args->attachment_id = 123;
 
 		$expected = [
@@ -108,7 +108,7 @@ final class DateQueryTest extends TestCase {
 	public function testDateQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
-		$args->date_query->relation = DateQueryValues::DATE_QUERY_RELATION_OR;
+		$args->date_query->relation = Values::DATE_QUERY_RELATION_OR;
 		$args->date_query->compare = 'NOT IN';
 		$args->attachment_id = 123;
 

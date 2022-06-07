@@ -149,4 +149,13 @@ class wp_insert_user extends Shared\Base {
 	 * Default empty.
 	 */
 	public string $locale;
+
+	/**
+	 * Array of user meta values keyed by their meta key.
+	 *
+	 * Default empty.
+	 *
+	 * @var array<string,mixed>
+	 */
+	public array $meta_input;
 }

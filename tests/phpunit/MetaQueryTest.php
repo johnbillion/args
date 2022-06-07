@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Args\Tests;
 
-use Args\Shared\MetaQuery;
-use Args\Shared\MetaQueryClause;
-use Args\Shared\MetaQueryValues;
+use Args\MetaQuery\Clause;
+use Args\MetaQuery\Query;
+use Args\MetaQuery\Values;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-type WithMeta class-string<\Args\Shared\WithMetaQueryArgs&\Args\Shared\Base>
+ * @phpstan-type WithMeta class-string<\Args\MetaQuery\WithArgs&\Args\Shared\Base>
  */
 final class MetaQueryTest extends TestCase {
 	use \FalseyAssertEqualsDetector\Test;
@@ -42,15 +42,15 @@ final class MetaQueryTest extends TestCase {
 	public function testMetaQueryIsCorrectlyConvertedToArray( string $class ): void {
 		$args = new $class;
 
-		$clause1 = new MetaQueryClause;
+		$clause1 = new Clause;
 		$clause1->key = 'my_meta_key';
 		$clause1->value = 'my_meta_value';
 
-		$clause2 = new MetaQueryClause;
+		$clause2 = new Clause;
 		$clause2->value = '100';
-		$clause2->compare = MetaQueryValues::META_COMPARE_VALUE_GREATER_THAN;
+		$clause2->compare = Values::META_COMPARE_VALUE_GREATER_THAN;
 
-		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
+		$args->meta_query->relation = Values::META_QUERY_RELATION_OR;
 		$args->meta_query->addClause( $clause1 );
 		$args->meta_query->addClause( $clause2, 'clause2' );
 
@@ -93,7 +93,7 @@ final class MetaQueryTest extends TestCase {
 				'value' => '100',
 			],
 		];
-		$args->meta_query = MetaQuery::fromArray( $meta_query );
+		$args->meta_query = Query::fromArray( $meta_query );
 		$args->attachment_id = 123;
 
 		$expected = [
@@ -112,7 +112,7 @@ final class MetaQueryTest extends TestCase {
 	public function testMetaQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
-		$args->meta_query->relation = MetaQueryValues::META_QUERY_RELATION_OR;
+		$args->meta_query->relation = Values::META_QUERY_RELATION_OR;
 		$args->attachment_id = 123;
 
 		$expected = [
