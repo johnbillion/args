@@ -10,7 +10,8 @@ use phpDocumentor\Reflection\Php\Project;
 require_once __DIR__ . '/vendor/autoload.php';
 
 /**
- * @var array{
+ * @var array<string, string>
+ * @phpstan-var array{
  *   file?: string,
  *   method?: string,
  *   function?: string,
