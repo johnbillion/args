@@ -77,8 +77,8 @@ class register_meta extends Shared\Base {
 	 *
 	 * @var bool|array<string, mixed>
 	 * @phpstan-var bool|array{
-	 *     schema: mixed[],
-	 *     prepare_callback: callable(mixed,\WP_REST_Request,mixed[]): mixed,
+	 *     schema: array<string,mixed>,
+	 *     prepare_callback: callable(mixed,\WP_REST_Request,array<string,mixed>): mixed,
 	 * }
 	 */
 	public $show_in_rest;

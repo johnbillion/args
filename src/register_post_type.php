@@ -231,7 +231,7 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Default is an array containing 'title' and 'editor'.
 	 *
-	 * @var mixed[]
+	 * @var array<int, (string|array<string, mixed>)>
 	 */
 	public array $supports;
 

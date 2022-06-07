@@ -40,7 +40,7 @@ final class Query implements Arrayable, Values {
 	public string $relation;
 
 	/**
-	 * @var Clause[]
+	 * @var array<int, Clause>
 	 */
 	public array $clauses;
 
