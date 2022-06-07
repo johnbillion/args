@@ -10,12 +10,12 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/register_meta/
  */
 class register_meta extends Shared\Base {
-	const TYPE_STRING = 'string';
-	const TYPE_BOOLEAN = 'boolean';
-	const TYPE_INTEGER = 'integer';
-	const TYPE_NUMBER = 'number';
-	const TYPE_ARRAY = 'array';
-	const TYPE_OBJECT = 'object';
+	public const TYPE_STRING = 'string';
+	public const TYPE_BOOLEAN = 'boolean';
+	public const TYPE_INTEGER = 'integer';
+	public const TYPE_NUMBER = 'number';
+	public const TYPE_ARRAY = 'array';
+	public const TYPE_OBJECT = 'object';
 
 	/**
 	 * A subtype; e.g. if the object type is "post", the post type.

@@ -10,23 +10,23 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/
  */
 class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
-	const FIELD_ID = 'ID';
-	const FIELD_LOGIN = 'user_login';
-	const FIELD_EMAIL = 'user_email';
-	const FIELD_URL = 'user_url';
-	const FIELD_NICENAME = 'user_nicename';
-	const FIELD_DISPLAY_NAME = 'display_name';
-	const FIELD_REGISTERED = 'user_registered';
+	public const FIELD_ID = 'ID';
+	public const FIELD_LOGIN = 'user_login';
+	public const FIELD_EMAIL = 'user_email';
+	public const FIELD_URL = 'user_url';
+	public const FIELD_NICENAME = 'user_nicename';
+	public const FIELD_DISPLAY_NAME = 'display_name';
+	public const FIELD_REGISTERED = 'user_registered';
 
-	const SEARCH_COLUMN_ID = self::FIELD_ID;
-	const SEARCH_COLUMN_LOGIN = self::FIELD_LOGIN;
-	const SEARCH_COLUMN_EMAIL = self::FIELD_EMAIL;
-	const SEARCH_COLUMN_URL = self::FIELD_URL;
-	const SEARCH_COLUMN_NICENAME = self::FIELD_NICENAME;
-	const SEARCH_COLUMN_DISPLAY_NAME = self::FIELD_DISPLAY_NAME;
+	public const SEARCH_COLUMN_ID = self::FIELD_ID;
+	public const SEARCH_COLUMN_LOGIN = self::FIELD_LOGIN;
+	public const SEARCH_COLUMN_EMAIL = self::FIELD_EMAIL;
+	public const SEARCH_COLUMN_URL = self::FIELD_URL;
+	public const SEARCH_COLUMN_NICENAME = self::FIELD_NICENAME;
+	public const SEARCH_COLUMN_DISPLAY_NAME = self::FIELD_DISPLAY_NAME;
 
-	const WHO_ALL = '';
-	const WHO_AUTHORS = 'authors';
+	public const WHO_ALL = '';
+	public const WHO_AUTHORS = 'authors';
 
 	use MetaQuery\ProvidesArgs;
 

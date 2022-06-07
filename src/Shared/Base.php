@@ -11,8 +11,8 @@ use Args\Arrayable\Arrayable;
  * @implements \IteratorAggregate<string, mixed>
  */
 abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arrayable {
-	const ORDER_ASC = 'ASC';
-	const ORDER_DESC = 'DESC';
+	public const ORDER_ASC = 'ASC';
+	public const ORDER_DESC = 'DESC';
 
 	use \Args\Arrayable\ProvidesFromArray;
 	use \Args\Arrayable\ProvidesToArray;

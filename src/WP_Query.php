@@ -10,22 +10,22 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
  */
 class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs, TaxQuery\WithArgs {
-	const COMMENT_STATUS_OPEN = 'open';
-	const COMMENT_STATUS_CLOSED = 'closed';
+	public const COMMENT_STATUS_OPEN = 'open';
+	public const COMMENT_STATUS_CLOSED = 'closed';
 
-	const FIELD_ALL = '';
-	const FIELD_IDS = 'ids';
-	const FIELD_ID_PARENT = 'id=>parent';
+	public const FIELD_ALL = '';
+	public const FIELD_IDS = 'ids';
+	public const FIELD_ID_PARENT = 'id=>parent';
 
-	const PERM_READABLE = 'readable';
-	const PERM_EDITABLE = 'editable';
+	public const PERM_READABLE = 'readable';
+	public const PERM_EDITABLE = 'editable';
 
-	const COMMENT_COUNT_COMPARE_EQUALS = '=';
-	const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
-	const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
-	const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
-	const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
-	const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+	public const COMMENT_COUNT_COMPARE_EQUALS = '=';
+	public const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
+	public const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
+	public const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	public const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
+	public const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
 
 	use DateQuery\ProvidesArgs;
 	use MetaQuery\ProvidesArgs;
