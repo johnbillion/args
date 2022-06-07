@@ -1,0 +1,13 @@
+int|bool $filter
+string $format
+int $largest
+int $number
+string $order
+string $orderby
+string $separator
+bool|int $show_count
+int $smallest
+callable $topic_count_scale_callback
+string $topic_count_text
+callable $topic_count_text_callback
+string $unit

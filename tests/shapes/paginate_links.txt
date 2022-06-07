@@ -1,0 +1,16 @@
+array $add_args
+string $add_fragment
+string $after_page_number
+string $aria_current
+string $base
+string $before_page_number
+int $current
+int $end_size
+string $format
+int $mid_size
+bool $next_text
+bool $prev_next
+bool $prev_text
+bool $show_all
+int $total
+string $type

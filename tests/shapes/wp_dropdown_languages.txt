@@ -1,0 +1,10 @@
+bool|int $echo
+bool $explicit_option_en_us
+string $id
+array $languages
+string $name
+string $selected
+bool $show_available_translations
+bool $show_option_en_us
+bool $show_option_site_default
+array $translations
