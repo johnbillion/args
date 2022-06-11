@@ -73,7 +73,7 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Block type render callback.
 	 *
-	 * @var callable
+	 * @var callable(array<string, mixed>, string): string
 	 */
 	public $render_callback;
 
