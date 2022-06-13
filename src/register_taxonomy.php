@@ -174,7 +174,7 @@ class register_taxonomy extends Shared\Base {
 	 * Default term to be used for the taxonomy.
 	 *
 	 * @var string|array<string,string>
-	 * @phpstan-var string|array<string,string>{
+	 * @phpstan-var string|array{
 	 *     name: string,
 	 *     slug?: string,
 	 *     description?: string,

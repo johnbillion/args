@@ -14,6 +14,7 @@ $args->capabilities = [
 ];
 $args->default_term = [
 	'name' => 'Foo',
+	'slug' => 'foo',
 ];
 $args->default_term = 'Foo';
 $args->meta_box_cb = function( \WP_Post $post, array $args ) {};
