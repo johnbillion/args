@@ -73,6 +73,8 @@ foreach ( $files as $file ) {
 	}
 
 	$object = new ReflectionClass( $class );
+
+	/** @var \Args\Shared\Base $instance */
 	$instance = new $class();
 	$props = array_map( function( ReflectionProperty $prop ) : string {
 		return $prop->getName();

@@ -15,28 +15,36 @@ class wp_generate_tag_cloud extends Shared\Base {
 	/**
 	 * Smallest font size used to display tags.
 	 *
-	 * Paired with the value of `$unit`, to determine CSS text size unit. Default 8 (pt).
+	 * Paired with the value of `$unit`, to determine CSS text size unit.
+	 *
+	 * Default 8 (pt).
 	 */
 	public int $smallest;
 
 	/**
 	 * Largest font size used to display tags.
 	 *
-	 * Paired with the value of `$unit`, to determine CSS text size unit. Default 22 (pt).
+	 * Paired with the value of `$unit`, to determine CSS text size unit.
+	 *
+	 * Default 22 (pt).
 	 */
 	public int $largest;
 
 	/**
 	 * CSS text size unit to use with the `$smallest` and `$largest` values.
 	 *
-	 * Accepts any valid CSS text size unit. Default 'pt'.
+	 * Accepts any valid CSS text size unit.
+	 *
+	 * Default 'pt'.
 	 */
 	public string $unit;
 
 	/**
 	 * The number of tags to return.
 	 *
-	 * Accepts any positive integer or zero to return all. Default 0.
+	 * Accepts any positive integer or zero to return all.
+	 *
+	 * Default 0.
 	 *
 	 * @phpstan-var positive-int | 0
 	 */
@@ -45,7 +53,9 @@ class wp_generate_tag_cloud extends Shared\Base {
 	/**
 	 * Format to display the tag cloud in.
 	 *
-	 * Accepts 'flat' (tags separated with spaces), 'list' (tags displayed in an unordered list), or 'array' (returns an array). Default 'flat'.
+	 * Accepts 'flat' (tags separated with spaces), 'list' (tags displayed in an unordered list), or 'array' (returns an array).
+	 *
+	 * Default 'flat'.
 	 */
 	public string $format;
 
@@ -59,21 +69,29 @@ class wp_generate_tag_cloud extends Shared\Base {
 	/**
 	 * Value to order tags by.
 	 *
-	 * Accepts 'name' or 'count'. Default 'name'. The {@see 'tag_cloud_sort'} filter can also affect how tags are sorted.
+	 * Accepts 'name' or 'count'.
+	 *
+	 * The {@see 'tag_cloud_sort'} filter can also affect how tags are sorted.
+	 *
+	 * Default 'name'.
 	 */
 	public string $orderby;
 
 	/**
 	 * How to order the tags.
 	 *
-	 * Accepts 'ASC' (ascending), 'DESC' (descending), or 'RAND' (random). Default 'ASC'.
+	 * Accepts 'ASC' (ascending), 'DESC' (descending), or 'RAND' (random).
+	 *
+	 * Default 'ASC'.
 	 *
 	 * @phpstan-var 'ASC'|'DESC'|'RAND'
 	 */
 	public string $order;
 
 	/**
-	 * Whether to enable filtering of the final output via {@see 'wp_generate_tag_cloud'}. Default true.
+	 * Whether to enable filtering of the final output via {@see 'wp_generate_tag_cloud'}.
+	 *
+	 * Default true.
 	 */
 	public bool $filter;
 
