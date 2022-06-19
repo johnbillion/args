@@ -9,7 +9,7 @@ namespace Args\Arrayable;
  */
 interface Arrayable {
 	/**
-	 * @return mixed[]
+	 * @return ?array<string|int,mixed>
 	 */
 	public function toArray() :? array;
 }

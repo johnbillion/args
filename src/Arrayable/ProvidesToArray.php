@@ -13,7 +13,7 @@ trait ProvidesToArray {
 	protected array $map = [];
 
 	/**
-	 * @return array<string, mixed>
+	 * @return array<string,mixed>
 	 */
 	final public function toArray() : array {
 		$vars = get_object_vars( $this );
