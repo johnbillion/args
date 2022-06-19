@@ -64,12 +64,15 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Alternative block styles.
 	 *
+	 * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
+	 *
 	 * @var array<int, array<string, mixed>>
 	 * @phpstan-var array<int, array{
 	 *   name: string,
 	 *   label: string,
+	 *   inline_style: string,
 	 *   style_handle: string,
-	 *   inline_handle: string,
+	 *   is_default: bool,
 	 * }>
 	 */
 	public array $styles;
@@ -77,14 +80,16 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Supported features.
 	 *
-	 * @var mixed[]
+	 * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
+	 *
+	 * @var array<string,mixed>
 	 */
 	public array $supports;
 
 	/**
 	 * Structured data for the block preview.
 	 *
-	 * @var mixed[]
+	 * @var array<string, array<string, mixed>>
 	 */
 	public array $example;
 
@@ -98,21 +103,21 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Block type attributes property schemas.
 	 *
-	 * @var mixed[]
+	 * @var array<string, array<string, mixed>>
 	 */
 	public array $attributes;
 
 	/**
 	 * Context values inherited by blocks of this type.
 	 *
-	 * @var mixed[]
+	 * @var array<int, string>
 	 */
 	public array $uses_context;
 
 	/**
 	 * Context provided by blocks of this type.
 	 *
-	 * @var mixed[]
+	 * @var array<string, string>
 	 */
 	public array $provides_context;
 
@@ -135,4 +140,16 @@ class WP_Block_Type extends Shared\Base {
 	 * Block type front end style handle.
 	 */
 	public string $style;
+
+	/**
+	 * Block type front end only script handle.
+	 */
+	public string $view_script;
+
+	/**
+	 * Block variations.
+	 *
+	 * @var array<int, array<string, mixed>>
+	 */
+	public array $variations;
 }
