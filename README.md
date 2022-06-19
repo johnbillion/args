@@ -172,11 +172,14 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_safe_remote_head`
 * `\Args\wp_safe_remote_request`
 
-### Everything Else
+### Blocks
 
 * `\Args\WP_Block_Type`
-* `\Args\paginate_links`
 * `\Args\register_block_type`
+
+### Everything Else
+
+* `\Args\paginate_links`
 * `\Args\register_meta`
 * `\Args\register_rest_field`
 * `\Args\wp_get_nav_menus`
