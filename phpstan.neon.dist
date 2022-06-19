@@ -3,6 +3,8 @@ includes:
   - vendor/phpstan/phpstan-phpunit/extension.neon
   - vendor/phpstan/phpstan-phpunit/rules.neon
   - vendor/phpstan/phpstan-strict-rules/rules.neon
+rules:
+  - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
 parameters:
   level: 8
   checkMissingCallableSignature: true
@@ -10,6 +12,8 @@ parameters:
     - src
     - tests
     - generate.php
+    - shape.php
+    - shapes.php
   bootstrapFiles:
     - tests/stubs.php
   ignoreErrors:

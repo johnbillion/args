@@ -99,6 +99,7 @@
 		"wordpress-install-dir": "vendor/wordpress/wordpress"
 	},
 	"require-dev": {
+		"ergebnis/phpstan-rules": "^1.0",
 		"humanmade/coding-standards": "^1.1",
 		"johnbillion/falsey-assertequals-detector": "^3",
 		"phpdocumentor/reflection": "~4.0 || ~5.0",

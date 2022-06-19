@@ -1,12 +1,14 @@
 <?php
 
-class WP_Post {}
+declare(strict_types=1);
 
-class WP_Term {}
+final class WP_Post {}
 
-class WP_Taxonomy {}
+final class WP_Term {}
 
-class WP_REST_Controller {}
+final class WP_Taxonomy {}
+
+abstract class WP_REST_Controller {}
 
 class WP_REST_Request {}
 
