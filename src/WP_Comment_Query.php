@@ -376,10 +376,10 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	/**
 	 * Currently unused.
 	 */
-	private int $ID;
+	protected int $ID;
 
 	/**
 	 * Currently unused.
 	 */
-	private int $post_ID;
+	protected int $post_ID;
 }

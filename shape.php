@@ -142,7 +142,7 @@ if ( count( $params ) === 0 ) {
 
 $desc = (string) $params[0]->getDescription();
 $desc = trim( $desc, '{}' );
-$desc = explode( '@type', $desc );
+$desc = explode( "\n    @type", $desc );
 $desc = array_map( 'trim', $desc );
 
 unset( $desc[0] );

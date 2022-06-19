@@ -73,12 +73,13 @@ foreach ( $files as $file ) {
 	}
 
 	$object = new ReflectionClass( $class );
+	$instance = new $class();
 	$props = array_map( function( ReflectionProperty $prop ) : string {
 		return $prop->getName();
 	}, $object->getProperties() );
-	$expected_params = array_filter( $expected_params, function( string $name ) : bool {
-		return strpos( $name, '_' ) !== 0;
-	} );
+	$map = $instance->getMap();
+	$expected_params = array_diff( $expected_params, array_values( $map ) );
+	$expected_params = array_merge( array_values( $expected_params ), array_keys( $map ) );
 	$missing = array_diff( $expected_params, $props );
 
 	if ( count( $missing ) === 0 ) {

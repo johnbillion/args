@@ -13,12 +13,19 @@ trait ProvidesToArray {
 	protected array $map = [];
 
 	/**
+	 * @return array<string, string>
+	 */
+	final public function getMap() : array {
+		return $this->map;
+	}
+
+	/**
 	 * @return array<string,mixed>
 	 */
 	final public function toArray() : array {
 		$vars = get_object_vars( $this );
 
-		foreach ( $this->map as $from => $to ) {
+		foreach ( $this->getMap() as $from => $to ) {
 			if ( array_key_exists( $from, $vars ) ) {
 				$vars[ $to ] = $vars[ $from ];
 				unset( $vars[ $from ] );

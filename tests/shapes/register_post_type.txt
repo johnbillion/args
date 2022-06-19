@@ -5,9 +5,7 @@ string[] $capabilities
 string|array $capability_type
 bool $delete_with_user
 string $description
-int $ep_mask
 bool $exclude_from_search
-bool $feeds
 bool|string $has_archive
 bool $hierarchical
 string $label
@@ -15,7 +13,6 @@ string[] $labels
 bool $map_meta_cap
 string $menu_icon
 int $menu_position
-bool $pages
 bool $public
 bool $publicly_queryable
 string|bool $query_var
@@ -29,9 +26,7 @@ bool|string $show_in_menu
 bool $show_in_nav_menus
 bool $show_in_rest
 bool $show_ui
-string $slug
 array $supports
 string[] $taxonomies
 array $template
 string|false $template_lock
-bool $with_front
