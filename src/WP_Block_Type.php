@@ -5,11 +5,16 @@ declare(strict_types=1);
 namespace Args;
 
 /**
- * Arguments for the `WP_Block_Type()` class in WordPress.
+ * Arguments for the `WP_Block_Type` class in WordPress.
  *
  * @link https://developer.wordpress.org/reference/classes/WP_Block_Type/
  */
 class WP_Block_Type extends Shared\Base {
+	/**
+	 * Block API version.
+	 */
+	public int $api_version;
+
 	/**
 	 * Human-readable block type label.
 	 */
@@ -26,6 +31,13 @@ class WP_Block_Type extends Shared\Base {
 	 * @var mixed[]
 	 */
 	public array $parent;
+
+	/**
+	 * Setting ancestor makes a block available only inside the specified block types at any position of the ancestor's block subtree.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $ancestor;
 
 	/**
 	 * Block type icon.
