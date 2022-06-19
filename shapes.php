@@ -75,7 +75,7 @@ foreach ( $files as $file ) {
 	$object = new ReflectionClass( $class );
 	$props = array_map( function( ReflectionProperty $prop ) : string {
 		return $prop->getName();
-	}, $object->getProperties( ReflectionProperty::IS_PUBLIC ) );
+	}, $object->getProperties() );
 	$expected_params = array_filter( $expected_params, function( string $name ) : bool {
 		return strpos( $name, '_' ) !== 0;
 	} );
