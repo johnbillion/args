@@ -28,7 +28,7 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Setting parent lets a block require that it is only available when nested within the specified blocks.
 	 *
-	 * @var mixed[]
+	 * @var array<int, string>
 	 */
 	public array $parent;
 
@@ -52,7 +52,7 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Additional keywords to produce block type as result in search interfaces.
 	 *
-	 * @var mixed[]
+	 * @var array<int, string>
 	 */
 	public array $keywords;
 
@@ -64,7 +64,13 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Alternative block styles.
 	 *
-	 * @var mixed[]
+	 * @var array<int, array<string, mixed>>
+	 * @phpstan-var array<int, array{
+	 *   name: string,
+	 *   label: string,
+	 *   style_handle: string,
+	 *   inline_handle: string,
+	 * }>
 	 */
 	public array $styles;
 
