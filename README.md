@@ -197,7 +197,7 @@ Typed class properties are implemented in this library where possible. If you pa
 declare( strict_types=1 );
 ```
 
-No more mystery bugs due to incorrect types.
+No more mysterious bugs due to incorrect types.
 
 Note that several parameters in WordPress accept multiple types, for example the `$ignore_sticky_posts` argument for `\WP_Query` can be a boolean or an integer. In some of these cases I've opted to type the parameter with the most appropriate type even though it can technically accept other types.
 
