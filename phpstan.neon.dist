@@ -1,27 +1,27 @@
 includes:
-  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
-  - vendor/phpstan/phpstan-phpunit/extension.neon
-  - vendor/phpstan/phpstan-phpunit/rules.neon
-  - vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-phpunit/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
 rules:
-  - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
+	- Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
 parameters:
-  level: 8
-  checkMissingCallableSignature: true
-  paths:
-    - src
-    - tests
-    - generate.php
-    - shape.php
-    - shapes.php
-  bootstrapFiles:
-    - tests/stubs.php
-  ignoreErrors:
-    -
-      message: '#^Access to an undefined property Args\\#'
-      path: tests/phpunit
-    - '#Variable property access on static\(Args\\Shared\\#'
-    - '#Variable property access on \$this\(Args\\Shared\\#'
-    - '#Variable property access on static\(Args\\DateQuery\\#'
-    - '#Variable property access on static\(Args\\MetaQuery\\#'
-    - '#Variable property access on static\(Args\\TaxQuery\\#'
+	level: 8
+	checkMissingCallableSignature: true
+	paths:
+		- src
+		- tests
+		- generate.php
+		- shape.php
+		- shapes.php
+	bootstrapFiles:
+		- tests/stubs.php
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property Args\\#'
+			path: tests/phpunit
+		- '#Variable property access on static\(Args\\Shared\\#'
+		- '#Variable property access on \$this\(Args\\Shared\\#'
+		- '#Variable property access on static\(Args\\DateQuery\\#'
+		- '#Variable property access on static\(Args\\MetaQuery\\#'
+		- '#Variable property access on static\(Args\\TaxQuery\\#'
