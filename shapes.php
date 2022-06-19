@@ -39,6 +39,8 @@ $has_errors = false;
 foreach ( $files as $file ) {
 	$arg = basename( $file, '.php' );
 	$txt = __DIR__ . '/tests/shapes/' . $arg . '.txt';
+	$class = "\Args\\{$arg}";
+
 	if ( ! file_exists( $txt ) ) {
 		printf(
 			'There is no shape file for %1$s: %2$s' . "\n",
@@ -47,4 +49,50 @@ foreach ( $files as $file ) {
 		);
 		exit( 1 );
 	}
+
+	if ( ! class_exists( $class ) ) {
+		printf(
+			'Class %s does not exist' . "\n",
+			$class
+		);
+		exit( 1 );
+	}
+
+	$contents = trim( (string) file_get_contents( $txt ) );
+
+	if ( strlen( $contents ) === 0 ) {
+		continue;
+	}
+
+	$expected = explode( "\n", $contents );
+	$expected_params = [];
+
+	foreach ( $expected as $param ) {
+		list( $type, $name ) = explode( ' $', $param );
+		$expected_params[] = $name;
+	}
+
+	$object = new ReflectionClass( $class );
+	$props = array_map( function( ReflectionProperty $prop ) : string {
+		return $prop->getName();
+	}, $object->getProperties( ReflectionProperty::IS_PUBLIC ) );
+	$expected_params = array_filter( $expected_params, function( string $name ) : bool {
+		return strpos( $name, '_' ) !== 0;
+	} );
+	$missing = array_diff( $expected_params, $props );
+
+	if ( count( $missing ) === 0 ) {
+		continue;
+	}
+
+	printf(
+		'Properties are missing from %1$s: %2$s' . "\n",
+		$file,
+		implode( ', ', $missing )
+	);
+	$has_errors = true;
+}
+
+if ( $has_errors ) {
+	exit( 1 );
 }
