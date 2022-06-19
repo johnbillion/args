@@ -206,4 +206,11 @@ class wp_insert_post extends Shared\Base {
 	 * @var array<string,mixed>
 	 */
 	public array $meta_input;
+
+	/**
+	 *  The post ID to be used when inserting a new post. If specified, must not match any existing post ID.
+	 *
+	 * Default 0.
+	 */
+	public int $import_id;
 }

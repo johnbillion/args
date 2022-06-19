@@ -58,4 +58,11 @@ class wp_dropdown_languages extends Shared\Base {
 	 * Whether to show an option for English (United States). Default true.
 	 */
 	public bool $show_option_en_us;
+
+	/**
+	 * Whether the English (United States) option uses an explicit value of en_US instead of an empty value.
+	 *
+	 * Default true.
+	 */
+	public bool $explicit_option_en_us;
 }
