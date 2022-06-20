@@ -2,9 +2,14 @@
 
 # Directories
 /.github export-ignore
+/bin export-ignore
 /tests export-ignore
 
 # Files
 /.editorconfig export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
+/CONTRIBUTING.md export-ignore
+/phpcs.xml.dist export-ignore
+/phpstan.neon.dist export-ignore
+/phpunit.xml.dist export-ignore
