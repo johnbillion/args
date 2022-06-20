@@ -51,6 +51,9 @@ jobs:
     name: Test exported files
     runs-on: ubuntu-18.04
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Test exported files
       run: |
         mkdir -p tests/cache/ourselves
