@@ -11,9 +11,7 @@ parameters:
 	paths:
 		- src
 		- tests
-		- generate.php
-		- shape.php
-		- shapes.php
+		- bin
 	bootstrapFiles:
 		- tests/stubs.php
 	ignoreErrors:

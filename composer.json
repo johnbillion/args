@@ -27,13 +27,13 @@
 	},
 	"scripts": {
 		"generate": [
-			"@php generate.php"
+			"@php bin/generate.php"
 		],
 		"test:shapes": [
-			"@php shapes.php"
+			"@php bin/shapes.php"
 		],
 		"test:shape": [
-			"@php shape.php"
+			"@php bin/shape.php"
 		],
 		"test:phpcs": [
 			"phpcs -p --cache=tests/cache/phpcs.json --basepath='./' ."

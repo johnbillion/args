@@ -3,9 +3,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
-$shapes = json_decode( (string) file_get_contents( __DIR__ . '/composer.json' ), true )['extra']['args-shapes'];
+$shapes = json_decode( (string) file_get_contents( dirname( __DIR__ ) . '/composer.json' ), true )['extra']['args-shapes'];
 
 foreach ( $shapes as $shape ) {
 	$output = null;
@@ -27,7 +27,7 @@ foreach ( $shapes as $shape ) {
 	}
 }
 
-$files = glob( __DIR__ . '/src/*.php' );
+$files = glob( dirname( __DIR__ ) . '/src/*.php' );
 
 if ( $files === false || count( $files ) === 0 ) {
 	echo 'No files found';
@@ -38,7 +38,7 @@ $has_errors = false;
 
 foreach ( $files as $file ) {
 	$arg = basename( $file, '.php' );
-	$txt = __DIR__ . '/tests/shapes/' . $arg . '.txt';
+	$txt = dirname( __DIR__ ) . '/tests/shapes/' . $arg . '.txt';
 	$class = "\Args\\{$arg}";
 
 	if ( ! file_exists( $txt ) ) {

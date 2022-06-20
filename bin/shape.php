@@ -7,7 +7,7 @@ use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Reflection\DocBlock\Tags\Param;
 use phpDocumentor\Reflection\Php\Project;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 /**
  * @var array<string, string>
@@ -166,4 +166,4 @@ $desc = array_map( function( array $item ) : string {
 	);
 }, $desc );
 
-file_put_contents( __DIR__ . '/tests/shapes/' . trim( $name, '\\' ) . '.txt', implode( "\n", $desc ) . "\n" );
+file_put_contents( dirname( __DIR__ ) . '/tests/shapes/' . trim( $name, '\\' ) . '.txt', implode( "\n", $desc ) . "\n" );
