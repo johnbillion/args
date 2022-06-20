@@ -47,11 +47,15 @@ jobs:
       run: |
         composer test
 
+  exported-files:
+    name: Test exported files
+    runs-on: ubuntu-18.04
+    steps:
     - name: Test exported files
       run: |
         mkdir -p tests/cache/ourselves
         echo '{"repositories":[{"type":"path","url":"../../../","options":{"symlink":false}}],"minimum-stability":"dev"}' >tests/cache/ourselves/composer.json
         composer require --working-dir=tests/cache/ourselves 'johnbillion/args:*'
         EXPECTED_FILES="composer.json,CONTRIBUTING.md,FUNDING.yml,generate.php,LICENSE,phpcs.xml.dist,phpstan.neon.dist,phpunit.xml.dist,README.md,shape.php,shapes.php,tests.yml"
-        CURRENT_FILES="$(find tests/cache/ourselves/vendor/johnbillion/args/ -type f -not -path 'tests/cache/ourselves/vendor/johnbillion/args/src/*' -printf '%f\0'|sort -z|paste -s -z -d ",")"
+        CURRENT_FILES="$(find tests/cache/ourselves/vendor/johnbillion/args/ -type f -not -path 'tests/cache/ourselves/vendor/johnbillion/args/src/*' -printf '%f\0'|sort -z|paste -s -z -d ","|tr -d '\000')"
         test "$EXPECTED_FILES" == "$CURRENT_FILES"
