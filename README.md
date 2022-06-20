@@ -14,7 +14,7 @@ $query = new WP_Query( [
 
 This library provides well-documented classes which represent many of the associative array parameters used throughout WordPress. Using them at the point where you populate the arguments means you get autocompletion and intellisense in your code editor, and strict typing thanks to typed properties in PHP 7.4. Comprehensive types and constraints for [PHPStan](https://phpstan.org/) are also included.
 
-![](assets/screenshot.png)
+![](.github/assets/screenshot.png)
 
 ## Current Status
 
@@ -219,11 +219,11 @@ I have a name for these array-type parameters for passing arguments. I call them
 
 The time that I spend maintaining this library and others is in part sponsored by:
 
-[![Automattic](assets/gh/automattic.png)](https://automattic.com)
+[![Automattic](.github/assets/gh/automattic.png)](https://automattic.com)
 
 Plus all my kind sponsors on GitHub:
 
-[![Sponsors](assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+[![Sponsors](.github/assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
 
 [Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).
 
