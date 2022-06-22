@@ -25,6 +25,7 @@ jobs:
       uses: shivammathur/setup-php@2.19.1
       with:
         php-version: ${{ matrix.php }}
+        ini-file: development
         coverage: none
 
     - name: Debugging
