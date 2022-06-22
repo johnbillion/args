@@ -28,7 +28,9 @@ jobs:
         coverage: none
 
     - name: Debugging
-      run: php --version
+      run: |
+        php --version
+        php -m
 
     - name: Get Composer Cache Directory
       id: composer-cache-dir
