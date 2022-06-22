@@ -27,6 +27,9 @@ jobs:
         php-version: ${{ matrix.php }}
         coverage: none
 
+    - name: Debugging
+      run: php --version
+
     - name: Get Composer Cache Directory
       id: composer-cache-dir
       run: |
