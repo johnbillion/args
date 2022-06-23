@@ -36,7 +36,7 @@
 			"@php bin/shape.php"
 		],
 		"test:phpcs": [
-			"phpcs -p --cache=tests/cache/phpcs.json --basepath='./' ."
+			"phpcs -p -d error_reporting=24575 --cache=tests/cache/phpcs.json --basepath='./' ."
 		],
 		"test:phpunit": [
 			"phpunit --testdox"
