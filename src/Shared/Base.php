@@ -44,6 +44,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	 * @param mixed $offset
 	 * @return mixed
 	 */
+	#[\ReturnTypeWillChange]
 	final public function offsetGet( $offset ) {
 		if ( ! is_string( $offset ) ) {
 			return null;
