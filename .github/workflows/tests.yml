@@ -25,13 +25,7 @@ jobs:
       uses: shivammathur/setup-php@2.19.1
       with:
         php-version: ${{ matrix.php }}
-        ini-file: development
         coverage: none
-
-    - name: Debugging
-      run: |
-        php --version
-        php -m
 
     - name: Get Composer Cache Directory
       id: composer-cache-dir
@@ -50,5 +44,14 @@ jobs:
         composer update --prefer-dist --no-progress --no-interaction
 
     - name: Run the tests
+      if: ${{matrix.php != '8.1'}}
       run: |
         composer test
+
+    - name: Run the tests on PHP 8.1
+      if: ${{matrix.php == '8.1'}}
+      run: |
+        composer test:shapes
+        vendor/bin/phpcs -p -d error_reporting=24575 --cache=tests/cache/phpcs.json --basepath='./' .
+        composer test:phpunit
+        composer test:phpstan
