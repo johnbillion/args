@@ -70,7 +70,7 @@ class wp_nav_menu extends Shared\Base {
 	 * Default is 'wp_page_menu'. Set to false for no fallback.
 	 *
 	 * @var callable|false
-	 * @phpstan-var (callable(mixed[]):(string|void))|false
+	 * @phpstan-var (callable(mixed[]): (string|void))|false
 	 */
 	public $fallback_cb;
 
