@@ -149,7 +149,7 @@ jobs:
         run: "composer run test:phpcs"
 
   generate_code:
-    name: "4️⃣ Generate code"
+    name: "5️⃣ Generate code"
     needs:
       - "byte_level"
       - "syntax_errors"
@@ -177,7 +177,7 @@ jobs:
         run: "git diff --exit-code"
 
   exported_files:
-    name: "5️⃣ Exported files"
+    name: "6️⃣ Exported files"
     needs:
       - "byte_level"
       - "syntax_errors"
