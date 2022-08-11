@@ -2,7 +2,7 @@
 	"name": "johnbillion/args",
 	"description": "I don't want to get into an argument about this.",
 	"type": "library",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "John Blackbourn",
