@@ -181,6 +181,7 @@ $query = new \WP_Query( $args->toArray() );
 
 * `\Args\WP_Customize_Control`
 * `\Args\WP_Customize_Manager`
+* `\Args\WP_Customize_Panel`
 
 ### Everything Else
 

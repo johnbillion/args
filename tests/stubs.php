@@ -22,6 +22,8 @@ class WP_Customize_Control {}
 
 class WP_Customize_Manager {}
 
+class WP_Customize_Panel {}
+
 function __return_false() : bool {
 	return false;
 }
