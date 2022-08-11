@@ -1,0 +1,9 @@
+callable $active_callback
+string $capability
+string $description
+bool $description_hidden
+string $panel
+int $priority
+string|string[] $theme_supports
+string $title
+string $type
