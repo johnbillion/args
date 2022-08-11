@@ -163,7 +163,7 @@ BLOCK,
 }, $desc );
 
 $composer_file = dirname( __DIR__ ) . '/composer.json';
-$composer_contents = file_get_contents( $composer_file );
+$composer_contents = (string) file_get_contents( $composer_file );
 $composer = json_decode( $composer_contents, true );
 
 if ( isset( $options['method'] ) ) {
@@ -186,17 +186,21 @@ $composer['extra']['args-shapes'] = array_unique( $composer['extra']['args-shape
 
 sort( $composer['extra']['args-shapes'] );
 
-$printer = new \Ergebnis\Json\Printer\Printer();
-$printed = $printer->print(
-	json_encode( $composer, JSON_UNESCAPED_SLASHES ),
-	"\t"
-);
+$json = json_encode( $composer, JSON_UNESCAPED_SLASHES );
+
+if ( is_string( $json ) ) {
+	$printer = new \Ergebnis\Json\Printer\Printer();
+	$printed = $printer->print(
+		$json,
+		"\t"
+	);
+	file_put_contents( $composer_file, $printed . "\n" );
+}
 
 $data = '<?php' . "\n\n" . 'declare(strict_types=1);' . "\n\n" . 'namespace Args;' . "\n\n" . 'class ' . trim( $name, '\\' ) . ' extends Shared\Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
 
 $src_target = dirname( __DIR__ ) . '/src/' . trim( $name, '\\' ) . '.php';
 
-file_put_contents( $composer_file, $printed . "\n" );
 file_put_contents( $src_target, $data );
 
 $data = '<?php' . "\n\n" . 'declare(strict_types=1);' . "\n\n" . '$args = new \Args' . $name . ';' . "\n";
