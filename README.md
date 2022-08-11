@@ -180,6 +180,7 @@ $query = new \WP_Query( $args->toArray() );
 ### Customizer
 
 * `\Args\WP_Customize_Control`
+* `\Args\WP_Customize_Manager`
 
 ### Everything Else
 

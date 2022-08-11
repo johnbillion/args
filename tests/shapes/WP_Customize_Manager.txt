@@ -1,0 +1,6 @@
+bool $autosaved
+bool $branching
+null|string|false $changeset_uuid
+string $messenger_channel
+bool $settings_previewed
+string $theme

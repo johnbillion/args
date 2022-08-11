@@ -20,6 +20,8 @@ class Walker {}
 
 class WP_Customize_Control {}
 
+class WP_Customize_Manager {}
+
 function __return_false() : bool {
 	return false;
 }
