@@ -29,3 +29,6 @@ end_of_line = crlf
 
 [LICENSE]
 indent_style = unset
+
+[{bin/generate.php,bin/shape.php}]
+eclint_indent_style = unset
