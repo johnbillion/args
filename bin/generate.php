@@ -162,4 +162,47 @@ BLOCK,
 	);
 }, $desc );
 
-echo 'class ' . trim( $name, '\\' ) . ' extends Shared\Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
+$composer_file = dirname( __DIR__ ) . '/composer.json';
+$composer_contents = file_get_contents( $composer_file );
+$composer = json_decode( $composer_contents, true );
+
+if ( isset( $options['method'] ) ) {
+	$composer['extra']['args-shapes'][] = sprintf(
+		'--method="%1$s" --param=%2$s --file=%3$s',
+		$options['method'],
+		$options['param'],
+		$options['file']
+	);
+} else {
+	$composer['extra']['args-shapes'][] = sprintf(
+		'--function="%1$s" --param=%2$s --file=%3$s',
+		$options['function'],
+		$options['param'],
+		$options['file']
+	);
+}
+
+$composer['extra']['args-shapes'] = array_unique( $composer['extra']['args-shapes'] );
+
+sort( $composer['extra']['args-shapes'] );
+
+$printer = new \Ergebnis\Json\Printer\Printer();
+$printed = $printer->print(
+	json_encode( $composer, JSON_UNESCAPED_SLASHES ),
+	"\t"
+);
+
+$data = '<?php' . "\n\n" . 'declare(strict_types=1);' . "\n\n" . 'namespace Args;' . "\n\n" . 'class ' . trim( $name, '\\' ) . ' extends Shared\Base {' . "\n" . implode( "\n\n", $desc ) . "\n}\n";
+
+$src_target = dirname( __DIR__ ) . '/src/' . trim( $name, '\\' ) . '.php';
+
+file_put_contents( $composer_file, $printed . "\n" );
+file_put_contents( $src_target, $data );
+
+$data = '<?php' . "\n\n" . 'declare(strict_types=1);' . "\n\n" . '$args = new \Args' . $name . ';' . "\n";
+
+$tests_target = dirname( __DIR__ ) . '/tests/' . trim( $name, '\\' ) . '.php';
+
+file_put_contents( $tests_target, $data );
+
+echo $src_target . "\n";

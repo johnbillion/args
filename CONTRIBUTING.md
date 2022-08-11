@@ -24,10 +24,6 @@ A copy of WordPress is available in `vendor/wordpress/wordpress`.
 composer generate -- --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php --method="\WP_Query::parse_query()" --param=query
 ```
 
-## Adding the shape definition
-
-Add an entry to the `extra.args-shapes` property in composer.json to point to the method or function name, the args parameter name, and file location of the method or function. These entries are used to track changes to the shapes of arguments from one release of WordPress to the next.
-
 ## Running the Tests
 
 The tests in the `tests` directory are there mainly to check the types of the properties of a given Args definition. They're not real tests and they only test the happy path (it's not possible to ensure that a given value _cannot_ be used, for example). That said, they've allowed me to catch a few bugs so they are somewhat useful.

@@ -100,6 +100,7 @@
 		"wordpress-install-dir": "vendor/wordpress/wordpress"
 	},
 	"require-dev": {
+		"ergebnis/json-printer": "^3.2",
 		"ergebnis/phpstan-rules": "^1.0",
 		"humanmade/coding-standards": "^1.1",
 		"johnbillion/falsey-assertequals-detector": "^3",
