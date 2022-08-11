@@ -17,12 +17,19 @@ block_comment_start = /*
 block_comment = *
 block_comment_end = */
 
-[{*.yml}]
+[**.yml]
 indent_style = space
 indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.txt,wp-config-sample.php}]
+[wp-config-sample.php]
 end_of_line = crlf
+
+[LICENSE]
+indent_style = unset
+
+# FIXME
+[{bin/generate.php,bin/shape.php}]
+block_comment = unset
