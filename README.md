@@ -177,6 +177,10 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\WP_Block_Type`
 * `\Args\register_block_type`
 
+### Customizer
+
+* `\Args\WP_Customize_Control`
+
 ### Everything Else
 
 * `\Args\paginate_links`

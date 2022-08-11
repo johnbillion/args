@@ -1,0 +1,16 @@
+callable $active_callback
+bool $allow_addition
+string $capability
+array $choices
+string $description
+string $id
+array $input_attrs
+int $instance_number
+array $json
+string $label
+WP_Customize_Manager $manager
+int $priority
+string $section
+string $setting
+array $settings
+string $type

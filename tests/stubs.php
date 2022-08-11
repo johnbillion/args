@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+class WP_Error {}
+
 final class WP_Post {}
 
 final class WP_Term {}
@@ -15,6 +17,8 @@ class WP_REST_Request {}
 class WP_Http_Cookie {}
 
 class Walker {}
+
+class WP_Customize_Control {}
 
 function __return_false() : bool {
 	return false;
