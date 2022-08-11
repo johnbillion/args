@@ -1,0 +1,9 @@
+string $capability
+string $default
+bool $dirty
+callable $sanitize_callback
+callable $sanitize_js_callback
+string|string[] $theme_supports
+string $transport
+string $type
+callable $validate_callback

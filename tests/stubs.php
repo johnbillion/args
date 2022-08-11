@@ -26,6 +26,8 @@ class WP_Customize_Panel {}
 
 class WP_Customize_Section {}
 
+class WP_Customize_Setting {}
+
 function __return_false() : bool {
 	return false;
 }
