@@ -136,6 +136,9 @@ jobs:
 
       - name: "Check adherence to EditorConfig"
         uses: "greut/eclint-action@v0"
+        # FIXME https://github.com/greut/eclint/issues/1
+        with:
+          eclint_args: "-exclude '{bin/generate.php,bin/shape.php}'"
 
       - name: "Install dependencies"
         uses: "ramsey/composer-install@v2"

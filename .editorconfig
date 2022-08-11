@@ -29,7 +29,3 @@ end_of_line = crlf
 
 [LICENSE]
 indent_style = unset
-
-# FIXME
-[{bin/generate.php,bin/shape.php}]
-block_comment = unset
