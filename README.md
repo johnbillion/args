@@ -85,7 +85,7 @@ $clause->taxonomy = 'post_tag';
 $clause->terms = [ 'amazing' ];
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->tax_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -101,7 +101,7 @@ $clause->year = 2000;
 $clause->compare = '>=';
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->date_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```
