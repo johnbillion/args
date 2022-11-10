@@ -80,14 +80,14 @@ class paginate_links extends Shared\Base {
 	 *
 	 * Default '&laquo; Previous'.
 	 */
-	public bool $prev_text;
+	public string $prev_text;
 
 	/**
 	 * The next page text.
 	 *
 	 * Default 'Next &raquo;'.
 	 */
-	public bool $next_text;
+	public string $next_text;
 
 	/**
 	 * Controls format of the returned value. Possible values are 'plain', 'array' and 'list'.
