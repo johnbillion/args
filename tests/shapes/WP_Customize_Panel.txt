@@ -2,6 +2,6 @@ callable $active_callback
 string $capability
 string $description
 int $priority
-string|string[] $theme_supports
+mixed[] $theme_supports
 string $title
 string $type

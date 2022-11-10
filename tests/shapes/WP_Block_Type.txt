@@ -1,4 +1,4 @@
-array|null $ancestor
+string[]|null $ancestor
 string $api_version
 array|null $attributes
 string|null $category
@@ -8,15 +8,15 @@ string[] $editor_style_handles
 array|null $example
 string|null $icon
 string[] $keywords
-array|null $parent
-array|null $provides_context
+string[]|null $parent
+string[]|null $provides_context
 callable|null $render_callback
 string[] $script_handles
 string[] $style_handles
-array $styles
+array[] $styles
 array|null $supports
 string|null $textdomain
 string $title
-array $uses_context
-array $variations
+string[] $uses_context
+array[] $variations
 string[] $view_script_handles
