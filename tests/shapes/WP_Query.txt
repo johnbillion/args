@@ -67,6 +67,7 @@ string[] $tag_slug__and
 string[] $tag_slug__in
 array $tax_query
 string $title
+bool $update_menu_item_cache
 bool $update_post_meta_cache
 bool $update_post_term_cache
 int $w

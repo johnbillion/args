@@ -172,6 +172,13 @@ class wp_insert_post extends Shared\Base {
 	public string $guid;
 
 	/**
+	 * Page template to use.
+	 *
+	 * Default empty.
+	 */
+	public string $page_template;
+
+	/**
 	 * Array of category IDs.
 	 *
 	 * Defaults to value of the 'default_category' option.

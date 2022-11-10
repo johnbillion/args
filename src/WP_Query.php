@@ -483,6 +483,13 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	public bool $update_post_term_cache;
 
 	/**
+	 * Whether to update the menu item cache.
+	 *
+	 * Default true.
+	 */
+	public bool $update_menu_item_cache;
+
+	/**
 	 * Whether to lazy-load term meta. Setting to false will disable cache priming for term meta, so that each get_term_meta() call will hit the database.
 	 *
 	 * Defaults to the value of `$update_post_term_cache`.
