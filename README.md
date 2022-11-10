@@ -7,7 +7,7 @@ Many functions and methods in WordPress accept arguments as an associative array
 ```php
 $query = new WP_Query( [
 	'post_type' => 'post',
-	'category_something' => 'does this accept an integer or a string?',
+	'category' => 'does this accept an ID or a slug?',
 	'number_of_...errr'
 ] );
 ```
