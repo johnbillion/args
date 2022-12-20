@@ -1,4 +1,4 @@
-[![](https://img.shields.io/github/workflow/status/johnbillion/args/PHP%20Standards/trunk?style=flat-square)](https://github.com/johnbillion/args/actions)
+[![](https://img.shields.io/github/actions/workflow/status/johnbillion/args/tests.yml?branch=trunk&style=flat-square)](https://github.com/johnbillion/args/actions)
 
 # Args
 
