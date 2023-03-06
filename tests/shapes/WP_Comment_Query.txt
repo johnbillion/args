@@ -1,4 +1,3 @@
-int $ID
 int[] $author__in
 int[] $author__not_in
 string $author_email
@@ -28,7 +27,6 @@ int $paged
 int $parent
 int[] $parent__in
 int[] $parent__not_in
-int $post_ID
 int[] $post__in
 int[] $post__not_in
 int $post_author

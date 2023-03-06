@@ -8,6 +8,6 @@ string $separator
 bool|int $show_count
 int $smallest
 callable $topic_count_scale_callback
-string $topic_count_text
+array $topic_count_text
 callable $topic_count_text_callback
 string $unit

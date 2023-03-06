@@ -124,28 +124,73 @@ class WP_Block_Type extends Shared\Base {
 
 	/**
 	 * Block type editor script handle.
+	 *
+	 * @deprecated WordPress 6.1.0
 	 */
 	public string $editor_script;
 
 	/**
+	 * Block type editor only script handles.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $editor_script_handles;
+
+	/**
 	 * Block type front end script handle.
+	 *
+	 * @deprecated WordPress 6.1.0
 	 */
 	public string $script;
 
 	/**
+	 * Block type front end and editor script handles.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $script_handles;
+
+	/**
 	 * Block type editor style handle.
+	 *
+	 * @deprecated WordPress 6.1.0
 	 */
 	public string $editor_style;
 
 	/**
+	 * Block type editor only style handles.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $editor_style_handles;
+
+	/**
 	 * Block type front end style handle.
+	 *
+	 * @deprecated WordPress 6.1.0
 	 */
 	public string $style;
 
 	/**
+	 * Block type front end and editor style handles.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $style_handles;
+
+	/**
 	 * Block type front end only script handle.
+	 *
+	 * @deprecated WordPress 6.1.0
 	 */
 	public string $view_script;
+
+	/**
+	 * Block type front end only script handles.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $view_script_handles;
 
 	/**
 	 * Block variations.

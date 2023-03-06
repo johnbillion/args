@@ -4,6 +4,7 @@ string $guid
 int $import_id
 int $menu_order
 array $meta_input
+string $page_template
 string $ping_status
 string $pinged
 int $post_author

@@ -1,3 +1,4 @@
+string $aria_describedby
 string $class
 int $depth
 bool|int $echo

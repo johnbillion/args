@@ -3,7 +3,7 @@ bool $date_floating
 bool $exclude_from_search
 bool $internal
 bool|string $label
-bool|array $label_count
+array|false $label_count
 bool $private
 bool $protected
 bool $public

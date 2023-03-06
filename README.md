@@ -1,4 +1,4 @@
-[![](https://img.shields.io/github/workflow/status/johnbillion/args/PHP%20Standards/trunk?style=flat-square)](https://github.com/johnbillion/args/actions)
+[![](https://img.shields.io/github/actions/workflow/status/johnbillion/args/tests.yml?branch=trunk&style=flat-square)](https://github.com/johnbillion/args/actions)
 
 # Args
 
@@ -7,7 +7,7 @@ Many functions and methods in WordPress accept arguments as an associative array
 ```php
 $query = new WP_Query( [
 	'post_type' => 'post',
-	'category_something' => 'does this accept an integer or a string?',
+	'category' => 'does this accept an ID or a slug?',
 	'number_of_...errr'
 ] );
 ```
@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current Status
 
-Last updated for WordPress 6.0.
+Last updated for WordPress 6.1.
 
 ## Requirements
 
@@ -85,7 +85,7 @@ $clause->taxonomy = 'post_tag';
 $clause->terms = [ 'amazing' ];
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->tax_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -101,7 +101,7 @@ $clause->year = 2000;
 $clause->compare = '>=';
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->date_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```

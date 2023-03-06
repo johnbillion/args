@@ -11,6 +11,13 @@ namespace Args;
  */
 class wp_dropdown_categories extends WP_Term_Query {
 	/**
+	 * The 'id' of an element that contains descriptive text for the select.
+	 *
+	 * Default empty.
+	 */
+	public string $aria_describedby;
+
+	/**
 	 * Text to display for showing all categories.
 	 *
 	 * Default empty.
