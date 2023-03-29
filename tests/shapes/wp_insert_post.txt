@@ -15,8 +15,6 @@ string $post_date
 string $post_date_gmt
 string $post_excerpt
 string $post_mime_type
-string $post_modified
-string $post_modified_gmt
 string $post_name
 int $post_parent
 string $post_password

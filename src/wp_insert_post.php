@@ -130,20 +130,6 @@ class wp_insert_post extends Shared\Base {
 	public string $pinged;
 
 	/**
-	 * The date when the post was last modified.
-	 *
-	 * Default is the current time.
-	 */
-	public string $post_modified;
-
-	/**
-	 * The date when the post was last modified in the GMT timezone.
-	 *
-	 * Default is the current time.
-	 */
-	public string $post_modified_gmt;
-
-	/**
 	 * Set this for the post it belongs to, if any.
 	 *
 	 * Default 0.

@@ -396,6 +396,18 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	public string $s;
 
 	/**
+	 * Array of column names to be searched.
+	 *
+	 * Accepts 'post_title', 'post_excerpt', and 'post_content'.
+	 *
+	 * Default empty array.
+	 *
+	 * @var array<int, string>
+	 * @phpstan-var list<'post_title'|'post_excerpt'|'post_content'>
+	 */
+	public array $search_columns;
+
+	/**
 	 * Second of the minute.
 	 *
 	 * Default empty. Accepts numbers 0-59.

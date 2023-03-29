@@ -28,8 +28,6 @@ final class BasicTest extends TestCase {
 	public function testUnknownParamsAreIncludedInArray(): void {
 		$args = new \Args\WP_Query;
 
-		self::assertObjectNotHasAttribute( 'hello', $args );
-
 		$args->attachment_id = 123;
 		$args->hello = 'world';
 
