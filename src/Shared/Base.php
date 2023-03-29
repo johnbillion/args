@@ -32,6 +32,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	/**
 	 * @param mixed $offset
 	 */
+	#[\ReturnTypeWillChange]
 	final public function offsetExists( $offset ) : bool {
 		if ( ! is_string( $offset ) ) {
 			return false;
@@ -61,6 +62,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	 * @param mixed $offset
 	 * @param mixed $value
 	 */
+	#[\ReturnTypeWillChange]
 	final public function offsetSet( $offset, $value ) : void {
 		$this->$offset = $value;
 	}
@@ -68,6 +70,7 @@ abstract class Base implements \ArrayAccess, \Countable, \IteratorAggregate, Arr
 	/**
 	 * @param mixed $offset
 	 */
+	#[\ReturnTypeWillChange]
 	final public function offsetUnset( $offset ) : void {
 		unset( $this->$offset );
 	}
