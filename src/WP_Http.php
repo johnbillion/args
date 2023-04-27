@@ -88,7 +88,7 @@ class WP_Http extends Shared\Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var array<int,string>
+	 * @var array<string,string>
 	 */
 	public array $headers;
 

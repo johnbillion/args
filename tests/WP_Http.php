@@ -29,7 +29,7 @@ $args->user_agent = 'Args';
 $args->reject_unsafe_urls = true;
 $args->blocking = false;
 $args->headers = [
-	'Foo: Bar',
+	'Foo' => 'Bar',
 ];
 $args->cookies = [];
 $args->body = 'Hello';
