@@ -97,7 +97,7 @@ class WP_Block_Type extends Shared\Base {
 	 * Block type render callback.
 	 *
 	 * @var callable
-	 * @phpstan-var callable(array<string, mixed>, string): string
+	 * @phpstan-var callable( array<string, mixed>, string, ?\WP_Block ): string
 	 */
 	public $render_callback;
 
