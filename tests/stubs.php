@@ -12,6 +12,8 @@ final class WP_Taxonomy {}
 
 abstract class WP_REST_Controller {}
 
+class WP_Block {}
+
 class WP_REST_Request {}
 
 class WP_Http_Cookie {}
