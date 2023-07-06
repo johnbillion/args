@@ -1,4 +1,5 @@
 int $blog_id
+bool $cache_results
 string|string[] $capability
 string[] $capability__in
 string[] $capability__not_in

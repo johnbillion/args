@@ -55,7 +55,7 @@ string|string[] $post_type
 int $posts_per_archive_page
 int $posts_per_page
 string $s
-array $search_columns
+string[] $search_columns
 int $second
 bool $sentence
 bool $suppress_filters

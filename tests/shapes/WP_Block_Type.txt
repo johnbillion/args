@@ -12,6 +12,7 @@ string[]|null $parent
 string[]|null $provides_context
 callable|null $render_callback
 string[] $script_handles
+array $selectors
 string[] $style_handles
 array[] $styles
 array|null $supports

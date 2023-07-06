@@ -151,6 +151,13 @@ class WP_Block_Type extends Shared\Base {
 	public array $script_handles;
 
 	/**
+	 * Custom CSS selectors for theme.json style generation.
+	 *
+	 * @var array<string, mixed>
+	 */
+	public array $selectors;
+
+	/**
 	 * Block type editor style handle.
 	 *
 	 * @deprecated WordPress 6.1.0
