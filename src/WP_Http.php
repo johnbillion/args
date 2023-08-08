@@ -143,7 +143,7 @@ class WP_Http extends Shared\Base {
 	/**
 	 * Whether to stream to a file.
 	 *
-	 * If set to true and no filename was given, it will be droped it in the WP temp dir and its name will be set using the basename of the URL.
+	 * If set to true and no filename was given, it will be dropped it in the WP temp dir and its name will be set using the basename of the URL.
 	 *
 	 * Default false.
 	 */
