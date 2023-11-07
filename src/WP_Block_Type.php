@@ -70,9 +70,9 @@ class WP_Block_Type extends Shared\Base {
 	 * @phpstan-var array<int, array{
 	 *   name: string,
 	 *   label: string,
-	 *   inline_style: string,
-	 *   style_handle: string,
-	 *   is_default: bool,
+	 *   inline_style?: string,
+	 *   style_handle?: string,
+	 *   is_default?: bool,
 	 * }>
 	 */
 	public array $styles;
@@ -121,6 +121,14 @@ class WP_Block_Type extends Shared\Base {
 	 * @var array<string, string>
 	 */
 	public array $provides_context;
+
+	/**
+	 * Block hooks.
+	 *
+	 * @var array<string, string>
+	 * @phpstan-var array<string, 'before'|'after'|'first_child'|'last_child'>
+	 */
+	public array $block_hooks;
 
 	/**
 	 * Block type editor script handle.

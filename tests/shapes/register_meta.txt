@@ -2,6 +2,7 @@ callable $auth_callback
 mixed $default
 string $description
 string $object_subtype
+bool $revisions_enabled
 callable $sanitize_callback
 bool|array $show_in_rest
 bool $single

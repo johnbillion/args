@@ -141,6 +141,29 @@ class register_post_type extends Shared\Base {
 	public string $rest_controller_class;
 
 	/**
+	 * REST API autosave controller class name.
+	 *
+	 * Default is 'WP_REST_Autosaves_Controller'.
+	 *
+	 * @phpstan-var class-string<\WP_REST_Controller>
+	 */
+	public string $autosave_rest_controller_class;
+
+	/**
+	 * REST API revisions controller class name.
+	 *
+	 * Default is 'WP_REST_Revisions_Controller'.
+	 *
+	 * @phpstan-var class-string<\WP_REST_Controller>
+	 */
+	public string $revisions_rest_controller_class;
+
+	/**
+	 * A flag to direct the REST API controllers for autosave / revisions should be registered before/after the post type controller.
+	 */
+	public bool $late_route_registration;
+
+	/**
 	 * The position in the menu order the post type should appear. To work, `$show_in_menu` must be true.
 	 *
 	 * Default null (at the bottom).

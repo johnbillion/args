@@ -36,3 +36,5 @@ $args->show_in_rest = [
 	],
 	'prepare_callback' => fn( mixed $value, \WP_REST_Request $request, array $args ) => ( 123 ),
 ];
+$args->revisions_enabled = true;
+$args->revisions_enabled = false;

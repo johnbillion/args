@@ -1,7 +1,7 @@
 bool|int $echo
 bool $explicit_option_en_us
 string $id
-array $languages
+string[] $languages
 string $name
 string $selected
 bool $show_available_translations

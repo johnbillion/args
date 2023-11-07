@@ -1,6 +1,7 @@
 string[]|null $ancestor
 string $api_version
 array|null $attributes
+array[] $block_hooks
 string|null $category
 string $description
 string[] $editor_script_handles

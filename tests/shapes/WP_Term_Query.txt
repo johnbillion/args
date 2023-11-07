@@ -1,4 +1,5 @@
 string $cache_domain
+bool $cache_results
 int $child_of
 bool $childless
 bool $count

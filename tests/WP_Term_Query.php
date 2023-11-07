@@ -34,6 +34,7 @@ $args->parent = 88;
 $args->childless = false;
 $args->cache_domain = '';
 $args->update_term_meta_cache = true;
+$args->cache_results = true;
 
 $args->meta_key = 'key';
 $args->meta_key = [ 'key', 'key' ];

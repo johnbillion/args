@@ -1,5 +1,6 @@
 bool $_builtin
 string $_edit_link
+string|bool $autosave_rest_controller_class
 bool $can_export
 string[] $capabilities
 string|array $capability_type
@@ -10,6 +11,7 @@ bool|string $has_archive
 bool $hierarchical
 string $label
 string[] $labels
+bool $late_route_registration
 bool $map_meta_cap
 string $menu_icon
 int $menu_position
@@ -20,6 +22,7 @@ callable $register_meta_box_cb
 string $rest_base
 string $rest_controller_class
 string $rest_namespace
+string|bool $revisions_rest_controller_class
 bool|array $rewrite
 bool $show_in_admin_bar
 bool|string $show_in_menu

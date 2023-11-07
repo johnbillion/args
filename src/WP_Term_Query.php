@@ -230,6 +230,13 @@ class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string $cache_domain;
 
 	/**
+	 * Whether to cache term information.
+	 *
+	 * Default true.
+	 */
+	public bool $cache_results;
+
+	/**
 	 * Whether to prime meta caches for matched terms.
 	 *
 	 * Default true.

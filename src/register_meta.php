@@ -82,4 +82,11 @@ class register_meta extends Shared\Base {
 	 * }
 	 */
 	public $show_in_rest;
+
+	/**
+	 * Whether to enable revisions support for this meta_key.
+	 *
+	 * Can only be used when the object type is 'post'.
+	 */
+	public bool $revisions_enabled;
 }
