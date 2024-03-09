@@ -7,6 +7,9 @@ use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Reflection\DocBlock\Tags\Param;
 use phpDocumentor\Reflection\Php\Project;
 
+// Don't show deprecated errors
+error_reporting( E_ALL & ~E_DEPRECATED );
+
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 /**

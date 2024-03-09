@@ -3,6 +3,9 @@
 
 declare(strict_types=1);
 
+// Don't show deprecated errors
+error_reporting( E_ALL & ~E_DEPRECATED );
+
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 $shapes = json_decode( (string) file_get_contents( dirname( __DIR__ ) . '/composer.json' ), true )['extra']['args-shapes'];
