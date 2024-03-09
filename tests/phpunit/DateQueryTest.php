@@ -49,10 +49,7 @@ final class DateQueryTest extends TestCase {
 		$args->date_query->addClause( $clause1 );
 		$args->date_query->addClause( $clause2 );
 
-		$args->attachment_id = 123;
-
 		$expected = [
-			'attachment_id' => 123,
 			'date_query' => [
 				'compare' => 'BETWEEN',
 				'relation' => 'OR',
@@ -90,10 +87,8 @@ final class DateQueryTest extends TestCase {
 			],
 		];
 		$args->date_query = Query::fromArray( $date_query );
-		$args->attachment_id = 123;
 
 		$expected = [
-			'attachment_id' => 123,
 			'date_query' => $date_query,
 		];
 		$actual = $args->toArray();
@@ -110,11 +105,8 @@ final class DateQueryTest extends TestCase {
 
 		$args->date_query->relation = Values::DATE_QUERY_RELATION_OR;
 		$args->date_query->compare = 'NOT IN';
-		$args->attachment_id = 123;
 
-		$expected = [
-			'attachment_id' => 123,
-		];
+		$expected = [];
 		$actual = $args->toArray();
 
 		self::assertSame( $expected, $actual );

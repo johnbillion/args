@@ -54,10 +54,7 @@ final class MetaQueryTest extends TestCase {
 		$args->meta_query->addClause( $clause1 );
 		$args->meta_query->addClause( $clause2, 'clause2' );
 
-		$args->attachment_id = 123;
-
 		$expected = [
-			'attachment_id' => 123,
 			'meta_query' => [
 				'relation' => 'OR',
 				[
@@ -94,10 +91,8 @@ final class MetaQueryTest extends TestCase {
 			],
 		];
 		$args->meta_query = Query::fromArray( $meta_query );
-		$args->attachment_id = 123;
 
 		$expected = [
-			'attachment_id' => 123,
 			'meta_query' => $meta_query,
 		];
 		$actual = $args->toArray();
@@ -113,11 +108,8 @@ final class MetaQueryTest extends TestCase {
 		$args = new $class;
 
 		$args->meta_query->relation = Values::META_QUERY_RELATION_OR;
-		$args->attachment_id = 123;
 
-		$expected = [
-			'attachment_id' => 123,
-		];
+		$expected = [];
 		$actual = $args->toArray();
 
 		self::assertSame( $expected, $actual );

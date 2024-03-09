@@ -29,11 +29,11 @@ final class BasicTest extends TestCase {
 		$args = new \Args\WP_Query;
 
 		$args->attachment_id = 123;
-		$args->hello = 'world';
+		$args->name = 'world';
 
 		$expected = [
 			'attachment_id' => 123,
-			'hello' => 'world',
+			'name' => 'world',
 		];
 		$actual = $args->toArray();
 
@@ -46,7 +46,7 @@ final class BasicTest extends TestCase {
 		self::assertCount( 0, $args );
 
 		$args->attachment_id = 123;
-		$args->hello = 'world';
+		$args->name = 'world';
 
 		self::assertCount( 2, $args );
 	}
@@ -55,7 +55,7 @@ final class BasicTest extends TestCase {
 		$args = new \Args\WP_Query;
 
 		$args->attachment_id = 123;
-		$args->hello = 'world';
+		$args->name = 'world';
 
 		$expected = [
 			123,

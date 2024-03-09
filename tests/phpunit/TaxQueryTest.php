@@ -45,10 +45,7 @@ final class TaxQueryTest extends TestCase {
 		$args->tax_query->addClause( $clause1 );
 		$args->tax_query->addClause( $clause2 );
 
-		$args->attachment_id = 123;
-
 		$expected = [
-			'attachment_id' => 123,
 			'tax_query' => [
 				'relation' => 'OR',
 				[
@@ -85,10 +82,8 @@ final class TaxQueryTest extends TestCase {
 			],
 		];
 		$args->tax_query = Query::fromArray( $tax_query );
-		$args->attachment_id = 123;
 
 		$expected = [
-			'attachment_id' => 123,
 			'tax_query' => $tax_query,
 		];
 		$actual = $args->toArray();
@@ -104,11 +99,8 @@ final class TaxQueryTest extends TestCase {
 		$args = new $class;
 
 		$args->tax_query->relation = Values::TAX_QUERY_RELATION_OR;
-		$args->attachment_id = 123;
 
-		$expected = [
-			'attachment_id' => 123,
-		];
+		$expected = [];
 		$actual = $args->toArray();
 
 		self::assertSame( $expected, $actual );
