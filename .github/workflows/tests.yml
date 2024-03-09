@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install PHP
       uses: shivammathur/setup-php@2.19.1
@@ -42,7 +42,7 @@ jobs:
 
     - name: Cache PHP Dependencies
       id: composer-cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ steps.composer-cache-dir.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('composer.json') }}
