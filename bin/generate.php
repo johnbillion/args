@@ -170,24 +170,39 @@ $composer_contents = (string) file_get_contents( $composer_file );
 $composer = json_decode( $composer_contents, true );
 
 if ( isset( $options['method'] ) ) {
-	$composer['extra']['args-shapes'][] = sprintf(
-		'--method="%1$s" --param=%2$s --file=%3$s',
-		$options['method'],
-		$options['param'],
-		$options['file']
-	);
+	$composer['extra']['args-shapes'][] = [
+		'method' => $options['method'],
+		'param' => $options['param'],
+		'file' => $options['file'],
+	];
 } else {
-	$composer['extra']['args-shapes'][] = sprintf(
-		'--function="%1$s" --param=%2$s --file=%3$s',
-		$options['function'],
-		$options['param'],
-		$options['file']
-	);
+	$composer['extra']['args-shapes'][] = [
+		'function' => $options['function'],
+		'param' => $options['param'],
+		'file' => $options['file'],
+	];
 }
 
-$composer['extra']['args-shapes'] = array_unique( $composer['extra']['args-shapes'] );
+// Sort by function names followed by method names
+usort( $composer['extra']['args-shapes'], function( array $a, array $b ) : int {
+	if ( isset( $a['function'], $b['function'] ) ) {
+		return strcmp( $a['function'], $b['function'] );
+	}
 
-sort( $composer['extra']['args-shapes'] );
+	if ( isset( $a['method'], $b['method'] ) ) {
+		return strcmp( $a['method'], $b['method'] );
+	}
+
+	if ( isset( $a['function'] ) && ! isset( $b['function'] ) ) {
+		return -1;
+	}
+
+	if ( isset( $b['function'] ) && ! isset( $a['function'] ) ) {
+		return 1;
+	}
+
+	return 0;
+} );
 
 $json = json_encode( $composer, JSON_UNESCAPED_SLASHES );
 
