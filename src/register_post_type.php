@@ -261,7 +261,7 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Do `remove_meta_box()` and `add_meta_box()` calls in the callback.
 	 *
-	 * Default null.
+	 * The callback is called via the https://developer.wordpress.org/reference/hooks/add_meta_boxes_post_type/ action.
 	 *
 	 * @var callable
 	 * @phpstan-var callable(\WP_Post): void

@@ -106,6 +106,8 @@ class register_taxonomy extends Shared\Base {
 	/**
 	 * Provide a callback function for the meta box display. If not set, `post_categories_meta_box()` is used for hierarchical taxonomies, and `post_tags_meta_box()` is used for non-hierarchical. If false, no meta box is shown.
 	 *
+	 * The callback is called in `do_meta_boxes()`: https://github.com/WordPress/wordpress-develop/blob/6.6.0/src/wp-admin/includes/template.php#L1456
+	 *
 	 * @var false|callable
 	 * @phpstan-var false|callable(\WP_Post,mixed[]): void
 	 */

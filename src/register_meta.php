@@ -55,7 +55,12 @@ class register_meta extends Shared\Base {
 	public $default;
 
 	/**
-	 * A function or method to call when sanitizing `$meta_key` data.
+	 * A function or method to call when sanitizing the meta value.
+	 *
+	 * The callback is called via one of:
+	 *
+	 * - The https://developer.wordpress.org/reference/hooks/sanitize_object_type_meta_meta_key_for_object_subtype/ filter
+	 * - The https://developer.wordpress.org/reference/hooks/sanitize_object_type_meta_meta_key/ filter
 	 *
 	 * @var callable
 	 * @phpstan-var (callable(mixed,string,string,string): mixed)|(callable(mixed,string,string): mixed)
@@ -64,6 +69,11 @@ class register_meta extends Shared\Base {
 
 	/**
 	 * A function or method to call when performing `edit_post_meta`, `add_post_meta`, and `delete_post_meta` capability checks.
+	 *
+	 * The callback is called via one of:
+	 *
+	 * - The https://developer.wordpress.org/reference/hooks/auth_object_type_meta_meta_key_for_object_subtype/ filter
+	 * - The https://developer.wordpress.org/reference/hooks/auth_object_type_meta_meta_key/ filter
 	 *
 	 * @var callable
 	 * @phpstan-var (callable(bool,string,string,string): bool)|(callable(bool,string,string): bool)
@@ -74,6 +84,8 @@ class register_meta extends Shared\Base {
 	 * Whether data associated with this meta key can be considered public and should be accessible via the REST API.
 	 *
 	 * A custom post type must also declare support for custom fields for registered meta to be accessible via REST. When registering complex meta values this argument may optionally be an array with 'schema' or 'prepare_callback' keys instead of a boolean.
+	 *
+	 * If this value is an array with a prepare_callback key, the callback is called here: https://github.com/WordPress/wordpress-develop/blob/6.6.0/src/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php#L127
 	 *
 	 * @var bool|array<string, mixed>
 	 * @phpstan-var bool|array{

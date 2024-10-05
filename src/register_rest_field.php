@@ -15,8 +15,10 @@ class register_rest_field extends Shared\Base {
 	 *
 	 * Default is 'null', the field will not be returned in the response. The function will be passed the prepared object data.
 	 *
+	 * The callback is called here: https://github.com/WordPress/wordpress-develop/blob/6.6.0/src/wp-includes/rest-api/endpoints/class-wp-rest-controller.php#L434-L440
+	 *
 	 * @var callable
-	 * @phpstan-var callable(mixed[],string,\WP_REST_Request): mixed
+	 * @phpstan-var callable(mixed[],string,\WP_REST_Request,string): mixed
 	 */
 	public $get_callback;
 
@@ -24,6 +26,8 @@ class register_rest_field extends Shared\Base {
 	 * The callback function used to set and update the field value.
 	 *
 	 * Default is 'null', the value cannot be set or updated. The function will be passed the model object, like `WP_Post`.
+	 *
+	 * The callback is called here: https://github.com/WordPress/wordpress-develop/blob/6.6.0/src/wp-includes/rest-api/endpoints/class-wp-rest-controller.php#L468-L475
 	 *
 	 * @var callable
 	 * @phpstan-var callable(mixed,object,string,\WP_REST_Request,string): mixed

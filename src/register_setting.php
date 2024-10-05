@@ -37,6 +37,8 @@ class register_setting extends Shared\Base {
 	/**
 	 * A callback function that sanitizes the option's value.
 	 *
+	 * The callback is called via the https://developer.wordpress.org/reference/hooks/sanitize_option_option/ filter.
+	 *
 	 * @var callable
 	 * @phpstan-var callable(mixed,string,mixed):mixed
 	 */
