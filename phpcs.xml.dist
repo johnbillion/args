@@ -23,6 +23,7 @@
 		<exclude name="HM.Security.EscapeOutput"/>
 		<exclude name="HM.PHP.Isset.MultipleArguments"/>
 		<exclude name="PEAR.NamingConventions"/>
+		<exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
 		<exclude name="PSR2R.Namespaces.UnusedUseStatement"/>
 		<exclude name="Squiz.Commenting"/>
 		<exclude name="WordPress.Files"/>
