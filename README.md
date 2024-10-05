@@ -198,6 +198,7 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\paginate_links`
 * `\Args\register_meta`
 * `\Args\register_rest_field`
+* `\Args\register_setting`
 * `\Args\wp_get_nav_menus`
 * `\Args\wp_nav_menu`
 * `\Args\wp_die`

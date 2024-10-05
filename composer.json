@@ -116,6 +116,11 @@
 				"file": "vendor/wordpress/wordpress/wp-includes/rest-api.php"
 			},
 			{
+				"function": "\\register_setting()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/option.php"
+			},
+			{
 				"function": "\\register_taxonomy()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/taxonomy.php"
