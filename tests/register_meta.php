@@ -16,6 +16,7 @@ $args->type = $args::TYPE_ARRAY;
 $args->type = $args::TYPE_OBJECT;
 
 $args->description = 'Description';
+$args->label = 'Label';
 $args->single = true;
 $args->default = 123;
 

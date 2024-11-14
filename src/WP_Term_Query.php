@@ -140,13 +140,6 @@ class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string $fields;
 
 	/**
-	 * Whether to return a term count. If true, will take precedence over `$fields`.
-	 *
-	 * Default false.
-	 */
-	public bool $count;
-
-	/**
 	 * Name or array of names to return term(s) for.
 	 *
 	 * @var string|array<int,string>

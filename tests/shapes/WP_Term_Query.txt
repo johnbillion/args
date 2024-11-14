@@ -2,7 +2,6 @@ string $cache_domain
 bool $cache_results
 int $child_of
 bool $childless
-bool $count
 string $description__like
 int[]|string $exclude
 int[]|string $exclude_tree

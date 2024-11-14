@@ -41,6 +41,11 @@ class register_meta extends Shared\Base {
 	public string $description;
 
 	/**
+	 * A human-readable label of the data attached to this meta key.
+	 */
+	public string $label;
+
+	/**
 	 * Whether the meta key has one value per object, or an array of values per object.
 	 */
 	public bool $single;

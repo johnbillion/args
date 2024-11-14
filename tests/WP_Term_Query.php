@@ -18,7 +18,6 @@ $args->exclude_tree = [ 789 ];
 $args->number = 5;
 $args->offset = 2;
 $args->fields = $args::FIELD_ALL;
-$args->count = false;
 $args->name = 'foo';
 $args->slug = 'bar';
 $args->term_taxonomy_id = 33;

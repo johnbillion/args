@@ -34,13 +34,16 @@ composer generate -- --file=vendor/wordpress/wordpress/wp-includes/class-wp-quer
 composer generate -- --file=vendor/wordpress/wordpress/wp-includes/post.php --function="\register_post_type()" --param=args
 ```
 
+### Tests
+
+Add a corresponding entry to the `extra.args-shapes` property in composer.json using the existing entries as a guide.
+
 ## Updating args for a new WordPress release
 
-1. Switch the `roots/wordpress-full` dependency to `dev-main`
+1. Switch the `roots/wordpress-full` dependency to `dev-main` or an RC, such as `x.y-RC3`
 2. Run `composer test`
 3. Address any new, updated, or removed args in changed files in `tests/shapes`
 4. Re-run the tests until they all pass
-5. Add a corresponding entry to the `extra.args-shapes` property in composer.json
 
 ## Running the Tests
 
