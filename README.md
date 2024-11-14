@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current status
 
-Last updated for WordPress 6.6.
+Last updated for WordPress 6.7.
 
 ## Requirements
 
