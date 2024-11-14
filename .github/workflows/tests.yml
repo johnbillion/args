@@ -17,7 +17,7 @@ jobs:
       matrix:
         php: ['8.0', '8.3']
       fail-fast: false
-    name: PHP Coding Standards
+    name: Tests / PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -30,11 +30,6 @@ jobs:
         php-version: ${{ matrix.php }}
         ini-file: development
         coverage: none
-
-    - name: Debugging
-      run: |
-        php --version
-        php -m
 
     - name: Get Composer Cache Directory
       id: composer-cache-dir
