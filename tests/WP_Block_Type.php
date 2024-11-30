@@ -40,7 +40,7 @@ $args->example = [
 		'align' => 'left',
 	],
 ];
-$args->render_callback = function( array $atts, string $content, WP_Block $block = null ) {
+$args->render_callback = function( array $atts, string $content, ?WP_Block $block = null ) {
 	return $content;
 };
 $args->attributes = [

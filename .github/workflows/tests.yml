@@ -15,7 +15,9 @@ jobs:
   build:
     strategy:
       matrix:
-        php: ['8.0', '8.3']
+        php:
+          - '8.4'
+          - '8.0'
       fail-fast: false
     name: Tests / PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
