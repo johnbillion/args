@@ -32,6 +32,7 @@ jobs:
         php-version: ${{ matrix.php }}
         ini-file: development
         coverage: none
+        tools: parallel-lint
 
     - name: Get Composer cache directory
       id: composer-cache
@@ -42,6 +43,9 @@ jobs:
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('composer.json') }}
+
+    - name: Check source code for syntax errors
+      run: composer exec --no-interaction -- parallel-lint bin/ src/ tests/
 
     - name: Install PHP Dependencies
       run: |
