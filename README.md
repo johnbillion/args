@@ -236,7 +236,7 @@ I have a name for these array-type parameters for passing arguments. I call them
 
 The time that I spend maintaining this library and others is in part sponsored by:
 
-[![Automattic](.github/assets/gh/automattic.png)](https://automattic.com)
+[![Automattic](https://cdn.jsdelivr.net/gh/johnbillion/johnbillion/assets/sponsors/automattic.png)](https://automattic.com)
 
 Plus all my kind sponsors on GitHub:
 
