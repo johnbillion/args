@@ -25,6 +25,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        persist-credentials: false
 
     - name: Install PHP
       uses: shivammathur/setup-php@v2
@@ -36,7 +38,8 @@ jobs:
 
     - name: Get Composer cache directory
       id: composer-cache
-      run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+      run: | #shell
+        echo dir="$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
     - name: Cache PHP Dependencies
       uses: actions/cache@v4
@@ -48,9 +51,9 @@ jobs:
       run: composer exec --no-interaction -- parallel-lint bin/ src/ tests/
 
     - name: Install PHP Dependencies
-      run: |
+      run: | #shell
         composer install --prefer-dist --no-progress --no-interaction
 
     - name: Run the tests
-      run: |
+      run: | #shell
         composer test
