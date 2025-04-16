@@ -228,16 +228,30 @@ foreach ( $files as $file ) {
 	$expected_params = array_merge( array_values( $expected_params ), array_keys( $map ) );
 	$missing = array_diff( $expected_params, $props );
 
-	if ( count( $missing ) === 0 ) {
-		continue;
+	if ( count( $props ) === 0 ) {
+		printf(
+			'No properties found in %1$s' . "\n",
+			$file
+		);
+		$has_errors = true;
 	}
 
-	printf(
-		'Properties are missing from %1$s: %2$s' . "\n",
-		$file,
-		implode( ', ', $missing )
-	);
-	$has_errors = true;
+	if ( count( $expected_params ) === 0 ) {
+		printf(
+			'No parameters found in %1$s' . "\n",
+			$txt
+		);
+		$has_errors = true;
+	}
+
+	if ( count( $missing ) > 0 ) {
+		printf(
+			'Properties are missing from %1$s: %2$s' . "\n",
+			$file,
+			implode( ', ', $missing )
+		);
+		$has_errors = true;
+	}
 }
 
 if ( $has_errors ) {
