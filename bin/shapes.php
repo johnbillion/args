@@ -220,9 +220,18 @@ foreach ( $files as $file ) {
 
 	/** @var \Args\Shared\Base $instance */
 	$instance = new $class();
+
+	$props = $object->getProperties();
+
+	$props = array_filter( $props, function( ReflectionProperty $prop ): bool {
+		$docComment = $prop->getDocComment();
+		return $docComment === false || strpos( $docComment, '@deprecated' ) === false;
+	} );
+
 	$props = array_map( function( ReflectionProperty $prop ) : string {
 		return $prop->getName();
-	}, $object->getProperties() );
+	}, $props );
+
 	$map = $instance->getMap();
 	$expected_params = array_diff( $expected_params, array_values( $map ) );
 	$expected_params = array_merge( array_values( $expected_params ), array_keys( $map ) );
