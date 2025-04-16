@@ -8,15 +8,11 @@ namespace Args\Arrayable;
  * An arguments object which provides a vanilla `toArray()` method.
  */
 trait ProvidesToArray {
-
-	/** @var array<string, string> */
-	protected array $map = [];
-
 	/**
 	 * @return array<string, string>
 	 */
-	final public function getMap() : array {
-		return $this->map;
+	public function getMap() : array {
+		return [];
 	}
 
 	/**
@@ -31,8 +27,6 @@ trait ProvidesToArray {
 				unset( $vars[ $from ] );
 			}
 		}
-
-		unset( $vars['map'] );
 
 		foreach ( $vars as $key => $var ) {
 			if ( ! $var instanceof Arrayable ) {
