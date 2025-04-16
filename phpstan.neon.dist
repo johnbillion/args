@@ -4,8 +4,6 @@ includes:
 	- vendor/phpstan/phpstan-phpunit/rules.neon
 	- vendor/phpstan/phpstan-strict-rules/rules.neon
 	- vendor/szepeviktor/phpstan-wordpress/extension.neon
-rules:
-	- Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
 parameters:
 	level: 8
 	checkMissingCallableSignature: true

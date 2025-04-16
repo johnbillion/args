@@ -300,7 +300,6 @@
 	},
 	"require-dev": {
 		"ergebnis/json-printer": "3.7.0",
-		"ergebnis/phpstan-rules": "1.0.0",
 		"humanmade/coding-standards": "1.2.1",
 		"johnbillion/falsey-assertequals-detector": "^3",
 		"phpdocumentor/reflection": "~4.0 || ~5.0",
