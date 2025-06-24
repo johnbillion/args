@@ -92,6 +92,7 @@ final class Query implements Arrayable, Values {
 		}
 
 		$vars = [];
+		$i = 0;
 
 		if ( isset( $this->relation ) ) {
 			$vars['relation'] = $this->relation;
@@ -99,14 +100,21 @@ final class Query implements Arrayable, Values {
 
 		if ( $has_clauses ) {
 			foreach ( $this->clauses as $key => $clause ) {
-				$vars[ $key ] = $clause->toArray();
+				if ( is_string( $key ) ) {
+					$vars[ $key ] = $clause->toArray();
+				} else {
+					$vars[ $i++ ] = $clause->toArray();
+				}
 			}
 		}
 
 		if ( $has_queries ) {
 			foreach ( $this->queries as $key => $query ) {
-				// @todo need to handle numeric keys that match the clause keys.
-				$vars[ $key ] = $query->toArray();
+				if ( is_string( $key ) ) {
+					$vars[ $key ] = $query->toArray();
+				} else {
+					$vars[ $i++ ] = $query->toArray();
+				}
 			}
 		}
 
