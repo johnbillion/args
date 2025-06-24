@@ -76,8 +76,51 @@ final class MetaQueryTest extends TestCase {
 	 * @dataProvider dataWithMetaQueryArgs
 	 * @param WithMeta $class
 	 */
+	public function testNestedMetaQueryIsCorrectlyConvertedToArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->key = 'my_meta_key';
+		$clause1->value = 'my_meta_value';
+
+		$clause2 = new Clause;
+		$clause2->value = '100';
+		$clause2->compare = Values::META_COMPARE_VALUE_GREATER_THAN;
+
+		$query = new Query;
+		$query->relation = Values::META_QUERY_RELATION_AND;
+		$query->addClause( $clause2 );
+
+		$args->meta_query->addClause( $clause1 );
+		$args->meta_query->addQuery( $query, 'nested' );
+
+		$expected = [
+			'meta_query' => [
+				[
+					'key' => 'my_meta_key',
+					'value' => 'my_meta_value',
+				],
+				'nested' => [
+					'relation' => 'AND',
+					[
+						'compare' => '>',
+						'value' => '100',
+					],
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
 	public function testMetaQueryIsCorrectlyConvertedFromArray( string $class ): void {
 		$args = new $class;
+		// @todo need better assertion for this
 
 		$meta_query = [
 			'relation' => 'OR',
@@ -104,7 +147,79 @@ final class MetaQueryTest extends TestCase {
 	 * @dataProvider dataWithMetaQueryArgs
 	 * @param WithMeta $class
 	 */
-	public function testMetaQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
+	public function testAssociativeNestedMetaQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$meta_query = [
+			'relation' => 'AND',
+			[
+				'key' => 'my_meta_key',
+				'value' => 'my_meta_value',
+			],
+			'nested' => [
+				[
+					'compare' => '>',
+					'value' => '100',
+				],
+				[
+					'compare' => '<',
+					'value' => '200',
+				],
+			],
+		];
+		$args->meta_query = Query::fromArray( $meta_query );
+
+		$expected = [
+			'meta_query' => $meta_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
+	public function testIndexedNestedMetaQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$meta_query = [
+			'relation' => 'OR',
+			[
+				'compare' => '=',
+				'key' => 'color',
+				'value' => 'orange',
+			],
+			[
+				'relation' => 'AND',
+				[
+					'compare' => '=',
+					'key' => 'color',
+					'value' => 'red',
+				],
+				[
+					'compare' => '=',
+					'key' => 'size',
+					'value' => 'small',
+				],
+			],
+		];
+		$args->meta_query = Query::fromArray( $meta_query );
+
+		$expected = [
+			'meta_query' => $meta_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
+	public function testMetaQueryWithNoClausesOrQueriesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
 		$args->meta_query->relation = Values::META_QUERY_RELATION_OR;
