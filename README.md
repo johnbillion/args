@@ -114,6 +114,32 @@ $args->date_query->clauses[] = $clause;
 $query = new \WP_Query( $args->toArray() );
 ```
 
+Nested queries are supported:
+
+```php
+$args = new \Args\WP_Query;
+
+// Create some clauses
+$clause1 = new \Args\MetaQuery\Clause;
+$clause1->key = 'my_meta_key';
+$clause1->value = 'my_meta_value';
+
+$clause2 = new \Args\MetaQuery\Clause;
+$clause1->key = 'another_meta_key';
+$clause2->value = '100';
+$clause2->compare = '>';
+
+// Create a nested query with a clause
+$query = new \Args\MetaQuery\Query;
+$query->addClause( $clause2 );
+
+// Add the clause and nested query
+$args->meta_query->clauses[] = $clause1;
+$args->meta_query->queries[] = $query;
+
+$query = new \WP_Query( $args->toArray() );
+```
+
 Alternatively you can construct a complete query object by calling the `fromArray()` static method with the same nested array syntax that WordPress core uses:
 
 ```php
