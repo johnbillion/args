@@ -44,10 +44,8 @@ final class Query implements Arrayable, Values {
 			} elseif ( ! is_array( $query ) ) {
 				continue;
 			} elseif ( $class->isFirstOrderClause( $query ) ) {
-				// If the first order query is an array, it must be a clause.
 				$class->addClause( Clause::fromArray( $query ), is_string( $key ) ? $key : null );
 			} else {
-				// Otherwise, it must be a nested query.
 				$class->addQuery( Query::fromArray( $query ), is_string( $key ) ? $key : null );
 			}
 		}

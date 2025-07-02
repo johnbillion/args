@@ -100,6 +100,117 @@ final class DateQueryTest extends TestCase {
 	 * @dataProvider dataWithDateQueryArgs
 	 * @param WithDate $class
 	 */
+	public function testNestedDateQueryIsCorrectlyConvertedToArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->year = 1984;
+		$clause1->column = 'post_modified';
+
+		$clause2 = new Clause;
+		$clause2->year = 2000;
+		$clause2->month = 12;
+
+		$query = new Query;
+		$query->relation = Values::DATE_QUERY_RELATION_AND;
+		$query->addClause( $clause2 );
+
+		$args->date_query->addClause( $clause1 );
+		$args->date_query->addQuery( $query, 'nested' );
+
+		$expected = [
+			'date_query' => [
+				[
+					'column' => 'post_modified',
+					'year' => 1984,
+				],
+				'nested' => [
+					'relation' => 'AND',
+					[
+						'month' => 12,
+						'year' => 2000,
+					],
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithDateQueryArgs
+	 * @param WithDate $class
+	 */
+	public function testAssociativeNestedDateQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$date_query = [
+			'relation' => 'AND',
+			[
+				'column' => 'post_modified',
+				'year' => 1984,
+			],
+			'nested' => [
+				[
+					'month' => 12,
+					'year' => 2000,
+				],
+				[
+					'month' => 1,
+					'year' => 2001,
+				],
+			],
+		];
+		$args->date_query = Query::fromArray( $date_query );
+
+		$expected = [
+			'date_query' => $date_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithDateQueryArgs
+	 * @param WithDate $class
+	 */
+	public function testIndexedNestedDateQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$date_query = [
+			'relation' => 'OR',
+			[
+				'column' => 'post_date',
+				'year' => 1984,
+			],
+			[
+				'relation' => 'AND',
+				[
+					'month' => 12,
+					'year' => 2000,
+				],
+				[
+					'month' => 1,
+					'year' => 2001,
+				],
+			],
+		];
+		$args->date_query = Query::fromArray( $date_query );
+
+		$expected = [
+			'date_query' => $date_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithDateQueryArgs
+	 * @param WithDate $class
+	 */
 	public function testDateQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 

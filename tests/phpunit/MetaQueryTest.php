@@ -120,7 +120,6 @@ final class MetaQueryTest extends TestCase {
 	 */
 	public function testMetaQueryIsCorrectlyConvertedFromArray( string $class ): void {
 		$args = new $class;
-		// @todo need better assertion for this
 
 		$meta_query = [
 			'relation' => 'OR',
