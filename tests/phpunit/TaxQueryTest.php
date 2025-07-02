@@ -95,6 +95,122 @@ final class TaxQueryTest extends TestCase {
 	 * @dataProvider dataWithTaxQueryArgs
 	 * @param WithTax $class
 	 */
+	public function testNestedTaxQueryIsCorrectlyConvertedToArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->taxonomy = 'category';
+		$clause1->terms = 'foo';
+
+		$clause2 = new Clause;
+		$clause2->taxonomy = 'post_tag';
+		$clause2->terms = 'bar';
+		$clause2->operator = 'NOT IN';
+
+		$query = new Query;
+		$query->relation = Values::TAX_QUERY_RELATION_AND;
+		$query->addClause( $clause2 );
+
+		$args->tax_query->addClause( $clause1 );
+		$args->tax_query->addQuery( $query, 'nested' );
+
+		$expected = [
+			'tax_query' => [
+				[
+					'taxonomy' => 'category',
+					'terms' => 'foo',
+				],
+				'nested' => [
+					'relation' => 'AND',
+					[
+						'operator' => 'NOT IN',
+						'taxonomy' => 'post_tag',
+						'terms' => 'bar',
+					],
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithTaxQueryArgs
+	 * @param WithTax $class
+	 */
+	public function testAssociativeNestedTaxQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$tax_query = [
+			'relation' => 'AND',
+			[
+				'taxonomy' => 'category',
+				'terms' => 'foo',
+			],
+			'nested' => [
+				[
+					'operator' => 'NOT IN',
+					'taxonomy' => 'post_tag',
+					'terms' => 'bar',
+				],
+				[
+					'field' => 'slug',
+					'taxonomy' => 'custom_tax',
+					'terms' => 'baz',
+				],
+			],
+		];
+		$args->tax_query = Query::fromArray( $tax_query );
+
+		$expected = [
+			'tax_query' => $tax_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithTaxQueryArgs
+	 * @param WithTax $class
+	 */
+	public function testIndexedNestedTaxQueryIsCorrectlyConvertedFromArray( string $class ): void {
+		$args = new $class;
+
+		$tax_query = [
+			'relation' => 'OR',
+			[
+				'taxonomy' => 'category',
+				'terms' => 'news',
+			],
+			[
+				'relation' => 'AND',
+				[
+					'taxonomy' => 'post_tag',
+					'terms' => 'featured',
+				],
+				[
+					'operator' => 'EXISTS',
+					'taxonomy' => 'custom_tax',
+					'terms' => 'special',
+				],
+			],
+		];
+		$args->tax_query = Query::fromArray( $tax_query );
+
+		$expected = [
+			'tax_query' => $tax_query,
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithTaxQueryArgs
+	 * @param WithTax $class
+	 */
 	public function testTaxQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
