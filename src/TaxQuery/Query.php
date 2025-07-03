@@ -59,12 +59,12 @@ final class Query implements Arrayable, Values {
 	 * @param mixed[] $query
 	 */
 	private function isFirstOrderClause( array $query ) : bool {
-		return empty( $query ) || 
-			   array_key_exists( 'terms', $query ) || 
-			   array_key_exists( 'taxonomy', $query ) || 
-			   array_key_exists( 'include_children', $query ) || 
-			   array_key_exists( 'field', $query ) || 
-			   array_key_exists( 'operator', $query );
+		return count( $query ) === 0 ||
+			array_key_exists( 'terms', $query ) ||
+			array_key_exists( 'taxonomy', $query ) ||
+			array_key_exists( 'include_children', $query ) ||
+			array_key_exists( 'field', $query ) ||
+			array_key_exists( 'operator', $query );
 	}
 
 	final public function addClause( Clause $clause, ?string $key = null ) : void {
