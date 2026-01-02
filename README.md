@@ -125,7 +125,7 @@ $clause1->key = 'my_meta_key';
 $clause1->value = 'my_meta_value';
 
 $clause2 = new \Args\MetaQuery\Clause;
-$clause1->key = 'another_meta_key';
+$clause2->key = 'another_meta_key';
 $clause2->value = '100';
 $clause2->compare = '>';
 
