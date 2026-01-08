@@ -11,6 +11,8 @@ on:
     branches:
       - '**'
 
+permissions: {}
+
 jobs:
   build:
     strategy:
@@ -24,12 +26,12 @@ jobs:
     timeout-minutes: 10
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       with:
         persist-credentials: false
 
     - name: Install PHP
-      uses: shivammathur/setup-php@v2
+      uses: shivammathur/setup-php@db91e1a0e48e84637d325a7ee4d2677e146ceec4 # v2.36.0
       with:
         php-version: ${{ matrix.php }}
         ini-file: development
@@ -42,7 +44,7 @@ jobs:
         echo dir="$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
     - name: Cache PHP Dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('composer.json') }}
