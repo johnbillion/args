@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+
+# Args is publised to Packagist via the native GitHub integration when a tag is pushed.
+# This workflow updates GitHub milestones accordingly.
+
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions: {}
+
+jobs:
+  github:
+    name: GitHub Milestones
+    permissions:
+      issues: write # Required for write access to milestones
+    uses: johnbillion/plugin-infrastructure/.github/workflows/reusable-milestones.yml@2.5.3
+    with:
+      version: ${{ github.ref_name }}
