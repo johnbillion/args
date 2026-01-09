@@ -90,13 +90,13 @@ final class Clause implements Arrayable, Values {
 	public int|array $month;
 
 	/**
-	 * The week number of the year. Accepts numbers 0-53 or an
+	 * The week number of the year. Accepts numbers 1-53 or an
 	 * array of valid numbers if `$compare` supports it.
 	 *
 	 * Default empty.
 	 *
 	 * @var int|array<int,int>
-	 * @phpstan-var int<0,53>|list<int<0,53>>
+	 * @phpstan-var int<1,53>|list<int<1,53>>
 	 */
 	public int|array $week;
 
@@ -151,7 +151,7 @@ final class Clause implements Arrayable, Values {
 	 * Default empty.
 	 *
 	 * @var int|array<int,int>
-	 * @phpstan-var int<1,23>|list<int<1,23>>
+	 * @phpstan-var int<0,23>|list<int<0,23>>
 	 */
 	public int|array $hour;
 
