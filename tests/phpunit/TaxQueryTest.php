@@ -105,4 +105,46 @@ final class TaxQueryTest extends TestCase {
 
 		self::assertSame( $expected, $actual );
 	}
+
+	/**
+	 * @dataProvider dataWithTaxQueryArgs
+	 * @param WithTax $class
+	 */
+	public function testTaxQueryChildrenBackwardCompatibility( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->taxonomy = 'category';
+		$clause1->terms = 'foo';
+		$clause1->include_children = true;
+
+		$clause2 = new Clause;
+		$clause2->terms = 456;
+		$clause2->operator = 'EXISTS';
+		$clause2->children = false;
+
+		$args->tax_query->relation = Values::TAX_QUERY_RELATION_OR;
+		$args->tax_query->addClause( $clause1 );
+		$args->tax_query->addClause( $clause2 );
+
+		$expected = [
+			'tax_query' => [
+				'relation' => 'OR',
+				[
+					'include_children' => true,
+					'taxonomy' => 'category',
+					'terms' => 'foo',
+				],
+				[
+					'children' => false,
+					'include_children' => false,
+					'operator' => 'EXISTS',
+					'terms' => 456,
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
 }

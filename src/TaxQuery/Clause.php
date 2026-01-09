@@ -59,7 +59,29 @@ final class Clause implements Arrayable, Values {
 	/**
 	 * Whether to include child terms. Requires a `$taxonomy`.
 	 *
+	 * @alias include_children
+	 *
 	 * Default: true.
 	 */
 	public bool $children;
+
+	/**
+	 * Whether to include child terms. Requires a `$taxonomy`.
+	 *
+	 * Default: true.
+	 */
+	public bool $include_children;
+
+	/**
+	 * @return array<string,mixed>
+	 */
+	final public function toArray(): array {
+		$vars = get_object_vars( $this );
+		if ( isset( $this->children ) && ! isset( $this->include_children ) ) {
+			$vars['include_children'] = $this->children;
+		}
+		\ksort( $vars );
+
+		return $vars;
+	}
 }
