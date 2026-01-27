@@ -211,6 +211,35 @@ final class DateQueryTest extends TestCase {
 	 * @dataProvider dataWithDateQueryArgs
 	 * @param WithDate $class
 	 */
+	public function testEmptyNestedDateQueryIsNotIncludedInArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->year = 1984;
+		$clause1->column = 'post_modified';
+
+		$emptyQuery = new Query;
+
+		$args->date_query->addClause( $clause1 );
+		$args->date_query->addQuery( $emptyQuery );
+
+		$expected = [
+			'date_query' => [
+				[
+					'column' => 'post_modified',
+					'year' => 1984,
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithDateQueryArgs
+	 * @param WithDate $class
+	 */
 	public function testDateQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 

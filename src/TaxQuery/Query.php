@@ -113,10 +113,16 @@ final class Query implements Arrayable, Values {
 
 		if ( $has_queries ) {
 			foreach ( $this->queries as $key => $query ) {
+				$value = $query->toArray();
+
+				if ( null === $value ) {
+					continue;
+				}
+
 				if ( is_string( $key ) ) {
-					$vars[ $key ] = $query->toArray();
+					$vars[ $key ] = $value;
 				} else {
-					$vars[ $i++ ] = $query->toArray();
+					$vars[ $i++ ] = $value;
 				}
 			}
 		}

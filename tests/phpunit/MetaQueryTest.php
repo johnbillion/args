@@ -218,6 +218,35 @@ final class MetaQueryTest extends TestCase {
 	 * @dataProvider dataWithMetaQueryArgs
 	 * @param WithMeta $class
 	 */
+	public function testEmptyNestedMetaQueryIsNotIncludedInArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->key = 'my_meta_key';
+		$clause1->value = 'my_meta_value';
+
+		$emptyQuery = new Query;
+
+		$args->meta_query->addClause( $clause1 );
+		$args->meta_query->addQuery( $emptyQuery );
+
+		$expected = [
+			'meta_query' => [
+				[
+					'key' => 'my_meta_key',
+					'value' => 'my_meta_value',
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithMetaQueryArgs
+	 * @param WithMeta $class
+	 */
 	public function testMetaQueryWithNoClausesOrQueriesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 

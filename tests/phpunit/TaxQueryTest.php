@@ -211,6 +211,35 @@ final class TaxQueryTest extends TestCase {
 	 * @dataProvider dataWithTaxQueryArgs
 	 * @param WithTax $class
 	 */
+	public function testEmptyNestedTaxQueryIsNotIncludedInArray( string $class ): void {
+		$args = new $class;
+
+		$clause1 = new Clause;
+		$clause1->taxonomy = 'category';
+		$clause1->terms = 'foo';
+
+		$emptyQuery = new Query;
+
+		$args->tax_query->addClause( $clause1 );
+		$args->tax_query->addQuery( $emptyQuery );
+
+		$expected = [
+			'tax_query' => [
+				[
+					'taxonomy' => 'category',
+					'terms' => 'foo',
+				],
+			],
+		];
+		$actual = $args->toArray();
+
+		self::assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @dataProvider dataWithTaxQueryArgs
+	 * @param WithTax $class
+	 */
 	public function testTaxQueryWithNoClausesIsNotIncludedInArray( string $class ): void {
 		$args = new $class;
 
