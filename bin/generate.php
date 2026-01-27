@@ -144,11 +144,12 @@ $desc = array_map( 'trim', $desc );
 unset( $desc[0] );
 
 $desc = array_map( function( string $string ) : array {
-	return (array) preg_split( '#\s+#', $string, 3 );
+	$parts = preg_split( '#\s+#', $string, 3 );
+	return $parts !== false ? $parts : [];
 }, $desc );
 
 $desc = array_map( function( array $item ) : string {
-	$description = preg_replace( '#\n\s+#', ' ', (string) $item[2] );
+	$description = preg_replace( '#\n\s+#', ' ', $item[2] );
 	$type = $item[0];
 	$name = $item[1];
 

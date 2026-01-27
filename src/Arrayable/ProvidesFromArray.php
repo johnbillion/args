@@ -13,6 +13,7 @@ trait ProvidesFromArray {
 	 * @return static
 	 */
 	final public static function fromArray( array $args ) : self {
+		/** @phpstan-ignore new.staticInAbstractClassStaticMethod */
 		$class = new static();
 
 		foreach ( $args as $key => $value ) {

@@ -153,7 +153,8 @@ function test_shape( array $options ): void {
 		if ( preg_match( '#^(.+?)\s+(\$\S+)#', $string, $matches ) === 1 ) {
 			return [ trim( $matches[1] ), $matches[2] ];
 		}
-		return (array) preg_split( '#\s+#', $string, 3 );
+		$parts = preg_split( '#\s+#', $string, 3 );
+		return $parts !== false ? $parts : [];
 	}, $desc );
 
 	usort( $desc, function( $a, $b ): int {
