@@ -16,11 +16,13 @@
 
 	<rule ref="HM">
 		<exclude name="Generic.Commenting"/>
+		<exclude name="Generic.Functions.CallTimePassByReference"/>
 		<exclude name="HM.Files"/>
 		<exclude name="HM.Layout.Order"/>
 		<exclude name="HM.Namespaces.NoLeadingSlashOnUse.LeadingSlash"/>
 		<exclude name="HM.Performance.SlowMetaQuery"/>
 		<exclude name="HM.Security.EscapeOutput"/>
+		<exclude name="HM.Debug.ESLint"/>
 		<exclude name="HM.PHP.Isset.MultipleArguments"/>
 		<exclude name="PEAR.NamingConventions"/>
 		<exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
