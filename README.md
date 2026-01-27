@@ -130,12 +130,12 @@ $clause2->value = '100';
 $clause2->compare = '>';
 
 // Create a nested query with a clause
-$query = new \Args\MetaQuery\Query;
-$query->addClause( $clause2 );
+$nested = new \Args\MetaQuery\Query;
+$nested->addClause( $clause2 );
 
 // Add the clause and nested query
 $args->meta_query->clauses[] = $clause1;
-$args->meta_query->queries[] = $query;
+$args->meta_query->queries[] = $nested;
 
 $query = new \WP_Query( $args->toArray() );
 ```
