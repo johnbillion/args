@@ -148,6 +148,11 @@ function test_shape( array $options ): void {
 	unset( $desc[0] );
 
 	$desc = array_map( function( string $string ) : array {
+		// Match type (everything before $varname) and variable name
+		// Handles types with spaces like "array<string, mixed>"
+		if ( preg_match( '#^(.+?)\s+(\$\S+)#', $string, $matches ) === 1 ) {
+			return [ trim( $matches[1] ), $matches[2] ];
+		}
 		return (array) preg_split( '#\s+#', $string, 3 );
 	}, $desc );
 
