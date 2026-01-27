@@ -66,8 +66,14 @@ $clause1->key = 'foo';
 $clause2 = new \Args\MetaQuery\Clause;
 $clause2->key = 'bar';
 
+$nestedQuery = new \Args\MetaQuery\Query;
+$nestedQuery->relation = \Args\MetaQuery\Values::META_QUERY_RELATION_OR;
+$nestedQuery->addClause( $clause1 );
+$nestedQuery->addClause( $clause2 );
+
 $args->meta_query->clauses['one'] = $clause1;
 $args->meta_query->addClause( $clause2 );
+$args->meta_query->addQuery( $nestedQuery );
 $args->meta_query->relation = $args->meta_query::META_QUERY_RELATION_AND;
 
 $args->menu_order = 0;

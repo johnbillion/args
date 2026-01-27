@@ -43,8 +43,8 @@
 		],
 		"test": [
 			"@test:shapes",
-			"@test:phpstan",
 			"@test:phpunit",
+			"@test:phpstan",
 			"@test:phpcs"
 		]
 	},

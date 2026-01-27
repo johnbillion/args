@@ -40,45 +40,104 @@ final class Query implements Arrayable, Values {
 	public string $relation;
 
 	/**
-	 * @var array<int, Clause>
+	 * @var array<int|string, Clause>
 	 */
 	public array $clauses;
 
 	/**
-	 * @param mixed[] $clauses
+	 * @var array<int|string, Query>
+	 */
+	public array $queries;
+
+	/**
+	 * Supported time-related parameter keys.
+	 *
+	 * @var list<string>
+	 */
+	private const TIME_KEYS = [
+		'after',
+		'before',
+		'year',
+		'month',
+		'monthnum',
+		'week',
+		'w',
+		'dayofyear',
+		'day',
+		'dayofweek',
+		'dayofweek_iso',
+		'hour',
+		'minute',
+		'second',
+	];
+
+	/**
+	 * See {@link https://github.com/WordPress/wordpress-develop/blob/40bc4f565a871f1ac0eda3111781168133ca06aa/src/wp-includes/class-wp-date-query.php#L189-L237 WP_Date_Query::sanitize_query()}.
+	 *
+	 * @param mixed[] $queries
 	 * @return static
 	 */
-	final public static function fromArray( array $clauses ) : self {
+	final public static function fromArray( array $queries ) : self {
 		$class = new static();
 
-		foreach ( $clauses as $key => $value ) {
+		foreach ( $queries as $key => $query ) {
 			if ( 'column' === $key ) {
-				$class->column = $value;
+				$class->column = $query;
 			} elseif ( 'compare' === $key ) {
-				$class->compare = $value;
+				$class->compare = $query;
 			} elseif ( 'relation' === $key ) {
-				$class->relation = $value;
+				$class->relation = $query;
+			} elseif ( ! is_array( $query ) ) {
+				continue;
+			} elseif ( $class->isFirstOrderClause( $query ) ) {
+				$class->addClause( Clause::fromArray( $query ), is_string( $key ) ? $key : null );
 			} else {
-				$class->addClause( Clause::fromArray( $value ) );
+				$class->addQuery( Query::fromArray( $query ), is_string( $key ) ? $key : null );
 			}
 		}
 
 		return $class;
 	}
 
-	final public function addClause( Clause $clause ) : void {
-		$this->clauses[] = $clause;
+	/**
+	 * See {@link https://github.com/WordPress/wordpress-develop/blob/40bc4f565a871f1ac0eda3111781168133ca06aa/src/wp-includes/class-wp-date-query.php#L250-L253 WP_Date_Query::is_first_order_clause()}.
+	 *
+	 * @param mixed[] $query
+	 */
+	private function isFirstOrderClause( array $query ) : bool {
+		$time_keys = array_intersect( self::TIME_KEYS, array_keys( $query ) );
+		return count( $time_keys ) > 0;
+	}
+
+	final public function addClause( Clause $clause, ?string $key = null ) : void {
+		if ( null !== $key ) {
+			$this->clauses[ $key ] = $clause;
+		} else {
+			$this->clauses[] = $clause;
+		}
+	}
+
+	final public function addQuery( Query $query, ?string $key = null ) : void {
+		if ( null !== $key ) {
+			$this->queries[ $key ] = $query;
+		} else {
+			$this->queries[] = $query;
+		}
 	}
 
 	/**
 	 * @return ?array<string|int,mixed>
 	 */
 	final public function toArray() : ?array {
-		if ( ! isset( $this->clauses ) || count( $this->clauses ) === 0 ) {
+		$has_clauses = isset( $this->clauses ) && count( $this->clauses ) > 0;
+		$has_queries = isset( $this->queries ) && count( $this->queries ) > 0;
+
+		if ( ! $has_clauses && ! $has_queries ) {
 			return null;
 		}
 
 		$vars = [];
+		$i = 0;
 
 		if ( isset( $this->column ) ) {
 			$vars['column'] = $this->column;
@@ -90,8 +149,30 @@ final class Query implements Arrayable, Values {
 			$vars['relation'] = $this->relation;
 		}
 
-		foreach ( $this->clauses as $key => $value ) {
-			$vars[ $key ] = $value->toArray();
+		if ( $has_clauses ) {
+			foreach ( $this->clauses as $key => $clause ) {
+				if ( is_string( $key ) ) {
+					$vars[ $key ] = $clause->toArray();
+				} else {
+					$vars[ $i++ ] = $clause->toArray();
+				}
+			}
+		}
+
+		if ( $has_queries ) {
+			foreach ( $this->queries as $key => $query ) {
+				$value = $query->toArray();
+
+				if ( null === $value ) {
+					continue;
+				}
+
+				if ( is_string( $key ) ) {
+					$vars[ $key ] = $value;
+				} else {
+					$vars[ $i++ ] = $value;
+				}
+			}
 		}
 
 		return $vars;
