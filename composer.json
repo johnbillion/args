@@ -186,6 +186,16 @@
 				"file": "vendor/wordpress/wordpress/wp-includes/nav-menu-template.php"
 			},
 			{
+				"function": "\\wp_register_ability()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api.php"
+			},
+			{
+				"function": "\\wp_register_ability_category()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api.php"
+			},
+			{
 				"function": "\\wp_remote_get()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/http.php"
@@ -239,6 +249,16 @@
 				"function": "\\wp_update_user()",
 				"param": "userdata",
 				"file": "vendor/wordpress/wordpress/wp-includes/user.php"
+			},
+			{
+				"method": "\\WP_Abilities_Registry::register()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api/class-wp-abilities-registry.php"
+			},
+			{
+				"method": "\\WP_Ability_Categories_Registry::register()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api/class-wp-ability-categories-registry.php"
 			},
 			{
 				"method": "\\WP_Block_Type::__construct()",

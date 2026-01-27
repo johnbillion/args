@@ -1,0 +1,9 @@
+string $ability_class
+string $category
+string $description
+callable $execute_callback
+array<string, mixed> $input_schema
+string $label
+array<string, mixed> $meta
+array<string, mixed> $output_schema
+callable $permission_callback

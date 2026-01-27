@@ -1,0 +1,3 @@
+string $description
+string $label
+array<string, mixed> $meta
