@@ -12,6 +12,7 @@ namespace Args;
 class register_post_type extends Shared\Base {
 	public const TEMPLATE_LOCK_ALL = 'all';
 	public const TEMPLATE_LOCK_INSERT = 'insert';
+	public const TEMPLATE_LOCK_CONTENT_ONLY = 'contentOnly';
 	public const TEMPLATE_LOCK_FALSE = false;
 
 	/**
@@ -350,7 +351,8 @@ class register_post_type extends Shared\Base {
 	 * Whether the block template should be locked if `$template` is set.
 	 *
 	 *   - If set to 'all', the user is unable to insert new blocks, move existing blocks and delete blocks.
-	 *   - If set to 'insert', the user is able to move existing blocks but is unable to insert new blocks and delete blocks
+	 *   - If set to 'insert', the user is able to move existing blocks but is unable to insert new blocks and delete blocks.
+	 *   - If set to 'contentOnly', the user is only able to edit the content of existing blocks.
 	 *
 	 * Default false.
 	 *
