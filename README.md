@@ -211,6 +211,11 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\WP_Block_Type`
 * `\Args\register_block_type`
 
+### Abilities
+
+* `\Args\wp_register_ability`
+* `\Args\wp_register_ability_category`
+
 ### Customizer
 
 * `\Args\WP_Customize_Control`
