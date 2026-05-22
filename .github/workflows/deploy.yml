@@ -17,6 +17,6 @@ jobs:
     name: GitHub Milestones
     permissions:
       issues: write # Required for write access to milestones
-    uses: johnbillion/plugin-infrastructure/.github/workflows/reusable-milestones.yml@1bf8b2cc9ee7211d0ac2e5d7f82bc9a151d7d094 # 2.7.2
+    uses: johnbillion/plugin-infrastructure/.github/workflows/reusable-milestones.yml@cc47e37177c694e00b901a5dc89fda5644bc550f # 2.9.1
     with:
       version: ${{ github.ref_name }}
