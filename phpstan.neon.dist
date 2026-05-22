@@ -19,4 +19,3 @@ parameters:
 		- '#Variable property access on static\(Args\\DateQuery\\#'
 		- '#Variable property access on static\(Args\\MetaQuery\\#'
 		- '#Variable property access on static\(Args\\TaxQuery\\#'
-		- '#with generic class WP_REST_Request does not specify its types#'
