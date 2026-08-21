@@ -15,6 +15,13 @@
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"roots/wordpress-core-installer": true
+		},
+		"policy": {
+			"advisories": {
+				"ignore-id": [
+					"PKSA-mh9b-91zm-m1gy"
+				]
+			}
 		}
 	},
 	"require": {
