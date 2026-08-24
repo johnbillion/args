@@ -163,6 +163,11 @@
 				"file": "vendor/wordpress/wordpress/wp-includes/category-template.php"
 			},
 			{
+				"function": "\\wp_get_abilities()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api.php"
+			},
+			{
 				"function": "\\wp_get_nav_menus()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/nav-menu.php"
@@ -335,7 +340,7 @@
 		"phpstan/phpstan-strict-rules": "2.0.8",
 		"phpunit/phpunit": "^9.0",
 		"roots/wordpress-core-installer": "1.100.0",
-		"roots/wordpress-full": "~7.0.0",
+		"roots/wordpress-full": "~7.1.0",
 		"szepeviktor/phpstan-wordpress": "2.0.3"
 	},
 	"funding": [

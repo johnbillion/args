@@ -18,7 +18,7 @@ This library provides well-documented classes which represent many of the associ
 
 ## Current status
 
-Last updated for WordPress 7.0.
+Last updated for WordPress 7.1.
 
 ## Requirements
 
@@ -213,6 +213,7 @@ $query = new \WP_Query( $args->toArray() );
 
 ### Abilities
 
+* `\Args\wp_get_abilities`
 * `\Args\wp_register_ability`
 * `\Args\wp_register_ability_category`
 

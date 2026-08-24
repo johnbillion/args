@@ -1,0 +1,5 @@
+string $category
+callable $item_include_callback
+array $meta
+string $namespace
+callable $result_callback

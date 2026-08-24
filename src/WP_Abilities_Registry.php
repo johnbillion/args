@@ -69,6 +69,7 @@ class WP_Abilities_Registry extends Shared\Base {
 	 *         destructive?: bool|null,
 	 *         idempotent?: bool|null,
 	 *     },
+	 *     public?: bool,
 	 *     show_in_rest?: bool,
 	 * }
 	 */
