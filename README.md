@@ -223,6 +223,11 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_register_icon`
 * `\Args\wp_register_icon_collection`
 
+### Tooltips
+
+* `\Args\wp_get_toggletip`
+* `\Args\wp_get_tooltip`
+
 ### Customizer
 
 * `\Args\WP_Customize_Control`

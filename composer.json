@@ -183,6 +183,16 @@
 				"file": "vendor/wordpress/wordpress/wp-includes/taxonomy.php"
 			},
 			{
+				"function": "\\wp_get_toggletip()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/general-template.php"
+			},
+			{
+				"function": "\\wp_get_tooltip()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/general-template.php"
+			},
+			{
 				"function": "\\wp_insert_post()",
 				"param": "postarr",
 				"file": "vendor/wordpress/wordpress/wp-includes/post.php"

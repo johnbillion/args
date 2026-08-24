@@ -1,0 +1,6 @@
+string $button
+string $class
+string $close_label
+string $icon
+string $id
+string $label
