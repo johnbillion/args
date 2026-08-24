@@ -9,7 +9,7 @@ $args->rest_controller_class = WP_REST_Controller::class;
 $args->capability_type = [ 'page', 'pages' ];
 $args->capabilities = [
 	'read' => 'foo',
-	'what' => 'foo',
+	'edit_post' => 'foo',
 ];
 $args->template_lock = 'all';
 $args->register_meta_box_cb = function( \WP_Post $post ) {};
