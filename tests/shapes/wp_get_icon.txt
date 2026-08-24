@@ -1,0 +1,3 @@
+string $class
+string $label
+int|null $size

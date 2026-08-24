@@ -168,6 +168,11 @@
 				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api.php"
 			},
 			{
+				"function": "\\wp_get_icon()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/icons.php"
+			},
+			{
 				"function": "\\wp_get_nav_menus()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/nav-menu.php"
@@ -206,6 +211,16 @@
 				"function": "\\wp_register_ability_category()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/abilities-api.php"
+			},
+			{
+				"function": "\\wp_register_icon()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/icons.php"
+			},
+			{
+				"function": "\\wp_register_icon_collection()",
+				"param": "args",
+				"file": "vendor/wordpress/wordpress/wp-includes/icons.php"
 			},
 			{
 				"function": "\\wp_remote_get()",
@@ -311,6 +326,16 @@
 				"method": "\\WP_Http::request()",
 				"param": "args",
 				"file": "vendor/wordpress/wordpress/wp-includes/class-wp-http.php"
+			},
+			{
+				"method": "\\WP_Icon_Collections_Registry::register()",
+				"param": "collection_properties",
+				"file": "vendor/wordpress/wordpress/wp-includes/class-wp-icon-collections-registry.php"
+			},
+			{
+				"method": "\\WP_Icons_Registry::register()",
+				"param": "icon_properties",
+				"file": "vendor/wordpress/wordpress/wp-includes/class-wp-icons-registry.php"
 			},
 			{
 				"method": "\\WP_Query::parse_query()",

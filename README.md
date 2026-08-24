@@ -217,6 +217,12 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_register_ability`
 * `\Args\wp_register_ability_category`
 
+### Icons
+
+* `\Args\wp_get_icon`
+* `\Args\wp_register_icon`
+* `\Args\wp_register_icon_collection`
+
 ### Customizer
 
 * `\Args\WP_Customize_Control`
