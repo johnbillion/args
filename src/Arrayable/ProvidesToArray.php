@@ -55,10 +55,11 @@ trait ProvidesToArray {
 	 * WordPress only accepts strings for sort orders. The `SortDirection` enum exists on PHP 8.6+ only, so the enum
 	 * cases must not be referenced outside of the `instanceof` check.
 	 *
-	 * @param mixed $value
-	 * @return mixed
+	 * @template T
+	 * @param T $value
+	 * @return (T is \SortDirection ? \Args\Shared\Base::ORDER_* : T)
 	 */
-	private static function sortDirectionToString( $value ) {
+	private static function sortDirectionToString( mixed $value ) : mixed {
 		if ( ! $value instanceof \SortDirection ) {
 			return $value;
 		}
