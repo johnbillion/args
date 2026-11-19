@@ -10,5 +10,13 @@ $args->description = 'A description of the data attached to this setting.';
 $args->sanitize_callback = function ( int $value, string $option_name, mixed $args ) {
 	return $value;
 };
+$args->sanitize_callback = null;
 $args->show_in_rest = true;
+$args->show_in_abilities = true;
+$args->show_in_abilities = [
+	'name' => 'my_setting',
+	'schema' => [
+		'type' => 'string',
+	],
+];
 $args->default = 'default value';

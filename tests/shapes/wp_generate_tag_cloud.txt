@@ -1,12 +1,12 @@
 int|bool $filter
 string $format
-int $largest
+int|float $largest
 int $number
 string $order
 string $orderby
 string $separator
 bool|int $show_count
-int $smallest
+int|float $smallest
 callable $topic_count_scale_callback
 array $topic_count_text
 callable $topic_count_text_callback

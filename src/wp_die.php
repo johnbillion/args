@@ -11,11 +11,11 @@ namespace Args;
  */
 class wp_die extends Shared\Base {
 	/**
-	 * The HTTP response code.
+	 * The HTTP response code, or null to send no status header.
 	 *
 	 * Default 200 for Ajax requests, 500 otherwise.
 	 */
-	public int $response;
+	public int|null $response;
 
 	/**
 	 * A URL to include a link to.

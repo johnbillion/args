@@ -1,6 +1,7 @@
 mixed $default
 string $description
 string $label
-callable $sanitize_callback
+callable|null $sanitize_callback
+bool|array $show_in_abilities
 bool|array $show_in_rest
 string $type

@@ -375,7 +375,7 @@
 		"phpstan/phpstan-strict-rules": "2.0.8",
 		"phpunit/phpunit": "^9.0",
 		"roots/wordpress-core-installer": "1.100.0",
-		"roots/wordpress-full": "~7.1.0",
+		"roots/wordpress-full": "7.2-RC2",
 		"szepeviktor/phpstan-wordpress": "2.0.3"
 	},
 	"funding": [

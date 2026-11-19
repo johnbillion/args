@@ -78,6 +78,13 @@ class register_post_type extends Shared\Base {
 	public bool $publicly_queryable;
 
 	/**
+	 * Whether posts of this post type can be selected by random content redirects, such as example.com/random/.
+	 *
+	 * If not set, the default is true when `$publicly_queryable` is true and `$has_archive` is set.
+	 */
+	public bool $randomable;
+
+	/**
 	 * Whether to generate and allow a UI for managing this post type in the admin.
 	 *
 	 * Default is value of `$public`.
@@ -115,6 +122,13 @@ class register_post_type extends Shared\Base {
 	 * Set this to true for the post type to be available in the block editor.
 	 */
 	public bool $show_in_rest;
+
+	/**
+	 * Whether to expose this post type through the Abilities API, so the core content abilities can access its posts, subject to the current user's capabilities.
+	 *
+	 * Default false.
+	 */
+	public bool $show_in_abilities;
 
 	/**
 	 * To change the base URL of REST API route.

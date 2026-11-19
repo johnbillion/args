@@ -9,6 +9,10 @@ $args->description = 'Does something useful';
 $args->category = 'content';
 $args->execute_callback = fn( mixed $input = null ) => $input;
 $args->permission_callback = fn( mixed $input = null ) => true;
+$args->required_capabilities = [
+	'edit_posts',
+	'export',
+];
 $args->input_schema = [
 	'type' => 'object',
 	'properties' => [

@@ -35,11 +35,11 @@ class wp_nav_menu extends Shared\Base {
 	public string $menu_id;
 
 	/**
-	 * Whether to wrap the ul, and what to wrap it with.
+	 * Whether to wrap the ul, and what to wrap it with. False for no container.
 	 *
 	 * Default 'div'.
 	 */
-	public string $container;
+	public string|false $container;
 
 	/**
 	 * Class that is applied to the container.

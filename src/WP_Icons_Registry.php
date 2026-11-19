@@ -29,4 +29,11 @@ class WP_Icons_Registry extends Shared\Base {
 	 * The full path to the file containing the icon content.
 	 */
 	public string $file_path;
+
+	/**
+	 * Additional search terms for the icon, matched by `get_registered_icons()` alongside the name and label.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $keywords;
 }

@@ -185,7 +185,7 @@ class WP_Block_Type extends Shared\Base {
 	/**
 	 * Custom CSS selectors for theme.json style generation.
 	 *
-	 * @var array<string, mixed>
+	 * @var array<string, string|array<string, string>>
 	 */
 	public array $selectors;
 
@@ -230,6 +230,13 @@ class WP_Block_Type extends Shared\Base {
 	 * @var array<int, string>
 	 */
 	public array $view_script_handles;
+
+	/**
+	 * Block type front end only script module IDs.
+	 *
+	 * @var array<int, string>
+	 */
+	public array $view_script_module_ids;
 
 	/**
 	 * Block variations.

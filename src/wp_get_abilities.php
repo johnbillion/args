@@ -35,6 +35,14 @@ class wp_get_abilities extends Shared\Base {
 	public array $meta;
 
 	/**
+	 * Whether to leave out abilities whose required capabilities the current user doesn't have.
+	 *
+	 * Abilities without required capabilities pass this check but remain subject to other filters. Permission
+	 * callbacks do not run, so inclusion does not guarantee execution permission.
+	 */
+	public bool $has_required_capabilities;
+
+	/**
 	 * A callback invoked for each ability after the category, namespace, and meta filters.
 	 *
 	 * Return true to include the ability, false to exclude it.

@@ -7,3 +7,4 @@ string $label
 array<string, mixed> $meta
 array<string, mixed> $output_schema
 callable $permission_callback
+list<string> $required_capabilities
