@@ -10,22 +10,22 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_query/parse_query/
  */
 class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs, TaxQuery\WithArgs {
-	public const COMMENT_STATUS_OPEN = 'open';
-	public const COMMENT_STATUS_CLOSED = 'closed';
+	final public const COMMENT_STATUS_OPEN = 'open';
+	final public const COMMENT_STATUS_CLOSED = 'closed';
 
-	public const FIELD_ALL = '';
-	public const FIELD_IDS = 'ids';
-	public const FIELD_ID_PARENT = 'id=>parent';
+	final public const FIELD_ALL = '';
+	final public const FIELD_IDS = 'ids';
+	final public const FIELD_ID_PARENT = 'id=>parent';
 
-	public const PERM_READABLE = 'readable';
-	public const PERM_EDITABLE = 'editable';
+	final public const PERM_READABLE = 'readable';
+	final public const PERM_EDITABLE = 'editable';
 
-	public const COMMENT_COUNT_COMPARE_EQUALS = '=';
-	public const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
-	public const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
-	public const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
-	public const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
-	public const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
+	final public const COMMENT_COUNT_COMPARE_EQUALS = '=';
+	final public const COMMENT_COUNT_COMPARE_NOT_EQUALS = '!=';
+	final public const COMMENT_COUNT_COMPARE_GREATER_THAN = '>';
+	final public const COMMENT_COUNT_COMPARE_GREATER_THAN_OR_EQUALS = '>=';
+	final public const COMMENT_COUNT_COMPARE_LESS_THAN = '<';
+	final public const COMMENT_COUNT_COMPARE_LESS_THAN_OR_EQUALS = '<=';
 
 	use DateQuery\ProvidesArgs;
 	use MetaQuery\ProvidesArgs;

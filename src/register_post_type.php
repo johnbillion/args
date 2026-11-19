@@ -10,10 +10,10 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/register_post_type/
  */
 class register_post_type extends Shared\Base {
-	public const TEMPLATE_LOCK_ALL = 'all';
-	public const TEMPLATE_LOCK_INSERT = 'insert';
-	public const TEMPLATE_LOCK_CONTENT_ONLY = 'contentOnly';
-	public const TEMPLATE_LOCK_FALSE = false;
+	final public const TEMPLATE_LOCK_ALL = 'all';
+	final public const TEMPLATE_LOCK_INSERT = 'insert';
+	final public const TEMPLATE_LOCK_CONTENT_ONLY = 'contentOnly';
+	final public const TEMPLATE_LOCK_FALSE = false;
 
 	/**
 	 * Name of the post type shown in the menu. Usually plural.

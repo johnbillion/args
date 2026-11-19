@@ -10,16 +10,16 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
  */
 class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
-	public const FIELD_ALL = 'all';
-	public const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
-	public const FIELD_IDS = 'ids';
-	public const FIELD_TT_IDS = 'tt_ids';
-	public const FIELD_NAMES = 'names';
-	public const FIELD_SLUGS = 'slugs';
-	public const FIELD_COUNT = 'count';
-	public const FIELD_ID_PARENT = 'id=>parent';
-	public const FIELD_ID_NAME = 'id=>name';
-	public const FIELD_ID_SLUG = 'id=>slug';
+	final public const FIELD_ALL = 'all';
+	final public const FIELD_ALL_WITH_OBJECT_ID = 'all_with_object_id';
+	final public const FIELD_IDS = 'ids';
+	final public const FIELD_TT_IDS = 'tt_ids';
+	final public const FIELD_NAMES = 'names';
+	final public const FIELD_SLUGS = 'slugs';
+	final public const FIELD_COUNT = 'count';
+	final public const FIELD_ID_PARENT = 'id=>parent';
+	final public const FIELD_ID_NAME = 'id=>name';
+	final public const FIELD_ID_SLUG = 'id=>slug';
 
 	use MetaQuery\ProvidesArgs;
 

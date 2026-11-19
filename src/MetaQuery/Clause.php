@@ -9,6 +9,7 @@ use Args\Arrayable\Arrayable;
 /**
  * Arguments for a clause within a meta query, for example those within a `$meta_query` argument.
  */
+#[\AllowDynamicProperties]
 final class Clause implements Arrayable, Values {
 	use \Args\Arrayable\ProvidesFromArray;
 	use \Args\Arrayable\ProvidesToArray;

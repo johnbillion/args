@@ -9,6 +9,9 @@
 	convertWarningsToExceptions="true"
 	convertDeprecationsToExceptions="true"
 >
+	<php>
+		<ini name="error_reporting" value="-1"/>
+	</php>
 	<testsuites>
 		<testsuite name="main">
 			<directory suffix=".php">tests/phpunit</directory>

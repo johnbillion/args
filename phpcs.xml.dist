@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="Args">
-	<config name="testVersion" value="8.0-"/>
+	<config name="testVersion" value="8.3-"/>
 	<arg name="cache" value="tests/cache/phpcs.json"/>
 	<arg name="extensions" value="php"/>
 	<arg value="s"/>

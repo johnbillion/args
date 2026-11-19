@@ -10,12 +10,12 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/classes/wp_comment_query/__construct/
  */
 class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\WithArgs {
-	public const FIELD_IDS = 'ids';
-	public const FIELD_ALL = '';
+	final public const FIELD_IDS = 'ids';
+	final public const FIELD_ALL = '';
 
-	public const HIERARCHICAL_FALSE = false;
-	public const HIERARCHICAL_THREADED = 'threaded';
-	public const HIERARCHICAL_FLAT = 'flat';
+	final public const HIERARCHICAL_FALSE = false;
+	final public const HIERARCHICAL_THREADED = 'threaded';
+	final public const HIERARCHICAL_FLAT = 'flat';
 
 	use DateQuery\ProvidesArgs;
 	use MetaQuery\ProvidesArgs;

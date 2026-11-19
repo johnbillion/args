@@ -10,8 +10,8 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/wp_insert_post/
  */
 class wp_insert_post extends Shared\Base {
-	public const COMMENT_STATUS_OPEN = 'open';
-	public const COMMENT_STATUS_CLOSED = 'closed';
+	final public const COMMENT_STATUS_OPEN = 'open';
+	final public const COMMENT_STATUS_CLOSED = 'closed';
 
 	/**
 	 * The post ID. If equal to something other than 0, the post with that ID will be updated.
