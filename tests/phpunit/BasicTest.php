@@ -80,6 +80,25 @@ final class BasicTest extends TestCase {
 		self::assertSame( [ 'order' => 'DESC' ], $args->toArray() );
 	}
 
+	public function testUndeclaredParamsCanBeSet(): void {
+		$args = \Args\WP_Query::fromArray( [
+			'not_a_real_arg' => 123,
+		] );
+		$args->another_fake_arg = 'yes';
+
+		$clause = \Args\MetaQuery\Clause::fromArray( [
+			'not_a_real_arg' => 456,
+		] );
+
+		$expected = [
+			'another_fake_arg' => 'yes',
+			'not_a_real_arg' => 123,
+		];
+
+		self::assertSame( $expected, $args->toArray() );
+		self::assertSame( [ 'not_a_real_arg' => 456 ], $clause->toArray() );
+	}
+
 	public function testUnknownParamsAreIncludedInArray(): void {
 		$args = new \Args\WP_Query;
 

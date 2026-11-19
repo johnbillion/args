@@ -41,7 +41,7 @@ trait ProvidesToArray {
 		}
 
 		if ( isset( $vars['orderby'] ) && is_array( $vars['orderby'] ) ) {
-			$vars['orderby'] = array_map( fn( $value ) => self::sortDirectionToString( $value ), $vars['orderby'] );
+			$vars['orderby'] = array_map( self::sortDirectionToString( ... ), $vars['orderby'] );
 		}
 
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );

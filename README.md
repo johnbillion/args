@@ -22,7 +22,7 @@ Last updated for WordPress 7.1.
 
 ## Requirements
 
-* PHP 8.0+
+* PHP 8.3+
 
 ## Installation
 

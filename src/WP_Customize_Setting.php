@@ -11,8 +11,8 @@ namespace Args;
  * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
  */
 class WP_Customize_Setting extends Shared\Base {
-	public const TRANSPORT_REFRESH = 'refresh';
-	public const TRANSPORT_POSTMESSAGE = 'postMessage';
+	final public const TRANSPORT_REFRESH = 'refresh';
+	final public const TRANSPORT_POSTMESSAGE = 'postMessage';
 
 	/**
 	 * Type of the setting.

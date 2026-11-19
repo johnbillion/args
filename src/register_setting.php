@@ -10,12 +10,12 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/register_setting/
  */
 class register_setting extends Shared\Base {
-	public const TYPE_STRING = 'string';
-	public const TYPE_BOOLEAN = 'boolean';
-	public const TYPE_INTEGER = 'integer';
-	public const TYPE_NUMBER = 'number';
-	public const TYPE_ARRAY = 'array';
-	public const TYPE_OBJECT = 'object';
+	final public const TYPE_STRING = 'string';
+	final public const TYPE_BOOLEAN = 'boolean';
+	final public const TYPE_INTEGER = 'integer';
+	final public const TYPE_NUMBER = 'number';
+	final public const TYPE_ARRAY = 'array';
+	final public const TYPE_OBJECT = 'object';
 
 	/**
 	 * The type of data associated with this setting. Valid values are 'string', 'boolean', 'integer', 'number', 'array', and 'object'.

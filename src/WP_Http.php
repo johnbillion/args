@@ -12,18 +12,19 @@ use WP_Http_Cookie;
  * @link https://developer.wordpress.org/reference/classes/wp_http/request/
  */
 class WP_Http extends Shared\Base {
-	public const METHOD_GET = 'GET';
-	public const METHOD_POST = 'POST';
-	public const METHOD_HEAD = 'HEAD';
-	public const METHOD_PUT = 'PUT';
-	public const METHOD_DELETE = 'DELETE';
-	public const METHOD_TRACE = 'TRACE';
-	public const METHOD_OPTIONS = 'OPTIONS';
-	public const METHOD_PATCH = 'PATCH';
+	final public const METHOD_GET = 'GET';
+	final public const METHOD_POST = 'POST';
+	final public const METHOD_HEAD = 'HEAD';
+	final public const METHOD_PUT = 'PUT';
+	final public const METHOD_DELETE = 'DELETE';
+	final public const METHOD_TRACE = 'TRACE';
+	final public const METHOD_OPTIONS = 'OPTIONS';
+	final public const METHOD_PATCH = 'PATCH';
 
 	/**
 	 * @return array<string, string>
 	 */
+	#[\Override]
 	public function getMap() : array {
 		return [
 			'user_agent' => 'user-agent',

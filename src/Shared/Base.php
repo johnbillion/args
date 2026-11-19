@@ -6,9 +6,11 @@ namespace Args\Shared;
 
 use Args\Arrayable\Arrayable;
 
+// Unknown args are passed through to WordPress as-is.
+#[\AllowDynamicProperties]
 abstract class Base implements Arrayable {
-	public const ORDER_ASC = 'ASC';
-	public const ORDER_DESC = 'DESC';
+	final public const ORDER_ASC = 'ASC';
+	final public const ORDER_DESC = 'DESC';
 
 	use \Args\Arrayable\ProvidesFromArray;
 	use \Args\Arrayable\ProvidesToArray;
