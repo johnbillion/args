@@ -157,6 +157,18 @@ $args->meta_query = $args->meta_query::fromArray( $array );
 $query = new \WP_Query( $args->toArray() );
 ```
 
+## Sort direction
+
+On PHP 8.6 and higher, any `order` argument also accepts a case of the native `SortDirection` enum, as do the order values in the `orderby` array of `WP_User_Query`. These are converted to `'ASC'` or `'DESC'` by `toArray()`, so you must pass the result of `toArray()` to WordPress rather than the enum itself.
+
+```php
+$args = new \Args\WP_Query;
+
+$args->order = SortDirection::Ascending;
+
+$query = new \WP_Query( $args->toArray() );
+```
+
 ## What's provided
 
 ### Posts

@@ -229,11 +229,11 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	/**
 	 * Designates ascending or descending order of posts.
 	 *
-	 * Default 'DESC'. Accepts 'ASC', 'DESC'.
+	 * Default 'DESC'. Accepts 'ASC', 'DESC', or a `SortDirection` case on PHP 8.6+.
 	 *
-	 * @phpstan-var Shared\Base::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*|\SortDirection
 	 */
-	public string $order;
+	public string|\SortDirection $order;
 
 	/**
 	 * Sort retrieved posts by parameter. One or more options may be passed.

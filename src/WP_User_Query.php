@@ -102,7 +102,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	/**
 	 * Field(s) to sort the retrieved users by.
 	 *
-	 * May be a single value, an array of values, or a multi-dimensional array with fields as keys and orders ('ASC' or 'DESC') as values. Accepted values are:
+	 * May be a single value, an array of values, or a multi-dimensional array with fields as keys and orders ('ASC', 'DESC', or a `SortDirection` case on PHP 8.6+) as values. Accepted values are:
 	 *
 	 *   - 'ID', 'display_name' (or 'name')
 	 *   - 'include'
@@ -128,13 +128,13 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string|array $orderby;
 
 	/**
-	 * Designates ascending or descending order of users. Order values passed as part of an `$orderby` array take precedence over this parameter. Accepts 'ASC', 'DESC'.
+	 * Designates ascending or descending order of users. Order values passed as part of an `$orderby` array take precedence over this parameter. Accepts 'ASC', 'DESC', or a `SortDirection` case on PHP 8.6+.
 	 *
 	 * Default 'ASC'.
 	 *
-	 * @phpstan-var Shared\Base::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*|\SortDirection
 	 */
-	public string $order;
+	public string|\SortDirection $order;
 
 	/**
 	 * Number of users to offset in retrieved results. Can be used in conjunction with pagination.

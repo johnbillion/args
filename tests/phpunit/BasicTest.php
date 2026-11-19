@@ -25,6 +25,61 @@ final class BasicTest extends TestCase {
 		self::assertSame( $expected, $actual );
 	}
 
+	public function testStringOrderIsUnchanged(): void {
+		$args = new \Args\WP_Query;
+
+		$args->order = 'ASC';
+
+		self::assertSame( [ 'order' => 'ASC' ], $args->toArray() );
+	}
+
+	/**
+	 * @requires PHP >= 8.6
+	 */
+	public function testSortDirectionIsConvertedToString(): void {
+		$args = new \Args\WP_Query;
+
+		$args->order = \SortDirection::Ascending;
+		self::assertSame( [ 'order' => 'ASC' ], $args->toArray() );
+
+		$args->order = \SortDirection::Descending;
+		self::assertSame( [ 'order' => 'DESC' ], $args->toArray() );
+	}
+
+	/**
+	 * @requires PHP >= 8.6
+	 */
+	public function testSortDirectionInOrderbyArrayIsConvertedToString(): void {
+		$args = new \Args\WP_User_Query;
+
+		$args->orderby = [
+			'user_login' => \SortDirection::Ascending,
+			'user_registered' => \SortDirection::Descending,
+			'post_count' => 'ASC',
+		];
+
+		$expected = [
+			'orderby' => [
+				'user_login' => 'ASC',
+				'user_registered' => 'DESC',
+				'post_count' => 'ASC',
+			],
+		];
+
+		self::assertSame( $expected, $args->toArray() );
+	}
+
+	/**
+	 * @requires PHP >= 8.6
+	 */
+	public function testSortDirectionCanBeSetFromArray(): void {
+		$args = \Args\WP_Term_Query::fromArray( [
+			'order' => \SortDirection::Descending,
+		] );
+
+		self::assertSame( [ 'order' => 'DESC' ], $args->toArray() );
+	}
+
 	public function testUnknownParamsAreIncludedInArray(): void {
 		$args = new \Args\WP_Query;
 

@@ -18,6 +18,7 @@ jobs:
     strategy:
       matrix:
         php:
+          - '8.6'
           - '8.4'
           - '8.0'
       fail-fast: false
@@ -58,5 +59,14 @@ jobs:
         composer install --prefer-dist --no-progress --no-interaction
 
     - name: Run the tests
+      if: matrix.php != '8.0'
       run: | #shell
         composer test
+
+    # PHPStan can't load the SortDirection enum stub when running on PHP 8.0 because enums need PHP 8.1.
+    - name: Run the tests without PHPStan
+      if: matrix.php == '8.0'
+      run: | #shell
+        composer test:shapes
+        composer test:phpunit
+        composer test:phpcs

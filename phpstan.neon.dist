@@ -11,6 +11,8 @@ parameters:
 		- src
 		- tests
 		- bin
+	scanFiles:
+		- tests/stubs/SortDirection.stub
 	ignoreErrors:
 		-
 			message: '#^Access to an undefined property Args\\#'

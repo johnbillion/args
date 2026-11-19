@@ -1,0 +1,7 @@
+<?php
+
+// Native in PHP 8.6+. Lets PHPStan know about it when running on older versions.
+enum SortDirection {
+	case Ascending;
+	case Descending;
+}

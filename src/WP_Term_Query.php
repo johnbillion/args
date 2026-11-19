@@ -58,13 +58,13 @@ class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string $orderby;
 
 	/**
-	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending).
+	 * Whether to order terms in ascending or descending order. Accepts 'ASC' (ascending), 'DESC' (descending), or a `SortDirection` case on PHP 8.6+.
 	 *
 	 * Default 'ASC'.
 	 *
-	 * @phpstan-var Shared\Base::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*|\SortDirection
 	 */
-	public string $order;
+	public string|\SortDirection $order;
 
 	/**
 	 * Whether to hide terms not assigned to any posts.
