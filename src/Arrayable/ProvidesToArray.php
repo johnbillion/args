@@ -36,11 +36,35 @@ trait ProvidesToArray {
 			$vars[ $key ] = $var->toArray();
 		}
 
+		if ( isset( $vars['order'] ) ) {
+			$vars['order'] = self::sortDirectionToString( $vars['order'] );
+		}
+
+		if ( isset( $vars['orderby'] ) && is_array( $vars['orderby'] ) ) {
+			$vars['orderby'] = array_map( fn( $value ) => self::sortDirectionToString( $value ), $vars['orderby'] );
+		}
+
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
 
 		ksort( $vars );
 
 		return $vars;
+	}
+
+	/**
+	 * WordPress only accepts strings for sort orders. The `SortDirection` enum exists on PHP 8.6+ only, so the enum
+	 * cases must not be referenced outside of the `instanceof` check.
+	 *
+	 * @template T
+	 * @param T $value
+	 * @return (T is \SortDirection ? \Args\Shared\Base::ORDER_* : T)
+	 */
+	private static function sortDirectionToString( mixed $value ) : mixed {
+		if ( ! $value instanceof \SortDirection ) {
+			return $value;
+		}
+
+		return ( $value === \SortDirection::Ascending ) ? \Args\Shared\Base::ORDER_ASC : \Args\Shared\Base::ORDER_DESC;
 	}
 
 }

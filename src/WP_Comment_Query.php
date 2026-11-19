@@ -162,13 +162,13 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	public string|array $orderby;
 
 	/**
-	 * How to order retrieved comments. Accepts 'ASC', 'DESC'.
+	 * How to order retrieved comments. Accepts 'ASC', 'DESC', or a `SortDirection` case on PHP 8.6+.
 	 *
 	 * Default: 'DESC'.
 	 *
-	 * @phpstan-var Shared\Base::ORDER_*
+	 * @phpstan-var Shared\Base::ORDER_*|\SortDirection
 	 */
-	public string $order;
+	public string|\SortDirection $order;
 
 	/**
 	 * Parent ID of comment to retrieve children of.

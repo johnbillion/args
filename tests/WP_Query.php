@@ -84,6 +84,7 @@ $args->nopaging = true;
 $args->no_found_rows = true;
 $args->offset = 1;
 $args->order = 'ASC';
+$args->order = \SortDirection::Descending;
 $args->orderby = '';
 $args->p = 1;
 $args->page = 4;

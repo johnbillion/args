@@ -80,13 +80,13 @@ class wp_generate_tag_cloud extends Shared\Base {
 	/**
 	 * How to order the tags.
 	 *
-	 * Accepts 'ASC' (ascending), 'DESC' (descending), or 'RAND' (random).
+	 * Accepts 'ASC' (ascending), 'DESC' (descending), 'RAND' (random), or a `SortDirection` case on PHP 8.6+.
 	 *
 	 * Default 'ASC'.
 	 *
-	 * @phpstan-var 'ASC'|'DESC'|'RAND'
+	 * @phpstan-var 'ASC'|'DESC'|'RAND'|\SortDirection
 	 */
-	public string $order;
+	public string|\SortDirection $order;
 
 	/**
 	 * Whether to enable filtering of the final output via {@see 'wp_generate_tag_cloud'}.
