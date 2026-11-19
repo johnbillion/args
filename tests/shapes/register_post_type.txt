@@ -18,12 +18,14 @@ int $menu_position
 bool $public
 bool $publicly_queryable
 string|bool $query_var
+bool $randomable
 callable $register_meta_box_cb
 string $rest_base
 string $rest_controller_class
 string $rest_namespace
 string|bool $revisions_rest_controller_class
 bool|array $rewrite
+bool $show_in_abilities
 bool $show_in_admin_bar
 bool|string $show_in_menu
 bool $show_in_nav_menus

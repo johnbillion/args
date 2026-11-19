@@ -82,6 +82,9 @@ $args->style_handles = [
 $args->view_script_handles = [
 	'wp-handle',
 ];
+$args->view_script_module_ids = [
+	'@my-plugin/view',
+];
 $args->variations = [
 	[
 		'name' => 'error',

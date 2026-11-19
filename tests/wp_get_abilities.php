@@ -11,5 +11,6 @@ $args->meta = [
 		'readonly' => true,
 	],
 ];
+$args->has_required_capabilities = true;
 $args->item_include_callback = fn( \WP_Ability $ability ): bool => true;
 $args->result_callback = fn( array $abilities ): array => array_slice( $abilities, 0, 10 );

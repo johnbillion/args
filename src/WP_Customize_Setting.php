@@ -43,7 +43,7 @@ class WP_Customize_Setting extends Shared\Base {
 	 *
 	 * Default is empty string.
 	 */
-	public string $default;
+	public mixed $default;
 
 	/**
 	 * Options for rendering the live preview of changes in Customizer.

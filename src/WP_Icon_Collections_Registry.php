@@ -21,4 +21,13 @@ class WP_Icon_Collections_Registry extends Shared\Base {
 	 * A human-readable description for the icon collection.
 	 */
 	public string $description;
+
+	/**
+	 * Whether the collection and its icons are exposed through the REST API, and therefore selectable in the editor's icon picker.
+	 *
+	 * Icons in non-public collections stay available to server-side code via `wp_get_icon()`.
+	 *
+	 * Default true.
+	 */
+	public bool $public;
 }

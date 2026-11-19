@@ -40,10 +40,22 @@ class WP_Abilities_Registry extends Shared\Base {
 	 *
 	 * Receives optional mixed input and returns bool or WP_Error.
 	 *
+	 * Required unless `$required_capabilities` lists at least one capability.
+	 *
 	 * @var callable
 	 * @phpstan-var callable(mixed=): (bool|\WP_Error)
 	 */
 	public $permission_callback;
+
+	/**
+	 * Minimum capabilities required for every execution of the ability, regardless of input.
+	 *
+	 * They are checked before `$permission_callback`, which handles input-dependent requirements.
+	 *
+	 * @var array<int, string>
+	 * @phpstan-var list<string>
+	 */
+	public array $required_capabilities;
 
 	/**
 	 * JSON Schema definition for the ability's input.

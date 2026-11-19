@@ -5,6 +5,7 @@ declare(strict_types=1);
 $args = new \Args\wp_die;
 
 $args->response = 418;
+$args->response = null;
 $args->link_url = 'http://example.net';
 $args->link_text = 'Text';
 $args->back_link = true;

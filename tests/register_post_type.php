@@ -16,3 +16,5 @@ $args->register_meta_box_cb = function( \WP_Post $post ) {};
 $args->labels = [
 	'featured_image' => 'Icon',
 ];
+$args->randomable = false;
+$args->show_in_abilities = true;

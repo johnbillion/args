@@ -1,3 +1,4 @@
 string $content
 string $file_path
+string[] $keywords
 string $label

@@ -19,7 +19,7 @@ class wp_generate_tag_cloud extends Shared\Base {
 	 *
 	 * Default 8 (pt).
 	 */
-	public int $smallest;
+	public int|float $smallest;
 
 	/**
 	 * Largest font size used to display tags.
@@ -28,7 +28,7 @@ class wp_generate_tag_cloud extends Shared\Base {
 	 *
 	 * Default 22 (pt).
 	 */
-	public int $largest;
+	public int|float $largest;
 
 	/**
 	 * CSS text size unit to use with the `$smallest` and `$largest` values.

@@ -39,8 +39,10 @@ class register_setting extends Shared\Base {
 	 *
 	 * The callback is called via the https://developer.wordpress.org/reference/hooks/sanitize_option_option/ filter.
 	 *
-	 * @var callable
-	 * @phpstan-var callable(mixed,string,mixed):mixed
+	 * Default null.
+	 *
+	 * @var callable|null
+	 * @phpstan-var (callable(mixed,string,mixed):mixed)|null
 	 */
 	public $sanitize_callback;
 
@@ -50,6 +52,21 @@ class register_setting extends Shared\Base {
 	 * @var bool|array<string, mixed>
 	 */
 	public bool|array $show_in_rest;
+
+	/**
+	 * Whether this setting should be exposed through the Abilities API.
+	 *
+	 * When true, it uses the same name and schema as `$show_in_rest`. It may also be an array with 'name' and 'schema' keys, used instead of `$show_in_rest` rather than merged with it.
+	 *
+	 * Settings registered after abilities initialize are not exposed.
+	 *
+	 * @var bool|array<string, mixed>
+	 * @phpstan-var bool|array{
+	 *     name?: string,
+	 *     schema?: array<string, mixed>,
+	 * }
+	 */
+	public bool|array $show_in_abilities;
 
 	/**
 	 * Default value when calling `get_option()`.

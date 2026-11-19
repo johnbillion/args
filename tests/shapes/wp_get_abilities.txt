@@ -1,4 +1,5 @@
 string $category
+bool $has_required_capabilities
 callable $item_include_callback
 array $meta
 string $namespace
