@@ -29,14 +29,19 @@ trait ProvidesToArray {
 		}
 
 		foreach ( $vars as $key => $var ) {
-			if ( $var instanceof Arrayable ) {
-				$vars[ $key ] = $var->toArray();
-			} elseif ( is_array( $var ) ) {
-				// Covers order values within an `orderby` array.
-				$vars[ $key ] = array_map( fn( $value ) => self::sortDirectionToString( $value ), $var );
-			} else {
-				$vars[ $key ] = self::sortDirectionToString( $var );
+			if ( ! $var instanceof Arrayable ) {
+				continue;
 			}
+
+			$vars[ $key ] = $var->toArray();
+		}
+
+		if ( isset( $vars['order'] ) ) {
+			$vars['order'] = self::sortDirectionToString( $vars['order'] );
+		}
+
+		if ( isset( $vars['orderby'] ) && is_array( $vars['orderby'] ) ) {
+			$vars['orderby'] = array_map( fn( $value ) => self::sortDirectionToString( $value ), $vars['orderby'] );
 		}
 
 		$vars = array_filter( $vars, fn( $value ) : bool => $value !== null );
